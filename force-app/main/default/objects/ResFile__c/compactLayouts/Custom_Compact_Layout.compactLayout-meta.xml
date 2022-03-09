@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Reservation_Nr__c</fields>
+    <fields>Booking_Year__c</fields>
+    <fields>Booking_Month__c</fields>
+    <fields>Booking_Date__c</fields>
+    <fields>Reservation_Hour__c</fields>
+    <fields>Pick_Up_Year__c</fields>
+    <fields>Pick_Up_Month__c</fields>
+    <fields>Pick_Up_Date__c</fields>
+    <fields>Pick_Up_Hour__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

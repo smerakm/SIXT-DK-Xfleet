@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>stationType__c</fullName>
+    <externalId>false</externalId>
+    <label>Station Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Airpot</fullName>
+                <default>false</default>
+                <label>Airpot</label>
+            </value>
+            <value>
+                <fullName>City</fullName>
+                <default>false</default>
+                <label>City</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

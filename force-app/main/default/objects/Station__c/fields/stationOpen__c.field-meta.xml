@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>stationOpen__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>If the button is checked the station is open for renting out cars. This not a box there a managing open closed hours it is managing if the station is closed for good.</description>
+    <externalId>false</externalId>
+    <label>Station Open</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

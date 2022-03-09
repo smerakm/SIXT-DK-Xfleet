@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>longTermRental__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If it is true, then it is a long term rental if it is unchecked then it is a short term rental</description>
+    <externalId>false</externalId>
+    <label>Long Term Rental</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

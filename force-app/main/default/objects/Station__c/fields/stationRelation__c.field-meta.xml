@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>stationRelation__c</fullName>
+    <description>This field is to describe that which relation the station has to Sixt Denmark.</description>
+    <externalId>false</externalId>
+    <label>Station Relation</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sixt DK Owned</fullName>
+                <default>false</default>
+                <label>Sixt DK Owned</label>
+            </value>
+            <value>
+                <fullName>Sub Franchise</fullName>
+                <default>false</default>
+                <label>Sub Franchise</label>
+            </value>
+            <value>
+                <fullName>Agent</fullName>
+                <default>false</default>
+                <label>Agent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

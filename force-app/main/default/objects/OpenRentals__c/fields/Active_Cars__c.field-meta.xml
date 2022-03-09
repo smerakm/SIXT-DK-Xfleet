@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Cars__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ((Import_Date__c = TODAY() &amp;&amp;  Drop_off__c  &gt; TODAY() -3), TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Cars</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>importDate__c</columns>
+    <columns>batchFileType__c</columns>
+    <columns>mvnr__c</columns>
+    <columns>konr__c</columns>
+    <columns>stor__c</columns>
+    <columns>bumo__c</columns>
+    <columns>abrd__c</columns>
+    <columns>resn__c</columns>
+    <columns>c_A__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Alle registreringer</label>
+</ListView>
