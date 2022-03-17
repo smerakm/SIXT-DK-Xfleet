@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>vehicleBatch__c</entityName>
+    <fieldName>Status_Field__c</fieldName>
+    <masterLabel>Vehicle Batch Phases</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <picklistValueName>Canceled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>numberOfVehicles__c</fieldNames>
+        <fieldNames>deliveryDate__c</fieldNames>
+        <picklistValueName>Deal</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>numberOfVehicles__c</fieldNames>
+        <picklistValueName>No deal</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleBuyer__c</fieldNames>
+        <fieldNames>deliveryDate__c</fieldNames>
+        <picklistValueName>Offer</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Vehicle_Batch_Buying</recordTypeName>
+</PathAssistant>

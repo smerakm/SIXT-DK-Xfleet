@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Batch_Buying</fullName>
+    <active>true</active>
+    <label>Vehicle Batch Buying</label>
+    <picklistValues>
+        <picklist>Status_Field__c</picklist>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
