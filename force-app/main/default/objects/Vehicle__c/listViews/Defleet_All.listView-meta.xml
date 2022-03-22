@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_All</fullName>
+    <columns>NAME</columns>
+    <columns>Expected_Defleet_Date__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <columns>defleetReadyCheck__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Defleet</value>
+    </filters>
+    <label>Defleet All</label>
+    <sharedTo>
+        <group>Defleet</group>
+        <group>Infleet</group>
+    </sharedTo>
+</ListView>

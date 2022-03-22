@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Warning</fullName>
+    <booleanFilter>(1 OR 2 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <columns>COC_document__c</columns>
+    <columns>Registration_document__c</columns>
+    <columns>Spare_key__c</columns>
+    <columns>Defleet_Coordinator_Comment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>COC_document__c</field>
+        <operation>equals</operation>
+        <value>Not found</value>
+    </filters>
+    <filters>
+        <field>Registration_document__c</field>
+        <operation>equals</operation>
+        <value>Not found</value>
+    </filters>
+    <filters>
+        <field>Spare_key__c</field>
+        <operation>equals</operation>
+        <value>Not found</value>
+    </filters>
+    <filters>
+        <field>Defleet_Coordinator_Comment__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Operations,Defleet</value>
+    </filters>
+    <label>Warning list</label>
+    <sharedTo>
+        <group>Defleet</group>
+    </sharedTo>
+</ListView>

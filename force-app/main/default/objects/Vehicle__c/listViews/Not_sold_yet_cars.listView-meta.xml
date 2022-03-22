@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_sold_yet_cars</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Vehicle_status__c</columns>
+    <columns>Re_marketing_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Re_marketing_Status__c</field>
+        <operation>equals</operation>
+        <value>Not sold</value>
+    </filters>
+    <label>Not sold yet cars</label>
+    <sharedTo>
+        <group>Re_marketing</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cars_not_distributed</fullName>
+    <columns>NAME</columns>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Model__c</columns>
+    <columns>Batch_Distribution__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Batch_Distribution__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Expected_Delivery_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Batch_Status__c</field>
+        <operation>equals</operation>
+        <value>Deal</value>
+    </filters>
+    <label>Cars not distributed</label>
+    <sharedTo>
+        <group>Infleet</group>
+    </sharedTo>
+</ListView>

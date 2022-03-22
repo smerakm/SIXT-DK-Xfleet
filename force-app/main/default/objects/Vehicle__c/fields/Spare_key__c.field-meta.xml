@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spare_key__c</fullName>
+    <externalId>false</externalId>
+    <label>Spare key</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Received in HQ</fullName>
+                <default>false</default>
+                <label>Received in HQ</label>
+            </value>
+            <value>
+                <fullName>Received at Station</fullName>
+                <default>false</default>
+                <label>Received at Station</label>
+            </value>
+            <value>
+                <fullName>In Car</fullName>
+                <default>false</default>
+                <label>In Car</label>
+            </value>
+            <value>
+                <fullName>With Customer</fullName>
+                <default>false</default>
+                <label>With Customer</label>
+            </value>
+            <value>
+                <fullName>Not found</fullName>
+                <default>false</default>
+                <label>Not found</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

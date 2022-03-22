@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicles_that_needs_Infleet_activities</fullName>
+    <columns>NAME</columns>
+    <columns>Brand__c</columns>
+    <columns>Vehicle_type__c</columns>
+    <columns>Car_description__c</columns>
+    <columns>Actual_Infleet_Day__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Infleet_activities_finished__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Vehicles that needs Infleet activities</label>
+    <sharedTo>
+        <group>Infleet</group>
+    </sharedTo>
+</ListView>

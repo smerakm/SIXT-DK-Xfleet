@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overview_of_cars_kilometres</fullName>
+    <columns>NAME</columns>
+    <columns>COBRA_Model__c</columns>
+    <columns>Current_KM__c</columns>
+    <columns>Max_KM__c</columns>
+    <columns>Remaining_KM__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Overview of cars with kilometres</label>
+    <sharedTo>
+        <group>Infleet</group>
+    </sharedTo>
+</ListView>
