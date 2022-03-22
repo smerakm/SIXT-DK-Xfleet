@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet Sprint 1 part 1 v2</fullName>
+    <types>
+        <members>Account.Damage_check_at_DAL_is_required__c</members>
+        <members>Damage__c.fixedDate__c</members>
+        <members>Damage__c.isFixed__c</members>
+        <members>Damage__c.vehicle__c</members>
+        <members>Vehicle__c.Buyer_Account__c</members>
+        <members>Vehicle__c.Buyer_Contact__c</members>
+        <members>Vehicle__c.Buyer_DAL_damage_check_required__c</members>
+        <members>Vehicle__c.Check_for_Milage__c</members>
+        <members>Vehicle__c.Defleet_Coordinator_Comment__c</members>
+        <members>Vehicle__c.Defleet_Status__c</members>
+        <members>Vehicle__c.Expected_Defleet_Date__c</members>
+        <members>Vehicle__c.Plates_are_removed__c</members>
+        <members>Vehicle__c.Re_marketing_Status__c</members>
+        <members>Vehicle__c.Stickers_are_removed__c</members>
+        <members>Vehicle__c.checkForDamage__c</members>
+        <members>Vehicle__c.checkForWinterTires__c</members>
+        <members>Vehicle__c.defleetReadyCheck__c</members>
+        <members>Vehicle__c.hasDamages__c</members>
+        <members>Vehicle__c.notFixedYetDamages__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Damage__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Defleet</members>
+        <members>Re_marketing</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <version>50.0</version>
+</Package>
