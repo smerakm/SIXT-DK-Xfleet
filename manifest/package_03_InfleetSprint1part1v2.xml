@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infleet Sprint 1 part 1 v%2E2</fullName>
+    <description>Public group and List Views, Layout</description>
+    <types>
+        <members>Infleet</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>Vehicle__c-Vehicle Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Overview_of_cars_kilometres</members>
+        <members>Vehicle__c.Prioritized_Cars</members>
+        <members>Vehicle__c.Vehicles_Expected_Delivery_Date</members>
+        <members>Vehicle__c.Vehicles_moved_to_Infleet</members>
+        <members>Vehicle__c.Vehicles_ready_for_final_Infleet</members>
+        <members>Vehicle__c.Vehicles_that_needs_Infleet_activities</members>
+        <members>Vehicle__c.Vehicles_with_no_email_sent_to_supplier</members>
+        <name>ListView</name>
+    </types>
+    <version>50.0</version>
+</Package>
