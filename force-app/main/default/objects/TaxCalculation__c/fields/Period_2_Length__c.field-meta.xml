@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_2_Length__c</fullName>
+    <defaultValue>33</defaultValue>
+    <description>length of the 2nd period for assumed value loss calculation in months</description>
+    <externalId>false</externalId>
+    <inlineHelpText>length of the 2nd period for assumed value loss calculation in months</inlineHelpText>
+    <label>Period 2 Length</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

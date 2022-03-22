@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tyres_Service_Cost__c</fullName>
+    <description>cost for tyres and service per month</description>
+    <externalId>false</externalId>
+    <inlineHelpText>cost for tyres and service per month</inlineHelpText>
+    <label>Tyres &amp; Service Cost</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

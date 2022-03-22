@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_2_Rate__c</fullName>
+    <defaultValue>1</defaultValue>
+    <description>how much percent of value is lost per month during the 1st period</description>
+    <externalId>false</externalId>
+    <inlineHelpText>how much percent of value is lost per month during the 1st period</inlineHelpText>
+    <label>Period 2 Rate</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>
