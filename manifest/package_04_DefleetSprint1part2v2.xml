@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet Sprint 1 part 2 v2</fullName>
+    <types>
+        <members>Station_managers</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>Account-Account Layout</members>
+        <members>Damage__c-Damage Layout</members>
+        <members>Vehicle__c-Vehicle Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Damage_check_reminder_list</members>
+        <members>Vehicle__c.Defleet_All</members>
+        <members>Vehicle__c.Not_sold_yet_cars</members>
+        <members>Vehicle__c.Re_marketing_All</members>
+        <members>Vehicle__c.Ready_for_pick</members>
+        <members>Vehicle__c.Vehicles</members>
+        <members>Vehicle__c.Vehicles_with_damages_to_be_fixed</members>
+        <members>Vehicle__c.Warning</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <version>50.0</version>
+</Package>
