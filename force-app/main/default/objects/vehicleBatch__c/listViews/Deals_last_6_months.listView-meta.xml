@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deals_last_6_months</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>deliveryDate__c</columns>
+    <columns>vehicleSeller__c</columns>
+    <columns>vehicleImporter__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Deal</value>
+    </filters>
+    <filters>
+        <field>deliveryDate__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_MONTHS:6</value>
+    </filters>
+    <label>Deals last 6 months</label>
+    <sharedTo>
+        <group>Procurement</group>
+    </sharedTo>
+</ListView>

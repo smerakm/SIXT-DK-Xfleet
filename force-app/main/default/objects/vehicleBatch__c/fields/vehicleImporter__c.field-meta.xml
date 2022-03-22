@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>Vehicle Importer</label>
     <lookupFilter>
-        <active>true</active>
+        <active>false</active>
         <filterItems>
             <field>Account.Type</field>
             <operation>equals</operation>

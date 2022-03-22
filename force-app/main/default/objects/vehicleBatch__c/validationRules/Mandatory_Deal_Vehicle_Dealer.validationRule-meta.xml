@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Deal_Vehicle_Dealer</fullName>
+    <active>true</active>
+    <description>Dealer must be selected before mark a batch as Deal</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Deal&quot;)
+&amp;&amp;
+ISBLANK(vehicleSeller__c)</errorConditionFormula>
+    <errorDisplayField>vehicleSeller__c</errorDisplayField>
+    <errorMessage>Dealer need to be selected before batch is marked as Deal</errorMessage>
+</ValidationRule>

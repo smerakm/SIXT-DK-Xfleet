@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pipeline</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>deliveryDate__c</columns>
+    <columns>vehicleSeller__c</columns>
+    <columns>vehicleImporter__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Offer,Waiting for Dealer</value>
+    </filters>
+    <label>Pipeline</label>
+    <sharedTo>
+        <group>Procurement</group>
+        <group>Re_marketing</group>
+    </sharedTo>
+</ListView>

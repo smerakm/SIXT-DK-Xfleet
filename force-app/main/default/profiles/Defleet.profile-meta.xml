@@ -1,197 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <classAccesses>
-        <apexClass>CalculationsHoldingCost</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CalculationsHoldingCost_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CalculationsTax</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CalculationsTax_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Car_Group__c</field>
+        <field>Vehicle__c.Last_Calculation_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle__c.vatDeduction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.Batch_Notes__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Contract_fee__c</field>
+        <field>vehicleBatch__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.No_Deal_Reason__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Damages__c</field>
+        <field>vehicleBatch__c.Number_Of_Vehicles__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.Number_Of_Vehicles_in_Operations__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Delivery__c</field>
+        <field>vehicleBatch__c.Number_of_Vehicles_Sold__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Depreciation__c</field>
+        <field>vehicleBatch__c.Number_of_Vehicles_in_Defleet__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Difference__c</field>
+        <field>vehicleBatch__c.Required_by_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>vehicleBatch__c.Status_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.batchName__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Handling_Cost__c</field>
+        <field>vehicleBatch__c.bonusPrVehicle__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Insurance__c</field>
+        <field>vehicleBatch__c.deliveryDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.leasingCompany__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.leasingLength__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Insurance_cost_for_period__c</field>
+        <field>vehicleBatch__c.minimumKM__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Interest_for_period__c</field>
+        <field>vehicleBatch__c.numberOfMiniLeaseVehicles__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Interest_towards_Tax__c</field>
+        <field>vehicleBatch__c.numberOfNoTaxVehicles__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Intrest_for_financing__c</field>
+        <field>vehicleBatch__c.numberOfStockVehicles__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.Intrest_rate_financing__c</field>
+        <field>vehicleBatch__c.numberOfTaxVehicles__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.L94_Car_Cost_for_period__c</field>
+        <field>vehicleBatch__c.numberOfVehicles__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.L94_Car_Monthly_Cost__c</field>
+        <field>vehicleBatch__c.vehicleBrandAndModel__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.L94_registration_tax__c</field>
+        <field>vehicleBatch__c.vehicleBuyer__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Batch_Calculator__c.License_Plate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Onboard_Offboard_reduction__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Ownership_tax__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Ownership_tax_period__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Period__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Proportional_registration_fee__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Refusion__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Regulated_tax_at_re_calculation__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Sales_price__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Status__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Steel_price__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Tires_Service__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Total_buy_price__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Total_cost_month__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Total_establishing_cost__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Total_registration_tax__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Valuta_Car_monthy_cost__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Valuta_Car_period__c</field>
-        <readable>false</readable>
+        <field>vehicleBatch__c.vehicleImporter__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Batch_Calculator__c-Batch Calculator Layout</layout>
+        <layout>vehicleBatch__c-Vehicle Batch Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>vehicleBatch__c-Vehicle Batch Layout</layout>
+        <recordType>vehicleBatch__c.Vehicle_Batch_Buying</recordType>
+    </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>vehicleBatch__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>vehicleBatch__c.Vehicle_Batch_Buying</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <tabVisibilities>
-        <tab>ServiceAndDamageCost__c</tab>
+        <tab>vehicleBatch__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>

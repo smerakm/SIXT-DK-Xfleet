@@ -6,7 +6,7 @@
     <externalId>false</externalId>
     <label>Vehicle Seller</label>
     <lookupFilter>
-        <active>true</active>
+        <active>false</active>
         <filterItems>
             <field>Account.Type</field>
             <operation>equals</operation>

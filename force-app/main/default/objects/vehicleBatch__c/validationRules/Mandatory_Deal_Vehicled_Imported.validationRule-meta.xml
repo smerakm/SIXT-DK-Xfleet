@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Deal_Vehicled_Imported</fullName>
+    <active>true</active>
+    <description>There need to be at least 1 vehicle before we can mark the batch as a deal</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Deal&quot;)
+&amp;&amp;
+Number_Of_Vehicles__c = 0</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Please check that the vehicles are imported to the batch before mark it as Deal!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>vehicleBatch__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Vehicle Batch Lifecycle</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleSeller__c</fieldNames>
+        <fieldNames>No_Deal_Reason__c</fieldNames>
+        <info>&lt;p&gt;Populate reason for no deal/cancelation.&lt;/p&gt;</info>
+        <picklistValueName>Canceled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleSeller__c</fieldNames>
+        <fieldNames>leasingCompany__c</fieldNames>
+        <fieldNames>leasingLength__c</fieldNames>
+        <fieldNames>Required_by_Date__c</fieldNames>
+        <info>&lt;p&gt;Set Leasing Company.&lt;/p&gt;&lt;p&gt;Populate Required Date.&lt;/p&gt;</info>
+        <picklistValueName>Deal</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleSeller__c</fieldNames>
+        <fieldNames>No_Deal_Reason__c</fieldNames>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Populate reason for no deal.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>No deal</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleSeller__c</fieldNames>
+        <fieldNames>Description__c</fieldNames>
+        <info>&lt;p&gt;Select Importer and Dealer.&lt;/p&gt;&lt;p&gt;Contact Dealer with the requirements.&lt;/p&gt;&lt;p&gt;Calculate holding and leasing costs for batch for different periods.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Offer</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>vehicleImporter__c</fieldNames>
+        <fieldNames>vehicleSeller__c</fieldNames>
+        <fieldNames>deliveryDate__c</fieldNames>
+        <fieldNames>LastModifiedById</fieldNames>
+        <info>&lt;p&gt;Import vehicles when information are provided by Dealer.&lt;/p&gt;&lt;p&gt;Set Expected Delivery Date.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Waiting for Dealer</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Vehicle_Batch_Buying</recordTypeName>
+</PathAssistant>

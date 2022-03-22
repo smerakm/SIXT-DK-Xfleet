@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Deal_ExpectedDeliveryDate</fullName>
+    <active>true</active>
+    <description>Expected Delivery Date needs to be populated before batch can be moved to Deal status</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Deal&quot;)
+&amp;&amp;
+ISBLANK(deliveryDate__c)</errorConditionFormula>
+    <errorDisplayField>deliveryDate__c</errorDisplayField>
+    <errorMessage>Expected Delivery Date need to be populated before batch can be moved to Deal status!</errorMessage>
+</ValidationRule>
