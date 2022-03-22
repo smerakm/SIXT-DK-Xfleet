@@ -4,7 +4,7 @@
     <deleteConstraint>Restrict</deleteConstraint>
     <description>The Vehicle Seller is the company there sold the car to the company</description>
     <externalId>false</externalId>
-    <label>Vehicle Seller</label>
+    <label>Dealer</label>
     <lookupFilter>
         <active>false</active>
         <filterItems>
@@ -17,7 +17,7 @@
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Vehicle Batches (Vehicle Seller)</relationshipLabel>
     <relationshipName>Vehicle_Batches1</relationshipName>
-    <required>true</required>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>

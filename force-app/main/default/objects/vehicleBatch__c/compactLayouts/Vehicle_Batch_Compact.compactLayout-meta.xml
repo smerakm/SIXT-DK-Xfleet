@@ -3,8 +3,11 @@
     <fullName>Vehicle_Batch_Compact</fullName>
     <fields>Description__c</fields>
     <fields>vehicleSeller__c</fields>
-    <fields>Status__c</fields>
+    <fields>Requested_Number_of_Vehicles__c</fields>
+    <fields>Number_Of_Vehicles__c</fields>
     <fields>deliveryDate__c</fields>
+    <fields>Required_by_Date__c</fields>
+    <fields>Selected_Operating_Period__c</fields>
     <fields>CreatedById</fields>
     <label>Vehicle Batch Compact</label>
 </CompactLayout>

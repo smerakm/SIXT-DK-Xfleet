@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Waiting_Calculation_Selected</fullName>
+    <active>true</active>
+    <description>One batch calculation have to be selected before we can move to Waiting for Dealer</description>
+    <errorConditionFormula>System_Number_of_Selected_Calculations__c = 0
+	&amp;&amp; ISPICKVAL(Status__c, &quot;Waiting for Dealer&quot;)</errorConditionFormula>
+    <errorMessage>Please select one calculation before move to Waiting for Dealer phase!</errorMessage>
+</ValidationRule>

@@ -3,7 +3,7 @@
     <fullName>vehicleImporter__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Vehicle Importer</label>
+    <label>Importer</label>
     <lookupFilter>
         <active>false</active>
         <filterItems>

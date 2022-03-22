@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Number_of_Vehicles__c</fullName>
+    <description>how many vehicles we would like to buy</description>
+    <externalId>false</externalId>
+    <inlineHelpText>how many vehicles we would like to buy</inlineHelpText>
+    <label>Requested Number of Vehicles</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

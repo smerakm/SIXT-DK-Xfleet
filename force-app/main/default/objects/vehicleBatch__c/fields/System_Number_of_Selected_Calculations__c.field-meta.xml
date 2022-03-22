@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Number_of_Selected_Calculations__c</fullName>
+    <description>used for validation that only 1 calculation is selected</description>
+    <externalId>false</externalId>
+    <label>(System) Number of Selected Calculations</label>
+    <summaryFilterItems>
+        <field>Batch_Calculator__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Selected</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Batch_Calculator__c.batch_relationship__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

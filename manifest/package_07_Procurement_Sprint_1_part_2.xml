@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_object_part_2</fullName>
+    <description>updates to batch object after fist feedback</description>
+    <types>
+        <members>vehicleBatch__c.Vehicle_Batch_Compact</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>vehicleBatch__c.Requested_Number_of_Vehicles__c</members>
+        <members>vehicleBatch__c.Required_by_Date__c</members>
+        <members>vehicleBatch__c.Selected_Operating_Period__c</members>
+        <members>vehicleBatch__c.System_Number_of_Selected_Calculations__c</members>
+        <members>vehicleBatch__c.vehicleImporter__c</members>
+        <members>vehicleBatch__c.vehicleSeller__c</members>
+        <members>Vehicle__c.Batch_Distribution__c</members>
+        <members>Vehicle__c.Batch_Status__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Vehicle_Batch_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>VEHICLE_TRG_BeforeInsert</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>vehicleBatch__c-Vehicle Batch Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Cars_not_distributed</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Vehicle_Batch_Lifecycle</members>
+        <name>PathAssistant</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Batch_Calculator__c.Only_one_can_be_Selected</members>
+        <members>vehicleBatch__c.Mandatory_Waiting_Calculation_Selected</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>50.0</version>
+</Package>
