@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Sales_price__c</fullName>
+    <fullName>Interest_for_period_full_tax_car__c</fullName>
     <externalId>false</externalId>
-    <label>Remarketing Price</label>
-    <precision>6</precision>
+    <formula>Full_Tax_buy__c  * Intrest_rate_financing__c / 12 * Period__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Interest for period - full tax car</label>
+    <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>

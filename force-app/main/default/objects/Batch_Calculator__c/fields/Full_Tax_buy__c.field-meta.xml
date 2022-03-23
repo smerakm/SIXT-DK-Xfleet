@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Sales_price__c</fullName>
+    <fullName>Full_Tax_buy__c</fullName>
     <externalId>false</externalId>
-    <label>Remarketing Price</label>
-    <precision>6</precision>
+    <formula>Total_buy_price__c  +  Total_registration_tax__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total buy price - Full Tax</label>
+    <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>
