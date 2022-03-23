@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_cannot_be_moved_without_price</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISCHANGED( Status__c ),
+ ISPICKVAL(Status__c , &apos;Sold&apos;),
+ OR(ISBLANK(Sales_Price__c),
+ ISBLANK( Buyer_Account__c )
+)
+)</errorConditionFormula>
+    <errorMessage>The process cannot be closed if there is no price or Buyer Account data.</errorMessage>
+</ValidationRule>

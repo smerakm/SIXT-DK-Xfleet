@@ -11,9 +11,8 @@
         <value>NEXT_N_WEEKS:3</value>
     </filters>
     <filters>
-        <field>defleetReadyCheck__c</field>
+        <field>Damage_checked_date__c</field>
         <operation>equals</operation>
-        <value>false</value>
     </filters>
     <label>Damage check reminder list</label>
     <sharedTo>

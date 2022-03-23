@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet Sprint 1 part 3</fullName>
+    <types>
+        <members>Account.Invoice_or_advis__c</members>
+        <members>Vehicle__c.Damage_checked_date__c</members>
+        <members>Vehicle__c.The_car_is_paid__c</members>
+        <members>Vehicle__c.The_car_is_picked_up__c</members>
+        <members>Vehicle__c.The_car_is_released__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Account-Account Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Damage_check_reminder_list</members>
+        <members>Vehicle__c.Overview_of_cars_to_send_docs_and_keys</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Status_cannot_be_moved_without_price</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>50.0</version>
+</Package>

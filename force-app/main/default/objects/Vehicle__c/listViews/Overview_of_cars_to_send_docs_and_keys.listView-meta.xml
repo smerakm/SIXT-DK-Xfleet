@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overview_of_cars_to_send_docs_and_keys</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>The_car_is_paid__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>The_car_is_picked_up__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>The_car_is_released__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Key_sent_to_buyer__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>COC_document__c</field>
+        <operation>equals</operation>
+        <value>Received in HQ,Received at Station,In Car,Not found</value>
+    </filters>
+    <label>Overview of cars to send docs and keys</label>
+    <sharedTo>
+        <group>Defleet</group>
+    </sharedTo>
+</ListView>
