@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profiles_Activities_SIX-194</fullName>
+    <description>add access to Events, Tasks, Notes and permission set for Custom List Views</description>
+    <types>
+        <members>Event</members>
+        <members>Task</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Create_own_list_views</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <version>54.0</version>
+</Package>
