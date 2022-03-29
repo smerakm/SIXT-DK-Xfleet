@@ -15,8 +15,8 @@
     </filters>
     <filters>
         <field>Expected_Delivery_Date__c</field>
-        <operation>lessOrEqual</operation>
-        <value>LAST_N_WEEKS:4</value>
+        <operation>greaterOrEqual</operation>
+        <value>NEXT_N_WEEKS:4</value>
     </filters>
     <label>Vehicles with no email sent to supplier</label>
     <sharedTo>

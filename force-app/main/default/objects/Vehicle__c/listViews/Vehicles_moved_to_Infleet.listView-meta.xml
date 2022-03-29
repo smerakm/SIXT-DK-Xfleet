@@ -12,10 +12,6 @@
         <operation>equals</operation>
         <value>Infleet</value>
     </filters>
-    <filters>
-        <field>Planned_Infleet_Date__c</field>
-        <operation>notEqual</operation>
-    </filters>
     <label>Vehicles moved to Infleet</label>
     <sharedTo>
         <group>Infleet</group>

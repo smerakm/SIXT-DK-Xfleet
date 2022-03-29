@@ -51,6 +51,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Damage_check_at_DAL_is_required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Agriculture</fullName>
@@ -178,6 +189,17 @@
         </values>
         <values>
             <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoice_or_advis__c</picklist>
+        <values>
+            <fullName>Advis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice</fullName>
             <default>false</default>
         </values>
     </picklistValues>

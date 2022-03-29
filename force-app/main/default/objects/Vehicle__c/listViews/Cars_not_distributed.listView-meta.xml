@@ -23,5 +23,6 @@
     <label>Cars not distributed</label>
     <sharedTo>
         <group>Infleet</group>
+        <group>Re_marketing</group>
     </sharedTo>
 </ListView>

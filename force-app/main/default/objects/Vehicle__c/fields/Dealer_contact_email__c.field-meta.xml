@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Deadline_for_Registration__c</fullName>
+    <fullName>Dealer_contact_email__c</fullName>
     <externalId>false</externalId>
-    <formula>Expected_Delivery_Date__c + 28</formula>
+    <formula>Dealer_contact__r.Email</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Deadline for Registration</label>
+    <label>Dealer contact email</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

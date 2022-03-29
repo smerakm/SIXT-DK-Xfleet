@@ -10,5 +10,10 @@
         <sharedTo>Procurement</sharedTo>
         <sharedToType>Group</sharedToType>
     </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Re_marketing</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </folderShares>
     <name>Fleet Management - Procurement</name>
 </ReportFolder>

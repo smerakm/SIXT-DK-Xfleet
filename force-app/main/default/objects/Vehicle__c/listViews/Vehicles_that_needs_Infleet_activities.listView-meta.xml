@@ -6,11 +6,17 @@
     <columns>Vehicle_type__c</columns>
     <columns>Car_description__c</columns>
     <columns>Actual_Infleet_Day__c</columns>
+    <columns>Actual_Infleet_2__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Infleet_activities_finished__c</field>
         <operation>equals</operation>
         <value>0</value>
+    </filters>
+    <filters>
+        <field>Actual_Infleet_2__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
     </filters>
     <label>Vehicles that needs Infleet activities</label>
     <sharedTo>
