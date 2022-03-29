@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Price_Confirmed__c</fullName>
+    <description>Sales Price is confirmed by the Buyer</description>
+    <externalId>false</externalId>
+    <formula>Selected_Vehicle_Calculator__r.Confirmed_Price__c</formula>
+    <inlineHelpText>Sales Price is confirmed by the Buyer</inlineHelpText>
+    <label>Sales Price Confirmed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

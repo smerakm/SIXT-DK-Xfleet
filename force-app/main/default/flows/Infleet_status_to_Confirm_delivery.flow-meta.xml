@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Change Vehicle Infleet status to Confirm delivery when Vehicle Batch status is Deal</description>
+    <interviewLabel>Infleet status to Confirm delivery {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Infleet status to Confirm delivery</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Vehicle_Infleet_Status_to_Confirm_delivery</name>
+        <label>Vehicle Infleet Status to Confirm delivery</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Batch_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Deal</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Infleet_status__c</field>
+            <value>
+                <stringValue>Confirm delivery</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Infleet</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Vehicle__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Vehicle_Infleet_Status_to_Confirm_delivery</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Deal</stringValue>
+            </value>
+        </filters>
+        <object>vehicleBatch__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

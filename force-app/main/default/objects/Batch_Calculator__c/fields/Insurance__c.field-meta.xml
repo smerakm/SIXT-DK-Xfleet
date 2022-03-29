@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Insurance__c</fullName>
+    <defaultValue>200</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>Insurance should be entered for monthly basis</inlineHelpText>
     <label>Insurance cost</label>

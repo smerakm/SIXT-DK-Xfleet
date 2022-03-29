@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_to_Transport</fullName>
+    <active>true</active>
+    <description>Cannot move Infleet status to Transport without filled Station</description>
+    <errorConditionFormula>ISPICKVAL( Infleet_status__c , &quot;Transport&quot;)
+&amp;&amp;
+ISPICKVAL(  Use_type__c  , &quot;Short-term&quot;)
+&amp;&amp;
+ISBLANK(  Station__c  )</errorConditionFormula>
+    <errorMessage>You cannot move Infleet status to Transport without filling Station</errorMessage>
+</ValidationRule>

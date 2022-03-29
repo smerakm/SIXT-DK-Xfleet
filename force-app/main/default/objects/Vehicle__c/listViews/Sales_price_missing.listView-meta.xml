@@ -7,10 +7,11 @@
     <columns>Status__c</columns>
     <columns>Expected_Delivery_Date__c</columns>
     <columns>Expected_Defleet_Date__c</columns>
-    <columns>Sales_Price__c</columns>
+    <columns>Sales_Price_Formula__c</columns>
+    <columns>Sales_Price_Confirmed__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Sales_Price__c</field>
+        <field>Sales_Price_Formula__c</field>
         <operation>equals</operation>
     </filters>
     <label>Sales price missing</label>

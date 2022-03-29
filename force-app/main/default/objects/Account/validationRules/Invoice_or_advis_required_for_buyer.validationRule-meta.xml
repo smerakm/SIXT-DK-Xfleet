@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_or_advis_required_for_buyer</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Type , &apos;Vehicle Buyer&apos;),
+  ISPICKVAL( Invoice_or_advis__c , &apos;&apos;) 
+)</errorConditionFormula>
+    <errorDisplayField>Invoice_or_advis__c</errorDisplayField>
+    <errorMessage>The buyer account requires invoice or advis chosen.</errorMessage>
+</ValidationRule>

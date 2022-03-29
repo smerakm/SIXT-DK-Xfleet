@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DecisionComment_mandatory_for_Selected</fullName>
+    <active>true</active>
+    <description>Comments is required before status is set to Selected</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Selected&quot;)
+&amp;&amp; ISBLANK(Decision_Comments__c)</errorConditionFormula>
+    <errorDisplayField>Decision_Comments__c</errorDisplayField>
+    <errorMessage>Please provide comments why the calculation is selected!</errorMessage>
+</ValidationRule>

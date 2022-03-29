@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Key_received_at_HQ_Timestamp__c</fullName>
-    <description>What time did the key get to the HQ?</description>
     <externalId>false</externalId>
-    <inlineHelpText>What time did the key get to the HQ?</inlineHelpText>
     <label>Key received at HQ Timestamp</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

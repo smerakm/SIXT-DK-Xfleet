@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_for_robot</fullName>
+    <columns>NAME</columns>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Ready_for_robot__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Ready for robot</label>
+    <sharedTo>
+        <group>Defleet</group>
+    </sharedTo>
+</ListView>

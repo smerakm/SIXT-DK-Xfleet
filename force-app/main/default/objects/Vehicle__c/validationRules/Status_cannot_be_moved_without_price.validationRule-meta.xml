@@ -3,8 +3,10 @@
     <fullName>Status_cannot_be_moved_without_price</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
- ISCHANGED( Status__c ),
- ISPICKVAL(Status__c , &apos;Sold&apos;),
+ OR(
+     AND(ISCHANGED( Status__c ),ISPICKVAL(Status__c , &apos;Sold&apos;)),
+     AND(ISCHANGED( Re_marketing_Status__c),ISPICKVAL( Re_marketing_Status__c , &apos;Sold&apos;))
+     ),
  OR(ISBLANK(Sales_Price__c),
  ISBLANK( Buyer_Account__c )
 )

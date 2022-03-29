@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Selected_Operating_Period__c</fullName>
-    <description>For how long we would like have the vehicles from the batch in operations. Value is coming from calculations.</description>
     <externalId>false</externalId>
-    <inlineHelpText>For how long we would like have the vehicles from the batch in operations. Value is coming from calculations.</inlineHelpText>
+    <formula>Selected_Batch_Calculator__r.Period__c</formula>
     <label>Selected Operating Period</label>
-    <precision>2</precision>
+    <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>

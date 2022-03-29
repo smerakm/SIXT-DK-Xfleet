@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Vehicle_use_type_is</name>
+        <label>Vehicle use type is ?</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Infleet_Status_to_Transport</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Short term</defaultConnectorLabel>
+        <rules>
+            <name>Short_term_rental</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Use_type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Short-term</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Infleet_status_to_Allocation</targetReference>
+            </connector>
+            <label>Short term rental</label>
+        </rules>
+    </decisions>
+    <description>Automatically update Infleet status to Allocation when Use Type is Short term and to Transport when Use Type is nor Short term, and Expected delivery Date is filled</description>
+    <interviewLabel>Infleet Status to Allocation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Infleet Status to Allocation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Infleet_status_to_Allocation</name>
+        <label>Infleet status to Allocation</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Use_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Short-term</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Infleet_status__c</field>
+            <value>
+                <stringValue>Allocation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Infleet_Status_to_Transport</name>
+        <label>Infleet Status to Transport</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Infleet_status__c</field>
+            <value>
+                <stringValue>Transport</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Vehicle_use_type_is</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Infleet_status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Confirm delivery</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Expected_Delivery_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Use_type__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Vehicle__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

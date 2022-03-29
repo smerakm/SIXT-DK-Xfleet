@@ -4,6 +4,15 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Buyer Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Buyer</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Vehicles (Buyer Account)</relationshipLabel>
     <relationshipName>Vehicles1</relationshipName>

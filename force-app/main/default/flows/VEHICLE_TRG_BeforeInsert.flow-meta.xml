@@ -30,6 +30,12 @@
         <locationX>176</locationX>
         <locationY>311</locationY>
         <inputAssignments>
+            <field>Dealer__c</field>
+            <value>
+                <elementReference>$Record.Vehicle_Batch__r.vehicleSeller__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Expected_Delivery_Date__c</field>
             <value>
                 <elementReference>$Record.Vehicle_Batch__r.deliveryDate__c</elementReference>
@@ -39,6 +45,12 @@
             <field>Required_by_Date__c</field>
             <value>
                 <elementReference>$Record.Vehicle_Batch__r.Required_by_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Selected_Batch_Calculator__c</field>
+            <value>
+                <elementReference>$Record.Vehicle_Batch__r.Selected_Batch_Calculator__c</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -53,5 +65,5 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

@@ -11,7 +11,12 @@
     <filters>
         <field>Last_Calculation_Date__c</field>
         <operation>lessOrEqual</operation>
-        <value>N_DAYS_AGO:90</value>
+        <value>N_DAYS_AGO:75</value>
+    </filters>
+    <filters>
+        <field>Vehicle_status__c</field>
+        <operation>notEqual</operation>
+        <value>99</value>
     </filters>
     <label>Recalculation needed</label>
     <sharedTo>

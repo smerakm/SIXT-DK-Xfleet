@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_to_Registration</fullName>
+    <active>true</active>
+    <description>Cannot move Infleet status to Registration without filled IRK code</description>
+    <errorConditionFormula>ISPICKVAL( Infleet_status__c , &quot;Registration&quot;)
+&amp;&amp;
+ISBLANK( IRK_code__c )</errorConditionFormula>
+    <errorMessage>You cannot move Infleet status to Registration without filling IRK Code field</errorMessage>
+</ValidationRule>

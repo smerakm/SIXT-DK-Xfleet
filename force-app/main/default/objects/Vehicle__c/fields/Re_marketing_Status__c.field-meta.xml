@@ -13,6 +13,11 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Ready to sell</fullName>
+                <default>false</default>
+                <label>Ready to sell</label>
+            </value>
+            <value>
                 <fullName>Sold</fullName>
                 <default>false</default>
                 <label>Sold</label>
