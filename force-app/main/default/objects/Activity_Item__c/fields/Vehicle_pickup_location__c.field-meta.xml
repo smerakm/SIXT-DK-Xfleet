@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_pickup_location__c</fullName>
+    <externalId>false</externalId>
+    <formula>Vehicle__r.Pickup_Location__r.MailingStreet + &quot;, &quot; +
+ Vehicle__r.Pickup_Location__r.MailingCity + &quot;, &quot; + 
+ Vehicle__r.Pickup_Location__r.MailingState + &quot;, &quot; + 
+ Vehicle__r.Pickup_Location__r.MailingCountry + &quot;, &quot; + 
+ Vehicle__r.Pickup_Location__r.MailingPostalCode</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Vehicle pickup location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

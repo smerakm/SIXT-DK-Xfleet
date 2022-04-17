@@ -34,6 +34,28 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Internal_number_changed</name>
+        <label>Is Internal number changed ?</label>
+        <locationX>182</locationX>
+        <locationY>1991</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes6</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Internal_number__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Internal_number_timestamp</targetReference>
+            </connector>
+            <label>Yes6</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Key_received_at_HQ_updated</name>
         <label>Is Key received at HQ updated?</label>
         <locationX>182</locationX>
@@ -88,6 +110,9 @@
         <label>Is Key sent to buyer updated ?</label>
         <locationX>182</locationX>
         <locationY>1655</locationY>
+        <defaultConnector>
+            <targetReference>Is_Internal_number_changed</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes5</name>
@@ -135,7 +160,8 @@ License_plate__c
 Key_received_at_HQ__c
 Key_received_at_station__c
 Key_sent_to_buyer__c
-Planned_Infleet_Date__c</description>
+Planned_Infleet_Date__c
+Internal_number_timestamp__c</description>
     <formulas>
         <name>FormulaforPlannedinfleetday</name>
         <dataType>Date</dataType>
@@ -184,6 +210,19 @@ Planned_Infleet_Date__c</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Internal_number_timestamp</name>
+        <label>Update Internal number timestamp</label>
+        <locationX>50</locationX>
+        <locationY>2111</locationY>
+        <inputAssignments>
+            <field>Internal_number_timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Key_received_at_HQ_timestamp</name>
         <label>Update Key received at HQ timestamp</label>
         <locationX>50</locationX>
@@ -220,6 +259,9 @@ Planned_Infleet_Date__c</description>
         <label>Update Key sent to buyer timestamp</label>
         <locationX>50</locationX>
         <locationY>1775</locationY>
+        <connector>
+            <targetReference>Is_Internal_number_changed</targetReference>
+        </connector>
         <inputAssignments>
             <field>Key_sent_to_buyer_timestamp__c</field>
             <value>
@@ -281,6 +323,13 @@ Planned_Infleet_Date__c</description>
         </filters>
         <filters>
             <field>Key_sent_to_buyer__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Internal_number__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

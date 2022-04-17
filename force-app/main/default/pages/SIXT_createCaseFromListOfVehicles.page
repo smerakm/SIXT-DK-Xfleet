@@ -1,0 +1,12 @@
+<apex:page standardController="Vehicle__c" tabStyle="Vehicle__c" recordSetVar="AllVehicles">
+    <!-- Add below each field you reference in your Flow -->
+    <apex:repeat value="{!AllVehicles}" var="row" rendered="false">
+        {!row.Name}
+        {!row.Model__c}
+    </apex:repeat>
+    <!-- Runs your Flow -->
+    <flow:interview name="SCR_Create_Case_with_Vehicles"
+          finishLocation="{!URLFOR($Action.Case.List,$ObjectType.Case)}">
+        <apex:param name="setSelectedVehicles" value="{!Selected}"/>
+    </flow:interview>    
+</apex:page>

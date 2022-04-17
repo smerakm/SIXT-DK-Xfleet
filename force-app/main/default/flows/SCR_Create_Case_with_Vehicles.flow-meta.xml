@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Add_the_single_Activity_Item_to_the_list</name>
+        <label>Add the single Activity Item to the list</label>
+        <locationX>264</locationX>
+        <locationY>638</locationY>
+        <assignmentItems>
+            <assignToReference>setActivityItems</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varSingleActivityItem</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Vehicles_to_the_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Create_single_Activity_Item</name>
+        <label>Create single Activity Item</label>
+        <locationX>264</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>varSingleActivityItem.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Case</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varSingleActivityItem.Vehicle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Assign_Vehicles_to_the_Case.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_the_single_Activity_Item_to_the_list</targetReference>
+        </connector>
+    </assignments>
+    <description>create a case and assign set of selected vehicles</description>
+    <dynamicChoiceSets>
+        <name>CaseTypeSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Type</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>SCR_Create_Case_with_Vehicles {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SCR_Create_Case_with_Vehicles</label>
+    <loops>
+        <name>Assign_Vehicles_to_the_Case</name>
+        <label>Assign Vehicles to the Case</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <collectionReference>setSelectedVehicles</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Create_single_Activity_Item</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Save_Activity_Items</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Case</name>
+        <label>Create Case</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <connector>
+            <targetReference>Assign_Vehicles_to_the_Case</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Case_Subject_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <elementReference>Case_Email_Type</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Save_Activity_Items</name>
+        <label>Save Activity Items</label>
+        <locationX>176</locationX>
+        <locationY>854</locationY>
+        <inputReference>setActivityItems</inputReference>
+    </recordCreates>
+    <screens>
+        <name>Case_parameters</name>
+        <label>Case parameters</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Case</targetReference>
+        </connector>
+        <fields>
+            <name>Case_Email_Type</name>
+            <choiceReferences>CaseTypeSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Email Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Case_Subject_Name</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Email - {!$Flow.CurrentDateTime}</stringValue>
+            </defaultValue>
+            <fieldText>Case Subject / Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Case_parameters</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>set of junction objects between the case and vehicles</description>
+        <name>setActivityItems</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Activity_Item__c</objectType>
+    </variables>
+    <variables>
+        <name>setSelectedVehicles</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Vehicle__c</objectType>
+    </variables>
+    <variables>
+        <description>single activity item</description>
+        <name>varSingleActivityItem</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Activity_Item__c</objectType>
+    </variables>
+</Flow>

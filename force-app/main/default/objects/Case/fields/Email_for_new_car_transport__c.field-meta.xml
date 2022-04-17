@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_for_new_car_transport__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Email for transport of new cars (Normal)</description>
+    <externalId>false</externalId>
+    <label>Email for new car transport</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

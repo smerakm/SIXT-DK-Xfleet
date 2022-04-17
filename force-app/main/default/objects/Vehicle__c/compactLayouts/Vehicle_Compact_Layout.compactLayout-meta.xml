@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Compact_Layout</fullName>
+    <fields>Car_description_2__c</fields>
+    <fields>Dealer__c</fields>
+    <fields>License_plate__c</fields>
+    <fields>Actual_Infleet_Day__c</fields>
+    <fields>Status__c</fields>
+    <fields>Use_type__c</fields>
+    <fields>Warning_Key_is_not_at_HQ__c</fields>
+    <label>Vehicle Compact Layout</label>
+</CompactLayout>

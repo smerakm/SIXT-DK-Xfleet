@@ -1,364 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <classAccesses>
-        <apexClass>CalculationsHoldingCost</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CalculationsHoldingCost_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CalculationsTax_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FleetForecastUpdateBatch</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FleetForecastUpdateUtility</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FleetForecastUpdate_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LockingUtility_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>TestUtilitySIXT</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>VehicleGroupUpdateBatchable</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>VehicleGroupUpdateScheduler</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>VehicleGroupUpdate_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>VehicleGroupUtility</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Contract_end_date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Contract_start_date__c</field>
+        <editable>false</editable>
+        <field>Activity_Item__c.Dealer_email__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.External_Name__c</field>
+        <field>Activity_Item__c.Delivery_address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_Batch__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_Model__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_Required_by_date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_Vin_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_dealer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_final_tax_after_deduction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_licence_plate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_max_KM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_pickup_location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_puchase_price_excl_VAT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_tax_value_incl_VAT__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Leasing_Rate__c</field>
+        <field>Case.Delivery_address2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Leasing_contract_fee__c</field>
+        <field>Case.Email_about_Expected_delivery_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Account_finance__c</field>
+        <field>Case.Email_for_BMW_car_transport__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Car_Group__c</field>
+        <field>Case.Email_for_IRK_codes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Contract_fee__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Depreciation_Full_Tax__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Depreciation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Diffrence_Full_Tax__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Full_Tax_Car_Cost_for_period__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Full_Tax_buy__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Full_tax_car_Cost_per_month__c</field>
+        <field>Case.Email_for_Leasing_codes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Insurance__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Batch_Calculator__c.Interest_for_period_full_tax_car__c</field>
+        <field>Case.Email_for_day_to_day_transport__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Intrest_rate_financing__c</field>
+        <field>Case.Email_for_new_car_transport__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Refusion__c</field>
+        <field>Case.Email_for_plates_invoice_Navision__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Remarketing_Price_Full_Tax__c</field>
+        <field>Case.Email_logging_of_registration_num__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Remarketing_Price_with__c</field>
+        <field>Case.Email_to_DAL_for_transport_booking__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Sales_price__c</field>
+        <field>Case.Email_to_financing__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Batch_Calculator__c.Total_cost_month__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Current_fleet_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Current_fleet_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Defleet_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Defleet_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Difference_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Difference_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.First_Day__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Fleet_at_the_end_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Fleet_at_the_end_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Infleet_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Infleet_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Last_Day__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Long_Term_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Long_Term_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Period_Start_Date_formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Required_at_the_end_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Required_at_the_end_Valuta__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Short_Term_DK__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Fleet_Forecast__c.Short_Term_Valuta__c</field>
+        <field>Case.Email_to_inform_dealer_about_Behovsdato__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ServiceAndDamageCost__c.Car_Groups__c</field>
+        <field>Case.Leasing_company__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ServiceAndDamageCost__c.Service_and_Damage_Group__c</field>
+        <field>Vehicle__c.Calculator_period__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Vehicle__c.Contract_fee_batch__c</field>
-        <readable>true</readable>
+        <field>Vehicle__c.Internal_number_timestamp__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Vehicle__c.Interest_Rate_Batch_Calculator__c</field>
+        <editable>true</editable>
+        <field>Vehicle__c.Key_label_printed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Vehicle__c.Leasing_contract_fee__c</field>
+        <field>Vehicle__c.Speed_Pilot__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Vehicle__c.Valuta_Vehicle__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Vehicle__c.Vehicle_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Vehicle__c.leasing_rate_actual__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>vehicleBatch__c.Vehicle_Group__c</field>
+        <field>Vehicle__c.Warning_Key_is_not_at_HQ__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Batch_Calculator__c-Batch Calculator Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Fleet_Forecast__c-Fleet Forecast Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>ServiceAndDamageCost__c-Service and Damage Cost Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Service_and_Damage_Group__c-Service and Damage Group Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Vehicle_Group__c-Vehicle Group Layout</layout>
+        <layout>Activity_Item__c-Activity Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Vehicle__c-Vehicle Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
-        <layout>vehicleBatch__c-Vehicle Batch Layout</layout>
-    </layoutAssignments>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Fleet_Forecast__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Vehicle_Group__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <tabVisibilities>
-        <tab>Fleet_Forecast__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>ServiceAndDamageCost__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Service_and_Damage_Group__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Vehicle_Group__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
+    <pageAccesses>
+        <apexPage>SIXT_createCaseFromListOfVehicles</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
