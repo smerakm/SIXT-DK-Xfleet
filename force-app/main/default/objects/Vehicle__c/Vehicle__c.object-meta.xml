@@ -147,7 +147,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Vehicle_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -168,7 +168,14 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Vehicles</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <listViewButtons>Create_a_Case_for_Email</listViewButtons>
+        <searchResultsAdditionalFields>Car_description_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>vinNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>License_plate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model__c</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Create_a_Case_for_Email</searchResultsCustomButtons>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

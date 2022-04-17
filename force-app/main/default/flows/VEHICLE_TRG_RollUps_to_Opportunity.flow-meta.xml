@@ -178,7 +178,6 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
-    <triggerOrder>200</triggerOrder>
     <variables>
         <name>varCountOfVehicles</name>
         <dataType>Number</dataType>

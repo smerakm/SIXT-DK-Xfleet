@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>Mini-lease</label>
             </value>
+            <value>
+                <fullName>Full-tax</fullName>
+                <default>false</default>
+                <label>Full-tax</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

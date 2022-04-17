@@ -7,6 +7,12 @@
     <columns>vehicleSeller__c</columns>
     <columns>vehicleImporter__c</columns>
     <columns>Status__c</columns>
+    <columns>Vehicle_Group__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>vehicleBatch__c.Vehicle_Batch_Buying</value>
+    </filters>
     <label>All</label>
 </ListView>

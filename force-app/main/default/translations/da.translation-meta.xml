@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Fleet Management --></label>
+        <name>Fleet_Management</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Lead Generation --></label>
+        <name>Lead_Generation</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Relationship Management --></label>
+        <name>Relationship_Management</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Sales Leadership --></label>
+        <name>Sales_Leadership</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Sales Operations --></label>
+        <name>Sales_Operations</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Data Stream --></label>
+        <name>Sixt_DK</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Company Administration --></label>
+        <name>Sixt_Denmark</name>
+    </customApplications>
     <customLabels>
         <label><!-- Actions --></label>
         <name>Apttus_XApps__Actions</name>
@@ -948,6 +976,10 @@
         <label><!-- to --></label>
         <name>scrive__to</name>
     </customLabels>
+    <customTabs>
+        <label><!-- Delivery and Collection --></label>
+        <name>Delivery_and_Collection</name>
+    </customTabs>
     <flowDefinitions>
         <flows/>
         <fullName>CALCULATIONBATCH_TRG_AfterInsertUpdate</fullName>
@@ -1021,6 +1053,30 @@
         <fullName>Emails_after_logging_of_registration_numbers</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>FLEETFORECAST_TRG_AfterInsertUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>FLEETFORECAST_TRG_BeforeInsertUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Infleet_Status_to_Allocation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Infleet_status_to_Confirm_delivery</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Infleet_status_to_Leasing_code_and_IRK</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Infleet_status_to_Transport</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <screens>
                 <fields>
@@ -1053,6 +1109,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>VEHICLE_TRG_After_BatchCalculatorSelected</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLE_TRG_BeforeInsert</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>

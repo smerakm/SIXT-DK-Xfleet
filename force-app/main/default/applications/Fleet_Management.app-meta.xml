@@ -8,7 +8,6 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
-    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Fleet Management</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
@@ -17,6 +16,9 @@
     <tabs>standard-Account</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-report</tabs>
+    <tabs>Vehicle_Group__c</tabs>
+    <tabs>Fleet_Forecast__c</tabs>
+    <tabs>standard-Case</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Fleet_Management_UtilityBar</utilityBar>
 </CustomApplication>
