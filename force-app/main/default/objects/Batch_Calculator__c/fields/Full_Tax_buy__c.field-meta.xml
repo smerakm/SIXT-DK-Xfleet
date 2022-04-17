@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Full_Tax_buy__c</fullName>
     <externalId>false</externalId>
-    <formula>Total_buy_price__c  +  Total_registration_tax__c</formula>
+    <formula>Total_buy_price__c * 1.25  +  Total_registration_tax__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Total buy price - Full Tax</label>
     <precision>18</precision>

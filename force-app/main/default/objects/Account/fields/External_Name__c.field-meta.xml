@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Name__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>to enable import of vehicles from csv with reference to dealer and leasing company</description>
+    <externalId>true</externalId>
+    <inlineHelpText>to enable import of vehicles from csv with reference to dealer and leasing company</inlineHelpText>
+    <label>External Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

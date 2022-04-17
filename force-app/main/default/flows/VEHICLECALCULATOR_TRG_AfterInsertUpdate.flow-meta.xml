@@ -3,20 +3,14 @@
     <actionCalls>
         <name>Calculate_Tax_and_Holding_Costs</name>
         <label>Calculate Tax and Holding Costs</label>
-        <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
         <actionName>CalculationsHoldingCost</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Store_calculation_results</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>carGroup</name>
-            <value>
-                <elementReference>$Record.Vehicle__r.Selected_Batch_Calculator__r.Car_Group__c</elementReference>
-            </value>
-        </inputParameters>
         <inputParameters>
             <name>periodLength</name>
             <value>
@@ -35,13 +29,19 @@
                 <elementReference>$Record.Vehicle_Age__c</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>vehicleDamageGroup</name>
+            <value>
+                <elementReference>VehicleGroupFormula</elementReference>
+            </value>
+        </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
         <name>Lock_calculation_record_after_is_Selected</name>
         <label>Lock calculation record after is Selected</label>
         <locationX>50</locationX>
-        <locationY>935</locationY>
+        <locationY>1271</locationY>
         <actionName>LockingUtility</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -61,10 +61,35 @@
     </actionCalls>
     <apiVersion>54.0</apiVersion>
     <decisions>
+        <name>Is_in_Draft</name>
+        <label>Is in Draft?</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Is_Selected</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_Draft</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Draft</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Calculate_Tax_and_Holding_Costs</targetReference>
+            </connector>
+            <label>yes, Draft</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Selected</name>
         <label>Is Selected?</label>
         <locationX>182</locationX>
-        <locationY>575</locationY>
+        <locationY>911</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Selected</name>
@@ -84,6 +109,13 @@
         </rules>
     </decisions>
     <description>automatic recalculation of tax, service and damage</description>
+    <formulas>
+        <description>calculate Vehicle Group id, first from vehicle itself, or from related batch if it is empty on vehicle</description>
+        <name>VehicleGroupFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.Vehicle__r.Vehicle_Group__c}), {!$Record.Vehicle__r.Vehicle_Batch__r.Vehicle_Group__r.Service_and_Damage_Group__c},
+{!$Record.Vehicle__r.Vehicle_Group__r.Service_and_Damage_Group__c})</expression>
+    </formulas>
     <interviewLabel>VEHICLECALCULATOR_TRG_AfterInsertUpdate {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLECALCULATOR_TRG_AfterInsertUpdate</label>
     <processMetadataValues>
@@ -109,7 +141,7 @@
         <name>Discard_previously_Selected_Calculation</name>
         <label>Discard previously Selected Calculation</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>1031</locationY>
         <connector>
             <targetReference>Set_Selected_calculator_on_Vehicle_record</targetReference>
         </connector>
@@ -130,10 +162,32 @@
         <object>Vehicle_Calculator__c</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Set_Leasing_Rate_and_Contract_fee</name>
+        <label>Set Leasing Rate and Contract fee</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <connector>
+            <targetReference>Is_Selected</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Contract_Fee_On_delivery__c</field>
+            <value>
+                <elementReference>$Record.Vehicle__r.Leasing_contract_fee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_Rate__c</field>
+            <value>
+                <elementReference>$Record.Vehicle__r.leasing_rate_actual__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Set_Selected_calculator_on_Vehicle_record</name>
         <label>Set Selected calculator on Vehicle record</label>
         <locationX>50</locationX>
-        <locationY>815</locationY>
+        <locationY>1151</locationY>
         <connector>
             <targetReference>Lock_calculation_record_after_is_Selected</targetReference>
         </connector>
@@ -156,10 +210,10 @@
     <recordUpdates>
         <name>Store_calculation_results</name>
         <label>Store calculation results</label>
-        <locationX>182</locationX>
-        <locationY>455</locationY>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
         <connector>
-            <targetReference>Is_Selected</targetReference>
+            <targetReference>Set_Leasing_Rate_and_Contract_fee</targetReference>
         </connector>
         <inputAssignments>
             <field>Damages_estimate_for_period__c</field>
@@ -191,7 +245,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Calculate_Tax_and_Holding_Costs</targetReference>
+            <targetReference>Is_in_Draft</targetReference>
         </connector>
         <object>Vehicle_Calculator__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

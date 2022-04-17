@@ -26,7 +26,7 @@
  */
 public inherited sharing class CalculationsHoldingCost {
     // map to hold matrix for damage and service costs
-    private static Map<String, Map<Integer, DamageAndServiceWrapper>> mDamageAndService;
+    private static Map<Id, Map<Integer, DamageAndServiceWrapper>> mDamageAndService;
 
     /**
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -52,7 +52,7 @@ public inherited sharing class CalculationsHoldingCost {
      */
     public static CalculationHoldingCostOutputs calculateHoldingCost(CalculationHoldingCostInputs costInputs) {
         // read the config
-        Map<Integer, DamageAndServiceWrapper> mDamageAndServiceCarGroup = readDamageAndServiceSettings(costInputs.carGroup);
+        Map<Integer, DamageAndServiceWrapper> mDamageAndServiceCarGroup = readDamageAndServiceSettings(costInputs.vehicleDamageGroup);
         // calculate costs
         CalculationHoldingCostOutputs result = new CalculationHoldingCostOutputs();
         // damage and service
@@ -84,12 +84,13 @@ public inherited sharing class CalculationsHoldingCost {
      *                    value: wrapper with damage and service cost for the specific month
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    public static Map<Integer, DamageAndServiceWrapper> readDamageAndServiceSettings(String carGroup) {
+    public static Map<Integer, DamageAndServiceWrapper> readDamageAndServiceSettings(Id serviceGroupId) {
+        System.debug(LoggingLevel.DEBUG, 'read damage and service configuration for group: ' + serviceGroupId);
         if (mDamageAndService == null) {
-            mDamageAndService = new Map<String, Map<Integer, DamageAndServiceWrapper>>();
+            mDamageAndService = new Map<Id, Map<Integer, DamageAndServiceWrapper>>();
         }
-        if (mDamageAndService.containsKey(carGroup)) {
-            return mDamageAndService.get(carGroup);
+        if (mDamageAndService.containsKey(serviceGroupId)) {
+            return mDamageAndService.get(serviceGroupId);
         } else {
             Map<Integer, DamageAndServiceWrapper> mForTheGroup = new Map<Integer, DamageAndServiceWrapper>();
             Integer actualMonth = 1;
@@ -98,14 +99,14 @@ public inherited sharing class CalculationsHoldingCost {
             for (ServiceAndDamageCost__c singleMonthCost : [
                 SELECT Period_Month__c, Damage_Cost__c, Tyres_Service_Cost__c
                 FROM ServiceAndDamageCost__c
-                WHERE Car_Groups__c INCLUDES (:carGroup)
+                WHERE Service_and_Damage_Group__c = :serviceGroupId
                 ORDER BY Period_Month__c
             ]) {
                 // check that we are on correct month (and there are no holes in configuration)
                 if (Integer.valueOf(singleMonthCost.Period_Month__c) != actualMonth) {
                     throw new HoldingCostException(
                         'Error when reading Service and Damage configuration for car group: ' +
-                        carGroup +
+                        serviceGroupId +
                         '! Check that there are no missing months in the configuration.'
                     );
                 }
@@ -123,9 +124,9 @@ public inherited sharing class CalculationsHoldingCost {
             }
 
             if (mForTheGroup.isEmpty()) {
-                throw new HoldingCostException('No Service and Damage configuration found for the car group: ' + carGroup + '!');
+                throw new HoldingCostException('No Service and Damage configuration found for the car group: ' + serviceGroupId + '!');
             }
-            mDamageAndService.put(carGroup, mForTheGroup);
+            mDamageAndService.put(serviceGroupId, mForTheGroup);
             return mForTheGroup;
         }
     }
@@ -164,8 +165,10 @@ public inherited sharing class CalculationsHoldingCost {
         //@InvocableVariable
         //public Decimal ownershipFee; // Ejerafgift, halvårligt
 
+        //@InvocableVariable
+        //public String carGroup; // bilgruppe
         @InvocableVariable
-        public String carGroup; // bilgruppe
+        public Id vehicleDamageGroup; // bilgruppe
         //@InvocableVariable
         //public Decimal contractCost; // Kontraktgebyr
         //@InvocableVariable

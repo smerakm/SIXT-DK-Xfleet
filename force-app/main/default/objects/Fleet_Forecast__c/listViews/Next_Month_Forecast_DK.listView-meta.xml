@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Month_Forecast_DK</fullName>
+    <columns>Description__c</columns>
+    <columns>Current_fleet_DK__c</columns>
+    <columns>Fleet_at_the_end_DK__c</columns>
+    <columns>Short_Term_DK__c</columns>
+    <columns>Long_Term_DK__c</columns>
+    <columns>Required_at_the_end_DK__c</columns>
+    <columns>Difference_DK__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Period_Start_Date_formula__c</field>
+        <operation>equals</operation>
+        <value>NEXT_MONTH</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Actual</value>
+    </filters>
+    <label>Next Month Forecast - DK</label>
+    <sharedTo>
+        <group>Forecast</group>
+        <group>Procurement</group>
+        <group>Re_marketing</group>
+    </sharedTo>
+</ListView>

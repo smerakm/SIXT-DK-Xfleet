@@ -16,27 +16,24 @@
  * @changes
  * v1.0            marek.smerak@wipro.com
  * 2022-03-14      initial version
+ * 
+ * v2.0             marek.smerak@wipro.com
+ * 2022-04-01       switch to Vehicle Group object instead of Car Group picklist
  *
  * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 @isTest
 public class LockingUtility_Test {
-    public static final String BATCH_DESCRIPTION = 'This is Unit Test 534ui';
 
     @TestSetup
     static void makeData() {
-        // Vehicle batch
-        VehicleBatch__c testBatch = new VehicleBatch__c();
-        testBatch.Description__c = BATCH_DESCRIPTION;
-        insert testBatch;
-
-        // it is hard to create any child related records because of different flow automation
+        TestUtilitySIXT.createBatch();
     }
 
     @isTest
     static void testLockUnlock() {
         // get the record
-        VehicleBatch__c testRec = [SELECT Id FROM VehicleBatch__c WHERE Description__c = :BATCH_DESCRIPTION LIMIT 1];
+        VehicleBatch__c testRec = [SELECT Id FROM VehicleBatch__c WHERE Description__c = :TestUtilitySIXT.BATCH_DESCRIPTION LIMIT 1];
         // test lock
         LockingUtility.LockInputs testInputs = new LockingUtility.LockInputs();
         testInputs.recordId = testRec.Id;

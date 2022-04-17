@@ -23,15 +23,7 @@
 private class CalculationsTax_Test {
     @TestSetup
     static void makeData() {
-        // custom settings for tax calculation
-        insert new TaxCalculation__c(
-            Interest_Rate__c = 2.1,
-            Period_1_Length__c = 3,
-            Period_1_Rate__c = 2,
-            Period_2_Length__c = 33,
-            Period_2_Rate__c = 1,
-            Last_Period_Rate__c = 0.5
-        );
+        TestUtilitySIXT.createTaxCalculationSettings();
     }
 
     @isTest

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_and_Damage_Group__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>used to calculate cost for damage and service for vehicles from this vehicle group</description>
+    <externalId>false</externalId>
+    <inlineHelpText>used to calculate cost for damage and service for vehicles from this vehicle group</inlineHelpText>
+    <label>Service and Damage Group</label>
+    <referenceTo>Service_and_Damage_Group__c</referenceTo>
+    <relationshipLabel>Vehicle Groups</relationshipLabel>
+    <relationshipName>Vehicle_Groups</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

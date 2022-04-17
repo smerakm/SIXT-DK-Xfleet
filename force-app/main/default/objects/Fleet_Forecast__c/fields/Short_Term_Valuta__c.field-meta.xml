@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Short_Term_Valuta__c</fullName>
+    <description>How many valuta vehicles of that car group we would like to have in short term in this period</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many valuta vehicles of that car group we would like to have in short term in this period</inlineHelpText>
+    <label>Short Term - Valuta</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

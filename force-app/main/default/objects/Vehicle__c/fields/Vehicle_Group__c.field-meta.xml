@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>car group, automatically set from acriss code</description>
+    <externalId>false</externalId>
+    <inlineHelpText>car group, automatically set from acriss code</inlineHelpText>
+    <label>Vehicle Group</label>
+    <referenceTo>Vehicle_Group__c</referenceTo>
+    <relationshipLabel>Vehicles</relationshipLabel>
+    <relationshipName>Vehicles</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

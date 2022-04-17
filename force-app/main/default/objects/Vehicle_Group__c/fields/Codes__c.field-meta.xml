@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Codes__c</fullName>
+    <description>acriss codes that are part of this group</description>
+    <externalId>false</externalId>
+    <inlineHelpText>acriss codes that are part of this group</inlineHelpText>
+    <label>Codes</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Acriss_Code</valueSetName>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>
