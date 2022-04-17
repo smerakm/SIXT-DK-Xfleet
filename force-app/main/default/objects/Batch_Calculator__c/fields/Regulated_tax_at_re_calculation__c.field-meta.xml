@@ -3,7 +3,7 @@
     <fullName>Regulated_tax_at_re_calculation__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
- Period__c &gt; 3,
+ Period__c &gt; 4,
  Total_registration_tax__c * 0.06 / 100 * Period__c,
 0
 )</formula>

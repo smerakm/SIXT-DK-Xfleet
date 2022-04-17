@@ -61,6 +61,10 @@
                 <behavior>Edit</behavior>
                 <field>Last_Rental_Agreement__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Preferred_Language__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -310,10 +314,6 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Vehicle__c.Pickup_Location__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Vehicle__c.Dealer_contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

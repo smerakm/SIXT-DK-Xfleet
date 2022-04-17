@@ -3,10 +3,9 @@
     <fullName>Total_buy_price__c</fullName>
     <externalId>false</externalId>
     <formula>IF( ISPICKVAL(Vehicle__r.Batch_Distribution__c, &quot;Full-tax&quot;),
-			Vehicle__r.Final_tax_after_deduction__c,
-			0
-)
-+ Vehicle__r.Sixt_puchase_price_excl_VAT__c +  Total_establishing_cost__c</formula>
+			Vehicle__r.Final_tax_after_deduction__c + (Vehicle__r.Sixt_steel_purchase_price__c + Total_establishing_cost__c) * 1.25,
+			Vehicle__r.Sixt_steel_purchase_price__c +  Total_establishing_cost__c
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Total buy price</label>
     <precision>18</precision>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Language__c</fullName>
+    <description>contact preferred communication language, used in some automatic emails</description>
+    <externalId>false</externalId>
+    <inlineHelpText>contact preferred communication language</inlineHelpText>
+    <label>Preferred Language</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Language</valueSetName>
+    </valueSet>
+</CustomField>

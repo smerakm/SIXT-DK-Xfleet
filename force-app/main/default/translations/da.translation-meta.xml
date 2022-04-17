@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label><!-- Actions --></label>
+        <name>Apttus_XApps__Actions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add --></label>
+        <name>Apttus_XApps__Add</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Advanced Search --></label>
+        <name>Apttus_XApps__AdvancedSearch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- App licenses exceeded --></label>
+        <name>Apttus_XApps__AppLicensesExceeded</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- App UniqueId already exists --></label>
+        <name>Apttus_XApps__AppUniqueIdAlreadyExists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Application already exists --></label>
+        <name>Apttus_XApps__ApplicationAlreadyExists</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Application License Management --></label>
+        <name>Apttus_XApps__ApplicationLicenseManagement</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Application Licenses --></label>
+        <name>Apttus_XApps__ApplicationLicenses</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>Apttus_XApps__Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear --></label>
+        <name>Apttus_XApps__Clear</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear all --></label>
+        <name>Apttus_XApps__ClearAll</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- X-Author For Excel Download Link --></label>
+        <name>Apttus_XApps__ClientDownloadLink</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close --></label>
+        <name>Apttus_XApps__Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Continue --></label>
+        <name>Apttus_XApps__Continue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Designer license required to activate --></label>
+        <name>Apttus_XApps__DesignerLicenseRequiredToActivate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Download --></label>
+        <name>Apttus_XApps__Download</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit In Excel Launch Instruction --></label>
+        <name>Apttus_XApps__EditInExcelLaunchInstruction</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit In Excel Setup Instruction --></label>
+        <name>Apttus_XApps__EditInExcelSetupInstruction</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error --></label>
+        <name>Apttus_XApps__Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export Data Failure --></label>
+        <name>Apttus_XApps__ExportDataFailure</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- First Page --></label>
+        <name>Apttus_XApps__FirstPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- X-Author For Excel Info Text --></label>
+        <name>Apttus_XApps__InfoText1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- X-Author For Excel Info Text --></label>
+        <name>Apttus_XApps__InfoText2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Install X-Author --></label>
+        <name>Apttus_XApps__InstallXAuthor</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InsufficientPrivilageforRuntime --></label>
+        <name>Apttus_XApps__InsufficientPrivilageforRuntime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Insufficient Privileges --></label>
+        <name>Apttus_XApps__InsufficientPrivileges</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Insuffiecient permissions to load app --></label>
+        <name>Apttus_XApps__InsuffiecientPermissionsToLoadApp</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid Schema Error --></label>
+        <name>Apttus_XApps__InvalidSchemaError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last Page --></label>
+        <name>Apttus_XApps__LastPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- License --></label>
+        <name>Apttus_XApps__License</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Login --></label>
+        <name>Apttus_XApps__Login</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Merge Call Timeout --></label>
+        <name>Apttus_XApps__MergeCallTimeout</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next --></label>
+        <name>Apttus_XApps__Next</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next Page --></label>
+        <name>Apttus_XApps__NextPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results to display --></label>
+        <name>Apttus_XApps__NoResultsToDisplay</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page X of X --></label>
+        <name>Apttus_XApps__PageOf1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page X of X --></label>
+        <name>Apttus_XApps__PageOf2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Password --></label>
+        <name>Apttus_XApps__Password</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Picklist value none --></label>
+        <name>Apttus_XApps__PicklistValueNone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please Wait --></label>
+        <name>Apttus_XApps__PleaseWait</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Previous Page --></label>
+        <name>Apttus_XApps__PreviousPage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Refresh License --></label>
+        <name>Apttus_XApps__RefreshLicense</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove --></label>
+        <name>Apttus_XApps__Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Required parameters are missing --></label>
+        <name>Apttus_XApps__RequiredParametersAreMissing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Results --></label>
+        <name>Apttus_XApps__Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save --></label>
+        <name>Apttus_XApps__Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save To Excel --></label>
+        <name>Apttus_XApps__SaveToExcel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search --></label>
+        <name>Apttus_XApps__Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select all --></label>
+        <name>Apttus_XApps__SelectAll</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Setup Edit In Excel Applications --></label>
+        <name>Apttus_XApps__SetupEditInExcelApplications</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Touchless Launch Instruction --></label>
+        <name>Apttus_XApps__TouchlessLaunchInstruction</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- UserAppAccessViolation --></label>
+        <name>Apttus_XApps__UserAppAccessViolation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Value is Duplicate --></label>
+        <name>Apttus_XApps__ValueIsDuplicate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Valuei is Missing --></label>
+        <name>Apttus_XApps__ValueIsMissing</name>
+    </customLabels>
+    <customLabels>
+        <label>Nej</label>
+        <name>No</name>
+    </customLabels>
+    <customLabels>
+        <label>Ja</label>
+        <name>Yes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close --></label>
+        <name>lightningbuddy__Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Dont show this again --></label>
+        <name>lightningbuddy__Dont_show_this_again</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Action --></label>
+        <name>scrive__Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add --></label>
+        <name>scrive__Add</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AddAttachment --></label>
+        <name>scrive__AddAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AddRecipient --></label>
+        <name>scrive__AddRecipient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Approver --></label>
+        <name>scrive__Approver</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AskYourAdminIfChosenScriveTemplateIsSharedWithinYourOrganization --></label>
+        <name>scrive__AskYourAdminIfChosenScriveTemplateIsSharedWithinYourOrganization</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AsychronousProcessing --></label>
+        <name>scrive__Asychronous_processing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AsyncProcessFailedFailed whileCreatingScriveDocument --></label>
+        <name>scrive__AsyncProcessFailedFailed_whileCreatingScriveDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AsyncProcessFailedReviewApexJobsInSetupForMoreDetails --></label>
+        <name>scrive__AsyncProcessFailedReviewApexJobsInSetupForMoreDetails</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AsyncProcessFailedReviewLatestItemsInApexJobs --></label>
+        <name>scrive__AsyncProcessFailedReviewLatestItemsInApexJobs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AsyncProcessFailed --></label>
+        <name>scrive__AsyncProcess_failed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AttachmentsToScrive --></label>
+        <name>scrive__AttachmentsToScrive</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- By --></label>
+        <name>scrive__By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CPQ --></label>
+        <name>scrive__CPQ</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>scrive__Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CausedBy --></label>
+        <name>scrive__CausedBy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ChooseACPQQuoteDocument --></label>
+        <name>scrive__ChooseACPQQuoteDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ChooseAQuoteDocument --></label>
+        <name>scrive__ChooseAQuoteDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ChooseAnAttachment --></label>
+        <name>scrive__ChooseAnAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ChooseDocumentSource --></label>
+        <name>scrive__ChooseDocumentSource</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ChooseScriveTemplate --></label>
+        <name>scrive__ChooseScriveTemplate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close --></label>
+        <name>scrive__Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CommunicationWithScriveServerIsStillInProgres --></label>
+        <name>scrive__CommunicationWithScriveServerIsStillInProgres</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CpqQuotePdf --></label>
+        <name>scrive__CpqQuotePdf</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CreatedBy --></label>
+        <name>scrive__CreatedBy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CreatedDate --></label>
+        <name>scrive__CreatedDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Danish --></label>
+        <name>scrive__Danish</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Days --></label>
+        <name>scrive__Days</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Del --></label>
+        <name>scrive__Del</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete --></label>
+        <name>scrive__Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DeliveryOptions --></label>
+        <name>scrive__DeliveryOptions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Discount --></label>
+        <name>scrive__Discount</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DisplayOptions --></label>
+        <name>scrive__DisplayOptions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Document --></label>
+        <name>scrive__Document</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentHasBeenWithdrawn --></label>
+        <name>scrive__DocumentHasBeenWithdrawn</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentHasNotYetBeenPostedToScrive --></label>
+        <name>scrive__DocumentHasNotYetBeenPostedToScrive</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentInSalesforceRepository --></label>
+        <name>scrive__DocumentInSalesforceRepository</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentName --></label>
+        <name>scrive__DocumentName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentToSend --></label>
+        <name>scrive__DocumentToSend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentToSign --></label>
+        <name>scrive__DocumentToSign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Documents --></label>
+        <name>scrive__Documents</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Dutch --></label>
+        <name>scrive__Dutch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit --></label>
+        <name>scrive__Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- EmailAddressNotProvided --></label>
+        <name>scrive__EmailAddressNotProvided</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- English --></label>
+        <name>scrive__English</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- EnterEmailAddress --></label>
+        <name>scrive__EnterEmailAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ErrorMsgForInvalidReceipent --></label>
+        <name>scrive__ErrorMsgForInvalidReceipent</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Estonian --></label>
+        <name>scrive__Estonian</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Exception --></label>
+        <name>scrive__Exception</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FileName --></label>
+        <name>scrive__FileName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FileOnYourComputer --></label>
+        <name>scrive__FileOnYourComputer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FileToUpload --></label>
+        <name>scrive__FileToUpload</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Finnish --></label>
+        <name>scrive__Finnish</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Forward --></label>
+        <name>scrive__Forward</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ForwardDocument --></label>
+        <name>scrive__ForwardDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- French --></label>
+        <name>scrive__French</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- German --></label>
+        <name>scrive__German</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GrandTotal --></label>
+        <name>scrive__GrandTotal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Greek --></label>
+        <name>scrive__Greek</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Icelandic --></label>
+        <name>scrive__Icelandic</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InOrderToAttachThisFileClickAddAttachment --></label>
+        <name>scrive__InOrderToAttachThisFileClickAddAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Incrementing --></label>
+        <name>scrive__Incrementing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InputSourceRecord --></label>
+        <name>scrive__InputSourceRecord</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InsertPagesToDelete --></label>
+        <name>scrive__InsertPagesToDelete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvitationBy --></label>
+        <name>scrive__InvitationBy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvitationMessage --></label>
+        <name>scrive__InvitationMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvitationOrder --></label>
+        <name>scrive__InvitationOrder</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Italian --></label>
+        <name>scrive__Italian</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Language --></label>
+        <name>scrive__Language</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Latvian --></label>
+        <name>scrive__Latvian</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LightningFile --></label>
+        <name>scrive__LightningFile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LimitedAccessRemoteAttachmentsCouldNotBeFetched --></label>
+        <name>scrive__LimitedAccessRemoteAttachmentsCouldNotBeFetched</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lithuanian --></label>
+        <name>scrive__Lithuanian</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LocateDocument --></label>
+        <name>scrive__LocateDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- MessageForDmlExceptionWithStatusPuttingScriveDoc --></label>
+        <name>scrive__MessageForDmlExceptionWithStatusPuttingScriveDoc</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Message For Response Other Then 200 --></label>
+        <name>scrive__MessageForResponseOtherThen200</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- MsgProcessingScriveDocInBackgroundLargeSize --></label>
+        <name>scrive__MsgProcessingScriveDocInBackgroundLargeSize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Name --></label>
+        <name>scrive__Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NextStep --></label>
+        <name>scrive__NextStep</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoRecordsToDisplay --></label>
+        <name>scrive__NoRecordsToDisplay</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Norwegian --></label>
+        <name>scrive__Norwegian</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NotAbleToFetchTheDocument --></label>
+        <name>scrive__NotAbleToFetchTheDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NotAbleToSendTheDocument --></label>
+        <name>scrive__NotAbleToSendTheDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NumberOfDaysToProlongDocumentBy --></label>
+        <name>scrive__NumberOfDaysToProlongDocumentBy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OptionallySelectARelatedObject --></label>
+        <name>scrive__OptionallySelectARelatedObject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PD --></label>
+        <name>scrive__PD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page --></label>
+        <name>scrive__Page</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Parties --></label>
+        <name>scrive__Parties</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseInsertPagesSeparatedByCommas --></label>
+        <name>scrive__PleaseInsertPagesSeparatedByCommas</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseSelectADocumentAsAttachment --></label>
+        <name>scrive__PleaseSelectADocumentAsAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseSelectAFileAsAttachment --></label>
+        <name>scrive__PleaseSelectAFileAsAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseSelectAnAttachment --></label>
+        <name>scrive__PleaseSelectAnAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseSelectDocument --></label>
+        <name>scrive__PleaseSelectDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseWait --></label>
+        <name>scrive__PleaseWait</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PointFileToUpload --></label>
+        <name>scrive__PointFileToUpload</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Polish --></label>
+        <name>scrive__Polish</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Portugese --></label>
+        <name>scrive__Portugese</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Preview --></label>
+        <name>scrive__Preview</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PreviewDirectlyInThisWindowIsUnavailable --></label>
+        <name>scrive__PreviewDirectlyInThisWindowIsUnavailable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PreviewDirectlyInThisWindowIsUnavailableMost --></label>
+        <name>scrive__PreviewDirectlyInThisWindowIsUnavailableMost</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PreviewIsUnavailable --></label>
+        <name>scrive__PreviewIsUnavailable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PreviewMainFileDirectlyFromScriveCom --></label>
+        <name>scrive__PreviewMainFileDirectlyFromScriveCom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PreviousStep --></label>
+        <name>scrive__PreviousStep</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Processing --></label>
+        <name>scrive__Processing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Prolong --></label>
+        <name>scrive__Prolong</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ProlongDocument --></label>
+        <name>scrive__ProlongDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ProvidedValueIsInvalidPleaseInsertIntegerBetween --></label>
+        <name>scrive__ProvidedValueIsInvalidPleaseInsertIntegerBetween</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quote --></label>
+        <name>scrive__Quote</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- QuotePdf --></label>
+        <name>scrive__QuotePdf</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recipient --></label>
+        <name>scrive__Recipient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Recipients --></label>
+        <name>scrive__Recipients</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Refresh --></label>
+        <name>scrive__Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RefreshAfterWithdrawIsOngoing --></label>
+        <name>scrive__RefreshAfterWithdrawIsOngoing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RefreshIsOngoingAsynchronousProcessPleaseRefreshThePage --></label>
+        <name>scrive__RefreshIsOngoingAsynchronousProcessPleaseRefreshThePage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RelatedObject&apos;sAttachment --></label>
+        <name>scrive__RelatedObject_sAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RelatedObject&apos;sLightningFile --></label>
+        <name>scrive__RelatedObject_sLightningFile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RelatedTo --></label>
+        <name>scrive__RelatedTo</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ReminderSendConfirmation --></label>
+        <name>scrive__ReminderSendConfirmation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove --></label>
+        <name>scrive__Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RemovePages --></label>
+        <name>scrive__RemovePages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RemoveParty --></label>
+        <name>scrive__RemoveParty</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PleaseNoticeThatOnceRemovedPagesCannotBeRestored! --></label>
+        <name>scrive__RemovedPagesCannotBeRestored</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Restart --></label>
+        <name>scrive__Restart</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Role --></label>
+        <name>scrive__Role</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving --></label>
+        <name>scrive__Saving</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive --></label>
+        <name>scrive__Scrive</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ScriveAttachments --></label>
+        <name>scrive__ScriveAttachments</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Configure Object Field Permissions --></label>
+        <name>scrive__ScriveConfigureObjectFieldPermissions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Configure Object Welcome --></label>
+        <name>scrive__ScriveConfigureObjectWelcome</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ScriveDocument --></label>
+        <name>scrive__ScriveDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ScriveDocumentInformation --></label>
+        <name>scrive__ScriveDocumentInformation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ScriveDocumentStatuses --></label>
+        <name>scrive__ScriveDocumentStatuses</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive Process Template Document Properties --></label>
+        <name>scrive__ScriveProcessTemplateDocumentProperties</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive Process Template Mapping --></label>
+        <name>scrive__ScriveProcessTemplateMapping</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive Process Template Party --></label>
+        <name>scrive__ScriveProcessTemplateParty</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive Process Template Source Document --></label>
+        <name>scrive__ScriveProcessTemplateSourceDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrive Process Template Source Object --></label>
+        <name>scrive__ScriveProcessTemplateSourceObject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectAll --></label>
+        <name>scrive__SelectAll</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectAttachment --></label>
+        <name>scrive__SelectAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectDocumentSource --></label>
+        <name>scrive__SelectDocumentSource</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectFile --></label>
+        <name>scrive__SelectFile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectLightningFile --></label>
+        <name>scrive__SelectLightningFile</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectScriveAttachment --></label>
+        <name>scrive__SelectScriveAttachment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SelectScriveTemplate --></label>
+        <name>scrive__SelectScriveTemplate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send --></label>
+        <name>scrive__Send</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SendAReminderIn --></label>
+        <name>scrive__SendAReminderIn</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SendDocumentViaScrive --></label>
+        <name>scrive__SendDocumentViaScrive</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SendReminder --></label>
+        <name>scrive__SendReminder</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SendReminderIn(days) --></label>
+        <name>scrive__SendReminderIn_days</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SendingConfirmation --></label>
+        <name>scrive__SendingConfirmation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show --></label>
+        <name>scrive__Show</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SignAndSend --></label>
+        <name>scrive__SignAndSend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Signatory --></label>
+        <name>scrive__Signatory</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SigningDeadline --></label>
+        <name>scrive__SigningDeadline</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SigningDeadline(days) --></label>
+        <name>scrive__SigningDeadline_days</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SigningParty --></label>
+        <name>scrive__SigningParty</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Spanish --></label>
+        <name>scrive__Spanish</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Status --></label>
+        <name>scrive__Status</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Swedish --></label>
+        <name>scrive__Swedish</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Template --></label>
+        <name>scrive__Template</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TheDocumentHadBeenSuccessfullyForwardedTo --></label>
+        <name>scrive__TheDocumentHadBeenSuccessfullyForwardedTo</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TheDocumentWillBeAutomaticallyAttachedTo --></label>
+        <name>scrive__TheDocumentWillBeAutomaticallyAttachedTo</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TheErrorWas --></label>
+        <name>scrive__TheErrorWas</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TheExactErrorWas --></label>
+        <name>scrive__TheExactErrorWas</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TheRelatedOpportunity --></label>
+        <name>scrive__TheRelatedOpportunity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ThisDocumentCannotBeRemovedBecauseItIsSentOrYouDoNotHaveSufficient --></label>
+        <name>scrive__ThisDocumentCannotBeRemoved_because_it_is_sent_or_you_do_not_have_sufficient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- UnableToSendReminder --></label>
+        <name>scrive__UnableToSendReminder</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- UseViewInScriveBbuttonInstead --></label>
+        <name>scrive__UseViewInScriveBbuttonInstead</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View --></label>
+        <name>scrive__View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ViewInScrive --></label>
+        <name>scrive__ViewInScrive</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Viewer --></label>
+        <name>scrive__Viewer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ViewerDoesNotSign --></label>
+        <name>scrive__ViewerDoesNotSign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VisualForce --></label>
+        <name>scrive__VisualForce</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WeWereNotAbleToSendTheDocumentDueToFollowingErrors: --></label>
+        <name>scrive__WeWereNotAbleToSendTheDocumentDueToFollowingErrors</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Withdraw --></label>
+        <name>scrive__Withdraw</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- YouDoNotHavePermissionToPerformThisActionOnTheDocument --></label>
+        <name>scrive__YouDoNotHavePermissionToPerformThisActionOnTheDocument</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- YouHaveToAddAtLeastOneRecipient --></label>
+        <name>scrive__YouHaveToAddAtLeastOneRecipient</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- or --></label>
+        <name>scrive__or</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- to --></label>
+        <name>scrive__to</name>
+    </customLabels>
+    <flowDefinitions>
+        <flows/>
+        <fullName>CALCULATIONBATCH_TRG_AfterInsertUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLEBATCH_TRG_Deal_to_new_Opportunity</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLECALCULATOR_TRG_AfterInsertUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLE_TRG_AfterInsert</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLE_TRG_After_BatchCalculatorSelected</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLE_TRG_BeforeUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLE_TRG_RollUps_to_Opportunity</fullName>
+    </flowDefinitions>
+</Translations>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Selected_Batch_Calculator__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
     <deleteConstraint>SetNull</deleteConstraint>
+    <description>no longer required, user shall be able to select several calculators</description>
     <externalId>false</externalId>
     <label>Selected Batch Calculator</label>
     <lookupFilter>
-        <active>true</active>
+        <active>false</active>
         <filterItems>
             <field>Batch_Calculator__c.Status__c</field>
             <operation>equals</operation>

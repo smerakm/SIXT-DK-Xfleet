@@ -7,7 +7,7 @@
     <fields>Number_Of_Vehicles__c</fields>
     <fields>deliveryDate__c</fields>
     <fields>Required_by_Date__c</fields>
-    <fields>Selected_Operating_Period__c</fields>
     <fields>CreatedById</fields>
+    <fields>System_Number_of_Selected_Calculations__c</fields>
     <label>Vehicle Batch Compact</label>
 </CompactLayout>

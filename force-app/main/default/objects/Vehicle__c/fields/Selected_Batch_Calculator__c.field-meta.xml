@@ -4,6 +4,17 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Selected Batch Calculator</label>
+    <lookupFilter>
+        <active>false</active>
+        <errorMessage>Only Calculators from related Batch and in Selected Status are allowed!</errorMessage>
+        <filterItems>
+            <field>Batch_Calculator__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Selected</value>
+        </filterItems>
+        <infoMessage>Only Calculators from related Batch and in Selected Status are allowed</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Batch_Calculator__c</referenceTo>
     <relationshipLabel>Vehicles</relationshipLabel>
     <relationshipName>Vehicles</relationshipName>

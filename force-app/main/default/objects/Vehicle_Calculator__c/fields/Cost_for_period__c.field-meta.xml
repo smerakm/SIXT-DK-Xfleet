@@ -5,7 +5,7 @@
     <formula>/* Tax costs */
 Registration_Fee_for_the_period__c
 /* Insurance */
-+ Vehicle__r.Selected_Batch_Calculator__r.Insurance_cost_for_period__c
++ (Vehicle__r.Selected_Batch_Calculator__r.Insurance__c * Period__c)
 /* Infleet and Defleet costs */
 + Vehicle__r.Selected_Batch_Calculator__r.Onboard_Offboard_reduction__c
 /* Ownership Tax */
@@ -14,7 +14,7 @@ Registration_Fee_for_the_period__c
 + Damages_estimate_for_period__c 
 + Tires_Service__c
 /* Contract fee */
-+ Vehicle__r.Selected_Batch_Calculator__r.Contract_fee__c
++ Contract_Fee_On_delivery__c 
 /* Leasing cost */
 + (Leasing_Fee_calculated__c * Period__c)
 /* Depreciation - cost of selling car with a lost = difference is negative number */

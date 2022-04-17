@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Only_one_can_be_Selected</fullName>
-    <active>true</active>
-    <description>Only one Calculation can be selected on a batch</description>
+    <active>false</active>
+    <description>Only one Calculation can be selected on a batch
+UPDATED REQUIREMENT: user shall be able to select several calculators</description>
     <errorConditionFormula>ISCHANGED(Status__c) 
 &amp;&amp; ISPICKVAL(Status__c, &quot;Selected&quot;) 
 &amp;&amp; batch_relationship__r.System_Number_of_Selected_Calculations__c &gt; 0</errorConditionFormula>

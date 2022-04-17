@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" language="en_US" renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style>
+            @page{
+                size: A4 landscape;
+            }            
+            body {
+                font-family: 'Arial Unicode MS';
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <c:VehiclesFromOpportunity opportunityId="{!opportunity.Id}" showAllFields="false"/>
+    </body>
+</apex:page>

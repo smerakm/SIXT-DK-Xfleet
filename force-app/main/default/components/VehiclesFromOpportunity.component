@@ -1,0 +1,68 @@
+<apex:component access="global" controller="VehiclesFromOpportunityController">
+    <apex:attribute type="String" name="opportunityId" assignTo="{!oppId}" description="Opportunity Id to pass into the controller"
+    />
+    <apex:attribute type="Boolean" name="showAllFields" description="select between limited fields (delivery confirmation) and all fields (offer)"
+    />
+    <apex:dataTable value="{!OpportunityVehicles}" var="veh" id="theTable" rowClasses="odd,even" styleClass="tableClass" border="1" cellpadding="10" width="100%">
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Production_Number__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Production_Number__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.vinNumber__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.vinNumber__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Brand__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Brand__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Model__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Model__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.color__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.color__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Fuel_type__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Fuel_type__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.kmPrL__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.kmPrL__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.CO2__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.CO2__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Navi__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Navi__c}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Automatic_gears__c.Label}</apex:facet>
+            <apex:outputText value="{!IF(veh.Automatic_gears__c, $Label.Yes, $Label.No)}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Speed_Pilot__c.Label}</apex:facet>
+            <apex:outputText value="{!IF(veh.Speed_Pilot__c, $Label.Yes, $Label.No)}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Parking_sensor__c.Label}</apex:facet>
+            <apex:outputText value="{!IF(veh.Parking_sensor__c, $Label.Yes, $Label.No)}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Bluetooth__c.Label}</apex:facet>
+            <apex:outputText value="{!IF(veh.Bluetooth__c, $Label.Yes, $Label.No)}" />
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Non_standard_Accessories__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Non_standard_Accessories__c}" />
+        </apex:column>
+        <apex:column rendered="{!showAllFields}">
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Sales_Price_Formula__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Sales_Price_Formula__c}" />
+        </apex:column>
+    </apex:dataTable>
+</apex:component>

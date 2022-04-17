@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selected_Batch_Calculator_same_Batch</fullName>
+    <active>true</active>
+    <description>Selected Batch Calculator must be from the same Batch as the vehicle</description>
+    <errorConditionFormula>NOT(ISBLANK(Selected_Batch_Calculator__c))
+&amp;&amp;
+Vehicle_Batch__c &lt;&gt;  Selected_Batch_Calculator__r.batch_relationship__c</errorConditionFormula>
+    <errorDisplayField>Selected_Batch_Calculator__c</errorDisplayField>
+    <errorMessage>Selected Batch Calculator must be from the same vehicle Batch as the Vehicle</errorMessage>
+</ValidationRule>
