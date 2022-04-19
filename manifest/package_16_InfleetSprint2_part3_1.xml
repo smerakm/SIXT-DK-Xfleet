@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infleet Sprint 2 part 3%2E1</fullName>
+    <types>
+        <members>Account.Navision_Account__c</members>
+        <members>Activity_Item__c.Account_number_Navison__c</members>
+        <members>Activity_Item__c.Delivery_address__c</members>
+        <members>Activity_Item__c.Vehicle_date_for_shipment_of_COC_doc__c</members>
+        <members>Activity_Item__c.Vehicle_date_for_shipment_of_Reg_attest__c</members>
+        <members>Activity_Item__c.Vehicle_date_for_shipment_of_spare_key__c</members>
+        <members>Activity_Item__c.Vehicle_pickup_location__c</members>
+        <members>Activity_Item__c.Vehicle_registration_number_BMW__c</members>
+        <members>Activity_Item__c.registration_plate__c</members>
+        <members>Case.Email_for_BMW_car_transport__c</members>
+        <members>Case.Email_for_day_to_day_transport__c</members>
+        <members>Case.Email_for_new_car_transport__c</members>
+        <members>Case.Email_to_DAL_for_transport_booking__c</members>
+        <members>Case.Email_to_DAL_from_Defleet__c</members>
+        <members>Case.Email_to_buyer_about_keys_DK__c</members>
+        <members>Case.Email_to_buyer_about_keys_EN__c</members>
+        <members>Vehicle__c.Date_for_shipment_of_COC_document__c</members>
+        <members>Vehicle__c.Date_for_shipment_of_Reg_attest__c</members>
+        <members>Vehicle__c.Date_for_shipment_of_spare_key__c</members>
+        <members>Vehicle__c.Pickup_Location__c</members>
+        <members>Vehicle__c.Registration_Number_BMW__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Email_for_transport_booking_new_cars_day_to_day</members>
+        <members>Email_for_transport_of_new_cars_BMW_Version</members>
+        <members>Email_for_transport_of_new_cars_Normal</members>
+        <members>Email_for_transport_to_DAL_Defleet</members>
+        <members>Email_to_buyer_related_to_keys_and_documents</members>
+        <members>Email_to_buyer_related_to_keys_and_documents_DK</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Case-Case Layout</members>
+        <members>Vehicle__c-Vehicle Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Defleet</members>
+        <members>Forecast</members>
+        <members>Infleet</members>
+        <members>Procurement</members>
+        <members>Re-marketing</members>
+        <name>Profile</name>
+    </types>
+    <version>52.0</version>
+</Package>

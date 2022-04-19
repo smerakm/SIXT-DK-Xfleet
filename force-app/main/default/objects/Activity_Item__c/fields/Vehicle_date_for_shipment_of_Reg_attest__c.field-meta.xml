@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_date_for_shipment_of_Reg_attest__c</fullName>
+    <externalId>false</externalId>
+    <formula>Vehicle__r.Date_for_shipment_of_Reg_attest__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Vehicle date for shipment of Reg. attest</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

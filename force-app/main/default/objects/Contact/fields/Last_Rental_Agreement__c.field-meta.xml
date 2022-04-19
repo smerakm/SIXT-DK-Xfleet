@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Rental_Agreement__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The customers last rental agreement. This field is also used for external lookup and at the same time being unique ID from Cobra.</description>
+    <externalId>true</externalId>
+    <label>Last Rental Agreement</label>
+    <length>11</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

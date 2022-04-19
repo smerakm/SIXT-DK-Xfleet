@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>TCO__c</fullName>
+    <fullName>Vehicle_registration_number_BMW__c</fullName>
     <externalId>false</externalId>
-    <formula>handlingCost__c +  aftermarketEquipmentPrice__c +  deliveryCost__c +  licensePlateCost__c +  steelPrice__c</formula>
+    <formula>Vehicle__r.Registration_Number_BMW__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>TCO</label>
-    <precision>18</precision>
+    <label>Vehicle registration number (BMW)</label>
     <required>false</required>
-    <scale>2</scale>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

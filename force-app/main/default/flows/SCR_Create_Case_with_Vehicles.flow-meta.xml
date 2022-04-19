@@ -50,6 +50,7 @@
         <picklistObject>Case</picklistObject>
     </dynamicChoiceSets>
     <interviewLabel>SCR_Create_Case_with_Vehicles {!$Flow.CurrentDateTime}</interviewLabel>
+    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
     <label>SCR_Create_Case_with_Vehicles</label>
     <loops>
         <name>Assign_Vehicles_to_the_Case</name>

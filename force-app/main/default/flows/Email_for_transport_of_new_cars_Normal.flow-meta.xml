@@ -89,7 +89,7 @@
         <name>tableRow</name>
         <dataType>String</dataType>
         <expression>&apos;&lt;tr&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Vin_Number__c} + 
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Brand__c} + 
+&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Model__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_pickup_location__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!$Record.Delivery_address2__c} +
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_dealer__c} +
@@ -181,7 +181,7 @@
         <queriedFields>Vehicle_pickup_location__c</queriedFields>
         <queriedFields>Delivery_address__c</queriedFields>
         <queriedFields>Vehicle_dealer__c</queriedFields>
-        <queriedFields>Vehicle_Brand__c</queriedFields>
+        <queriedFields>Vehicle_Model__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>
@@ -202,7 +202,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>emailBody</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -248,7 +248,7 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <value>
-            <stringValue>&lt;tr&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Mærke &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Afhentningsadresse &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Leveringsadresse &lt;/th&gt; &lt;th style=&quot;border: 1px solid black;&quot;&gt; Forhandler &lt;/th&gt; &lt;/tr&gt;</stringValue>
+            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Model &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Afhentningsadresse &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Leveringsadresse &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Forhandler &lt;/th&gt; &lt;/tr&gt;</stringValue>
         </value>
     </variables>
 </Flow>

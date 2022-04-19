@@ -4,30 +4,6 @@
         <label><!-- Fleet Management --></label>
         <name>Fleet_Management</name>
     </customApplications>
-    <customApplications>
-        <label><!-- Lead Generation --></label>
-        <name>Lead_Generation</name>
-    </customApplications>
-    <customApplications>
-        <label><!-- Relationship Management --></label>
-        <name>Relationship_Management</name>
-    </customApplications>
-    <customApplications>
-        <label><!-- Sales Leadership --></label>
-        <name>Sales_Leadership</name>
-    </customApplications>
-    <customApplications>
-        <label><!-- Sales Operations --></label>
-        <name>Sales_Operations</name>
-    </customApplications>
-    <customApplications>
-        <label><!-- Data Stream --></label>
-        <name>Sixt_DK</name>
-    </customApplications>
-    <customApplications>
-        <label><!-- Company Administration --></label>
-        <name>Sixt_Denmark</name>
-    </customApplications>
     <customLabels>
         <label><!-- Actions --></label>
         <name>Apttus_XApps__Actions</name>
@@ -976,10 +952,6 @@
         <label><!-- to --></label>
         <name>scrive__to</name>
     </customLabels>
-    <customTabs>
-        <label><!-- Delivery and Collection --></label>
-        <name>Delivery_and_Collection</name>
-    </customTabs>
     <flowDefinitions>
         <flows/>
         <fullName>CALCULATIONBATCH_TRG_AfterInsertUpdate</fullName>
@@ -1009,10 +981,65 @@
                 <name>emailBody</name>
             </textTemplates>
             <textTemplates>
+                <name>emailForTransportOfNewCarDayToDay</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_for_transport_booking_new_cars_day_to_day</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>emailForTransportOfNewCarBMW</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_for_transport_of_new_cars_BMW_Version</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
                 <name>emailForTransportOfNewCar</name>
             </textTemplates>
         </flows>
         <fullName>Email_for_transport_of_new_cars_Normal</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>emailForTransportRequestFromDefleet</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_for_transport_to_DAL_Defleet</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>emailToNotifyBuyerAboutKeysAndDocuments</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_to_buyer_related_to_keys_and_documents</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>emailToNotifyBuyerAboutKeysAndDocuments</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_to_buyer_related_to_keys_and_documents_DK</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>

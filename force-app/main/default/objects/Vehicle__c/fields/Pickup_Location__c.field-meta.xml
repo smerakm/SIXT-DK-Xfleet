@@ -10,7 +10,7 @@
         <filterItems>
             <field>Contact.RecordTypeId</field>
             <operation>equals</operation>
-            <value>Pickup Location, Pickup Location</value>
+            <value>Pickup Location</value>
         </filterItems>
         <isOptional>false</isOptional>
     </lookupFilter>

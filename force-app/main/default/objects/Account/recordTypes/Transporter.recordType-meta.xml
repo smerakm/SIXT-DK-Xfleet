@@ -51,6 +51,25 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>ActiveCamp__ActiveCampaign_Sync_Status__c</picklist>
+        <values>
+            <fullName>Does Not Meet Sync Criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Successfully Synced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting For Next Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting For Update</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Damage_check_at_DAL_is_required__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -285,6 +304,29 @@
         </values>
         <values>
             <fullName>Vehicle Seller</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>priceStructure__c</picklist>
+        <values>
+            <fullName>Corporate rates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Rates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Rate -10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Rate -15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Rate -5%25</fullName>
             <default>false</default>
         </values>
     </picklistValues>

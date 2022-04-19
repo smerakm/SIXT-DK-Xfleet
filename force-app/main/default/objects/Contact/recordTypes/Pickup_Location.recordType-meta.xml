@@ -5,6 +5,36 @@
     <description>Vehicle Pickup Location from Dealer</description>
     <label>Pickup Location</label>
     <picklistValues>
+        <picklist>ActiveCamp__Account_Relation_Sync_Status__c</picklist>
+        <values>
+            <fullName>Successfully Synced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting For Next Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting For Update</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ActiveCamp__ActiveCampaign_Sync_Status__c</picklist>
+        <values>
+            <fullName>Duplicate Email Found Do Not Sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Successfully Synced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting For Next Sync</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
             <fullName>Customer Event</fullName>

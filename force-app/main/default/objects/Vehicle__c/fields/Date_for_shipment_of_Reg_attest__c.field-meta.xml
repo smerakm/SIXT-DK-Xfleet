@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>deliveryCost__c</fullName>
+    <fullName>Date_for_shipment_of_Reg_attest__c</fullName>
     <externalId>false</externalId>
-    <label>Delivery Cost</label>
-    <precision>8</precision>
+    <label>Date for shipment of Reg. attest</label>
     <required>false</required>
-    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Date</type>
 </CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>priceStructure__c</fullName>
+    <description>Define which category the company should be in.</description>
+    <externalId>false</externalId>
+    <label>Price Structure</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public Rate -5%</fullName>
+                <default>false</default>
+                <label>Public Rate -5%</label>
+            </value>
+            <value>
+                <fullName>Public Rate -10%</fullName>
+                <default>false</default>
+                <label>Public Rate -10%</label>
+            </value>
+            <value>
+                <fullName>Public Rate -15%</fullName>
+                <default>false</default>
+                <label>Public Rate -15%</label>
+            </value>
+            <value>
+                <fullName>Corporate rates</fullName>
+                <default>false</default>
+                <label>Corporate rates</label>
+            </value>
+            <value>
+                <fullName>Local Rates</fullName>
+                <default>false</default>
+                <label>Local Rates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
