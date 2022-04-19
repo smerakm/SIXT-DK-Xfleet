@@ -81,6 +81,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>EUR_DKK__c</picklist>
+        <values>
+            <fullName>DKK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Agriculture</fullName>

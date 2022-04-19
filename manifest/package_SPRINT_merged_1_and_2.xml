@@ -41,6 +41,7 @@
 		<members>Account.Contract_end_date__c</members>
 		<members>Account.Contract_start_date__c</members>
 		<members>Account.Damage_check_at_DAL_is_required__c</members>
+		<members>Account.EUR_DKK__c</members>
 		<members>Account.External_Name__c</members>
 		<members>Account.Invoice_or_advis__c</members>
 		<members>Account.Leasing_Rate__c</members>
@@ -463,11 +464,14 @@
 		<name>EmailTemplate</name>
 	</types>
 	<types>
+		<members>Account_Record_Page3</members>
 		<members>Batch_Calculator_Record_Page</members>
+        <members>Buyer_Record_Page</members>
 		<members>Case_Record_Page</members>
 		<members>Fleet_Forecast_Record_Page</members>
 		<members>Fleet_Management_Console_UtilityBar</members>
 		<members>Fleet_Management_UtilityBar</members>
+        <members>Leasing_company_Record_Page</members>
 		<members>Opportunity_Record_Page</members>
 		<members>Vehicle_Batch_Record_Page</members>
 		<members>Vehicle_Group_Record_Page</members>
@@ -522,6 +526,7 @@
 	</types>
 	<types>
 		<members>Account-Account Layout</members>
+        <members>Account-Buyer account</members>
 		<members>Account-Leasing Company</members>
 		<members>Activity_Item__c-Activity Item Layout</members>
 		<members>Batch_Calculator__c-Batch Calculator Layout</members>

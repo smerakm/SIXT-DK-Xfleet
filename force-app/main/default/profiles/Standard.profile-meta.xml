@@ -123,6 +123,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.EUR_DKK__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.External_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
