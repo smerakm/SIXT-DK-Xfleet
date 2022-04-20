@@ -27,7 +27,6 @@
 		<members>Infleet</members>
 		<members>Procurement</members>
 		<members>Re-marketing</members>
-		<members>Standard</members>
 		<name>Profile</name>
 	</types>
     <version>52.0</version>

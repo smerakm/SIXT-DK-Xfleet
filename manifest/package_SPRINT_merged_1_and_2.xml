@@ -190,6 +190,12 @@
 		<members>Opportunity.Offer_Expiration_Date__c</members>
 		<members>Opportunity.Pickup_Location__c</members>
 		<members>Opportunity.Registration_Date__c</members>
+		<members>Opportunity.Billing_address__c</members>
+        <members>Opportunity.Current_scrive_user_full_name__c</members>
+        <members>Opportunity.Pickup_location_for_scrive__c</members>
+        <members>Opportunity.VAT_NUMBER__c</members>
+        <members>Opportunity.todays_date__c</members>
+        <members>Opportunity.Registration_Date_for_Scrive__c</members>
 		<members>ServiceAndDamageCost__c.Car_Groups__c</members>
 		<members>ServiceAndDamageCost__c.Damage_Cost__c</members>
 		<members>ServiceAndDamageCost__c.Period_Month__c</members>
@@ -534,6 +540,7 @@
 		<members>Contact-Contact Layout</members>
 		<members>Contact-Pickup Location</members>
 		<members>Fleet_Forecast__c-Fleet Forecast Layout</members>
+		<members>Opportunity-Opportunity Layout</members>
 		<members>ServiceAndDamageCost__c-Service and Damage Cost Layout</members>
 		<members>Service_and_Damage_Group__c-Service and Damage Group Layout</members>
 		<members>Store_email__c-Store email Layout</members>
