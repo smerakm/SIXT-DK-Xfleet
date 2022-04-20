@@ -217,5 +217,5 @@ update holding cost after calculation batch record is inserted or updated</descr
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

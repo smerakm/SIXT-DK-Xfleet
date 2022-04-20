@@ -4,25 +4,6 @@
     <active>true</active>
     <label>Vehicle Batch Buying</label>
     <picklistValues>
-        <picklist>Status_Field__c</picklist>
-        <values>
-            <fullName>Canceled</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Deal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No deal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Offer</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Status__c</picklist>
         <values>
             <fullName>Canceled</fullName>

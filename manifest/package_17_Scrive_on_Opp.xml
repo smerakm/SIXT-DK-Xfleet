@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>deployment for Scrive</fullName>
+    <types>
+        <members>Opportunity.Billing_address__c</members>
+        <members>Opportunity.Current_scrive_user_full_name__c</members>
+        <members>Opportunity.Pickup_location_for_scrive__c</members>
+        <members>Opportunity.Registration_Date__c</members>
+        <members>Opportunity.VAT_NUMBER__c</members>
+        <members>Opportunity.todays_date__c</members>
+        <members>Opportunity.Holding_Period_Length__c</members>
+        <members>Opportunity.Max_KM__c</members>
+        <members>Opportunity.Number_Of_Vehicles__c</members>
+        <members>Opportunity.Registration_Date_for_Scrive__c</members>
+        <members>Opportunity.VAT_NUMBER__c</members>
+        <members>Opportunity.todays_date__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Opportunity-Opportunity Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+		<members>Admin</members>
+		<members>Defleet</members>
+		<members>Forecast</members>
+		<members>Infleet</members>
+		<members>Procurement</members>
+		<members>Re-marketing</members>
+		<members>Standard</members>
+		<name>Profile</name>
+	</types>
+    <version>52.0</version>
+</Package>

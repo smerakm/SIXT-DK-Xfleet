@@ -20,7 +20,7 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Account.accountEmail__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
