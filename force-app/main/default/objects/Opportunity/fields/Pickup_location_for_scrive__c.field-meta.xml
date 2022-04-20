@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pickup_location_for_scrive__c</fullName>
+    <externalId>false</externalId>
+    <formula>Pickup_Location__r.MailingStreet + &quot; , &quot; + Pickup_Location__r.MailingPostalCode + &quot; , &quot; + Pickup_Location__r.MailingCity + &quot; ,&quot; + Pickup_Location__r.MailingCountry</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pickup location for scrive$</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
