@@ -4,7 +4,6 @@
     <columns>NAME</columns>
     <columns>Brand__c</columns>
     <columns>Vehicle_type__c</columns>
-    <columns>Car_description__c</columns>
     <columns>Actual_Infleet_Day__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -13,7 +12,4 @@
         <value>0</value>
     </filters>
     <label>Vehicles that needs Infleet activities</label>
-    <sharedTo>
-        <group>Infleet</group>
-    </sharedTo>
 </ListView>

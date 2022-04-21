@@ -12,7 +12,4 @@
         <value>Not sold</value>
     </filters>
     <label>Not sold yet cars</label>
-    <sharedTo>
-        <group>Re_marketing</group>
-    </sharedTo>
 </ListView>

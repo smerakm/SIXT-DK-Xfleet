@@ -12,9 +12,4 @@
         <value>1</value>
     </filters>
     <label>Check for damage Vehicles</label>
-    <sharedTo>
-        <group>Defleet</group>
-        <group>Infleet</group>
-        <group>Station_managers</group>
-    </sharedTo>
 </ListView>

@@ -8,7 +8,4 @@
     <columns>Remaining_KM__c</columns>
     <filterScope>Everything</filterScope>
     <label>Overview of cars with kilometres</label>
-    <sharedTo>
-        <group>Infleet</group>
-    </sharedTo>
 </ListView>

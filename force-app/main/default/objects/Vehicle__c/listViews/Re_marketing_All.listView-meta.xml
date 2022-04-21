@@ -8,7 +8,4 @@
     <columns>Return_Date__c</columns>
     <filterScope>Everything</filterScope>
     <label>Re-marketing All</label>
-    <sharedTo>
-        <group>Re_marketing</group>
-    </sharedTo>
 </ListView>

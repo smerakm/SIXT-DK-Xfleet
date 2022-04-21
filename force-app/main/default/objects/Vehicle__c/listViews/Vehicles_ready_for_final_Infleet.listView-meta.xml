@@ -2,15 +2,14 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicles_ready_for_final_Infleet</fullName>
     <columns>NAME</columns>
-    <columns>Car_description__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
     <columns>Actual_Infleet_Day__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Actual_Infleet_Day__c</field>
-        <operation>greaterOrEqual</operation>
-        <value>NEXT_WEEK</value>
+        <operation>lessOrEqual</operation>
+        <value>LAST_WEEK</value>
     </filters>
     <label>Vehicles ready for final Infleet</label>
     <sharedTo>

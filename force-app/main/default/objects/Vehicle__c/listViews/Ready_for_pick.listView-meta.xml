@@ -13,7 +13,4 @@
         <value>TODAY</value>
     </filters>
     <label>Ready for pick up today</label>
-    <sharedTo>
-        <group>Defleet</group>
-    </sharedTo>
 </ListView>

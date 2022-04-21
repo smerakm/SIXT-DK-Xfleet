@@ -15,7 +15,4 @@
         <operation>equals</operation>
     </filters>
     <label>Sales price missing</label>
-    <sharedTo>
-        <group>Re_marketing</group>
-    </sharedTo>
 </ListView>

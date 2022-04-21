@@ -13,7 +13,4 @@
         <value>Ready to sell</value>
     </filters>
     <label>Ready to sell</label>
-    <sharedTo>
-        <group>Re_marketing</group>
-    </sharedTo>
 </ListView>

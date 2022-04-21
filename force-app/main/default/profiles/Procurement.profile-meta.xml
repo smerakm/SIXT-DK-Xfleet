@@ -63,7 +63,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>VehiclesFromOpportunityController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
@@ -409,11 +409,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Batch_Calculator__c.Account_finance__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Batch_Calculator__c.Car_Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -779,11 +774,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Reason</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Send_email_to_buyer_keys_and_documents__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1378,11 +1368,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ServiceAndDamageCost__c.Car_Groups__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>ServiceAndDamageCost__c.Service_and_Damage_Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1423,22 +1408,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Vehicle_Calculator__c.Batch_calculator_Interest_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Vehicle_Calculator__c.Confirmed_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Vehicle_Calculator__c.Contract_Fee_On_delivery__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Vehicle_Calculator__c.Contract_Fee_batch__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1839,11 +1814,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Vehicle__c.Max_KM__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Vehicle__c.Min_KM__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2264,11 +2234,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Vehicle__c.leasing_Account__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Vehicle__c.leasing_rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

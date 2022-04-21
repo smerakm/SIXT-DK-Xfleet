@@ -12,7 +12,4 @@
         <value>1</value>
     </filters>
     <label>Vehicles with damages to be fixed</label>
-    <sharedTo>
-        <group>Defleet</group>
-    </sharedTo>
 </ListView>

@@ -12,8 +12,4 @@
         <value>Defleet</value>
     </filters>
     <label>Defleet All</label>
-    <sharedTo>
-        <group>Defleet</group>
-        <group>Infleet</group>
-    </sharedTo>
 </ListView>

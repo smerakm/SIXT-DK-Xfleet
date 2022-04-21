@@ -16,7 +16,4 @@
         <operation>notEqual</operation>
     </filters>
     <label>Klargøring list</label>
-    <sharedTo>
-        <group>Infleet</group>
-    </sharedTo>
 </ListView>
