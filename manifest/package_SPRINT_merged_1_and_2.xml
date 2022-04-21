@@ -72,7 +72,6 @@
 		<members>Activity_Item__c.Vehicle_tax_value_incl_VAT__c</members>
 		<members>Activity_Item__c.registration_plate__c</members>
 		<members>Batch_Calculator__c.Account_finance__c</members>
-		<members>Batch_Calculator__c.Car_Group__c</members>
 		<members>Batch_Calculator__c.Contract_fee__c</members>
 		<members>Batch_Calculator__c.Damages__c</members>
 		<members>Batch_Calculator__c.Decision_Comments__c</members>
@@ -196,7 +195,6 @@
         <members>Opportunity.VAT_NUMBER__c</members>
         <members>Opportunity.todays_date__c</members>
         <members>Opportunity.Registration_Date_for_Scrive__c</members>
-		<members>ServiceAndDamageCost__c.Car_Groups__c</members>
 		<members>ServiceAndDamageCost__c.Damage_Cost__c</members>
 		<members>ServiceAndDamageCost__c.Period_Month__c</members>
 		<members>ServiceAndDamageCost__c.Service_and_Damage_Group__c</members>
@@ -602,12 +600,8 @@
 	</types>
 	<types>
 		<members>Admin</members>
-		<members>Defleet</members>
-		<members>Forecast</members>
 		<members>Infleet</members>
 		<members>Procurement</members>
-		<members>Re-marketing</members>
-		<members>Standard</members>
 		<name>Profile</name>
 	</types>
 	<types>
