@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>deployment for Scrive</fullName>
+    <types>
+        <members>Defleet_Manager_Home_Screen</members>
+        <members>Procurement_manager_home_screen</members>
+        <name>FlexiPage</name>
+    </types>
+	<types>
+		<members>Fleet_Management</members>
+		<name>CustomApplication</name>
+	</types>
+    <types>
+		<members>Vehicle__c.Required_by_Date</members>
+		<name>ListView</name>
+	</types>
+    <types>
+		<members>Infleet</members>
+		<members>Procurement</members>
+		<name>Profile</name>
+	</types>
+    <version>52.0</version>
+</Package>
