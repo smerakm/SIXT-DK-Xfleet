@@ -8,6 +8,6 @@
     <columns>Max_KM__c</columns>
     <columns>Prioritized_for_Rental__c</columns>
     <columns>Prioritized_reason__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Prioritized Cars</label>
 </ListView>
