@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>L94_registration_tax__c  + Interest_towards_Tax__c  + Regulated_tax_at_re_calculation__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>L94_registration_tax__c + Interest_towards_Tax__c + Regulated_tax_at_re_calculation__c</inlineHelpText>
     <label>Proportional registration fee</label>
     <precision>18</precision>
     <required>false</required>

@@ -5,6 +5,8 @@
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
     <columns>Defleet_Status__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>The_car_is_paid__c</field>
@@ -29,7 +31,7 @@
     <filters>
         <field>COC_document__c</field>
         <operation>equals</operation>
-        <value>Received in HQ,Received at Station,In Car,Not found</value>
+        <value>Received in HQ</value>
     </filters>
     <label>Overview of cars to send docs and keys</label>
     <sharedTo>

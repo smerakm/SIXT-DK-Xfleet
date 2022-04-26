@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Ownership_tax_period__c + Insurance_cost_for_period__c + Onboard_Offboard_reduction__c  +  Damages__c  +  Tires_Service__c  +  Contract_fee__c  +  Interest_for_period__c  -  Depreciation__c  -  Refusion__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Ownership_tax_period__c + Insurance_cost_for_period__c + Onboard_Offboard_reduction__c + Damages__c + Tires_Service__c + Contract_fee__c + Interest_for_period__c - Depreciation__c - Refusion__c</inlineHelpText>
     <label>Valuta Car - Cost for period</label>
     <precision>18</precision>
     <required>false</required>

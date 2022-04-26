@@ -3,6 +3,8 @@
     <fullName>Sales_price_missing</fullName>
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
     <columns>Model__c</columns>
     <columns>Status__c</columns>
     <columns>Expected_Delivery_Date__c</columns>

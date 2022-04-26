@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Full_Tax_buy__c  * Intrest_rate_financing__c / 12 * Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Full_Tax_buy__c * Intrest_rate_financing__c / 12 * Period__c</inlineHelpText>
     <label>Interest for period - full tax car</label>
     <precision>18</precision>
     <required>false</required>

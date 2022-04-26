@@ -3,7 +3,8 @@
     <fullName>Account_finance__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Account_finance</label>
+    <inlineHelpText>Please select leasing account  (Interest rate and contract fee will then be automatically populated)</inlineHelpText>
+    <label>Leasing Account</label>
     <lookupFilter>
         <active>true</active>
         <filterItems>

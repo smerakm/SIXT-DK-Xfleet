@@ -8,6 +8,7 @@
 0
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>IF Period__c &gt; 4 THEN Total_registration_tax__c * 0.06 / 100 * Period__c</inlineHelpText>
     <label>Regulated tax at re-calculation</label>
     <precision>18</precision>
     <required>false</required>

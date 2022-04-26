@@ -3,6 +3,7 @@
     <fullName>Cars_not_distributed</fullName>
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
+    <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Model__c</columns>
     <columns>Batch_Distribution__c</columns>

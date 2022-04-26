@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_with_Currency_SYSTEM__c</fullName>
+    <description>system field to show total opportunity amount in Account currency (EUR/DKK) and include currency code in the text (can be used in offer and Scrive integration)</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Account.EUR_DKK__c, &quot;EUR&quot;), 
+			/* amount in EUR */
+			TEXT(CEILING(Amount *  $Setup.ConversionRate__c.DKK_to_EUR__c)) + &quot; EUR&quot;,
+			/* amount in DKK */
+			TEXT(Amount) + &quot; DKK&quot;
+)</formula>
+    <inlineHelpText>system field to show total opportunity amount in Account currency (EUR/DKK) and include currency code in the text (can be used in offer and Scrive integration)</inlineHelpText>
+    <label>Amount with Currency (SYSTEM)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

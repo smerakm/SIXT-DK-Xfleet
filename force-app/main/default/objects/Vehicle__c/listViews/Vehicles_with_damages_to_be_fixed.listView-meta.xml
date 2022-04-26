@@ -2,6 +2,8 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicles_with_damages_to_be_fixed</fullName>
     <columns>NAME</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
     <columns>Defleet_Status__c</columns>
     <columns>defleetReadyCheck__c</columns>
     <columns>hasDamages__c</columns>

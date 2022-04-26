@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Remarketing_Price_Full_Tax__c  -  Full_Tax_buy__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Remarketing_Price_Full_Tax__c  -  Full_Tax_buy__c</inlineHelpText>
     <label>Diffrence - Full Tax</label>
     <precision>18</precision>
     <required>false</required>

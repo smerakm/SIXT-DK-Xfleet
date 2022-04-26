@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>defleetReadyCheck__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(AND(checkForDamage__c=true,
+    <formula>IF(AND( Infleet_Damage_check_completed__c =true,
  checkForWinterTires__c=true,
  Stickers_are_removed__c=true,
  INCLUDES(Check_for_Milage__c, &quot;Max. is not exceeded&quot;),

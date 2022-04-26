@@ -3,7 +3,7 @@
     <fullName>Speed_Pilot__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Speed Pilot</label>
+    <label>Cruise control</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

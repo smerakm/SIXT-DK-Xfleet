@@ -3,6 +3,7 @@
     <fullName>Vehicle_Group__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
+    <inlineHelpText>Please select correct vehicle group for calculations</inlineHelpText>
     <label>Vehicle Group</label>
     <referenceTo>Vehicle_Group__c</referenceTo>
     <relationshipLabel>Batch Calculator</relationshipLabel>

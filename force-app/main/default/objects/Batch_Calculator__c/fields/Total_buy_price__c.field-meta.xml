@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Total_establishing_cost__c  +  Steel_price__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total_establishing_cost__c + Steel_price__c</inlineHelpText>
     <label>Total buy price</label>
     <precision>18</precision>
     <required>false</required>

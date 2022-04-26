@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Total_buy_price__c * 1.25  +  Total_registration_tax__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total_buy_price__c * 1.25 + Total_registration_tax__c</inlineHelpText>
     <label>Total buy price - Full Tax</label>
     <precision>18</precision>
     <required>false</required>

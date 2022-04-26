@@ -8,6 +8,11 @@ Difference__c,
 0
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>IF(
+Difference__c &lt; 0,
+Difference__c,
+0
+)</inlineHelpText>
     <label>Depreciation</label>
     <precision>18</precision>
     <required>false</required>

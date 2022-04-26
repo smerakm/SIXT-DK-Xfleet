@@ -20,7 +20,7 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Account.accountEmail__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -232,7 +232,7 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <value>
-            <stringValue>Email for transport of new cars (Normal) </stringValue>
+            <stringValue>Email for transport of new cars (BMW) </stringValue>
         </value>
     </variables>
     <variables>

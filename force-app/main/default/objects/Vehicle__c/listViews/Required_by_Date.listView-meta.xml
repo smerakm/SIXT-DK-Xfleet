@@ -2,6 +2,9 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Required_by_Date</fullName>
     <columns>NAME</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Required_by_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Required_by_Date__c</field>

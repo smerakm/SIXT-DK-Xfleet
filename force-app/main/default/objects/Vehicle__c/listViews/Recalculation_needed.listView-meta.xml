@@ -3,6 +3,8 @@
     <fullName>Recalculation_needed</fullName>
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
     <columns>Model__c</columns>
     <columns>Last_Calculation_Date__c</columns>
     <columns>Status__c</columns>

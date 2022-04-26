@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIN_number_not_updatable</fullName>
+    <active>true</active>
+    <description>When VIN is populated it can&apos;t be changed</description>
+    <errorConditionFormula>ISCHANGED(vinNumber__c)
+&amp;&amp; NOT(ISBLANK(PRIORVALUE(vinNumber__c)))</errorConditionFormula>
+    <errorDisplayField>vinNumber__c</errorDisplayField>
+    <errorMessage>VIN number can&apos;t be updated</errorMessage>
+</ValidationRule>

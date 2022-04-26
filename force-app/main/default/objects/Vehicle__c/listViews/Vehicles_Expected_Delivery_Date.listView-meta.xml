@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicles_Expected_Delivery_Date</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
     <columns>NAME</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Infleet_status__c</columns>
     <columns>Model__c</columns>
     <columns>Expected_Delivery_Date__c</columns>
-    <columns>Status__c</columns>
+    <columns>Use_type__c</columns>
+    <columns>Required_by_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Expected_Delivery_Date__c</field>
         <operation>notEqual</operation>
     </filters>
-    <label>Vehicles Expected Delivery Date</label>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Infleet</value>
+    </filters>
+    <filters>
+        <field>Required_by_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Use_type__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Set Use Type and Required By date</label>
 </ListView>

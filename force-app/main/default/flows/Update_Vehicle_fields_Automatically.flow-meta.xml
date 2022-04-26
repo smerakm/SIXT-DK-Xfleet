@@ -34,10 +34,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Infleet_Damage_check_completed_checked</name>
+        <label>Is Infleet Damage check completed checked ?</label>
+        <locationX>182</locationX>
+        <locationY>3671</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Infleet_Damage_check_completed__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Infleet_damage_check_completed_date_and_user_stampp</targetReference>
+            </connector>
+            <label>Yes11</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Internal_number_changed</name>
         <label>Is Internal number changed ?</label>
         <locationX>182</locationX>
         <locationY>1991</locationY>
+        <defaultConnector>
+            <targetReference>Is_Registration_document_updated</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes6</name>
@@ -75,7 +100,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Key_received_at_HQ_timestamp</targetReference>
+                <targetReference>Update_Key_received_at_HQ_time_and_user_stamp</targetReference>
             </connector>
             <label>Yes3</label>
         </rules>
@@ -100,7 +125,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_key_received_at_station_timestamp</targetReference>
+                <targetReference>Update_key_received_at_station_time_and_user_stamp</targetReference>
             </connector>
             <label>Yes4</label>
         </rules>
@@ -155,6 +180,106 @@
             <label>Yes2</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Is_Registration_document_updated</name>
+        <label>Is Registration document updated ?</label>
+        <locationX>182</locationX>
+        <locationY>2327</locationY>
+        <defaultConnector>
+            <targetReference>Is_the_car_is_paid_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Registration_document__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_registration_document_time_and_user_stamp</targetReference>
+            </connector>
+            <label>Yes7</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_car_is_paid_updated</name>
+        <label>Is the car is paid updated ?</label>
+        <locationX>182</locationX>
+        <locationY>2663</locationY>
+        <defaultConnector>
+            <targetReference>Is_the_car_is_released_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes8</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.The_car_is_paid__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_car_is_paid_user_and_time_stamp</targetReference>
+            </connector>
+            <label>Yes8</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_car_is_picked_up_updated</name>
+        <label>Is the car is picked up updated ?</label>
+        <locationX>182</locationX>
+        <locationY>3335</locationY>
+        <defaultConnector>
+            <targetReference>Is_Infleet_Damage_check_completed_checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes10</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.The_car_is_picked_up__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_car_is_picked_up_date_and_user_stamp</targetReference>
+            </connector>
+            <label>Yes10</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_the_car_is_released_updated</name>
+        <label>Is the car is released updated ?</label>
+        <locationX>182</locationX>
+        <locationY>2999</locationY>
+        <defaultConnector>
+            <targetReference>Is_the_car_is_picked_up_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.The_car_is_released__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_car_is_released_time_and_user_stamp</targetReference>
+            </connector>
+            <label>Yes9</label>
+        </rules>
+    </decisions>
     <description>Automatically update Vehicle fields : 
 License_plate__c
 Key_received_at_HQ__c
@@ -171,6 +296,11 @@ Internal_number_timestamp__c</description>
         <name>Today</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>userStamp</name>
+        <dataType>String</dataType>
+        <expression>{!$User.LastName} +&apos; &apos;+ {!$User.FirstName}</expression>
     </formulas>
     <interviewLabel>Update Vehicle fields Automatically {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Vehicle fields Automatically</label>
@@ -210,10 +340,32 @@ Internal_number_timestamp__c</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Infleet_damage_check_completed_date_and_user_stampp</name>
+        <label>Update Infleet damage check completed date and user stampp</label>
+        <locationX>50</locationX>
+        <locationY>3791</locationY>
+        <inputAssignments>
+            <field>Infleet_Damage_checked_by__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Infleet_Damage_checked_date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Internal_number_timestamp</name>
         <label>Update Internal number timestamp</label>
         <locationX>50</locationX>
         <locationY>2111</locationY>
+        <connector>
+            <targetReference>Is_Registration_document_updated</targetReference>
+        </connector>
         <inputAssignments>
             <field>Internal_number_timestamp__c</field>
             <value>
@@ -223,8 +375,8 @@ Internal_number_timestamp__c</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Key_received_at_HQ_timestamp</name>
-        <label>Update Key received at HQ timestamp</label>
+        <name>Update_Key_received_at_HQ_time_and_user_stamp</name>
+        <label>Update Key received at HQ time and user stamp</label>
         <locationX>50</locationX>
         <locationY>1103</locationY>
         <connector>
@@ -236,16 +388,28 @@ Internal_number_timestamp__c</description>
                 <elementReference>Today</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Key_received_at_HQ_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_key_received_at_station_timestamp</name>
-        <label>Update key received at station timestamp</label>
+        <name>Update_key_received_at_station_time_and_user_stamp</name>
+        <label>Update key received at station time and user stamp</label>
         <locationX>50</locationX>
         <locationY>1439</locationY>
         <connector>
             <targetReference>Is_Key_sent_to_buyer_updated</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Key_received_at_station_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Key_received_at_station_timestamp__c</field>
             <value>
@@ -256,12 +420,18 @@ Internal_number_timestamp__c</description>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Key_sent_to_buyer_timestamp</name>
-        <label>Update Key sent to buyer timestamp</label>
+        <label>Update Key sent to buyer time and user stamp</label>
         <locationX>50</locationX>
         <locationY>1775</locationY>
         <connector>
             <targetReference>Is_Internal_number_changed</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Key_sent_to_buyer_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Key_sent_to_buyer_timestamp__c</field>
             <value>
@@ -282,6 +452,94 @@ Internal_number_timestamp__c</description>
             <field>Planned_Infleet_Date__c</field>
             <value>
                 <elementReference>FormulaforPlannedinfleetday</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_registration_document_time_and_user_stamp</name>
+        <label>Update registration document time and user stamp</label>
+        <locationX>50</locationX>
+        <locationY>2447</locationY>
+        <connector>
+            <targetReference>Is_the_car_is_paid_updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Registration_document_Timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Registration_document_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_car_is_paid_user_and_time_stamp</name>
+        <label>Update the car is paid user and time stamp</label>
+        <locationX>50</locationX>
+        <locationY>2783</locationY>
+        <connector>
+            <targetReference>Is_the_car_is_released_updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>The_car_is_paid_Timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>The_car_is_paid_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_car_is_picked_up_date_and_user_stamp</name>
+        <label>Update the car is picked up date and user stamp</label>
+        <locationX>50</locationX>
+        <locationY>3455</locationY>
+        <connector>
+            <targetReference>Is_Infleet_Damage_check_completed_checked</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>The_car_is_picked_up_Timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>The_car_is_picked_up_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_car_is_released_time_and_user_stamp</name>
+        <label>Update the car is released time and user stamp</label>
+        <locationX>50</locationX>
+        <locationY>3119</locationY>
+        <connector>
+            <targetReference>Is_the_car_is_picked_up_updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>The_car_is_released_Timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>The_car_is_released_User__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -335,9 +593,44 @@ Internal_number_timestamp__c</description>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Registration_document__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>The_car_is_paid__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>The_car_is_released__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>The_car_is_picked_up__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Infleet_Damage_check_completed__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Vehicle__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

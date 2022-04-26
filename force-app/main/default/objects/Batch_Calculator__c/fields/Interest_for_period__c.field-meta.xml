@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Total_buy_price__c  *  Intrest_rate_financing__c  / 12 *  Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total_buy_price__c * Intrest_rate_financing__c / 12 * Period__c</inlineHelpText>
     <label>Interest for period</label>
     <precision>18</precision>
     <required>false</required>

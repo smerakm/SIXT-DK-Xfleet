@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Email_for_transport_of_new_cars_Normal</name>
-        <label>Email for transport of new cars (Normal)</label>
+        <name>Email_for_transport_to_DAL_Defleet</name>
+        <label>Email for transport to DAL(Defleet)</label>
         <locationX>176</locationX>
         <locationY>1031</locationY>
         <actionName>emailSimple</actionName>
@@ -20,7 +20,7 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Account.accountEmail__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -82,7 +82,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Email_for_transport_of_new_cars_Normal</targetReference>
+            <targetReference>Email_for_transport_to_DAL_Defleet</targetReference>
         </connector>
     </assignments>
     <description>Email request for transport to DAL from Defleet coordinator</description>
@@ -203,7 +203,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>emailBody</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

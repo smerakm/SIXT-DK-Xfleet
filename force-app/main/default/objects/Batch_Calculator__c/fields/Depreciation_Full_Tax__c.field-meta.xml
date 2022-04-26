@@ -8,6 +8,11 @@ Diffrence_Full_Tax__c,
 0
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>IF(
+Diffrence_Full_Tax__c &lt; 0,
+Diffrence_Full_Tax__c,
+0
+)</inlineHelpText>
     <label>Depreciation - Full Tax</label>
     <precision>18</precision>
     <required>false</required>

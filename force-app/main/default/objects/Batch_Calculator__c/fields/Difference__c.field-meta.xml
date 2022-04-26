@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Sales_price__c - Total_buy_price__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sales_price__c - Total_buy_price__c</inlineHelpText>
     <label>Difference</label>
     <precision>18</precision>
     <required>false</required>

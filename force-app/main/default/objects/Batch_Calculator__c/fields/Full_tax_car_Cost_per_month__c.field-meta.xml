@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Full_Tax_Car_Cost_for_period__c / Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Full_Tax_Car_Cost_for_period__c / Period__c</inlineHelpText>
     <label>Full tax car - Cost per month</label>
     <precision>18</precision>
     <required>false</required>

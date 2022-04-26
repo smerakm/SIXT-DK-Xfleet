@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>Insurance__c  *  Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Insurance__c * Period__c</inlineHelpText>
     <label>Insurance cost for period</label>
     <precision>18</precision>
     <required>false</required>

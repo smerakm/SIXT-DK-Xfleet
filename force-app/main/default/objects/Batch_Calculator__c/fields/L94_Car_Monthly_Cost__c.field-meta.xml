@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>L94_Car_Cost_for_period__c / Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>L94_Car_Cost_for_period__c / Period__c</inlineHelpText>
     <label>L94 Car - Monthly Cost</label>
     <precision>18</precision>
     <required>false</required>

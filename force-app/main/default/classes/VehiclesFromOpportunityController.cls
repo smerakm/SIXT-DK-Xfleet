@@ -21,10 +21,22 @@ public with sharing class VehiclesFromOpportunityController {
                 Parking_sensor__c,
                 Bluetooth__c,
                 Non_standard_Accessories__c,
-                Sales_Price_Formula__c
+                Sales_Price_Formula__c,
+                Sales_Price_EUR__c
             FROM Vehicle__c
             WHERE Opportunity__c = :oppId
         ];
         return opptyVehicles;
+    }
+
+    public Boolean getIsEUR() {
+        Boolean isEUR = false;
+        if (oppId != null) {
+            Opportunity opp = [SELECT Account.EUR_DKK__c FROM Opportunity WHERE Id = :oppId LIMIT 1];
+            if (String.isNotBlank(opp.Account.EUR_DKK__c) && opp.Account.EUR_DKK__c == 'EUR') {
+                isEUR = true;
+            }
+        }
+        return isEUR;
     }
 }

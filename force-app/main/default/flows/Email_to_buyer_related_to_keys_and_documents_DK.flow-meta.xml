@@ -20,7 +20,7 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Account.accountEmail__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -202,7 +202,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>emailBody</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -228,7 +228,7 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <value>
-            <stringValue>Email to notify of keys and documents </stringValue>
+            <stringValue>Email to notify of keys and documents (DK)</stringValue>
         </value>
     </variables>
     <variables>

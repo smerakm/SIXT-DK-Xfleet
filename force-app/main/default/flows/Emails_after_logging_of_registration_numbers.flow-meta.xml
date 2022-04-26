@@ -2,7 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <name>Email_to_dealer</name>
-        <label>Email to dealer and debitor</label>
+        <label>Email to dealer</label>
         <locationX>176</locationX>
         <locationY>1031</locationY>
         <actionName>emailSimple</actionName>
@@ -20,7 +20,43 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Account.accountEmail__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>emailSubject</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>emailToDebitor</name>
+        <label>emailToDebitor</label>
+        <locationX>176</locationX>
+        <locationY>1271</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>createEmailMessage</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>emailToDealerAndDebitor</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>debitor@sixt.dk</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -40,7 +76,7 @@
         <name>emailToLeasingCompany2</name>
         <label>emailToLeasingCompany</label>
         <locationX>176</locationX>
-        <locationY>1271</locationY>
+        <locationY>1511</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -56,7 +92,7 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>irinka1369@gmail.com</stringValue>
+                <elementReference>$Record.Leasing_company__r.accountEmail__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -170,6 +206,35 @@
         <locationX>176</locationX>
         <locationY>1151</locationY>
         <connector>
+            <targetReference>emailToDebitor</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>HtmlBody</field>
+            <value>
+                <elementReference>emailToDealerAndDebitor</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RelatedToId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>emailSubject</elementReference>
+            </value>
+        </inputAssignments>
+        <object>EmailMessage</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>createEmailMessage</name>
+        <label>createEmailMessage</label>
+        <locationX>176</locationX>
+        <locationY>1391</locationY>
+        <connector>
             <targetReference>emailToLeasingCompany2</targetReference>
         </connector>
         <inputAssignments>
@@ -197,7 +262,7 @@
         <name>emailToLeasing</name>
         <label>emailToLeasing</label>
         <locationX>176</locationX>
-        <locationY>1391</locationY>
+        <locationY>1631</locationY>
         <inputAssignments>
             <field>HtmlBody</field>
             <value>
@@ -262,7 +327,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>emailToDealerAndDebitor</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

@@ -2,6 +2,7 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicles_moved_to_Infleet</fullName>
     <columns>NAME</columns>
+    <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
     <columns>Vehicle_type__c</columns>
     <columns>Status__c</columns>
