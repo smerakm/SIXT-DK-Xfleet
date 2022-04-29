@@ -5,9 +5,8 @@
     <formula>IF(
 Diffrence_Full_Tax__c &lt; 0,
 Diffrence_Full_Tax__c,
-0
+NULL
 )</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>IF(
 Diffrence_Full_Tax__c &lt; 0,
 Diffrence_Full_Tax__c,

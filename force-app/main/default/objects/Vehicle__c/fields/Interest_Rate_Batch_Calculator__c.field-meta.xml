@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Interest_Rate_Batch_Calculator__c</fullName>
+    <description>Leasing Rate used on Batch calculator</description>
     <externalId>false</externalId>
-    <formula>Selected_Batch_Calculator__r.Intrest_rate_financing__c</formula>
+    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valutacar&quot;),
+			Selected_Batch_Calculator__r.Interest_rate_Financing_Valuta__c,
+			Selected_Batch_Calculator__r.Intrest_rate_financing__c
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Leasing Rate used on Batch calculator</inlineHelpText>
     <label>Interest rate - Batch Calculator</label>
     <precision>18</precision>
     <required>false</required>

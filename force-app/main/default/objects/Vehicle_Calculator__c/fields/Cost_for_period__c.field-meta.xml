@@ -5,7 +5,7 @@
     <formula>/* Tax costs */
 Registration_Fee_for_the_period__c
 /* Insurance */
-+ (Vehicle__r.Selected_Batch_Calculator__r.Insurance__c * Period__c)
++ (Vehicle__r.Selected_Batch_Calculator__r.Insurance_cost_month__c * Period__c)
 /* Infleet and Defleet costs */
 + Vehicle__r.Selected_Batch_Calculator__r.Onboard_Offboard_reduction__c
 /* Ownership Tax */

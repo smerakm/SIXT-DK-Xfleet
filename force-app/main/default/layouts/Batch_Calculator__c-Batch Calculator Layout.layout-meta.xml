@@ -23,6 +23,10 @@
                 <behavior>Required</behavior>
                 <field>Handling_Cost__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Interest_for_period_Valuta__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -134,11 +138,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Ownership_tax__c</field>
+                <field>Ownership_tax_6_months__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Insurance__c</field>
+                <field>Insurance_cost_month__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -151,6 +155,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Contract_fee__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Interest_rate_Financing_Valuta__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Contract_fee_Valuta__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -184,7 +196,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Refusion__c</field>
+                <field>Reimbursement__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Reimbursement_calc__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

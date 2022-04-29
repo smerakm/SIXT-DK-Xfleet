@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Leasing_contract_fee__c</fullName>
-    <description>Actual Contract fee received from leasing company for this vehicle</description>
+    <fullName>Leasing_Contract_Fee_Contract_Valuta__c</fullName>
+    <description>Leasing contact fee specified on contract with Leasing Company - for Valuta vehicles</description>
     <externalId>false</externalId>
-    <inlineHelpText>Actual Contract fee received from leasing company for this vehicle</inlineHelpText>
-    <label>Leasing contract fee - actual</label>
+    <inlineHelpText>Leasing contact fee specified on contract with Leasing Company - for Valuta vehicles</inlineHelpText>
+    <label>Leasing Contract Fee - Contract (Valuta)</label>
     <precision>8</precision>
     <required>false</required>
     <scale>2</scale>

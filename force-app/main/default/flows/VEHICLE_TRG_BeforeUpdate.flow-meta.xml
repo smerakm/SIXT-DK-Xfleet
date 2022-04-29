@@ -5,7 +5,7 @@
         <description>when the batch calculator is first time selected on the vehicle then populate some default values from it</description>
         <name>First_Batch_Calculator_is_Selected_on_the_Vehicle</name>
         <label>First Batch Calculator is Selected on the Vehicle</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>311</locationY>
         <defaultConnector>
             <targetReference>set_leasing_account</targetReference>
@@ -31,8 +31,8 @@
     <decisions>
         <name>Is_Registration_Date_Changed</name>
         <label>Is Registration Date Changed</label>
-        <locationX>182</locationX>
-        <locationY>1103</locationY>
+        <locationX>336</locationX>
+        <locationY>1775</locationY>
         <defaultConnectorLabel>no, Registration Date NOT Changed</defaultConnectorLabel>
         <rules>
             <name>Registration_Date_Changed</name>
@@ -51,9 +51,60 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Leasing_Fee_differs_for_Valuta</name>
+        <label>Leasing Fee differs for Valuta</label>
+        <locationX>182</locationX>
+        <locationY>1343</locationY>
+        <defaultConnector>
+            <targetReference>Is_Registration_Date_Changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>yes_valuta_fee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.leasing_Account__r.Leasing_contract_fee_valuta__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Specific_Contract_Fee_for_Valuta</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set Valuta specific Leasing Rate only if it is populated on the leasing account (otherwise it was set by default to the same value as for L94 in previous step)</description>
+        <name>Leasing_Rate_differs_for_Valuta</name>
+        <label>Leasing Rate differs for Valuta</label>
+        <locationX>182</locationX>
+        <locationY>1007</locationY>
+        <defaultConnector>
+            <targetReference>Leasing_Fee_differs_for_Valuta</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>yes_valuta_rate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.leasing_Account__r.Leasing_Rate_Valuta__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Specific_Leasing_Rate_for_Valuta</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>set_leasing_account</name>
         <label>Leasing account yes / no?</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>767</locationY>
         <defaultConnector>
             <targetReference>Is_Registration_Date_Changed</targetReference>
@@ -105,7 +156,7 @@
         <description>only if not set yet</description>
         <name>Set_default_Leasing_Account</name>
         <label>Set default Leasing Account</label>
-        <locationX>50</locationX>
+        <locationX>204</locationX>
         <locationY>551</locationY>
         <connector>
             <targetReference>set_leasing_account</targetReference>
@@ -119,21 +170,9 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Leasing_contract_fee__c</field>
-            <value>
-                <elementReference>$Record.Selected_Batch_Calculator__r.Account_finance__r.Leasing_contract_fee__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>leasing_Account__c</field>
             <value>
                 <elementReference>$Record.Selected_Batch_Calculator__r.Account_finance__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>leasing_rate_actual__c</field>
-            <value>
-                <elementReference>$Record.Selected_Batch_Calculator__r.Account_finance__r.Leasing_Rate__c</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -142,7 +181,7 @@
         <description>only if not set yet</description>
         <name>Set_default_Vehicle_Group</name>
         <label>Set default Vehicle Group</label>
-        <locationX>50</locationX>
+        <locationX>204</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Set_default_Leasing_Account</targetReference>
@@ -164,21 +203,66 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>update_rate</name>
-        <label>update rate</label>
+        <name>Specific_Contract_Fee_for_Valuta</name>
+        <label>Specific Contract Fee for Valuta</label>
         <locationX>50</locationX>
-        <locationY>887</locationY>
+        <locationY>1463</locationY>
         <connector>
             <targetReference>Is_Registration_Date_Changed</targetReference>
         </connector>
         <inputAssignments>
-            <field>Leasing_contract_fee__c</field>
+            <field>Leasing_Contract_Fee_Contract_Valuta__c</field>
+            <value>
+                <elementReference>$Record.leasing_Account__r.Leasing_contract_fee_valuta__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>only if it is populated on the leasing account (otherwise it was set by default to the same value as for L94 in previous step)</description>
+        <name>Specific_Leasing_Rate_for_Valuta</name>
+        <label>Specific Leasing Rate for Valuta</label>
+        <locationX>50</locationX>
+        <locationY>1127</locationY>
+        <connector>
+            <targetReference>Leasing_Fee_differs_for_Valuta</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Leasing_Rate_Contract_Valuta__c</field>
+            <value>
+                <elementReference>$Record.leasing_Account__r.Leasing_Rate_Valuta__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_rate</name>
+        <label>update rate</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <connector>
+            <targetReference>Leasing_Rate_differs_for_Valuta</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Leasing_Contact_Fee_Contract_L94__c</field>
             <value>
                 <elementReference>$Record.leasing_Account__r.Leasing_contract_fee__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>leasing_rate_actual__c</field>
+            <field>Leasing_Contract_Fee_Contract_Valuta__c</field>
+            <value>
+                <elementReference>$Record.leasing_Account__r.Leasing_contract_fee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Leasing_Rate_Contract_L94__c</field>
+            <value>
+                <elementReference>$Record.leasing_Account__r.Leasing_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Leasing_Rate_Contract_Valuta__c</field>
             <value>
                 <elementReference>$Record.leasing_Account__r.Leasing_Rate__c</elementReference>
             </value>
@@ -188,8 +272,8 @@
     <recordUpdates>
         <name>Updates_after_Registration_Date_Change</name>
         <label>Updates after Registration Date Change</label>
-        <locationX>50</locationX>
-        <locationY>1223</locationY>
+        <locationX>204</locationX>
+        <locationY>1895</locationY>
         <inputAssignments>
             <field>Last_Calculation_Date__c</field>
             <value>
@@ -199,7 +283,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>First_Batch_Calculator_is_Selected_on_the_Vehicle</targetReference>
@@ -208,5 +292,5 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

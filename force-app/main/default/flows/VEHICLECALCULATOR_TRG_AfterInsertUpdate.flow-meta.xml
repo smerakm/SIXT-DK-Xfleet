@@ -172,13 +172,13 @@
         <inputAssignments>
             <field>Contract_Fee_On_delivery__c</field>
             <value>
-                <elementReference>$Record.Vehicle__r.Leasing_contract_fee__c</elementReference>
+                <elementReference>$Record.Vehicle__r.Leasing_Contract_Fee_Contract__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Interest_Rate__c</field>
             <value>
-                <elementReference>$Record.Vehicle__r.leasing_rate_actual__c</elementReference>
+                <elementReference>$Record.Vehicle__r.Leasing_Rate_Contract__c</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -251,5 +251,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

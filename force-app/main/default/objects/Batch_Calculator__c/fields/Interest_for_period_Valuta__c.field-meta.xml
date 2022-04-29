@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Full_Tax_buy__c</fullName>
+    <fullName>Interest_for_period_Valuta__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(
-Remarketing_Price_Full_Tax__c &gt; 0,
-Total_buy_price__c * 1.25  +  Total_registration_tax__c,
-NULL
-)</formula>
+    <formula>Total_buy_price__c * Interest_rate_Financing_Valuta__c / 12 * Period__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>Total_buy_price__c * 1.25 + Total_registration_tax__c</inlineHelpText>
-    <label>Total buy price - Full Tax</label>
+    <inlineHelpText>Total_buy_price__c * Interest_rate_Financing_Valuta__c / 12 * Period__c</inlineHelpText>
+    <label>Interest for period (Valuta)</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

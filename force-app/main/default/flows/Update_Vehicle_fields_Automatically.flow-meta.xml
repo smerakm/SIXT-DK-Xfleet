@@ -34,10 +34,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Defleet_damage_check_completed_updated</name>
+        <label>Is Defleet damage check completed updated?</label>
+        <locationX>182</locationX>
+        <locationY>4007</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes12</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Defleet_damage_check_completed__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Defleet_damage_check_user_and_time_stamp</targetReference>
+            </connector>
+            <label>Yes12</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Infleet_Damage_check_completed_checked</name>
         <label>Is Infleet Damage check completed checked ?</label>
         <locationX>182</locationX>
         <locationY>3671</locationY>
+        <defaultConnector>
+            <targetReference>Is_Defleet_damage_check_completed_updated</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes11</name>
@@ -340,10 +365,32 @@ Internal_number_timestamp__c</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Defleet_damage_check_user_and_time_stamp</name>
+        <label>Update Defleet damage check user and time stamp</label>
+        <locationX>50</locationX>
+        <locationY>4127</locationY>
+        <inputAssignments>
+            <field>Damage_checked_date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Defleet_damage_checked_by__c</field>
+            <value>
+                <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Infleet_damage_check_completed_date_and_user_stampp</name>
         <label>Update Infleet damage check completed date and user stampp</label>
         <locationX>50</locationX>
         <locationY>3791</locationY>
+        <connector>
+            <targetReference>Is_Defleet_damage_check_completed_updated</targetReference>
+        </connector>
         <inputAssignments>
             <field>Infleet_Damage_checked_by__c</field>
             <value>
@@ -623,6 +670,13 @@ Internal_number_timestamp__c</description>
         </filters>
         <filters>
             <field>Infleet_Damage_check_completed__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Defleet_damage_check_completed__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

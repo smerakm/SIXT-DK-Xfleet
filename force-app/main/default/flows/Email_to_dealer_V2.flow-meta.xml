@@ -210,7 +210,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>emailBody</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -219,7 +219,7 @@
     <textTemplates>
         <name>emailtodealer</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;i&gt;Hej {!$Record.Account.Name}&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;Vi ønsker leasingkoder til følgende biler i vedhæftet fil.&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;Venlig hilsen&lt;/i&gt;&lt;/p&gt;&lt;p&gt;{!table}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Vi ønsker leasingkoder til følgende biler .&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Venlig hilsen&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>

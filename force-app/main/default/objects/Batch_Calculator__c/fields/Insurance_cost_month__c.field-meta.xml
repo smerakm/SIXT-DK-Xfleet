@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Contract_Fee_On_delivery__c</fullName>
-    <description>retrieved from Vehicle when the calculator is still in Draft mode</description>
+    <fullName>Insurance_cost_month__c</fullName>
+    <defaultValue>200</defaultValue>
     <externalId>false</externalId>
-    <label>Contract Fee - From finance company</label>
+    <inlineHelpText>Insurance should be entered for monthly basis</inlineHelpText>
+    <label>Insurance cost per month</label>
     <precision>6</precision>
     <required>false</required>
     <scale>0</scale>

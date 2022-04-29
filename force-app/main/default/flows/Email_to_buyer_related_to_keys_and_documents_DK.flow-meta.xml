@@ -211,7 +211,7 @@
     <textTemplates>
         <name>emailToNotifyBuyerAboutKeysAndDocuments</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Hej {!$Record.Account.Name}&lt;/p&gt;&lt;p&gt;Vi fremsender følgende nøgler og dokumenter herfra.&lt;/p&gt;&lt;p&gt;Fedex shipment #tracking no.# - Såfrmet du ikke kan se forsendelsen, kan det skyldes at forsendelsen &lt;/p&gt;&lt;p&gt;endnu ikke er tilgået Fedex system. Prøv igen senere.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Venlig hilsen&lt;/p&gt;&lt;p&gt;{!table}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Vi fremsender følgende nøgler og dokumenter herfra.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Fedex shipment #tracking no.# - Såfrmet du ikke kan se forsendelsen, kan det skyldes at forsendelsen&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;endnu ikke er tilgået Fedex system. Prøv igen senere.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Venlig hilsen&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>

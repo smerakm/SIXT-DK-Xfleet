@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Calculate_Holding_Costs</name>
         <label>Calculate Holding Costs</label>
-        <locationX>182</locationX>
-        <locationY>671</locationY>
+        <locationX>380</locationX>
+        <locationY>1463</locationY>
         <actionName>CalculationsHoldingCost</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -40,8 +40,8 @@
     <actionCalls>
         <name>Lock_the_calculation_record</name>
         <label>Lock the calculation record</label>
-        <locationX>50</locationX>
-        <locationY>1151</locationY>
+        <locationX>435</locationX>
+        <locationY>2039</locationY>
         <actionName>LockingUtility</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -60,11 +60,125 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Valuta_Contact_Fee_from_L94_field</name>
+        <label>Valuta Contact Fee from L94 field</label>
+        <locationX>314</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>varValutaContractFee</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Contract_fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_leasing_rate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Valuta_Contract_Fee_from_Valuta_field</name>
+        <label>Valuta Contract Fee from Valuta field</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>varValutaContractFee</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account_finance__r.Leasing_contract_fee_valuta__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_leasing_rate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Valuta_rate_from_L94_rate_field</name>
+        <label>Valuta rate from L94 rate field</label>
+        <locationX>314</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>varValutaLeasingRate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account_finance__r.Leasing_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Different_Valuta_Contract_Fee</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Valuta_rate_from_Valuta_rate_field</name>
+        <label>Valuta rate from Valuta rate field</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>varValutaLeasingRate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account_finance__r.Leasing_Rate_Valuta__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Different_Valuta_Contract_Fee</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Different_rate_for_Valuta</name>
+        <label>Different rate for Valuta</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnector>
+            <targetReference>Valuta_rate_from_L94_rate_field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>yes_valuta_rate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_finance__r.Leasing_Rate_Valuta__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Valuta_rate_from_Valuta_rate_field</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Different_Valuta_Contract_Fee</name>
+        <label>Different Valuta Contract Fee</label>
+        <locationX>182</locationX>
+        <locationY>911</locationY>
+        <defaultConnector>
+            <targetReference>Valuta_Contact_Fee_from_L94_field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_valuta_fee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_finance__r.Leasing_contract_fee_valuta__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Valuta_Contract_Fee_from_Valuta_field</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Financing_field_populated_Yes_No</name>
         <label>Financing field populated?  Yes / No</label>
-        <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationX>380</locationX>
+        <locationY>455</locationY>
         <defaultConnector>
             <targetReference>Calculate_Holding_Costs</targetReference>
         </defaultConnector>
@@ -76,24 +190,43 @@
                 <leftValueReference>$Record.Account_finance__c</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Account_finance__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Update_leasing_rate</targetReference>
+                <targetReference>Different_rate_for_Valuta</targetReference>
             </connector>
             <label>Financing field populated</label>
         </rules>
     </decisions>
     <decisions>
+        <description>Is it still in Draft?</description>
+        <name>Is_it_in_Draft</name>
+        <label>Is it in Draft?</label>
+        <locationX>567</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Update_Description</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_in_draft</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Draft</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Financing_field_populated_Yes_No</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Selected</name>
         <label>Is Selected?</label>
-        <locationX>182</locationX>
-        <locationY>1031</locationY>
+        <locationX>567</locationX>
+        <locationY>1919</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Selected</name>
@@ -138,8 +271,8 @@ update holding cost after calculation batch record is inserted or updated</descr
     <recordUpdates>
         <name>Update_Description</name>
         <label>Update Description</label>
-        <locationX>182</locationX>
-        <locationY>911</locationY>
+        <locationX>567</locationX>
+        <locationY>1799</locationY>
         <connector>
             <targetReference>Is_Selected</targetReference>
         </connector>
@@ -154,15 +287,27 @@ update holding cost after calculation batch record is inserted or updated</descr
     <recordUpdates>
         <name>Update_leasing_rate</name>
         <label>Update leasing rate</label>
-        <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationX>182</locationX>
+        <locationY>1247</locationY>
         <connector>
             <targetReference>Calculate_Holding_Costs</targetReference>
         </connector>
         <inputAssignments>
+            <field>Contract_fee_Valuta__c</field>
+            <value>
+                <elementReference>varValutaContractFee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Contract_fee__c</field>
             <value>
                 <elementReference>$Record.Account_finance__r.Leasing_contract_fee__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_rate_Financing_Valuta__c</field>
+            <value>
+                <elementReference>varValutaLeasingRate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -176,8 +321,8 @@ update holding cost after calculation batch record is inserted or updated</descr
     <recordUpdates>
         <name>Update_with_Holding_Costs</name>
         <label>Update with Holding Costs</label>
-        <locationX>182</locationX>
-        <locationY>791</locationY>
+        <locationX>380</locationX>
+        <locationY>1583</locationY>
         <connector>
             <targetReference>Update_Description</targetReference>
         </connector>
@@ -208,14 +353,30 @@ update holding cost after calculation batch record is inserted or updated</descr
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>441</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Financing_field_populated_Yes_No</targetReference>
+            <targetReference>Is_it_in_Draft</targetReference>
         </connector>
         <object>Batch_Calculator__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <variables>
+        <name>varValutaContractFee</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varValutaLeasingRate</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
 </Flow>

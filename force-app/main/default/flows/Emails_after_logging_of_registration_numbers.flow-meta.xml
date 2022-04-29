@@ -331,12 +331,12 @@
     <textTemplates>
         <name>emailToDealerAndDebitor</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Hej {!$Record.Account.Name}&lt;/p&gt;&lt;p&gt;Venligst fakturere forhandler for vedhæftet plader (#Antal plader#).&lt;/p&gt;&lt;p&gt;{!table}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;Venlig hilsen&lt;/span&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Venligst fakturere forhandler for vedhæftet plader (#Antal plader#).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); font-family: Calibri, sans-serif; color: rgb(0, 0, 0);&quot;&gt;Venlig hilsen.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!$User.Signature}&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>emailToLeasingCompany</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Hej {!$Record.Leasing_company__c}.&lt;/p&gt;&lt;p&gt;Venligst fakturere forhandler for vedhæftet plader (#Antal plader#).&lt;/p&gt;&lt;p&gt;{!table}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Venlig hilsen&lt;/span&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Leasing_company__c}.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Venligst fakturere forhandler for vedhæftet plader (#Antal plader#).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Venlig hilsen.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>

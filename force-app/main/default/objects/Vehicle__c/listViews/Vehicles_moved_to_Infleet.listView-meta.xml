@@ -6,6 +6,7 @@
     <columns>Brand__c</columns>
     <columns>Vehicle_type__c</columns>
     <columns>Status__c</columns>
+    <columns>Infleet_status__c</columns>
     <columns>Planned_Infleet_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -16,6 +17,11 @@
     <filters>
         <field>Planned_Infleet_Date__c</field>
         <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Infleet_status__c</field>
+        <operation>equals</operation>
+        <value>Confirm delivery</value>
     </filters>
     <label>Vehicles moved to Infleet</label>
 </ListView>
