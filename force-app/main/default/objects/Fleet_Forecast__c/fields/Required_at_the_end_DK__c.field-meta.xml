@@ -6,7 +6,7 @@
     <formula>Short_Term_DK__c +  Long_Term_DK__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>How many DK vehicles of that car group we would like to have in total (ST+LT) in this period</inlineHelpText>
-    <label>Required at the end - DK</label>
+    <label>Demand - DK</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
