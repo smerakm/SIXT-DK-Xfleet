@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>COC_document__c</name>
+    <picklistValues>
+        <masterLabel>Received in HQ</masterLabel>
+        <translation>Modtaget hos Car Control</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sent to Buyer</masterLabel>
+        <translation>Sendt til køber</translation>
+    </picklistValues>
+</CustomFieldTranslation>

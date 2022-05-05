@@ -74,19 +74,23 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>runtime_sales_activities:activityPanel</componentName>
+                <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-5271ffe0-b87e-4a70-8d94-067b50566fc5</name>
+        <name>Facet-7b7c3881-24e7-4cb9-a44f-e0ddbe580267</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>force:detailPanel</componentName>
+                <componentInstanceProperties>
+                    <name>hideHeader</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListQuickLinksContainer</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-7b7c3881-24e7-4cb9-a44f-e0ddbe580267</name>
+        <name>Facet-8102b50c-8a63-4e68-ba1f-feac0e7b1737</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -98,11 +102,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-5271ffe0-b87e-4a70-8d94-067b50566fc5</value>
+                    <value>Facet-7b7c3881-24e7-4cb9-a44f-e0ddbe580267</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.activity</value>
+                    <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
             </componentInstance>
@@ -111,11 +115,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-7b7c3881-24e7-4cb9-a44f-e0ddbe580267</value>
+                    <value>Facet-8102b50c-8a63-4e68-ba1f-feac0e7b1737</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.detail</value>
+                    <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
             </componentInstance>
@@ -139,11 +143,63 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>runtime_sales_activities:activityPanel</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-3e4e3db6-105e-4150-94cc-60d604e7e4bf</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>forceChatter:recordFeedContainer</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c96690fa-0581-4031-8e4d-a639227ca400</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
-                    <name>hideHeader</name>
-                    <value>false</value>
+                    <name>active</name>
+                    <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListQuickLinksContainer</componentName>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-3e4e3db6-105e-4150-94cc-60d604e7e4bf</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.activity</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-c96690fa-0581-4031-8e4d-a639227ca400</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.collaborate</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-725e84dd-28cf-4e69-8c73-f13a7c8710dd</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>tabs</name>
+                    <value>Facet-725e84dd-28cf-4e69-8c73-f13a7c8710dd</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tabset</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>

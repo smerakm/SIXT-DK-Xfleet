@@ -3,10 +3,10 @@
     <fullName>Registration_Fee_for_the_period__c</fullName>
     <description>0 for Valuta and Full tax vehicles</description>
     <externalId>false</externalId>
-    <formula>/* tax for period is 0 for valuta and full tax cars */
-IF(OR(ISPICKVAL(Vehicle__r.Batch_Distribution__c, &quot;Valutacar&quot;),ISPICKVAL(Vehicle__r.Batch_Distribution__c, &quot;Full-tax&quot;)),
-  0,
-  Proportional_registration_fee__c 
+    <formula>/* tax for period is 0 for valuta and DK-full tax cars */
+IF(ISPICKVAL(Vehicle__r.Batch_Distribution__c, &quot;DK - L94&quot;),
+  Proportional_registration_fee__c,
+		0
 )</formula>
     <inlineHelpText>0 for Valuta and Full tax vehicles</inlineHelpText>
     <label>Registration Fee for the period</label>

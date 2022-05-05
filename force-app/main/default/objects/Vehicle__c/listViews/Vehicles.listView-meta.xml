@@ -5,9 +5,25 @@
     <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Expected_Defleet_Date__c</columns>
+    <columns>Infleet_transportation_booked_date__c</columns>
     <columns>Infleet_Damage_check_completed__c</columns>
     <columns>Infleet_Damage_checked_by__c</columns>
     <columns>Infleet_Damage_checked_date__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Infleet_Damage_check_completed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Infleet</value>
+    </filters>
+    <filters>
+        <field>Infleet_transportation_booked_date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
     <label>Check for damage Vehicles</label>
 </ListView>

@@ -3,7 +3,7 @@
     <fullName>Interest_Rate_Batch_Calculator__c</fullName>
     <description>Leasing Rate used on Batch calculator</description>
     <externalId>false</externalId>
-    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valutacar&quot;),
+    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valuta&quot;),
 			Selected_Batch_Calculator__r.Interest_rate_Financing_Valuta__c,
 			Selected_Batch_Calculator__r.Intrest_rate_financing__c
 )</formula>

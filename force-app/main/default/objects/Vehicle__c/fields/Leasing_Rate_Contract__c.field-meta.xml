@@ -3,7 +3,7 @@
     <fullName>Leasing_Rate_Contract__c</fullName>
     <description>Leasing interest rate specified with the contract with the Leasing Company</description>
     <externalId>false</externalId>
-    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valutacar&quot;),
+    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valuta&quot;),
 			 Leasing_Rate_Contract_Valuta__c,
 			 Leasing_Rate_Contract_L94__c
 )</formula>

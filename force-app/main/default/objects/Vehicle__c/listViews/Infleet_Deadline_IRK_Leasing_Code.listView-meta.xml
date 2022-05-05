@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Infleet_Deadline_IRK_Leasing_Code</fullName>
+    <booleanFilter>4 AND (1 AND (2 OR 3))</booleanFilter>
+    <columns>Production_Number__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Model__c</columns>
+    <columns>Dealer__c</columns>
+    <columns>leasing_Account__c</columns>
+    <columns>Batch_Distribution__c</columns>
+    <columns>IRK_code__c</columns>
+    <columns>Leasing_code__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IRK_code__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Leasing_code__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Batch_Distribution__c</field>
+        <operation>notEqual</operation>
+        <value>Valutacar,Full-tax</value>
+    </filters>
+    <filters>
+        <field>Deadline_for_Registration__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:2</value>
+    </filters>
+    <label>Infleet: Deadline IRK &amp; Leasing Kode</label>
+</ListView>

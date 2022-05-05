@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Batch_Distribution__c</name>
+    <picklistValues>
+        <masterLabel>DK - Full tax</masterLabel>
+        <translation>DK - Fuld Afgift</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DK - L94</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DK - Tax type not determined</masterLabel>
+        <translation>DK - Afgitstype ikke bestemt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valuta</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

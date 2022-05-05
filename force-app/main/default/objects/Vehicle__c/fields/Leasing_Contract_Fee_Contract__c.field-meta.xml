@@ -3,7 +3,7 @@
     <fullName>Leasing_Contract_Fee_Contract__c</fullName>
     <description>Leasing fee specified with the contract with Leasing Company</description>
     <externalId>false</externalId>
-    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valutacar&quot;), 
+    <formula>IF(ISPICKVAL(Batch_Distribution__c, &quot;Valuta&quot;), 
 			 Leasing_Contract_Fee_Contract_Valuta__c,
 			 Leasing_Contact_Fee_Contract_L94__c 
 )</formula>

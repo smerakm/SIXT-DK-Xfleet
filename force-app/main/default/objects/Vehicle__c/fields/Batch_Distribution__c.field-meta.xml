@@ -12,24 +12,24 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Valutacar</fullName>
+                <fullName>DK - Full tax</fullName>
                 <default>false</default>
-                <label>Valutacar</label>
+                <label>DK - Full tax</label>
             </value>
             <value>
-                <fullName>DK-car</fullName>
+                <fullName>DK - L94</fullName>
                 <default>false</default>
-                <label>DK-car</label>
+                <label>DK - L94</label>
             </value>
             <value>
-                <fullName>Mini-lease</fullName>
+                <fullName>Valuta</fullName>
                 <default>false</default>
-                <label>Mini-lease</label>
+                <label>Valuta</label>
             </value>
             <value>
-                <fullName>Full-tax</fullName>
+                <fullName>DK - Tax type not determined</fullName>
                 <default>false</default>
-                <label>Full-tax</label>
+                <label>DK - Tax type not determined</label>
             </value>
         </valueSetDefinition>
     </valueSet>

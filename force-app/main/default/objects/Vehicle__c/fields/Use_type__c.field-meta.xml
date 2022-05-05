@@ -18,15 +18,15 @@
                 <label>Short-term</label>
             </value>
             <value>
+                <fullName>Mini-lease</fullName>
+                <default>false</default>
+                <label>Mini-lease</label>
+            </value>
+            <value>
                 <fullName>Long-term</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Long-term</label>
-            </value>
-            <value>
-                <fullName>Mini-lease</fullName>
-                <default>false</default>
-                <label>Mini-lease</label>
             </value>
         </valueSetDefinition>
     </valueSet>

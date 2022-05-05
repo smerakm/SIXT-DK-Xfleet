@@ -5,39 +5,38 @@
     <fieldName>Infleet_status__c</fieldName>
     <masterLabel>Infleet Status</masterLabel>
     <pathAssistantSteps>
+        <fieldNames>Use_type__c</fieldNames>
+        <fieldNames>Batch_Distribution__c</fieldNames>
         <fieldNames>Station__c</fieldNames>
-        <info>&lt;p&gt;Please check whether a car is ready for distribution to the station.&lt;/p&gt;&lt;p&gt;Fill in the Station field&lt;/p&gt;</info>
+        <info>&lt;p&gt;Allokér bil mht. Station, Brugstype og afgiftstype (hvis ikke allerede allokeret).&lt;/p&gt;</info>
         <picklistValueName>Allocation</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>Expected_Delivery_Date__c</fieldNames>
-        <fieldNames>Deadline_for_Registration__c</fieldNames>
-        <info>&lt;p&gt;Please fill in Expected Delivery Date field&lt;/p&gt;</info>
+        <fieldNames>Supplier_ready_Date__c</fieldNames>
+        <info>&lt;p&gt;Send email til forhandler for bekræftelse af leveringsdato.&lt;/p&gt;&lt;p&gt;Udfyld  &amp;quot;Supplier Ready Date&amp;quot;.&lt;/p&gt;</info>
         <picklistValueName>Confirm delivery</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>IRK_code__c</fieldNames>
         <fieldNames>Leasing_code__c</fieldNames>
-        <info>&lt;p&gt;Please fill in the IRK code field.&lt;/p&gt;&lt;p&gt;If a car is an L94 type - also fill in the Leasing code field.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <info>&lt;p&gt;Rekvirér og udfyld IRK og Leasing code.&lt;/p&gt;</info>
         <picklistValueName>IRK and Leasing Code</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Infleet_activities_finished__c</fieldNames>
-        <fieldNames>Key_received_at_HQ__c</fieldNames>
-        <fieldNames>Vehicle_status__c</fieldNames>
-        <info>&lt;p&gt;Please, check the following fields :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Vehicle status&lt;/li&gt;&lt;li&gt;Key received at HQ&lt;/li&gt;&lt;li&gt;Infleet activities finished?&lt;/li&gt;&lt;/ul&gt;</info>
+        <fieldNames>Internal_number__c</fieldNames>
+        <info>&lt;p&gt;Registrér bilen I COBRA og udfyld Internal ID. &lt;/p&gt;</info>
         <picklistValueName>Infleeted</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>License_plate__c</fieldNames>
-        <fieldNames>vehicleCobraId__c</fieldNames>
-        <info>&lt;p&gt;Please fill in the following fields :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;License plate&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11.375px;&quot;&gt;Vehicle Cobra Id&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</info>
+        <info>&lt;p&gt;Registrér bilen hos SKAT og udfyld nummerplade.&lt;/p&gt;</info>
         <picklistValueName>Registration</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Infleet_transportation_booked_date__c</fieldNames>
         <fieldNames>Planned_Infleet_Date__c</fieldNames>
-        <info>&lt;p&gt;Please fill in Infleet transportation booked date&lt;/p&gt;</info>
+        <fieldNames>Infleet_transportation_booked_date__c</fieldNames>
+        <info>&lt;p&gt;Bestil Transport til station på baggrund af planlagt infleet dato. &lt;/p&gt;</info>
         <picklistValueName>Transport</picklistValueName>
     </pathAssistantSteps>
     <recordTypeName>__MASTER__</recordTypeName>

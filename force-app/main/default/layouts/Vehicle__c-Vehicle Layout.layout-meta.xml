@@ -123,6 +123,10 @@
         <label>Leasing Information</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>leasing_Account__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Interest_Rate_Batch_Calculator__c</field>
             </layoutItems>
@@ -768,6 +772,16 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>SendEmail</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>2</sortOrder>
@@ -851,16 +865,6 @@
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>18</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -954,9 +958,14 @@
         <sizeX>4</sizeX>
         <sizeY>2</sizeY>
         <summaryLayoutItems>
-            <field>Car_description_2__c</field>
+            <field>vinNumber__c</field>
             <posX>0</posX>
             <posY>0</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
+            <field>Car_description_2__c</field>
+            <posX>0</posX>
+            <posY>1</posY>
         </summaryLayoutItems>
         <summaryLayoutItems>
             <field>Dealer__c</field>
@@ -964,9 +973,19 @@
             <posY>0</posY>
         </summaryLayoutItems>
         <summaryLayoutItems>
+            <field>License_plate__c</field>
+            <posX>1</posX>
+            <posY>1</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
             <field>Actual_Infleet_Day__c</field>
             <posX>2</posX>
             <posY>0</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
+            <field>IRK_code__c</field>
+            <posX>2</posX>
+            <posY>1</posY>
         </summaryLayoutItems>
         <summaryLayoutItems>
             <field>Warning_Key_is_not_at_HQ__c</field>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_calculator_Interest_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*Vehicle__r.Selected_Batch_Calculator__r.Intrest_rate_financing__c*/
+
+IF(ISPICKVAL(Vehicle__r.Batch_Distribution__c, &quot;Valuta&quot;),  Vehicle__r.Selected_Batch_Calculator__r.Interest_rate_Financing_Valuta__c  , Vehicle__r.Selected_Batch_Calculator__r.Intrest_rate_financing__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Interest Rate - Batch calculator</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>
