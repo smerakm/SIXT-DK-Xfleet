@@ -35,7 +35,7 @@
     <formulas>
         <name>formClosedDate</name>
         <dataType>Date</dataType>
-        <expression>ADDMONTHS({!$Flow.CurrentDate},{!$Record.Selected_Operating_Period__c}-2)</expression>
+        <expression>ADDMONTHS({!$Flow.CurrentDate},{!$Record.Shortest_Holding_Period__c}-2)</expression>
     </formulas>
     <interviewLabel>VEHICLEBATCH_TRG_Deal_to_new_Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLEBATCH_TRG_Deal_to_new_Opportunity</label>
@@ -83,7 +83,7 @@
         <inputAssignments>
             <field>AccountId</field>
             <value>
-                <elementReference>$Record.vehicleSeller__c</elementReference>
+                <elementReference>$Setup.FleetManagementConfig__c.DefaultOppAccountId__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -95,7 +95,7 @@
         <inputAssignments>
             <field>Holding_Period_Length__c</field>
             <value>
-                <elementReference>$Record.Selected_Operating_Period__c</elementReference>
+                <elementReference>$Record.Shortest_Holding_Period__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

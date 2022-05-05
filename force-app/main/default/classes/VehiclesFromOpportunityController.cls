@@ -15,7 +15,7 @@ public with sharing class VehiclesFromOpportunityController {
                 Fuel_type__c,
                 kmPrL__c,
                 CO2__c,
-                Navi__c,
+                Navigation__c,
                 Automatic_gears__c,
                 Speed_Pilot__c,
                 Parking_sensor__c,

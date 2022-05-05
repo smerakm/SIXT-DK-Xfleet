@@ -18,7 +18,9 @@ Registration_Fee_for_the_period__c
 /* Leasing cost */
 + (Leasing_Fee_calculated__c * Period__c)
 /* Depreciation - cost of selling car with a lost = difference is negative number */
-- IF(Difference__c &gt; 0, 0, Difference__c)</formula>
+- IF(Difference__c &gt; 0, 0, Difference__c)
+/* Reimbursement (L94 only) */
+- Reimbursement_calculation__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Cost for period</label>
     <precision>18</precision>

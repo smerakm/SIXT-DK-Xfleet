@@ -5,13 +5,17 @@
     <columns>Car_description_2__c</columns>
     <columns>Ready_for_distribution_to_station__c</columns>
     <columns>Required_by_Date__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Production_Number__c</columns>
+    <columns>Station__c</columns>
+    <columns>Use_type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Ready_for_distribution_to_station__c</field>
         <operation>equals</operation>
         <value>1</value>
     </filters>
-    <label>Cars ready for distribution to stations</label>
+    <label>Infleet: Allocation</label>
     <sharedTo>
         <group>Infleet</group>
     </sharedTo>

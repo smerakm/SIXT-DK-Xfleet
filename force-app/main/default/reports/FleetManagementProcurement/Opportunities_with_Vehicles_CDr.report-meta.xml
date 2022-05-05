@@ -53,7 +53,7 @@
         <field>Vehicle__c.CO2__c</field>
     </columns>
     <columns>
-        <field>Vehicle__c.Navi__c</field>
+        <field>Vehicle__c.Navigation__c</field>
     </columns>
     <columns>
         <field>Vehicle__c.Automatic_gears__c</field>

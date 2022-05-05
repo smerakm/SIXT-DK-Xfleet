@@ -23,19 +23,14 @@
                 <label>Received at Station</label>
             </value>
             <value>
-                <fullName>In Car</fullName>
-                <default>false</default>
-                <label>In Car</label>
-            </value>
-            <value>
                 <fullName>With Customer</fullName>
                 <default>false</default>
                 <label>With Customer</label>
             </value>
             <value>
-                <fullName>Not found</fullName>
+                <fullName>Send to Buyer</fullName>
                 <default>false</default>
-                <label>Not found</label>
+                <label>Send to Buyer</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -22,16 +22,16 @@
         <picklistValueName>IRK and Leasing Code</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Vehicle_status__c</fieldNames>
         <fieldNames>Infleet_activities_finished__c</fieldNames>
-        <info>&lt;p&gt;Please, check the following fields : &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Vehicle status&lt;/li&gt;&lt;li&gt;Infleet activities finished ?&lt;/li&gt;&lt;/ul&gt;</info>
+        <fieldNames>Key_received_at_HQ__c</fieldNames>
+        <fieldNames>Vehicle_status__c</fieldNames>
+        <info>&lt;p&gt;Please, check the following fields :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Vehicle status&lt;/li&gt;&lt;li&gt;Key received at HQ&lt;/li&gt;&lt;li&gt;Infleet activities finished?&lt;/li&gt;&lt;/ul&gt;</info>
         <picklistValueName>Infleeted</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Key_received_at_HQ__c</fieldNames>
         <fieldNames>License_plate__c</fieldNames>
         <fieldNames>vehicleCobraId__c</fieldNames>
-        <info>&lt;p&gt;Please fill in the following fields : &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Key received at HQ&lt;/li&gt;&lt;li&gt;License plate&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11.375px;&quot;&gt;Vehicle Cobra Id&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</info>
+        <info>&lt;p&gt;Please fill in the following fields :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;License plate&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11.375px;&quot;&gt;Vehicle Cobra Id&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</info>
         <picklistValueName>Registration</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>

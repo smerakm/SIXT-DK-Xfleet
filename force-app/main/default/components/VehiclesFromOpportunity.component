@@ -37,8 +37,8 @@
             <apex:outputText value="{!veh.CO2__c}" />
         </apex:column>
         <apex:column >
-            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Navi__c.Label}</apex:facet>
-            <apex:outputText value="{!veh.Navi__c}" />
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Navigation__c.Label}</apex:facet>
+            <apex:outputText value="{!IF(veh.Navigation__c, $Label.Yes, $Label.No)}" />
         </apex:column>
         <apex:column >
             <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Automatic_gears__c.Label}</apex:facet>

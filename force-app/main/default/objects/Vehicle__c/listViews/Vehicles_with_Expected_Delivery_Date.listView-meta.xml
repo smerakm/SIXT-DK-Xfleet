@@ -6,12 +6,19 @@
     <columns>Expected_Delivery_Date__c</columns>
     <columns>Infleet_status__c</columns>
     <columns>Status__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Production_Number__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Expected_Delivery_Date__c</field>
         <operation>notEqual</operation>
     </filters>
-    <label>Vehicles with Expected Delivery Date</label>
+    <filters>
+        <field>Infleet_status__c</field>
+        <operation>equals</operation>
+        <value>Confirm delivery</value>
+    </filters>
+    <label>Infleet: Confirm Delivery</label>
     <sharedTo>
         <group>Infleet</group>
     </sharedTo>

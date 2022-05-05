@@ -11,7 +11,7 @@
         <field>Vehicle__c$ACRISS_Code__c</field>
     </columns>
     <columns>
-        <field>Vehicle__c$Car_description__c</field>
+        <field>Vehicle__c$Car_description_2__c</field>
     </columns>
     <columns>
         <field>Vehicle__c$Registration_Date__c</field>
@@ -23,7 +23,7 @@
         <field>Vehicle__c$vinNumber__c</field>
     </columns>
     <columns>
-        <field>Vehicle__c$Outside_paint__c</field>
+        <field>Vehicle__c$color__c</field>
     </columns>
     <columns>
         <field>Vehicle__c$Fuel_type__c</field>
@@ -50,6 +50,8 @@
     <columns>
         <field>Vehicle__c$Station__c</field>
     </columns>
+    <currency>DKK</currency>
+    <description>All necessary key tags for the car</description>
     <filter>
         <criteriaItems>
             <column>Vehicle__c$Internal_number__c</column>
@@ -74,7 +76,12 @@
         </criteriaItems>
         <language>en_US</language>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Vehicle__c$Id</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Vehicle Key Tags</name>
     <params>
         <name>co</name>
@@ -83,8 +90,8 @@
     <reportType>Vehicles__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Vehicle__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

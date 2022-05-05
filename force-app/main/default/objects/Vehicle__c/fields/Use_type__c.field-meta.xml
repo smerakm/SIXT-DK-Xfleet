@@ -20,6 +20,7 @@
             <value>
                 <fullName>Long-term</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Long-term</label>
             </value>
             <value>

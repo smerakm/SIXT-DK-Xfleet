@@ -93,7 +93,7 @@
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Model__c}+ 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_pickup_location__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!$Record.Delivery_address2__c} +
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Account_number_Navison__c} +
+&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Station_Account_Number__c} +
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_dealer__c} +
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; +                                                                      
 &apos;&lt;/th&gt;&lt;/tr&gt;&apos;</expression>
@@ -184,8 +184,8 @@
         <queriedFields>Vehicle_Model__c</queriedFields>
         <queriedFields>Vehicle_pickup_location__c</queriedFields>
         <queriedFields>Delivery_address__c</queriedFields>
-        <queriedFields>Account_number_Navison__c</queriedFields>
         <queriedFields>Vehicle_dealer__c</queriedFields>
+        <queriedFields>Station_Account_Number__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>
@@ -215,7 +215,7 @@
     <textTemplates>
         <name>emailForTransportOfNewCarBMW</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Hej {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Vi vil gerne bestille transport på nedenstående biler. &amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;@forhandler vil i venligst frigive disse biler?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Transporten betales af forhandleren. &lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hvornår kan vi forvente levering?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Venlig hilsen&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(54, 179, 126); background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;&quot;&gt;af&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Vi vil gerne bestille transport &lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;af&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt; biler.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;@forhandler vil i venligst frigive disse biler?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Transporten betales af forhandleren. &lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Hvornår kan vi forvente levering?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;Venlig hilsen&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>

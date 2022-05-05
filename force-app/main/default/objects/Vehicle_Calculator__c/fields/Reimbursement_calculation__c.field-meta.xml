@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reimbursement_calculation__c</fullName>
+    <description>for DK/L94 vehicles only, calculated from Reimbursement percentage and registration tax</description>
+    <externalId>false</externalId>
+    <formula>/* L94 only */
+IF(ISPICKVAL( Vehicle__r.Batch_Distribution__c, &quot;DK-car&quot;), 
+			Reimbursement_percentage__c *  L94_registration_tax__c,
+			0
+)</formula>
+    <inlineHelpText>for DK/L94 vehicles only, calculated from Reimbursement percentage and registration tax</inlineHelpText>
+    <label>Reimbursement calculation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
