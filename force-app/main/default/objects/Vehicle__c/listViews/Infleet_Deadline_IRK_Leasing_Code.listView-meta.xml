@@ -24,7 +24,7 @@
     <filters>
         <field>Batch_Distribution__c</field>
         <operation>notEqual</operation>
-        <value>Valutacar,Full-tax</value>
+        <value>DK - Full tax,Valuta</value>
     </filters>
     <filters>
         <field>Deadline_for_Registration__c</field>

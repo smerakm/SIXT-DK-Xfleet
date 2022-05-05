@@ -161,7 +161,7 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Vehicle</label>
     <nameField>
-        <displayFormat>VEHICLES-{000000000}</displayFormat>
+        <displayFormat>V-{000000}</displayFormat>
         <label>Vehicle ID</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
