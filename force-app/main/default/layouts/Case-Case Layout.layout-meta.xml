@@ -147,6 +147,10 @@
                 <behavior>Edit</behavior>
                 <field>Email_to_buyer_about_keys_DK__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Email_to_DAL_about_Damage_check__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Calculator_period__c</fullName>
+    <fullName>Email_to_DAL_about_Damage_check__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Holding period</label>
-    <precision>18</precision>
-    <required>false</required>
-    <scale>0</scale>
+    <label>Email to DAL about Damage check</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
-    <unique>false</unique>
+    <type>Checkbox</type>
 </CustomField>

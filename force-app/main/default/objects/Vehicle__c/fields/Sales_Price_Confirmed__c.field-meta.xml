@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <formula>Selected_Vehicle_Calculator__r.Confirmed_Price__c</formula>
     <inlineHelpText>Sales Price is confirmed by the Buyer</inlineHelpText>
-    <label>Sales Price Confirmed</label>
+    <label>Remarketing Price Confirmed</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

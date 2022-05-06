@@ -5,8 +5,8 @@
     <formula>IF(AND( Infleet_Damage_check_completed__c =true,
  checkForWinterTires__c=true,
  Stickers_are_removed__c=true,
- INCLUDES(Check_for_Milage__c, &quot;Max. is not exceeded&quot;),
- OR(AND(INCLUDES(Check_for_Milage__c, &quot;Min. is reached&quot;),Plates_are_removed__c=true),
+  Max_is_not_exceeded__c =true,
+ OR(AND( Min_is_reached__c =true,Plates_are_removed__c=true),
  Plates_are_removed__c=false)
  ), &apos;Ready&apos;, &apos;Not Ready&apos;)</formula>
     <label>Defleet Ready Check</label>

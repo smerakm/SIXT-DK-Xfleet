@@ -6,7 +6,7 @@
     <formula>Sales_Price_Formula__c *  $Setup.ConversionRate__c.DKK_to_EUR__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>automatically calculated from Sales Price in DKK, rate can be set in the setup by admin</inlineHelpText>
-    <label>Sales Price (EUR)</label>
+    <label>Estimated remarketing price EUR</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

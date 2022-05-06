@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Sales_Price_Formula__c</fullName>
+    <fullName>Cost_for_period__c</fullName>
     <externalId>false</externalId>
-    <formula>Selected_Vehicle_Calculator__r.Remarketing_Price__c</formula>
-    <label>Estimated remarketing price</label>
+    <formula>Selected_Vehicle_Calculator__r.Cost_for_period__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cost for period</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

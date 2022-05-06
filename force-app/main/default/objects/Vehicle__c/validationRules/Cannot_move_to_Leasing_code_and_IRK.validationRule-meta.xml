@@ -2,11 +2,13 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cannot_move_to_Leasing_code_and_IRK</fullName>
     <active>true</active>
-    <description>Cannot move Infleet status to Leasing code and IRK without filled Infleet transportation booked date and Planned infleet date</description>
-    <errorConditionFormula>ISPICKVAL( Infleet_status__c , &quot;IRK and Leasing Code&quot;)
-&amp;&amp;
-ISBLANK( Infleet_transportation_booked_date__c )
-&amp;&amp;
-ISBLANK( Planned_Infleet_Date__c )</errorConditionFormula>
-    <errorMessage>You cannot move Infleet status to Leasing code and IRK without filling Infleet transportation booked date and Planned infleet date</errorMessage>
+    <description>Cannot move Infleet status to Leasing code and IRK without filled Infleet
+Transportation booked date and Station and Supplier Ready date</description>
+    <errorConditionFormula>AND(ISPICKVAL( Infleet_status__c , &quot;IRK and Leasing Code&quot;),
+OR(ISBLANK( Supplier_ready_Date__c ),ISBLANK( Station__c ),
+ISBLANK(  Infleet_transportation_booked_date__c  ) 
+) 
+)</errorConditionFormula>
+    <errorMessage>You cannot move Infleet status to the next step without filling Infleet
+Transportation booked date and Station and Supplier Ready date fields</errorMessage>
 </ValidationRule>
