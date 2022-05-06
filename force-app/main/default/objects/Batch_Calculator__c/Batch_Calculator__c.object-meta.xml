@@ -167,7 +167,11 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Batch Calculator</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Description_Formula__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Period__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

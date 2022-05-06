@@ -12,7 +12,7 @@
         <operation>notEqual</operation>
     </filters>
     <filters>
-        <field>Expected_Delivery_Date__c</field>
+        <field>vehicleCobraId__c</field>
         <operation>notEqual</operation>
     </filters>
     <label>Klargøring list</label>

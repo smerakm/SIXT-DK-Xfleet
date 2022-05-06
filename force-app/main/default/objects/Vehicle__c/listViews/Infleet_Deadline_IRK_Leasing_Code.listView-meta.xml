@@ -3,6 +3,7 @@
     <fullName>Infleet_Deadline_IRK_Leasing_Code</fullName>
     <booleanFilter>4 AND (1 AND (2 OR 3))</booleanFilter>
     <columns>Production_Number__c</columns>
+    <columns>Deadline_for_Registration__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>

@@ -28,9 +28,9 @@
                 <label>With Customer</label>
             </value>
             <value>
-                <fullName>Send to Buyer</fullName>
+                <fullName>Sent to Buyer</fullName>
                 <default>false</default>
-                <label>Send to Buyer</label>
+                <label>Sent to Buyer</label>
             </value>
         </valueSetDefinition>
     </valueSet>

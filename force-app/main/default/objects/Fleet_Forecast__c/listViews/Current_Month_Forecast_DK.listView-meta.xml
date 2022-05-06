@@ -2,6 +2,8 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Current_Month_Forecast_DK</fullName>
     <columns>Description__c</columns>
+    <columns>First_Day__c</columns>
+    <columns>Last_Day__c</columns>
     <columns>Current_fleet_DK__c</columns>
     <columns>Fleet_at_the_end_DK__c</columns>
     <columns>Short_Term_DK__c</columns>

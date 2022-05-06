@@ -3,19 +3,25 @@
     <fullName>Pipeline</fullName>
     <columns>NAME</columns>
     <columns>Description__c</columns>
+    <columns>Requested_Number_of_Vehicles__c</columns>
     <columns>deliveryDate__c</columns>
     <columns>vehicleSeller__c</columns>
     <columns>vehicleImporter__c</columns>
     <columns>Status__c</columns>
-    <columns>LAST_UPDATE</columns>
     <columns>OWNER.FIRST_NAME</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
         <value>Offer,Waiting for Dealer</value>
     </filters>
-    <label>Pipeline</label>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>vehicleBatch__c.Vehicle_Batch_Buying</value>
+    </filters>
+    <label>Procurement: Pipeline</label>
     <sharedTo>
         <group>Procurement</group>
         <group>Re_marketing</group>

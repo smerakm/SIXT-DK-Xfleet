@@ -50,7 +50,6 @@
     <columns>
         <field>Vehicle__c$Station__c</field>
     </columns>
-    <currency>DKK</currency>
     <description>All necessary key tags for the car</description>
     <filter>
         <criteriaItems>

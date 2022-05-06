@@ -20,7 +20,7 @@
                 <label>Received in HQ</label>
             </value>
             <value>
-                <fullName>Send to Buyer</fullName>
+                <fullName>Sent to Buyer</fullName>
                 <default>false</default>
                 <label>Sent to Buyer</label>
             </value>

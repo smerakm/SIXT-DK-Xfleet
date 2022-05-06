@@ -9,6 +9,8 @@
     <columns>Difference_Valuta__c</columns>
     <columns>Status__c</columns>
     <columns>NAME</columns>
+    <columns>First_Day__c</columns>
+    <columns>Last_Day__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

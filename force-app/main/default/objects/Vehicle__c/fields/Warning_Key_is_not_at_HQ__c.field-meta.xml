@@ -6,7 +6,7 @@
     <formula>IF( 
 NOT(ISBLANK( Internal_number__c )) 
 &amp;&amp; Key_received_at_HQ__c = false 
-&amp;&amp;( Internal_number_timestamp__c = TODAY() ),
+&amp;&amp;( Internal_number_timestamp__c &gt; (Internal_number_timestamp__c +19) ),
 
 IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;Red Flag&quot;),
 NULL)</formula>

@@ -23,7 +23,4 @@
         <value>LAST_N_DAYS:6</value>
     </filters>
     <label>Cars that need final infleet in Cobra</label>
-    <sharedTo>
-        <group>Infleet</group>
-    </sharedTo>
 </ListView>

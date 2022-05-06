@@ -32,7 +32,13 @@
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <elementReference>$User.Email</elementReference>
+                <stringValue>bilindkoeb@sixt.dk</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
             </value>
         </inputParameters>
         <inputParameters>

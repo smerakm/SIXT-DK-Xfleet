@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
-        <application>Fleet_Management</application>
+        <application>Xfleet</application>
         <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -337,6 +337,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Station_Account_Num__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Support_owner__c</field>
         <readable>false</readable>
@@ -439,6 +444,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Activity_Item__c.Period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Activity_Item__c.Station_Account_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2563,6 +2573,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Vehicle_Calculator__c.Batch_calculator_Interest_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Vehicle_Calculator__c.Confirmed_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2629,6 +2644,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle_Calculator__c.Regulated_tax_at_re_calculation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle_Calculator__c.Reimbursement_calculation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle_Calculator__c.Reimbursement_percentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3397,9 +3422,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Vehicle__c.Tires_ownership__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -5384,6 +5409,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>vehicleBatch__c.Selected_Operating_Period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vehicleBatch__c.Shortest_Holding_Period__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
