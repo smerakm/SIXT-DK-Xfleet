@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_Defleet_i_Cobra</fullName>
+    <columns>NAME</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Internal_number__c</columns>
+    <columns>Vehicle_status__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <columns>defleetReadyCheck__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Buyer_Contact__c</field>
+        <operation>notEqual</operation>
+        <value>Rævhede</value>
+    </filters>
+    <filters>
+        <field>Ready_for_robot__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Defleet: Defleet i Cobra</label>
+</ListView>

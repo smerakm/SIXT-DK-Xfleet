@@ -51,14 +51,17 @@ public inherited sharing class CalculationsHoldingCost {
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
     public static CalculationHoldingCostOutputs calculateHoldingCost(CalculationHoldingCostInputs costInputs) {
-        // read the config
-        Map<Integer, DamageAndServiceWrapper> mDamageAndServiceCarGroup = readDamageAndServiceSettings(costInputs.vehicleDamageGroup);
         // calculate costs
         CalculationHoldingCostOutputs result = new CalculationHoldingCostOutputs();
         // damage and service
-        DamageAndServiceWrapper damageAndServiceRecord = mDamageAndServiceCarGroup.get(costInputs.periodLength);
-        result.damage = damageAndServiceRecord.damageAccumulated;
-        result.serviceAndTyres = damageAndServiceRecord.serviceAccumulated;
+        if (String.isNotBlank(costInputs.vehicleDamageGroup)) {
+            // read the config
+            Map<Integer, DamageAndServiceWrapper> mDamageAndServiceCarGroup = readDamageAndServiceSettings(costInputs.vehicleDamageGroup);
+            // calculate damage and service
+            DamageAndServiceWrapper damageAndServiceRecord = mDamageAndServiceCarGroup.get(costInputs.periodLength);
+            result.damage = damageAndServiceRecord.damageAccumulated;
+            result.serviceAndTyres = damageAndServiceRecord.serviceAccumulated;
+        }
         // tax
         CalculationsTax.CalculationTaxInputs taxInputs = new CalculationsTax.CalculationTaxInputs();
         taxInputs.leasingPeriodLength = costInputs.periodLength;
@@ -168,7 +171,7 @@ public inherited sharing class CalculationsHoldingCost {
         //@InvocableVariable
         //public String carGroup; // bilgruppe
         @InvocableVariable
-        public Id vehicleDamageGroup; // bilgruppe
+        public String vehicleDamageGroup; // bilgruppe
         //@InvocableVariable
         //public Decimal contractCost; // Kontraktgebyr
         //@InvocableVariable

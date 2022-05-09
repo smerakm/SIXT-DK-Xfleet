@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Sales_Delta__c</fullName>
+    <description>Re-marketing price minus Total buy price, calculated on Selected Vehicle Calculator</description>
     <externalId>false</externalId>
-    <formula>( Sixt_steel_purchase_price__c +  Delivery_cost__c +  handlingCost__c )-  Sales_Price__c</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <formula>Selected_Vehicle_Calculator__r.Difference__c</formula>
+    <inlineHelpText>Re-marketing price minus Total buy price, calculated on Selected Vehicle Calculator</inlineHelpText>
     <label>Sales Delta</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>

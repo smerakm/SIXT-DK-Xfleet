@@ -28,9 +28,9 @@
                 <label>In Car</label>
             </value>
             <value>
-                <fullName>With Customer</fullName>
+                <fullName>Sent to buyer</fullName>
                 <default>false</default>
-                <label>With Customer</label>
+                <label>Sent to buyer</label>
             </value>
             <value>
                 <fullName>Not found</fullName>

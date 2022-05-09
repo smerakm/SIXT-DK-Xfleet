@@ -133,7 +133,7 @@
         <label>Operational fees</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Vehicle_Group__c</field>
             </layoutItems>
             <layoutItems>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_Afregistrering_i_SKAT</fullName>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Deregistered_in_SKAT__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Buyer_Contact__c</field>
+        <operation>notEqual</operation>
+        <value>Rævhede</value>
+    </filters>
+    <label>Defleet: Afregistrering i SKAT</label>
+</ListView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_Klar_til_Defleet</fullName>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Station__c</columns>
+    <columns>Vehicle_status__c</columns>
+    <columns>Buyer_DAL_damage_check_required__c</columns>
+    <columns>Buyer_Contact__c</columns>
+    <columns>Car_description_2__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <columns>Expected_Defleet_Date__c</columns>
+    <columns>defleetReadyCheck__c</columns>
+    <columns>Defleet_transportation_booked__c</columns>
+    <columns>The_car_is_paid__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Expected_Defleet_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH,NEXT_MONTH</value>
+    </filters>
+    <filters>
+        <field>Defleet_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Ready for Defleet</value>
+    </filters>
+    <filters>
+        <field>defleetReadyCheck__c</field>
+        <operation>equals</operation>
+        <value>Ready</value>
+    </filters>
+    <filters>
+        <field>Defleet_transportation_booked__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Defleet: Transportbestilling</label>
+</ListView>

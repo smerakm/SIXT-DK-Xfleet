@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Group_mandatory_for_Selected</fullName>
+    <active>true</active>
+    <description>Vehicle Group have to be selected before calculator status can be set to Selected</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Selected&quot;) 
+&amp;&amp;
+(
+    ISBLANK(Vehicle_Group__c)
+    ||
+    ISBLANK(PRIORVALUE(Vehicle_Group__c))
+)</errorConditionFormula>
+    <errorDisplayField>Vehicle_Group__c</errorDisplayField>
+    <errorMessage>Please choose Vehicle Group (when still in Draft) before you mark the calculator as Selected</errorMessage>
+</ValidationRule>
