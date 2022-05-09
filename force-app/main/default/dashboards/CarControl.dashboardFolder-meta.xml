@@ -2,7 +2,7 @@
 <DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>kp@sixt.dk.sixtdkqa</sharedTo>
+        <sharedTo>kp@sixt.dk12.uat</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <folderShares>

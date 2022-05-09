@@ -111,7 +111,7 @@
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>marek.smerak@wipro.com.sixtdk</runningUser>
+    <runningUser>kp@sixt.dk12.uat</runningUser>
     <textColor>#000000</textColor>
     <title>CarControl homescreen</title>
     <titleColor>#000000</titleColor>

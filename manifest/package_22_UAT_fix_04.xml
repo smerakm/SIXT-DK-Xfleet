@@ -76,6 +76,7 @@
 		<name>Profile</name>
 	</types>
 	<types>
+		<members>FleetManagementInfleet/HomescreenCarControl</members>
 		<members>FleetManagementInfleet/HomescreenCarControl/Defleet_All_XHg</members>
 		<members>FleetManagementInfleet/HomescreenCarControl/Overview_of_cars_with_kilometres_ia5</members>
 		<members>FleetManagementInfleet/HomescreenCarControl/Ready_for_pickup_today_wA4</members>
