@@ -23,7 +23,7 @@
     <filters>
         <field>Defleet_Status__c</field>
         <operation>notEqual</operation>
-        <value>Ready for Defleet</value>
+        <value>Defleet in COBRA</value>
     </filters>
     <filters>
         <field>defleetReadyCheck__c</field>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leasing_cost_per_period_calculated__c</fullName>
+    <description>leasing cost calculated for the whole holding period (holding period * leasing cost per month)</description>
+    <externalId>false</externalId>
+    <formula>Holding_Period__c *  Leasing_cost_per_month_calculated__c</formula>
+    <inlineHelpText>leasing cost calculated for the whole holding period (holding period * leasing cost per month)</inlineHelpText>
+    <label>Leasing cost per period - calculated</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

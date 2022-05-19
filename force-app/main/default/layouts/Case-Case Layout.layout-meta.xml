@@ -95,10 +95,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Email_to_financing__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Email_for_Leasing_codes__c</field>
             </layoutItems>
             <layoutItems>

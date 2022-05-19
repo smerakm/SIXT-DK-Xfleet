@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customApplications>
-        <label><!-- Fleet Management --></label>
-        <name>Fleet_Management</name>
+        <label><!-- Xfleet --></label>
+        <name>Xfleet</name>
     </customApplications>
     <customLabels>
         <label>Nej</label>
@@ -741,6 +741,10 @@
         <fullName>CALCULATIONBATCH_TRG_AfterInsertUpdate</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>Defleet_Status_Change</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <textTemplates>
                 <name>emailBody</name>
@@ -809,6 +813,17 @@
                 <name>emailBody</name>
             </textTemplates>
             <textTemplates>
+                <name>emailToDalForDamageCheck</name>
+            </textTemplates>
+        </flows>
+        <fullName>Email_til_DAL_Skadestjek</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>emailBody</name>
+            </textTemplates>
+            <textTemplates>
                 <name>emailToNotifyBuyerAboutKeysAndDocuments</name>
             </textTemplates>
         </flows>
@@ -865,11 +880,7 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
-        <fullName>FLEETFORECAST_TRG_AfterInsertUpdate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>FLEETFORECAST_TRG_BeforeInsertUpdate</fullName>
+        <fullName>Infleet_Status_Change</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
@@ -886,6 +897,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Infleet_status_to_Transport</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>OPPORTUNITY_TRG_After_Won</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
@@ -908,6 +923,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Update_Vehicle_fields_Automatically</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>VEHICLEBATCH_TRG_AfterInsert</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
@@ -937,4 +956,13 @@
         <flows/>
         <fullName>VEHICLE_TRG_RollUps_to_Opportunity</fullName>
     </flowDefinitions>
+    <reportTypes>
+        <description><!-- Vehicles --></description>
+        <label><!-- Vehicles --></label>
+        <name>Vehicles</name>
+        <sections>
+            <label><!-- Vehicles --></label>
+            <name>Vehicles</name>
+        </sections>
+    </reportTypes>
 </Translations>

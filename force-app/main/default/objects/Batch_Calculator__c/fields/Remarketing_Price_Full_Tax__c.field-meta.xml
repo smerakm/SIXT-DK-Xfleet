@@ -3,9 +3,9 @@
     <fullName>Remarketing_Price_Full_Tax__c</fullName>
     <externalId>false</externalId>
     <label>Remarketing Price - Full Tax</label>
-    <precision>8</precision>
+    <precision>10</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>

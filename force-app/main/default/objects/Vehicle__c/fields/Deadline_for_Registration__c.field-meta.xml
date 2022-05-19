@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Deadline_for_Registration__c</fullName>
     <externalId>false</externalId>
-    <formula>Expected_Delivery_Date__c + 28</formula>
+    <formula>Supplier_ready_Date__c + 28</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Deadline for Registration</label>
     <required>false</required>

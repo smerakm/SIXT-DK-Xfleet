@@ -7,9 +7,11 @@ public with sharing class FleetForecastUpdate_Test {
     @TestSetup
     static void makeData() {
         VehicleBatch__c testBatch = TestUtilitySIXT.createBatch();
+        Vehicle_Group__c vg = [SELECT Id FROM Vehicle_Group__c]; //  there is just one vehicle group
         Map<String, Object> vehicleParams = new Map<String, Object>{
             'Acriss_code__c' => TestUtilitySIXT.ACCRIS_CODE,
-            'Planned_Infleet_Date__c' => Date.today().addMonths(1)
+            'Planned_Infleet_Date__c' => Date.today().addMonths(1),
+            'Vehicle_Group__c' => vg.Id
         };
         TestUtilitySIXT.createVehicle(testBatch.Id, vehicleParams);
     }

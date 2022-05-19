@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leasing_Account_mandatory_for_Selected</fullName>
+    <active>true</active>
+    <description>Leasing account need to be chosen for Selected calculator</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &apos;Selected&apos;)
+&amp;&amp;
+ISBLANK(Account_finance__c)</errorConditionFormula>
+    <errorDisplayField>Account_finance__c</errorDisplayField>
+    <errorMessage>Please select Leasing Account before mark calculator as Selected</errorMessage>
+</ValidationRule>

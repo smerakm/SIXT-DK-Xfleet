@@ -25,7 +25,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$Sales_Price_Confirmed__c</field>
     </columns>
-    <currency>DKK</currency>
     <filter>
         <criteriaItems>
             <column>Vehicle__c$Sales_Price__c</column>

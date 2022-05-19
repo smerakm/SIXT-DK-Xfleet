@@ -21,11 +21,8 @@ public with sharing class FleetForecastUpdateUtility {
         List<Vehicle__c> vehicles = [
             SELECT Id, Planned_Infleet_Date__c, Expected_Defleet_Date__c, Registration_Date__c, Valuta_Vehicle__c
             FROM Vehicle__c
-            WHERE
-                (Vehicle_Group__c = :vehicleGroupId
-                OR (Vehicle_Group__c = NULL
-                AND Vehicle_Batch__r.Vehicle_Group__c = :vehicleGroupId))
-                AND Vehicle_Status__c != 99
+            WHERE Vehicle_Group__c = :vehicleGroupId
+            AND Vehicle_Status__c != '00-'
             ORDER BY Expected_Defleet_Date__c ASC NULLS FIRST
         ];
         // calculate updates for each period

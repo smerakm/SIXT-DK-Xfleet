@@ -13,10 +13,8 @@
         <field>Vehicle__c$Status__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$Vehicle_status__c</field>
     </columns>
-    <currency>DKK</currency>
     <filter>
         <criteriaItems>
             <column>Vehicle__c$Re_marketing_Status__c</column>

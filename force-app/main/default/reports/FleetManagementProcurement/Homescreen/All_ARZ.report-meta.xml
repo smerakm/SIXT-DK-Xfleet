@@ -12,7 +12,6 @@
     <columns>
         <field>Vehicle__c$Infleet_status__c</field>
     </columns>
-    <currency>DKK</currency>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

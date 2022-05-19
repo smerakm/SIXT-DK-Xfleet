@@ -22,7 +22,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$hasDamages__c</field>
     </columns>
-    <currency>DKK</currency>
     <filter>
         <criteriaItems>
             <column>Vehicle__c$Required_by_Date__c</column>

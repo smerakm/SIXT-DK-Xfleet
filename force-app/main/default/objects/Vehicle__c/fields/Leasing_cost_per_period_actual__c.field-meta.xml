@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leasing_cost_per_period_actual__c</fullName>
+    <description>Actual leasing cost for the whole holding period received from leasing company for this vehicle</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Actual leasing cost for the whole holding period received from leasing company for this vehicle</inlineHelpText>
+    <label>Leasing cost per period - actual</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

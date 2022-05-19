@@ -310,6 +310,11 @@
         <default>false</default>
         <label>XVAN</label>
     </customValue>
+    <customValue>
+        <fullName>---</fullName>
+        <default>false</default>
+        <label>--- not yet categorized --</label>
+    </customValue>
     <description>Acriss Codes used in SIXT DK</description>
     <masterLabel>Acriss Code</masterLabel>
     <sorted>false</sorted>

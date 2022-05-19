@@ -21,7 +21,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$Remaining_KM__c</field>
     </columns>
-    <currency>DKK</currency>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

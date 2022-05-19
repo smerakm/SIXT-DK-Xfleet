@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Batch__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Batch that the opportunity was initially created</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Batch that the opportunity was initially created</inlineHelpText>
+    <label>Original Batch</label>
+    <referenceTo>vehicleBatch__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

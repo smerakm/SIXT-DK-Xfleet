@@ -24,11 +24,36 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <description>if vehicle group is empty, set the default value from custom setting</description>
+        <name>set_default_Vehicle_Group_if_empty</name>
+        <label>set default Vehicle Group if empty</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Vehicle_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Vehicle_Group__c</field>
+            <value>
+                <elementReference>$Setup.FleetManagementConfig__c.Uncategorizied__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <description>some information are copied from master Vehicle Batch record</description>
         <name>Updates_from_Batch</name>
         <label>Updates from Batch</label>
         <locationX>176</locationX>
         <locationY>311</locationY>
+        <connector>
+            <targetReference>set_default_Vehicle_Group_if_empty</targetReference>
+        </connector>
         <inputAssignments>
             <field>Dealer__c</field>
             <value>

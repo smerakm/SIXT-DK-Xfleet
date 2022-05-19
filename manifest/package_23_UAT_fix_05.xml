@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>FleetForecastUpdateUtility</members>
+		<members>FleetForecastUpdate_Test</members>
+		<members>VehicleGroupUpdateBatchable</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Vehicle__c.Vehicle_Compact_Layout</members>
+		<name>CompactLayout</name>
+	</types>
+	<types>
+		<members>Activity_Item__c.Vehicle_purchase_price_excl_VAT__c</members>
+		<members>Batch_Calculator__c.Reimbursement__c</members>
+		<members>Batch_Calculator__c.Remarketing_Price_Full_Tax__c</members>
+		<members>Batch_Calculator__c.Sales_price__c</members>
+		<members>Batch_Calculator__c.Steel_price__c</members>
+		<members>Case.Email_to_financing__c</members>
+		<members>Opportunity.Registration_Date__c</members>
+		<members>Vehicle__c.Deadline_for_Registration__c</members>
+		<members>Vehicle__c.Expected_Defleet_Date__c</members>
+		<members>Vehicle__c.Financing_request_sent__c</members>
+		<members>Vehicle__c.Min_KM__c</members>
+		<members>Vehicle__c.Sixt_purchase_price_excl_VAT__c</members>
+		<members>Vehicle__c.Vehicle_status__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Fleet_Re_Marketing/Offer_to_Buyer_da</members>
+		<name>EmailTemplate</name>
+	</types>
+	<types>
+		<members>Email_to_dealer_V2</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Activity_Item__c-Activity Item Layout</members>
+		<members>Case-Case Layout</members>
+		<members>Vehicle_Group__c-Vehicle Group Layout</members>
+		<members>Vehicle__c-Vehicle Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Vehicle__c.Damage_check_reminder_list</members>
+		<members>Vehicle__c.Defleet_All</members>
+		<members>Vehicle__c.Defleet_Klar_til_Defleet</members>
+		<members>Vehicle__c.Defleet_Navision_Fakturering</members>
+		<members>Vehicle__c.Financing_request</members>
+		<members>Vehicle__c.Sales_price_missing</members>
+		<members>Vehicle__c.Vehicles</members>
+		<name>ListView</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Infleet</members>
+		<members>Procurement</members>
+		<name>Profile</name>
+	</types>
+	<types>
+		<members>FleetManagementForecast/Vehicle_models_in_Vehicle_Group</members>
+		<members>FleetManagementInfleet/HomescreenCarControl/Defleet_All_XHg</members>
+		<members>FleetManagementInfleet/Vehicle_Key_Tags_qv4</members>
+		<members>FleetManagementProcurement/Homescreen/Sales_price_missing_8Go</members>
+		<name>Report</name>
+	</types>
+	<types>
+		<members>Vehicles</members>
+		<name>ReportType</name>
+	</types>
+	<version>53.0</version>
+</Package>

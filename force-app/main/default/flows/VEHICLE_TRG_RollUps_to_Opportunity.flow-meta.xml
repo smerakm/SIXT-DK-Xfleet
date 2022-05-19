@@ -98,6 +98,20 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Min_KM__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Max_KM__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Vehicle__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
@@ -132,6 +146,7 @@
             </value>
         </inputAssignments>
     </subflows>
+    <triggerOrder>200</triggerOrder>
     <variables>
         <name>varCountOfVehicles</name>
         <dataType>Number</dataType>

@@ -30,10 +30,10 @@
         <locationY>335</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Batch_Status__c</field>
+            <field>Vehicle_Batch__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Deal</stringValue>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>

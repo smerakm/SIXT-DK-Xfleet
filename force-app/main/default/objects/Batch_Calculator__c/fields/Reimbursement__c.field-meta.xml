@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Reimbursement %</inlineHelpText>
     <label>Reimbursement percentage</label>
-    <precision>4</precision>
+    <precision>5</precision>
     <required>false</required>
     <scale>2</scale>
     <trackHistory>false</trackHistory>

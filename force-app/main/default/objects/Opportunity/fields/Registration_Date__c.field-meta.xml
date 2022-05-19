@@ -4,7 +4,7 @@
     <description>Date when we expect vehicles from the opportunity to be registered</description>
     <externalId>false</externalId>
     <inlineHelpText>Date when we expect vehicles from the opportunity to be registered</inlineHelpText>
-    <label>Registration Date</label>
+    <label>Opportunity Registration Date</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_to_Order_Damagecheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL( Defleet_Status__c , &quot;Order Damagecheck&quot;),
+OR(
+    defleetReadyCheck__c = &quot;Not Ready&quot;,
+    ISBLANK( Buyer_Contact__c ),
+   Buyer_DAL_damage_check_required__c = &quot;No&quot;,
+NOT(ISPICKVAL(  Defleet_Transport_Booked__c  , &quot;Transport booked&quot;)),
+ISPICKVAL(  Vehicle_status__c  , &quot;00- - Car is defleeted&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot move Defleet status without filling necessary fields</errorMessage>
+</ValidationRule>

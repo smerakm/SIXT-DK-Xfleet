@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_Transport_Booked__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
+    <externalId>false</externalId>
+    <label>Defleet Transport Booked</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Transport booked</fullName>
+                <default>false</default>
+                <label>Transport booked</label>
+            </value>
+            <value>
+                <fullName>Awaiting payment</fullName>
+                <default>false</default>
+                <label>Awaiting payment</label>
+            </value>
+            <value>
+                <fullName>Rebook transport</fullName>
+                <default>false</default>
+                <label>Rebook transport</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

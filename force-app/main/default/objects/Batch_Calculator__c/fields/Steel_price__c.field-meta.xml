@@ -3,7 +3,7 @@
     <fullName>Steel_price__c</fullName>
     <externalId>false</externalId>
     <label>Steel price</label>
-    <precision>6</precision>
+    <precision>10</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>

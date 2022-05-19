@@ -6,18 +6,12 @@
             <p>Kære {!recipient.Name},</p>
             <p>Vi har følgende i alt {!ROUND(relatedTo.Number_Of_Vehicles__c,0)} biler til salg.</p>
             
-            <p>Kan du være interesseret i følgende:</p>
-            
             <c:VehiclesFromOpportunity opportunityId="{!relatedTo.Id}" showAllFields="true"/>
             
-            <p>Bilerne bliver indsat i flåden i <apex:outputText value="{0, date, MMMM yyyy}"><apex:param value="{!relatedTo.Registration_Date__c}" /></apex:outputText>med defleet efter {! ROUND(relatedTo.Holding_Period_Length__c, 0)} måneder. Bilerne vil maksimalt have køre {!relatedTo.Max_KM__c} km.</p>
+            <p>Bilerne forventes indsat i flåden <apex:outputText value="{0, date, MMMM yyyy}"><apex:param value="{!relatedTo.Registration_Date__c}" /></apex:outputText>. Defleet sker {! ROUND(relatedTo.Holding_Period_Length__c, 0)} måneder efter infleet, og bilerne vil være klar til levering omkring 14 dage senere. Bilerne vil gennemsnitligt maksimalt have kørt {! ROUND(relatedTo.Max_KM__c, 0)} km. Eventuelle skader bliver afregnet til beløb jf. vores skadeskatalog.</p>
             
-            <p>Eventuelle skader, som bilerne måtte have ved defleet og levering til dig, vil blive afregnet til beløb jf. vores skadeskatalog.</p>
+            <p>Venligst kom retur inden 24 timer, ellers bliver bilerne tilbudt til anden kunde.</p>
             
-            <p>Venligst kom retur inden 24 timer, ellers vil bilerne blive tilbud til anden kunde.</p>
-            
-            <p>God dag og bedste hilsner,</p>
-            <p>Sixt</p>
             <apex:outputText value="{!$User.Signature}" escape="false"/>
             </body>
         </html>

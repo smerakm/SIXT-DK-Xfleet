@@ -27,7 +27,7 @@ global class VehicleGroupUpdateBatchable implements Database.Batchable<Vehicle__
 
     global List<Vehicle__c> start(Database.BatchableContext jobId) {
         List<Vehicle__c> recordList = new List<Vehicle__c>();
-        recordList = [SELECT ACRISS_Code__c, Vehicle_Group__c FROM Vehicle__c WHERE Vehicle_status__c != 99];
+        recordList = [SELECT ACRISS_Code__c, Vehicle_Group__c FROM Vehicle__c WHERE ACRISS_Code__c != null AND Vehicle_status__c != '00-']; 
         return recordList;
     }
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Holding_Period_Length__c</fullName>
-    <description>How many months we will keep vehicles before they will be ready for the buyer</description>
+    <description>Aggregated from vehicles as MAX(Holding Period).
+How many months we will keep vehicles before they will be ready for the buyer.</description>
     <externalId>false</externalId>
-    <inlineHelpText>How many months we will keep vehicles before they will be ready for the buyer</inlineHelpText>
+    <inlineHelpText>Aggregated from vehicles as MAX(Holding Period).
+How many months we will keep vehicles before they will be ready for the buyer.</inlineHelpText>
     <label>Holding Period Length</label>
     <precision>18</precision>
     <required>false</required>

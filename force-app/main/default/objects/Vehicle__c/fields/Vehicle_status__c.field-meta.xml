@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicle_status__c</fullName>
+    <description>status of the vehicle in COBRA</description>
     <externalId>false</externalId>
+    <inlineHelpText>status of the vehicle in COBRA</inlineHelpText>
     <label>Vehicle status</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0</fullName>
+                <default>false</default>
+                <label>0 - Car is rented</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>1 - Car is ready for rental</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3 - Car is not ready, block for a reservation</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4 - Car is available, but not cleaned</label>
+            </value>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>5 - Car is not available, blocked for workshop etc.</label>
+            </value>
+            <value>
+                <fullName>6</fullName>
+                <default>false</default>
+                <label>6 - Car is on workshop</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>10 - Car arrived, but not checked in yet</label>
+            </value>
+            <value>
+                <fullName>11</fullName>
+                <default>false</default>
+                <label>11 - Car is checked in, but rental agreement not closed</label>
+            </value>
+            <value>
+                <fullName>45</fullName>
+                <default>false</default>
+                <label>45 - Car is blocked for sale</label>
+            </value>
+            <value>
+                <fullName>50</fullName>
+                <default>false</default>
+                <label>50 - Car is on station, but not on contract</label>
+            </value>
+            <value>
+                <fullName>99</fullName>
+                <default>false</default>
+                <label>99 - Car is on checkout</label>
+            </value>
+            <value>
+                <fullName>00-</fullName>
+                <default>false</default>
+                <label>00- - Car is defleeted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>

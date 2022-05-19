@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Max_KM__c</fullName>
-    <description>maximal number of km that every vehicle can drive before could be sold</description>
+    <description>Aggregated from opportunity vehicles, MAX(Max KM).
+Maximal number of km that every vehicle can drive before could be sold.</description>
     <externalId>false</externalId>
-    <inlineHelpText>maximal number of km that every vehicle can drive before could be sold</inlineHelpText>
+    <inlineHelpText>Aggregated from opportunity vehicles, MAX(Max KM).
+Maximal number of km that every vehicle can drive before could be sold.</inlineHelpText>
     <label>Max. KM</label>
     <precision>18</precision>
     <required>false</required>

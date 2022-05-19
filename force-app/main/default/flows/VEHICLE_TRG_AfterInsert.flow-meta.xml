@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Get_Opportunity_list_size</name>
+        <label>Get Opportunity list size</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignmentItems>
+            <assignToReference>varOppListSize</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Query_Opportunity</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_there_only_1_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>save the opportunity id from collection to a single id variable</description>
+        <name>Store_the_Opportunity_Id_to_variable</name>
+        <label>Store the Opportunity Id to variable</label>
+        <locationX>138</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_the_opportunity_Id.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_the_opportunity_Id</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>check if there is only one opportunity related to the batch</description>
+        <name>Is_there_only_1_Opportunity</name>
+        <label>Is there only 1 Opportunity?</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>yes_only_one</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOppListSize</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_the_opportunity_Id</targetReference>
+            </connector>
+            <label>yes, only one</label>
+        </rules>
+    </decisions>
     <description>action happen AFTER new vehicle record is created</description>
     <interviewLabel>VEHICLE_TRG_AfterInsert {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLE_TRG_AfterInsert</label>
+    <loops>
+        <description>even if there is only one opportunity we still need to get id of a single record from the collection</description>
+        <name>Get_the_opportunity_Id</name>
+        <label>Get the opportunity Id</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <collectionReference>Query_Opportunity</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Store_the_Opportunity_Id_to_variable</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Opportunity_Id_on_the_Vehicle</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -23,68 +94,67 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordCreates>
-        <name>Create_initial_Vehicle_Calculator</name>
-        <label>Create initial Vehicle Calculator</label>
-        <locationX>176</locationX>
+    <recordLookups>
+        <description>get opportunity related to the vehicle batch</description>
+        <name>Query_Opportunity</name>
+        <label>Query Opportunity</label>
+        <locationX>182</locationX>
         <locationY>335</locationY>
-        <inputAssignments>
-            <field>Period__c</field>
-            <value>
-                <elementReference>$Record.Selected_Batch_Calculator__r.Period__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Remarketing_Price__c</field>
-            <value>
-                <elementReference>$Record.Selected_Batch_Calculator__r.Sales_price__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status__c</field>
-            <value>
-                <stringValue>Selected</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Vehicle_Age__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Vehicle__c</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Vehicle_Calculator__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <start>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_initial_Vehicle_Calculator</targetReference>
+            <targetReference>Get_Opportunity_list_size</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Selected_Batch_Calculator__c</field>
-            <operator>IsNull</operator>
+            <field>Original_Batch__c</field>
+            <operator>EqualTo</operator>
             <value>
-                <booleanValue>false</booleanValue>
+                <elementReference>$Record.Vehicle_Batch__c</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>Final_tax_after_deduction__c</field>
-            <operator>IsNull</operator>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity_Id_on_the_Vehicle</name>
+        <label>Update Opportunity Id on the Vehicle</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <inputAssignments>
+            <field>Opportunity__c</field>
             <value>
-                <booleanValue>false</booleanValue>
+                <elementReference>varOpportunityId</elementReference>
             </value>
-        </filters>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Query_Opportunity</targetReference>
+        </connector>
         <object>Vehicle__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>varOppListSize</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>the opportunity Id of the single opportunity related to the Vehicle&apos;s Batch</description>
+        <name>varOpportunityId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

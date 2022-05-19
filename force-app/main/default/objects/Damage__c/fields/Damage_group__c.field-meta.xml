@@ -8,7 +8,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -22,9 +21,9 @@
                 <label>Car body</label>
             </value>
             <value>
-                <fullName>Lightning System</fullName>
+                <fullName>Lighting System</fullName>
                 <default>false</default>
-                <label>Lightning System</label>
+                <label>Lighting System</label>
             </value>
             <value>
                 <fullName>Major Damage</fullName>

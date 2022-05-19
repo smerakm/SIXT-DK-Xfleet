@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COBRA_is_master</fullName>
+    <active>true</active>
+    <description>Some fields (e.g. Min KM and and Max KM) can be set in Salesforce only before vehicle is imported to COBRA, after that only admin/integration can update these information</description>
+    <errorConditionFormula>/* profile name is dependant on the org default value (e.g. Systemadministrator for Danish) and so there is a risk if the language is changed in future for this validation rule to stop working, so better option is to use profile id */
+$Profile.Id &lt;&gt; &apos;00e5I000000pqJ7&apos;
+	&amp;&amp;
+NOT(ISBLANK(Internal_number__c))
+	&amp;&amp;
+OR( ISCHANGED(Min_KM__c),
+				ISCHANGED(Max_KM__c)
+)</errorConditionFormula>
+    <errorMessage>fields (Min KM, Max KM) can be updated only in Cobra</errorMessage>
+</ValidationRule>

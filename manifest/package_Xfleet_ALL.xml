@@ -76,6 +76,7 @@
 		<members>Activity_Item__c.Vehicle_max_KM__c</members>
 		<members>Activity_Item__c.Vehicle_pickup_location__c</members>
 		<members>Activity_Item__c.Vehicle_puchase_price_excl_VAT__c</members>
+		<members>Activity_Item__c.Vehicle_purchase_price_excl_VAT__c</members>
 		<members>Activity_Item__c.Vehicle_registration_number_BMW__c</members>
 		<members>Activity_Item__c.Vehicle_tax_value_incl_VAT__c</members>
 		<members>Activity_Item__c.registration_plate__c</members>
@@ -143,6 +144,7 @@
 		<members>Case.Email_for_new_car_transport__c</members>
 		<members>Case.Email_for_plates_invoice_Navision__c</members>
 		<members>Case.Email_logging_of_registration_num__c</members>
+		<members>Case.Email_to_DAL_about_Damage_check__c</members>
 		<members>Case.Email_to_DAL_for_transport_booking__c</members>
 		<members>Case.Email_to_DAL_from_Defleet__c</members>
 		<members>Case.Email_to_buyer_about_keys_DK__c</members>
@@ -176,6 +178,7 @@
 		<members>Damage__c.isFixed__c</members>
 		<members>Damage__c.vehicle__c</members>
 		<members>FleetManagementConfig__c.DefaultOppAccountId__c</members>
+		<members>FleetManagementConfig__c.Uncategorizied__c</members>
 		<members>Fleet_Forecast__c.Current_fleet_DK__c</members>
 		<members>Fleet_Forecast__c.Current_fleet_Valuta__c</members>
 		<members>Fleet_Forecast__c.Defleet_DK__c</members>
@@ -209,6 +212,7 @@
 		<members>Opportunity.Min_KM__c</members>
 		<members>Opportunity.Number_Of_Vehicles__c</members>
 		<members>Opportunity.Offer_Expiration_Date__c</members>
+		<members>Opportunity.Original_Batch__c</members>
 		<members>Opportunity.Pickup_Location__c</members>
 		<members>Opportunity.Pickup_location_for_scrive__c</members>
 		<members>Opportunity.Registration_Date__c</members>
@@ -276,12 +280,15 @@
 		<members>Vehicle__c.Car_remark__c</members>
 		<members>Vehicle__c.Check_for_Milage__c</members>
 		<members>Vehicle__c.Contract_fee_batch__c</members>
+		<members>Vehicle__c.Cost_for_period__c</members>
+		<members>Vehicle__c.Cost_per_month__c</members>
 		<members>Vehicle__c.Current_KM__c</members>
 		<members>Vehicle__c.Current_city__c</members>
 		<members>Vehicle__c.Current_country__c</members>
 		<members>Vehicle__c.Current_fuel_level__c</members>
 		<members>Vehicle__c.Current_fuel_level_eighth__c</members>
 		<members>Vehicle__c.Damage_checked_date__c</members>
+		<members>Vehicle__c.Damagecheck_request_email_sent__c</members>
 		<members>Vehicle__c.Date_for_shipment_of_COC_document__c</members>
 		<members>Vehicle__c.Date_for_shipment_of_Reg_attest__c</members>
 		<members>Vehicle__c.Date_for_shipment_of_spare_key__c</members>
@@ -289,14 +296,21 @@
 		<members>Vehicle__c.Dealer__c</members>
 		<members>Vehicle__c.Defleet_Coordinator_Comment__c</members>
 		<members>Vehicle__c.Defleet_Status__c</members>
+		<members>Vehicle__c.Defleet_Transport_Booked__c</members>
 		<members>Vehicle__c.Defleet_damage_check_completed__c</members>
 		<members>Vehicle__c.Defleet_damage_checked_by__c</members>
+		<members>Vehicle__c.Defleet_transportation_booked__c</members>
+		<members>Vehicle__c.Defleet_transportation_booked_timestamp__c</members>
 		<members>Vehicle__c.Delivery_cost__c</members>
+		<members>Vehicle__c.Deregistered_in_SKAT__c</members>
+		<members>Vehicle__c.Deregistered_in_SKAT_timestamp__c</members>
 		<members>Vehicle__c.Email_sent_to_supplier__c</members>
 		<members>Vehicle__c.Expected_Defleet_Date__c</members>
 		<members>Vehicle__c.Expected_Delivery_Date__c</members>
 		<members>Vehicle__c.Final_tax_after_deduction__c</members>
+		<members>Vehicle__c.Financing_request_sent__c</members>
 		<members>Vehicle__c.Fuel_type__c</members>
+		<members>Vehicle__c.Holding_Period__c</members>
 		<members>Vehicle__c.IRK_code__c</members>
 		<members>Vehicle__c.Infleet_Damage_check_completed__c</members>
 		<members>Vehicle__c.Infleet_Damage_checked_by__c</members>
@@ -307,6 +321,8 @@
 		<members>Vehicle__c.Interest_Rate_Batch_Calculator__c</members>
 		<members>Vehicle__c.Internal_number__c</members>
 		<members>Vehicle__c.Internal_number_timestamp__c</members>
+		<members>Vehicle__c.Invoice_Advis_requested__c</members>
+		<members>Vehicle__c.Invoice_or_advis__c</members>
 		<members>Vehicle__c.Key_label_printed__c</members>
 		<members>Vehicle__c.Key_received_at_HQ_Timestamp__c</members>
 		<members>Vehicle__c.Key_received_at_HQ_User__c</members>
@@ -325,11 +341,22 @@
 		<members>Vehicle__c.Leasing_Rate_Contract_L94__c</members>
 		<members>Vehicle__c.Leasing_Rate_Contract_Valuta__c</members>
 		<members>Vehicle__c.Leasing_Rate_Contract__c</members>
+		<members>Vehicle__c.Leasing_cancelled__c</members>
 		<members>Vehicle__c.Leasing_code__c</members>
 		<members>Vehicle__c.Leasing_contract_fee__c</members>
+		<members>Vehicle__c.Leasing_contract_fee_calculated__c</members>
+		<members>Vehicle__c.Leasing_cost_actual__c</members>
+		<members>Vehicle__c.Leasing_cost_per_month_calculated__c</members>
+		<members>Vehicle__c.Leasing_cost_per_period_actual__c</members>
+		<members>Vehicle__c.Leasing_cost_per_period_calculated__c</members>
+		<members>Vehicle__c.Leasing_rate_calculated__c</members>
 		<members>Vehicle__c.License_plate__c</members>
 		<members>Vehicle__c.Life_start__c</members>
+		<members>Vehicle__c.Mail_skadestjek_bestil__c</members>
 		<members>Vehicle__c.Max_KM__c</members>
+		<members>Vehicle__c.Max_is_not_exceeded__c</members>
+		<members>Vehicle__c.Min_KM__c</members>
+		<members>Vehicle__c.Min_is_reached__c</members>
 		<members>Vehicle__c.Model__c</members>
 		<members>Vehicle__c.NCAP__c</members>
 		<members>Vehicle__c.Navi__c</members>
@@ -379,6 +406,7 @@
 		<members>Vehicle__c.Serial_Number__c</members>
 		<members>Vehicle__c.Service_interval_Years_KM__c</members>
 		<members>Vehicle__c.Sixt_puchase_price_excl_VAT__c</members>
+		<members>Vehicle__c.Sixt_purchase_price_excl_VAT__c</members>
 		<members>Vehicle__c.Sixt_steel_purchase_price__c</members>
 		<members>Vehicle__c.Spare_key__c</members>
 		<members>Vehicle__c.Speed_Pilot__c</members>
@@ -502,6 +530,7 @@
 		<name>CustomObjectTranslation</name>
 	</types>
 	<types>
+		<members>Activity_Item__c</members>
 		<members>Batch_Calculator__c</members>
 		<members>Fleet_Forecast__c</members>
 		<members>ServiceAndDamageCost__c</members>
@@ -512,6 +541,13 @@
 		<members>Vehicle__c</members>
 		<members>vehicleBatch__c</members>
 		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>CarControl</members>
+		<members>CarControl/EDsgpTEJmuHIQWfAiwcdmqzKHRaQwW</members>
+		<members>Procurement</members>
+		<members>Procurement/EfCQIwnBPiFizBTQhWARVFdYzYTDyJ</members>
+		<name>Dashboard</name>
 	</types>
 	<types>
 		<members>Fleet_Re_Marketing</members>
@@ -542,25 +578,30 @@
 	</types>
 	<types>
 		<members>CALCULATIONBATCH_TRG_AfterInsertUpdate</members>
+		<members>Defleet_Status_Change</members>
 		<members>Email_for_IRK_codes</members>
 		<members>Email_for_Navision</members>
 		<members>Email_for_transport_booking_new_cars_day_to_day</members>
 		<members>Email_for_transport_of_new_cars_BMW_Version</members>
 		<members>Email_for_transport_of_new_cars_Normal</members>
 		<members>Email_for_transport_to_DAL_Defleet</members>
+		<members>Email_til_DAL_Skadestjek</members>
 		<members>Email_to_buyer_related_to_keys_and_documents</members>
 		<members>Email_to_buyer_related_to_keys_and_documents_DK</members>
 		<members>Email_to_check_Expected_delivery_date</members>
 		<members>Email_to_dealer_V2</members>
 		<members>Email_to_follow_up_on_Expected_Delivery</members>
 		<members>Emails_after_logging_of_registration_numbers</members>
+		<members>Infleet_Status_Change</members>
 		<members>Infleet_Status_to_Allocation</members>
 		<members>Infleet_status_to_Confirm_delivery</members>
 		<members>Infleet_status_to_Leasing_code_and_IRK</members>
 		<members>Infleet_status_to_Transport</members>
+		<members>OPPORTUNITY_TRG_After_Won</members>
 		<members>OPPORTUNITY_VEHICLE_RollUps</members>
 		<members>SCR_Create_Case_with_Vehicles</members>
 		<members>Update_Vehicle_fields_Automatically</members>
+		<members>VEHICLEBATCH_TRG_AfterInsert</members>
 		<members>VEHICLEBATCH_TRG_Deal_to_new_Opportunity</members>
 		<members>VEHICLECALCULATOR_TRG_AfterInsertUpdate</members>
 		<members>VEHICLE_TRG_AfterInsert</members>
@@ -625,9 +666,14 @@
 		<members>Vehicle__c.Cars_ready_for_distribution_to_stations</members>
 		<members>Vehicle__c.Cars_that_need_final_infleet_in_Cobra</members>
 		<members>Vehicle__c.Damage_check_reminder_list</members>
+		<members>Vehicle__c.Defleet_Afregistrering_i_SKAT</members>
 		<members>Vehicle__c.Defleet_All</members>
+		<members>Vehicle__c.Defleet_Defleet_i_Cobra</members>
+		<members>Vehicle__c.Defleet_Klar_til_Defleet</members>
+		<members>Vehicle__c.Defleet_Navision_Fakturering</members>
 		<members>Vehicle__c.Defleet_Overview</members>
 		<members>Vehicle__c.Filtered_by_a_Batch_template</members>
+		<members>Vehicle__c.Financing_request</members>
 		<members>Vehicle__c.Infleet_Bekraeft_Leveringsdato</members>
 		<members>Vehicle__c.Infleet_Book_Transport</members>
 		<members>Vehicle__c.Infleet_Deadline_Book_Transport</members>
@@ -706,11 +752,25 @@
 		<members>FleetManagementForecast/Vehicle_models_in_Vehicle_Group</members>
 		<members>FleetManagementForecast/Vehicles_with_ACRISS_wo_Vehicle_Group_pkP</members>
 		<members>FleetManagementInfleet</members>
+		<members>FleetManagementInfleet/HomescreenCarControl</members>
+		<members>FleetManagementInfleet/HomescreenCarControl/Defleet_All_XHg</members>
+		<members>FleetManagementInfleet/HomescreenCarControl/Overview_of_cars_with_kilometres_ia5</members>
+		<members>FleetManagementInfleet/HomescreenCarControl/Ready_for_pickup_today_wA4</members>
+		<members>FleetManagementInfleet/HomescreenCarControl/Vehicles_with_damages_to_be_fixe_TW9</members>
 		<members>FleetManagementInfleet/Vehicle_Key_Tags_qv4</members>
 		<members>FleetManagementProcurement</members>
 		<members>FleetManagementProcurement/Batch_Split_Vehicles_by_Status_7S6</members>
+		<members>FleetManagementProcurement/Homescreen</members>
+		<members>FleetManagementProcurement/Homescreen/All_ARZ</members>
+		<members>FleetManagementProcurement/Homescreen/New_Vehicles_Report_akX</members>
+		<members>FleetManagementProcurement/Homescreen/Not_yet_sold_cars_7oy</members>
+		<members>FleetManagementProcurement/Homescreen/Sales_price_missing_8Go</members>
 		<members>FleetManagementProcurement/Opportunities_with_Vehicles_CDr</members>
 		<name>Report</name>
+	</types>
+	<types>
+		<members>Vehicles</members>
+		<name>ReportType</name>
 	</types>
 	<types>
 		<members>da</members>
@@ -719,12 +779,25 @@
 	<types>
 		<members>Account.Invoice_or_advis_required_for_buyer</members>
 		<members>Batch_Calculator__c.DecisionComment_mandatory_for_Selected</members>
+		<members>Batch_Calculator__c.Leasing_Account_mandatory_for_Selected</members>
 		<members>Batch_Calculator__c.Max_Period_Length</members>
 		<members>Batch_Calculator__c.Only_one_can_be_Selected</members>
+		<members>Batch_Calculator__c.Remarketing_price_mandatory_for_Selected</members>
+		<members>Batch_Calculator__c.Vehicle_Group_mandatory_for_Selected</members>
+		<members>Vehicle__c.COBRA_is_master</members>
+		<members>Vehicle__c.Cannot_move_to_Allocation</members>
 		<members>Vehicle__c.Cannot_move_to_Allocation_or_Transport</members>
+		<members>Vehicle__c.Cannot_move_to_Defleet_i_Kobra</members>
+		<members>Vehicle__c.Cannot_move_to_Deregister_in_SKAT</members>
+		<members>Vehicle__c.Cannot_move_to_Infleeted</members>
+		<members>Vehicle__c.Cannot_move_to_Invoice_Advis</members>
 		<members>Vehicle__c.Cannot_move_to_Leasing_code_and_IRK</members>
+		<members>Vehicle__c.Cannot_move_to_Order_Damagecheck</members>
+		<members>Vehicle__c.Cannot_move_to_Redying</members>
 		<members>Vehicle__c.Cannot_move_to_Registration</members>
+		<members>Vehicle__c.Cannot_move_to_Send_DocumentsKeys</members>
 		<members>Vehicle__c.Cannot_move_to_Transport</members>
+		<members>Vehicle__c.Cannot_move_to_Transport_Defleet</members>
 		<members>Vehicle__c.Selected_Batch_Calculator_same_Batch</members>
 		<members>Vehicle__c.Status_cannot_be_moved_without_price</members>
 		<members>Vehicle__c.VIN_number_not_updatable</members>
@@ -738,5 +811,5 @@
 		<members>Vehicle__c.Create_a_Case_for_Email</members>
 		<name>WebLink</name>
 	</types>
-	<version>52.0</version>
+	<version>54.0</version>
 </Package>

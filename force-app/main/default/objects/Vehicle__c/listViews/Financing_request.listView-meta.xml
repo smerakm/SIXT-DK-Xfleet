@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financing_request</fullName>
+    <columns>NAME</columns>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Model__c</columns>
+    <columns>Batch_Distribution__c</columns>
+    <columns>Cost_per_month__c</columns>
+    <columns>Financing_request_sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Batch_Status__c</field>
+        <operation>equals</operation>
+        <value>Deal</value>
+    </filters>
+    <filters>
+        <field>Financing_request_sent__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Financing request</label>
+</ListView>

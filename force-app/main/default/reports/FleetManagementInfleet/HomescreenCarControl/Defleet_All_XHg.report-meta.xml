@@ -18,7 +18,6 @@
     <columns>
         <field>Vehicle__c$defleetReadyCheck__c</field>
     </columns>
-    <currency>DKK</currency>
     <filter>
         <criteriaItems>
             <column>Vehicle__c$Status__c</column>

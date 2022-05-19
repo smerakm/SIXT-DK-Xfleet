@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remarketing_price_mandatory_for_Selected</fullName>
+    <active>true</active>
+    <description>Leasing account need to be chosen for Selected calculator</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &apos;Selected&apos;)
+&amp;&amp;
+ISBLANK(Sales_price__c)</errorConditionFormula>
+    <errorDisplayField>Sales_price__c</errorDisplayField>
+    <errorMessage>Please fill in Re-marketing price before mark calculator as Selected</errorMessage>
+</ValidationRule>
