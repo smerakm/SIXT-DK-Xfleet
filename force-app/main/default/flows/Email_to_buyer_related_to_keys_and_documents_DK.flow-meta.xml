@@ -105,7 +105,7 @@
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + TEXT({!Loop_through_cars.Vehicle_date_for_shipment_of_spare_key__c}) + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + TEXT({!Loop_through_cars.Vehicle_date_for_shipment_of_Reg_attest__c})+
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + TEXT({!Loop_through_cars.Vehicle_date_for_shipment_of_COC_doc__c}) +
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; +                                                                      
+&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_keys_and_documents_tracking_ID__c} +                                                                    
 &apos;&lt;/th&gt;&lt;/tr&gt;&apos;</expression>
     </formulas>
     <interviewLabel>Email to buyer related to keys and documents (DK) {!$Flow.CurrentDateTime}</interviewLabel>
@@ -194,6 +194,7 @@
         <queriedFields>Vehicle_date_for_shipment_of_spare_key__c</queriedFields>
         <queriedFields>Vehicle_date_for_shipment_of_Reg_attest__c</queriedFields>
         <queriedFields>Vehicle_date_for_shipment_of_COC_doc__c</queriedFields>
+        <queriedFields>Vehicle_keys_and_documents_tracking_ID__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>
@@ -260,7 +261,7 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <value>
-            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Nummerplade &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt;          Dato for forsendelse af reservenøgle &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt;          Dato for afsendelse af registreringsattest &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt;          Dato for afsendelse af COC-dokument &lt;/th&gt; &lt;/tr&gt;</stringValue>
+            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Nummerplade &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for forsendelse af reservenøgle &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for afsendelse af registreringsattest &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for afsendelse af COC-dokument &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Nøgler og dokumenter sporings-ID &lt;/th&gt; &lt;/tr&gt;</stringValue>
         </value>
     </variables>
 </Flow>

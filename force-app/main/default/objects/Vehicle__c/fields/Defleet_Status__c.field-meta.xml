@@ -13,19 +13,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Ready for Defleet</fullName>
+                <fullName>Redying</fullName>
                 <default>false</default>
-                <label>Ready for Defleet</label>
+                <label>Redying</label>
             </value>
             <value>
-                <fullName>Ready for de-registration at SKAT</fullName>
+                <fullName>Transport</fullName>
                 <default>false</default>
-                <label>Ready for de-registration at SKAT</label>
+                <label>Transport</label>
             </value>
             <value>
-                <fullName>Waiting for workhop/WT</fullName>
+                <fullName>Order Damagecheck</fullName>
                 <default>false</default>
-                <label>Waiting for workhop/WT</label>
+                <label>Order Damagecheck</label>
+            </value>
+            <value>
+                <fullName>Invoice/Advis</fullName>
+                <default>false</default>
+                <label>Invoice/Advis</label>
+            </value>
+            <value>
+                <fullName>Defleet in COBRA</fullName>
+                <default>false</default>
+                <label>Defleet in COBRA</label>
+            </value>
+            <value>
+                <fullName>Deregister in SKAT</fullName>
+                <default>false</default>
+                <label>Deregister in SKAT</label>
+            </value>
+            <value>
+                <fullName>Send Documents &amp; Keys to buyer</fullName>
+                <default>false</default>
+                <label>Send Documents &amp; Keys to buyer</label>
             </value>
         </valueSetDefinition>
     </valueSet>
