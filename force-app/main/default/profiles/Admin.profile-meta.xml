@@ -348,6 +348,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Activity_Item__c.Vehicle_keys_and_documents_tracking_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Activity_Item__c.Vehicle_Model__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1968,6 +1973,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Vehicle__c.Keys_and_documents_tracking_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Vehicle__c.Last_Calculation_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2212,6 +2222,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle__c.Redemption_Price_to_Leasing_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle__c.Redying_Date__c</field>
         <readable>true</readable>
@@ -2279,6 +2294,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Vehicle__c.Return_time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle__c.SYSTEM_Data_Migration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle__c.Sales_Bonus__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

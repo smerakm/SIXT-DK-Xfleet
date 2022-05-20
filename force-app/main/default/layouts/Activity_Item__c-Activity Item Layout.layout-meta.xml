@@ -153,6 +153,10 @@
                 <behavior>Readonly</behavior>
                 <field>Vehicle_date_for_shipment_of_COC_doc__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Vehicle_keys_and_documents_tracking_ID__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

@@ -72,6 +72,7 @@
 		<members>Activity_Item__c.Vehicle_dealer__c</members>
 		<members>Activity_Item__c.Vehicle_description__c</members>
 		<members>Activity_Item__c.Vehicle_final_tax_after_deduction__c</members>
+		<members>Activity_Item__c.Vehicle_keys_and_documents_tracking_ID__c</members>
 		<members>Activity_Item__c.Vehicle_licence_plate__c</members>
 		<members>Activity_Item__c.Vehicle_max_KM__c</members>
 		<members>Activity_Item__c.Vehicle_pickup_location__c</members>
@@ -333,6 +334,7 @@
 		<members>Vehicle__c.Key_sent_to_buyer_User__c</members>
 		<members>Vehicle__c.Key_sent_to_buyer__c</members>
 		<members>Vehicle__c.Key_sent_to_buyer_timestamp__c</members>
+		<members>Vehicle__c.Keys_and_documents_tracking_ID__c</members>
 		<members>Vehicle__c.Last_Calculation_Date__c</members>
 		<members>Vehicle__c.Latest_inregistration_date__c</members>
 		<members>Vehicle__c.Leasing_Contact_Fee_Contract_L94__c</members>
@@ -381,6 +383,7 @@
 		<members>Vehicle__c.Rate_code__c</members>
 		<members>Vehicle__c.Re_marketing_Status__c</members>
 		<members>Vehicle__c.Ready_for_robot__c</members>
+		<members>Vehicle__c.Redemption_Price_to_Leasing_Account__c</members>
 		<members>Vehicle__c.Redying_Date__c</members>
 		<members>Vehicle__c.Registration_Date__c</members>
 		<members>Vehicle__c.Registration_Number_BMW__c</members>
@@ -395,6 +398,8 @@
 		<members>Vehicle__c.Return_Date__c</members>
 		<members>Vehicle__c.Return_station__c</members>
 		<members>Vehicle__c.Return_time__c</members>
+		<members>Vehicle__c.SYSTEM_Data_Migration__c</members>
+		<members>Vehicle__c.Sales_Bonus__c</members>
 		<members>Vehicle__c.Sales_Delta__c</members>
 		<members>Vehicle__c.Sales_Price_Confirmed__c</members>
 		<members>Vehicle__c.Sales_Price_EUR__c</members>
