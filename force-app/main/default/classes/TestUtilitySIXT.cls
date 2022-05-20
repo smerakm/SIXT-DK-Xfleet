@@ -41,7 +41,6 @@ public with sharing class TestUtilitySIXT {
         // Vehicle batch
         VehicleBatch__c testBatch = new VehicleBatch__c();
         testBatch.Description__c = batchDescription;
-        testBatch.Vehicle_Group__c = vehicleGroupId;
         insert testBatch;
         return testBatch;
     }

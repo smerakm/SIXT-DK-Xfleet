@@ -15,10 +15,6 @@
         <operation>equals</operation>
         <value>Offer,Waiting for Dealer</value>
     </filters>
-    <filters>
-        <field>Selected_Batch_Calculator__c</field>
-        <operation>equals</operation>
-    </filters>
     <label>Without Selected Calculation</label>
     <sharedTo>
         <group>Procurement</group>

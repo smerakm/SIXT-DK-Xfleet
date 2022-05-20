@@ -716,7 +716,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Defleet_transportation_booked__c</field>
+                <field>Defleet_Transport_Booked__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

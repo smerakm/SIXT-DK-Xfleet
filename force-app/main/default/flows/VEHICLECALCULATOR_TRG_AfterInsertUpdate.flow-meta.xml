@@ -113,8 +113,7 @@
         <description>calculate Vehicle Group id, first from vehicle itself, or from related batch if it is empty on vehicle</description>
         <name>VehicleGroupFormula</name>
         <dataType>String</dataType>
-        <expression>IF(ISBLANK({!$Record.Vehicle__r.Vehicle_Group__c}), {!$Record.Vehicle__r.Vehicle_Batch__r.Vehicle_Group__r.Service_and_Damage_Group__c},
-{!$Record.Vehicle__r.Vehicle_Group__r.Service_and_Damage_Group__c})</expression>
+        <expression>{!$Record.Vehicle__r.Vehicle_Group__r.Service_and_Damage_Group__c}</expression>
     </formulas>
     <interviewLabel>VEHICLECALCULATOR_TRG_AfterInsertUpdate {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLECALCULATOR_TRG_AfterInsertUpdate</label>

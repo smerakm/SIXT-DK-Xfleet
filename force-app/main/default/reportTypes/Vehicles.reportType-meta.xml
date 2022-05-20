@@ -118,11 +118,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>propellant__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>leasing_Account__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -183,12 +178,42 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Holding_Period__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Sales_Bonus__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_cancelled__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Keys_and_documents_tracking_ID__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Leasing_Rate_Contract__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Redemption_Price_to_Leasing_Account__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Defleet_damage_check_completed__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_cost_per_period_actual__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -208,6 +233,31 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_rate_calculated__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_cost_actual__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_cost_per_period_calculated__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_cost_per_month_calculated__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Damagecheck_request_email_sent__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>The_car_is_paid_User__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -219,6 +269,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>The_car_is_picked_up_Timestamp__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Leasing_contract_fee_calculated__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -368,22 +423,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Defleet_transportation_booked__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Prioritized_reason__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Min_is_reached__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Expected_Defleet_Date_OLD__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -409,11 +454,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Calculator_period__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Needs_repair__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -479,11 +519,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Buyer_DAL_damage_check_required__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Check_for_Milage__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -658,11 +693,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Latest_inregistration_date__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>License_plate__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -689,11 +719,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Non_standard_Accessories__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Outside_paint__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -783,17 +808,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Sales_Price__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Seatbeltalarms__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Serial_Number__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -804,11 +819,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sixt_steel_purchase_price__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Speedpilot__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>

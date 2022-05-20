@@ -8,7 +8,6 @@
     <columns>Model__c</columns>
     <columns>Last_Calculation_Date__c</columns>
     <columns>Status__c</columns>
-    <columns>Sales_Price__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Last_Calculation_Date__c</field>

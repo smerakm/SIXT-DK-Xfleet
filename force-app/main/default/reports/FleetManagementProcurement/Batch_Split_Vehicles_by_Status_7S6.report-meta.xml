@@ -42,10 +42,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Vehicle__c.Sales_Price__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c.Sales_Delta__c</field>
     </columns>
     <format>Summary</format>

@@ -72,12 +72,6 @@
                 <elementReference>$Record.Vehicle_Batch__r.Required_by_Date__c</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Selected_Batch_Calculator__c</field>
-            <value>
-                <elementReference>$Record.Vehicle_Batch__r.Selected_Batch_Calculator__c</elementReference>
-            </value>
-        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>

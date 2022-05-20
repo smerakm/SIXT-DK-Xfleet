@@ -28,9 +28,6 @@
         <field>CUST_NAME</field>
     </columns>
     <columns>
-        <field>vehicleBatch__c.batchName__c</field>
-    </columns>
-    <columns>
         <field>Vehicle__c.COBRA_Model__c</field>
     </columns>
     <description>Will show vehicle models in specific Vehicle Group, grouping by Vehicle Group, Brand, Model, Cobra Model #</description>

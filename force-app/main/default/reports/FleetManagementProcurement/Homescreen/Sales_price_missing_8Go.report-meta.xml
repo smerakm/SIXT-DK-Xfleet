@@ -27,20 +27,15 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Vehicle__c$Sales_Price__c</column>
+            <column>Vehicle__c$Sales_Price_Formula__c</column>
             <columnToColumn>false</columnToColumn>
-            <isUnlocked>false</isUnlocked>
+            <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value></value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
-    <format>Summary</format>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>Vehicle__c$Sales_Price__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
+    <format>Tabular</format>
     <name>Sales price missing</name>
     <params>
         <name>co</name>

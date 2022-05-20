@@ -82,7 +82,6 @@
 		<members>Activity_Item__c.Vehicle_tax_value_incl_VAT__c</members>
 		<members>Activity_Item__c.registration_plate__c</members>
 		<members>Batch_Calculator__c.Account_finance__c</members>
-		<members>Batch_Calculator__c.Car_Group__c</members>
 		<members>Batch_Calculator__c.Contract_fee_Valuta__c</members>
 		<members>Batch_Calculator__c.Contract_fee__c</members>
 		<members>Batch_Calculator__c.Damages__c</members>
@@ -154,7 +153,6 @@
 		<members>Case.Email_to_inform_dealer_about_Behovsdato__c</members>
 		<members>Case.Leasing_company__c</members>
 		<members>Contact.Preferred_Language__c</members>
-		<members>Contact.launguageCode__c</members>
 		<members>ConversionRate__c.DKK_to_EUR__c</members>
 		<members>Damage__c.Amount_of_pictures__c</members>
 		<members>Damage__c.Causer__c</members>
@@ -275,11 +273,9 @@
 		<members>Vehicle__c.CO2__c</members>
 		<members>Vehicle__c.COBRA_Model__c</members>
 		<members>Vehicle__c.COC_document__c</members>
-		<members>Vehicle__c.Calculator_period__c</members>
 		<members>Vehicle__c.Car_description__c</members>
 		<members>Vehicle__c.Car_docs__c</members>
 		<members>Vehicle__c.Car_remark__c</members>
-		<members>Vehicle__c.Check_for_Milage__c</members>
 		<members>Vehicle__c.Contract_fee_batch__c</members>
 		<members>Vehicle__c.Cost_for_period__c</members>
 		<members>Vehicle__c.Cost_per_month__c</members>
@@ -297,10 +293,9 @@
 		<members>Vehicle__c.Dealer__c</members>
 		<members>Vehicle__c.Defleet_Coordinator_Comment__c</members>
 		<members>Vehicle__c.Defleet_Status__c</members>
-		<members>Vehicle__c.Defleet_Transport_Booked__c</members>
 		<members>Vehicle__c.Defleet_damage_check_completed__c</members>
 		<members>Vehicle__c.Defleet_damage_checked_by__c</members>
-		<members>Vehicle__c.Defleet_transportation_booked__c</members>
+		<members>Vehicle__c.Defleet_Transport_Booked__c</members>
 		<members>Vehicle__c.Defleet_transportation_booked_timestamp__c</members>
 		<members>Vehicle__c.Delivery_cost__c</members>
 		<members>Vehicle__c.Deregistered_in_SKAT__c</members>
@@ -336,7 +331,6 @@
 		<members>Vehicle__c.Key_sent_to_buyer_timestamp__c</members>
 		<members>Vehicle__c.Keys_and_documents_tracking_ID__c</members>
 		<members>Vehicle__c.Last_Calculation_Date__c</members>
-		<members>Vehicle__c.Latest_inregistration_date__c</members>
 		<members>Vehicle__c.Leasing_Contact_Fee_Contract_L94__c</members>
 		<members>Vehicle__c.Leasing_Contract_Fee_Contract_Valuta__c</members>
 		<members>Vehicle__c.Leasing_Contract_Fee_Contract__c</members>
@@ -361,13 +355,10 @@
 		<members>Vehicle__c.Min_is_reached__c</members>
 		<members>Vehicle__c.Model__c</members>
 		<members>Vehicle__c.NCAP__c</members>
-		<members>Vehicle__c.Navi__c</members>
 		<members>Vehicle__c.Navigation__c</members>
-		<members>Vehicle__c.Needs_repair__c</members>
 		<members>Vehicle__c.Non_standard_Accessories__c</members>
 		<members>Vehicle__c.Opportunity__c</members>
 		<members>Vehicle__c.Order_no__c</members>
-		<members>Vehicle__c.Outside_paint__c</members>
 		<members>Vehicle__c.Owning_Country__c</members>
 		<members>Vehicle__c.Parking_sensor__c</members>
 		<members>Vehicle__c.Parking_space__c</members>
@@ -404,18 +395,15 @@
 		<members>Vehicle__c.Sales_Price_Confirmed__c</members>
 		<members>Vehicle__c.Sales_Price_EUR__c</members>
 		<members>Vehicle__c.Sales_Price_Formula__c</members>
-		<members>Vehicle__c.Sales_Price__c</members>
 		<members>Vehicle__c.Seatbeltalarms__c</members>
 		<members>Vehicle__c.Selected_Batch_Calculator__c</members>
 		<members>Vehicle__c.Selected_Vehicle_Calculator__c</members>
-		<members>Vehicle__c.Serial_Number__c</members>
 		<members>Vehicle__c.Service_interval_Years_KM__c</members>
 		<members>Vehicle__c.Sixt_puchase_price_excl_VAT__c</members>
 		<members>Vehicle__c.Sixt_purchase_price_excl_VAT__c</members>
 		<members>Vehicle__c.Sixt_steel_purchase_price__c</members>
 		<members>Vehicle__c.Spare_key__c</members>
 		<members>Vehicle__c.Speed_Pilot__c</members>
-		<members>Vehicle__c.Speedpilot__c</members>
 		<members>Vehicle__c.Station__c</members>
 		<members>Vehicle__c.Status__c</members>
 		<members>Vehicle__c.Stickers_are_removed__c</members>
@@ -459,11 +447,9 @@
 		<members>Vehicle__c.licensePlateCost__c</members>
 		<members>Vehicle__c.notFixedYetDamages__c</members>
 		<members>Vehicle__c.ownershipTax__c</members>
-		<members>Vehicle__c.propellant__c</members>
 		<members>Vehicle__c.six_mth_owner_tax__c</members>
 		<members>Vehicle__c.steelPrice__c</members>
 		<members>Vehicle__c.taxReturnPrMonth__c</members>
-		<members>Vehicle__c.vatDeduction__c</members>
 		<members>Vehicle__c.vehicleCobraId__c</members>
 		<members>Vehicle__c.vinNumber__c</members>
 		<members>vehicleBatch__c.Batch_Notes__c</members>
@@ -475,25 +461,9 @@
 		<members>vehicleBatch__c.Number_of_Vehicles_in_Defleet__c</members>
 		<members>vehicleBatch__c.Requested_Number_of_Vehicles__c</members>
 		<members>vehicleBatch__c.Required_by_Date__c</members>
-		<members>vehicleBatch__c.Selected_Batch_Calculator__c</members>
-		<members>vehicleBatch__c.Selected_Operating_Period__c</members>
 		<members>vehicleBatch__c.Shortest_Holding_Period__c</members>
-		<members>vehicleBatch__c.Status_Field__c</members>
 		<members>vehicleBatch__c.Status__c</members>
 		<members>vehicleBatch__c.System_Number_of_Selected_Calculations__c</members>
-		<members>vehicleBatch__c.Vehicle_Group__c</members>
-		<members>vehicleBatch__c.batchName__c</members>
-		<members>vehicleBatch__c.bonusPrVehicle__c</members>
-		<members>vehicleBatch__c.deliveryDate__c</members>
-		<members>vehicleBatch__c.leasingCompany__c</members>
-		<members>vehicleBatch__c.leasingLength__c</members>
-		<members>vehicleBatch__c.numberOfMiniLeaseVehicles__c</members>
-		<members>vehicleBatch__c.numberOfNoTaxVehicles__c</members>
-		<members>vehicleBatch__c.numberOfStockVehicles__c</members>
-		<members>vehicleBatch__c.numberOfTaxVehicles__c</members>
-		<members>vehicleBatch__c.numberOfVehicles__c</members>
-		<members>vehicleBatch__c.vehicleBrandAndModel__c</members>
-		<members>vehicleBatch__c.vehicleBuyer__c</members>
 		<members>vehicleBatch__c.vehicleImporter__c</members>
 		<members>vehicleBatch__c.vehicleSeller__c</members>
 		<name>CustomField</name>
@@ -607,7 +577,6 @@
 		<members>SCR_Create_Case_with_Vehicles</members>
 		<members>Update_Vehicle_fields_Automatically</members>
 		<members>VEHICLEBATCH_TRG_AfterInsert</members>
-		<members>VEHICLEBATCH_TRG_Deal_to_new_Opportunity</members>
 		<members>VEHICLECALCULATOR_TRG_AfterInsertUpdate</members>
 		<members>VEHICLE_TRG_AfterInsert</members>
 		<members>VEHICLE_TRG_After_BatchCalculatorSelected</members>
