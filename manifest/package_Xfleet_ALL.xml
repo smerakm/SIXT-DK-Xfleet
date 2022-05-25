@@ -307,6 +307,7 @@
 		<members>Vehicle__c.Financing_request_sent__c</members>
 		<members>Vehicle__c.Fuel_type__c</members>
 		<members>Vehicle__c.Holding_Period__c</members>
+		<members>Vehicle__c.Holding_Period_End_Date__c</members>
 		<members>Vehicle__c.IRK_code__c</members>
 		<members>Vehicle__c.Infleet_Damage_check_completed__c</members>
 		<members>Vehicle__c.Infleet_Damage_checked_by__c</members>

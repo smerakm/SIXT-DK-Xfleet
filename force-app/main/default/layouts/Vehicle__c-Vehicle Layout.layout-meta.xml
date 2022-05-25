@@ -538,6 +538,10 @@
                 <field>Expected_Defleet_Date__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Holding_Period_End_Date__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Last_Calculation_Date__c</field>
             </layoutItems>

@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Defleet_Defleet_i_Cobra</fullName>
-    <columns>NAME</columns>
+    <fullName>Defleet_Forventet_Defleet_dato</fullName>
+    <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
-    <columns>Internal_number__c</columns>
-    <columns>Vehicle_status__c</columns>
+    <columns>Car_description_2__c</columns>
     <columns>Defleet_Status__c</columns>
+    <columns>Expected_Defleet_Date__c</columns>
     <columns>defleetReadyCheck__c</columns>
+    <columns>NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Buyer_Contact__c</field>
-        <operation>notEqual</operation>
-        <value>Rævhede</value>
-    </filters>
-    <filters>
-        <field>Ready_for_robot__c</field>
+        <field>Expected_Defleet_Date__c</field>
         <operation>equals</operation>
-        <value>1</value>
+        <value>THIS_MONTH,NEXT_MONTH</value>
     </filters>
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
         <value>00-</value>
     </filters>
-    <label>Defleet: Defleet i Cobra</label>
+    <label>Defleet: Forventet Defleet dato</label>
 </ListView>

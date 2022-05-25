@@ -22,5 +22,10 @@
         <operation>equals</operation>
         <value>Yes</value>
     </filters>
+    <filters>
+        <field>Vehicle_status__c</field>
+        <operation>notEqual</operation>
+        <value>00-</value>
+    </filters>
     <label>Defleet: Bestil Navision Faktura/Advis</label>
 </ListView>

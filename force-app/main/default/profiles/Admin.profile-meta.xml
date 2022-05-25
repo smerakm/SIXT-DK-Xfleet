@@ -1662,11 +1662,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Vehicle__c.Calculator_period__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle__c.Car_description_2__c</field>
         <readable>true</readable>
@@ -1838,8 +1833,13 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Vehicle__c.Holding_Period__c</field>
+        <field>Vehicle__c.Holding_Period_End_Date__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Holding_Period__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1979,6 +1979,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle__c.Leasing_Contract_Fee_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Leasing_Period__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2584,6 +2589,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>vehicleBatch__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>vehicleBatch__c.Holding_Period__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

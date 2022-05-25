@@ -12,7 +12,7 @@
         <operation>notEqual</operation>
     </filters>
     <filters>
-        <field>vehicleCobraId__c</field>
+        <field>Internal_number__c</field>
         <operation>notEqual</operation>
     </filters>
     <label>Klargøring list</label>
