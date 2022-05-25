@@ -8,6 +8,7 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Xfleet</label>
     <navType>Standard</navType>
     <profileActionOverrides>
@@ -268,5 +269,5 @@
     <tabs>Vehicle_Group__c</tabs>
     <tabs>Vehicle_Calculator__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Fleet_Management_UtilityBar</utilityBar>
+    <utilityBar>Xfleet_UtilityBar</utilityBar>
 </CustomApplication>

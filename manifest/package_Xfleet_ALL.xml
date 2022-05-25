@@ -539,8 +539,6 @@
 		<members>Contact_Record_Page</members>
 		<members>Defleet_Manager_Home_Screen</members>
 		<members>Fleet_Forecast_Record_Page</members>
-		<members>Fleet_Management_Console_UtilityBar</members>
-		<members>Fleet_Management_UtilityBar</members>
 		<members>Leasing_company_Record_Page</members>
 		<members>Opportunity_Record_Page</members>
 		<members>Procurement_manager_home_screen</members>
@@ -548,7 +546,7 @@
 		<members>Vehicle_Calculator_Record_Page</members>
 		<members>Vehicle_Group_Record_Page</members>
 		<members>Vehicle_Record_Page</members>
-		<members>Vehicle_Record_Page1</members>
+		<members>Xfleet_UtilityBar</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
