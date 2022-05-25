@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Holding_Period__c</fullName>
-    <description>Holding period, minimum period for how long we shall hold the vehicle. Initially populated from batch.</description>
+    <description>minimum period (in months) for which we shall hold the vehicles, value from this field is copied to vehicles upon vehicles creation</description>
     <externalId>false</externalId>
-    <inlineHelpText>Holding period, minimum period for how long we shall hold the vehicle. Initially populated from batch.</inlineHelpText>
+    <inlineHelpText>minimum period (in months) for which we shall hold the vehicles, value from this field is copied to vehicles upon vehicles creation</inlineHelpText>
     <label>Holding Period</label>
     <precision>3</precision>
     <required>false</required>

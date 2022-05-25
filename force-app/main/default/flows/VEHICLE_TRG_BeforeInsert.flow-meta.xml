@@ -67,6 +67,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Holding_Period__c</field>
+            <value>
+                <elementReference>$Record.Vehicle_Batch__r.Holding_Period__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Required_by_Date__c</field>
             <value>
                 <elementReference>$Record.Vehicle_Batch__r.Required_by_Date__c</elementReference>

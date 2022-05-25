@@ -26,7 +26,7 @@
             <assignToReference>varMaxOfHoldingPeriod</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>calculate_SUMs.Holding_Period__c</elementReference>
+                <elementReference>calculate_SUMs.Leasing_Period__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -109,7 +109,7 @@
             <name>new_maximum_holding_period</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>calculate_SUMs.Holding_Period__c</leftValueReference>
+                <leftValueReference>calculate_SUMs.Leasing_Period__c</leftValueReference>
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <elementReference>varMaxOfHoldingPeriod</elementReference>
