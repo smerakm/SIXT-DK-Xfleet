@@ -37,10 +37,10 @@
 		<members>vehicleBatch__c.Vehicle_Batch_Compact</members>
 		<name>CompactLayout</name>
 	</types>
-	<types>
+	<!--types>
 		<members>Xfleet</members>
 		<name>CustomApplication</name>
-	</types>
+	</types-->
 	<types>
 		<members>Account.Contract_end_date__c</members>
 		<members>Account.Contract_start_date__c</members>
@@ -113,7 +113,6 @@
 		<members>Batch_Calculator__c.License_Plate__c</members>
 		<members>Batch_Calculator__c.Onboard_Offboard_reduction__c</members>
 		<members>Batch_Calculator__c.Ownership_tax_6_months__c</members>
-		<members>Batch_Calculator__c.Ownership_tax__c</members>
 		<members>Batch_Calculator__c.Ownership_tax_period__c</members>
 		<members>Batch_Calculator__c.Period__c</members>
 		<members>Batch_Calculator__c.Proportional_registration_fee__c</members>
@@ -145,7 +144,6 @@
 		<members>Case.Email_for_plates_invoice_Navision__c</members>
 		<members>Case.Email_logging_of_registration_num__c</members>
 		<members>Case.Email_to_DAL_about_Damage_check__c</members>
-		<members>Case.Email_to_DAL_for_transport_booking__c</members>
 		<members>Case.Email_to_DAL_from_Defleet__c</members>
 		<members>Case.Email_to_buyer_about_keys_DK__c</members>
 		<members>Case.Email_to_buyer_about_keys_EN__c</members>
@@ -533,7 +531,6 @@
 	</types>
 	<types>
 		<members>Account_Record_Page</members>
-		<members>Account_Record_Page3</members>
 		<members>Batch_Calculator_Record_Page</members>
 		<members>Buyer_Record_Page</members>
 		<members>Case_Record_Page</members>
@@ -620,7 +617,7 @@
 		<name>Layout</name>
 	</types>
 	<types>
-		<members>Account.All_Buyer_AccountId</members>
+		<members>Account.All_Buyer_Accountd</members>
 		<members>Activity_Item__c.All</members>
 		<members>Fleet_Forecast__c.All</members>
 		<members>Fleet_Forecast__c.Current_Month_Forecast_DK</members>

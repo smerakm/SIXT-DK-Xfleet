@@ -13,6 +13,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>desktopDashboards:embeddedDashboard</componentName>
+                <identifier>desktopDashboards_embeddedDashboard</identifier>
             </componentInstance>
         </itemInstances>
         <name>top</name>
@@ -46,6 +47,7 @@
                     <value>6</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -75,6 +77,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -104,6 +107,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard3</identifier>
             </componentInstance>
         </itemInstances>
         <name>left</name>
@@ -137,6 +141,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -166,6 +171,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard5</identifier>
             </componentInstance>
         </itemInstances>
         <name>middle</name>
@@ -179,6 +185,7 @@
                     <value>TO</value>
                 </componentInstanceProperties>
                 <componentName>forceChatter:exposedFeed</componentName>
+                <identifier>forceChatter_exposedFeed</identifier>
             </componentInstance>
         </itemInstances>
         <name>right</name>

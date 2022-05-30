@@ -17,7 +17,7 @@
         <formFactor>Large</formFactor>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
         <type>Flexipage</type>
-        <profile>Procurement</profile>
+        <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>Tab</actionName>
@@ -25,7 +25,7 @@
         <formFactor>Large</formFactor>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
         <type>Flexipage</type>
-        <profile>Re-marketing</profile>
+        <profile>Procurement</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -44,24 +44,6 @@
         <recordType>Account.Buyer</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Re-marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Re-marketing</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -101,42 +83,6 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Forecast</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Forecast</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Defleet</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Buyer_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Buyer</recordType>
-        <type>Flexipage</type>
-        <profile>Defleet</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
         <content>Leasing_company_Record_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
@@ -152,42 +98,6 @@
         <recordType>Account.Leasing_Company</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Defleet</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Defleet</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Forecast</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Forecast</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -224,24 +134,6 @@
         <recordType>Account.Leasing_Company</recordType>
         <type>Flexipage</type>
         <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Re-marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Leasing_company_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>Account.Leasing_Company</recordType>
-        <type>Flexipage</type>
-        <profile>Re-marketing</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>Tab</actionName>
@@ -250,14 +142,6 @@
         <pageOrSobjectType>standard-home</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Infleet</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>Defleet_Manager_Home_Screen</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Defleet</profile>
     </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>Vehicle__c</tabs>
@@ -268,6 +152,7 @@
     <tabs>Fleet_Forecast__c</tabs>
     <tabs>Vehicle_Group__c</tabs>
     <tabs>Vehicle_Calculator__c</tabs>
+    <tabs>standard-Case</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Xfleet_UtilityBar</utilityBar>
 </CustomApplication>

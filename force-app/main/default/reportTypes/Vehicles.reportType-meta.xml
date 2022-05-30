@@ -178,7 +178,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Holding_Period__c</field>
+            <field>Leasing_Period__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -449,11 +449,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Invoice_Advis_requested__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Calculator_period__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>

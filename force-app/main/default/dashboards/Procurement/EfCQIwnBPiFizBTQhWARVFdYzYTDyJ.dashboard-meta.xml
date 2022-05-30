@@ -63,8 +63,7 @@
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <column>Vehicle__c$Vehicle_status__c</column>
+                    <column>RowCount</column>
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -73,7 +72,7 @@
                 <header>Not yet sold cars</header>
                 <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
+                <indicatorHighColor>#E61717</indicatorHighColor>
                 <indicatorLowColor>#33C14B</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
                 <report>FleetManagementProcurement/Homescreen/Not_yet_sold_cars_7oy</report>

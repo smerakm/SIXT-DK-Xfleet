@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cars_not_distributed</fullName>
+    <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
     <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Model__c</columns>
     <columns>Batch_Distribution__c</columns>
+    <columns>Use_type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Batch_Distribution__c</field>
@@ -20,6 +22,10 @@
         <field>Batch_Status__c</field>
         <operation>equals</operation>
         <value>Deal</value>
+    </filters>
+    <filters>
+        <field>Use_type__c</field>
+        <operation>equals</operation>
     </filters>
     <label>Cars not distributed</label>
 </ListView>
