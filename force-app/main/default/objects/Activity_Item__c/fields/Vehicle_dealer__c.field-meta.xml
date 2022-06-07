@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicle_dealer__c</fullName>
     <externalId>false</externalId>
-    <formula>Vehicle__r.Dealer__c</formula>
+    <formula>Vehicle__r.Dealer__r.Name</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Vehicle dealer</label>
     <required>false</required>

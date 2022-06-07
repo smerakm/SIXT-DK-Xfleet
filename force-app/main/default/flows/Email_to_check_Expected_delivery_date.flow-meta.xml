@@ -101,11 +101,12 @@
         <name>tableRow</name>
         <dataType>String</dataType>
         <expression>&apos;&lt;tr&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Batch__c} + 
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Vin_Number__c} + 
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Brand__c} + 
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Model__c} +
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + TEXT({!Loop_through_cars.Vehicle_Required_by_date__c}) +                                                                  
-&apos;&lt;/th&gt;&lt;/tr&gt;&apos;</expression>
+    &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Vin_Number__c} + 
+    &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Brand__c} + 
+    &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Model__c} +
+    &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_pickup_location__c} +    
+    &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + TEXT({!Loop_through_cars.Vehicle_Required_by_date__c}) +                                                                  
+    &apos;&lt;/th&gt;&lt;/tr&gt;&apos;</expression>
     </formulas>
     <interviewLabel>Email to check {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Email to check Expected delivery date</label>
@@ -193,6 +194,7 @@
         <queriedFields>Vehicle_Brand__c</queriedFields>
         <queriedFields>Vehicle_Model__c</queriedFields>
         <queriedFields>Vehicle_Required_by_date__c</queriedFields>
+        <queriedFields>Vehicle_pickup_location__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>
@@ -217,7 +219,7 @@
     <textTemplates>
         <name>emailRequiredByDate</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name},&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Endnu engang tak for handlen. Vi ser fortsat frem til at samarbejde om denne batch af biler. Batchen er #202X-YXX#.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(23, 43, 77); font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;﻿Vi ønsker følgende biler #stelnumre&quot; klargjort til endelig levering fra #dato#.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/em&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;Hej {!$Record.Account.Name},&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Endnu engang tak for handlen. Vi ser fortsat frem til at samarbejde om denne batch af biler. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(23, 43, 77);&quot;&gt;﻿&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: white; color: rgb(0, 0, 0);&quot;&gt;Vi ønsker følgende biler klargjort til endelig levering.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/em&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>
@@ -254,7 +256,7 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <value>
-            <stringValue>&lt;tr&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Batchnummer &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Bilmodel &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Afhentning &lt;/th&gt;  &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for ønsket levering &lt;/th&gt; &lt;/tr&gt;</stringValue>
+            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Batchnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Mærke &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Bilmodel &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Afhentning &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for ønsket levering &lt;/th&gt; &lt;/tr&gt;</stringValue>
         </value>
     </variables>
 </Flow>

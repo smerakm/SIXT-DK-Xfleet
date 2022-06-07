@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <inlineHelpText>What model is the car?</inlineHelpText>
     <label>Model</label>
-    <length>50</length>
+    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

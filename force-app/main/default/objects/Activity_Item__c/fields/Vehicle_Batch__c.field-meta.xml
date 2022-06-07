@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vehicle_Batch__c</fullName>
     <externalId>false</externalId>
-    <formula>Vehicle__r.Vehicle_Batch__c</formula>
+    <formula>Vehicle__r.Vehicle_Batch__r.Name</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Vehicle Batch #</label>
     <required>false</required>
