@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Katrine_ready_for_robot</fullName>
+    <columns>NAME</columns>
+    <columns>Ready_for_robot__c</columns>
+    <columns>Dealer__c</columns>
+    <columns>Defleet_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Ready_for_robot__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Katrine ready for robot</label>
+</ListView>

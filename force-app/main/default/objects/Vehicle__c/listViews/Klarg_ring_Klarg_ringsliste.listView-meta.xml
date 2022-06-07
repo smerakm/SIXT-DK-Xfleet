@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Klarg_ring_Klarg_ringsliste</fullName>
-    <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
     <columns>Vehicle_status__c</columns>
     <columns>Station__c</columns>
     <columns>Remaining_period__c</columns>
@@ -32,11 +32,6 @@
         <field>defleetReadyCheck__c</field>
         <operation>notEqual</operation>
         <value>Ready for defleet</value>
-    </filters>
-    <filters>
-        <field>Max_is_not_exceeded__c</field>
-        <operation>equals</operation>
-        <value>0</value>
     </filters>
     <label>Defleet: Klargøringsliste</label>
 </ListView>

@@ -336,15 +336,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>vehicleBatch__c.leasingCompany__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <relatedList>vehicleBatch__c.vehicleSeller__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>vehicleBatch__c.vehicleBuyer__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

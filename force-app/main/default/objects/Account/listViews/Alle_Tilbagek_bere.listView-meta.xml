@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>All_Buyer_Accountd</fullName>
+    <fullName>Alle_Tilbagek_bere</fullName>
     <columns>ACCOUNT.NAME</columns>
     <columns>ACCOUNT.ADDRESS1_STATE</columns>
     <columns>ACCOUNT.PHONE1</columns>
     <columns>ACCOUNT.TYPE</columns>
-    <columns>ACCOUNT.EMPLOYEES</columns>
-    <columns>ACCOUNT.LAST_UPDATE</columns>
-    <columns>UPDATEDBY_USER.ALIAS</columns>
-    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Invoice_or_advis__c</columns>
+    <columns>EUR_DKK__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ACCOUNT.RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Account.Transporter</value>
+        <value>Account.Buyer</value>
     </filters>
-    <label>Alle Transportfirmaer</label>
+    <label>Alle Tilbagekøbere</label>
 </ListView>

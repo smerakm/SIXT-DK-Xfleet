@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customApplications>
-        <label><!-- Xfleet --></label>
-        <name>Xfleet</name>
-    </customApplications>
     <customLabels>
         <label>Nej</label>
         <name>No</name>
@@ -956,6 +952,14 @@
         <description><!-- Vehicles --></description>
         <label><!-- Vehicles --></label>
         <name>Vehicles</name>
+        <sections>
+            <label><!-- Buyer --></label>
+            <name>Buyer</name>
+        </sections>
+        <sections>
+            <label><!-- Filial --></label>
+            <name>Filial</name>
+        </sections>
         <sections>
             <label><!-- Vehicles --></label>
             <name>Vehicles</name>

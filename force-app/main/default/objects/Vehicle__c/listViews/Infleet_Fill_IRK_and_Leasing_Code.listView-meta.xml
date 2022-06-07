@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Infleet_Fill_IRK_and_Leasing_Code</fullName>
-    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <booleanFilter>(1 AND 2) OR (1 AND 3)</booleanFilter>
     <columns>Production_Number__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
@@ -23,8 +23,8 @@
     </filters>
     <filters>
         <field>Batch_Distribution__c</field>
-        <operation>notEqual</operation>
-        <value>Valutacar,Full-tax</value>
+        <operation>equals</operation>
+        <value>DK - Full tax,Valuta</value>
     </filters>
     <label>Infleet: Udfyld IRK og Leasing Kode</label>
 </ListView>

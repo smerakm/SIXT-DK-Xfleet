@@ -88,9 +88,9 @@
                 <label>Mazda</label>
             </value>
             <value>
-                <fullName>Mercedes Benz</fullName>
+                <fullName>Mercedes-Benz</fullName>
                 <default>false</default>
-                <label>Mercedes Benz</label>
+                <label>Mercedes-Benz</label>
             </value>
             <value>
                 <fullName>MG</fullName>
@@ -161,6 +161,11 @@
                 <fullName>VW</fullName>
                 <default>false</default>
                 <label>VW</label>
+            </value>
+            <value>
+                <fullName>Jeep</fullName>
+                <default>false</default>
+                <label>Jeep</label>
             </value>
         </valueSetDefinition>
     </valueSet>

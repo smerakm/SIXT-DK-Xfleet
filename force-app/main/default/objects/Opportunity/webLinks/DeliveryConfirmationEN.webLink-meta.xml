@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeliveryConfirmationEN</fullName>
+    <availability>online</availability>
+    <description>The button which creates a Scrive Document based upon &quot;Delivery Confirmation - EN&quot; Scrive Process Template.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Delivery Confirmation - EN</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/scrive__scrivedocumentfromtemplate?Id=a0b680000000pMAAAY&amp;sourceRecordId={!Opportunity.Id}</url>
+</WebLink>

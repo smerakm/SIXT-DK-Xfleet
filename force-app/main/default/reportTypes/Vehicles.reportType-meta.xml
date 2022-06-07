@@ -503,21 +503,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Account__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Contact__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_DAL_damage_check_required__c</field>
-            <table>Vehicle__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Defleet_Coordinator_Comment__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -1002,5 +987,46 @@
             <table>Vehicle__c</table>
         </columns>
         <masterLabel>Vehicles</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_Account__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_Contact__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_Account__c.vatNumberCompany__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_Account__c.Navision_Account__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_DAL_damage_check_required__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Buyer_Account__c.EUR_DKK__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <masterLabel>Buyer</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Station__c.Station_Account_Num__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <masterLabel>Filial</masterLabel>
     </sections>
 </ReportType>

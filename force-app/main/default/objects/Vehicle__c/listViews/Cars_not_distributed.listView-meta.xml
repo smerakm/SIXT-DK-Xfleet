@@ -20,7 +20,7 @@
     </filters>
     <filters>
         <field>Batch_Status__c</field>
-        <operation>equals</operation>
+        <operation>notEqual</operation>
         <value>Deal</value>
     </filters>
     <filters>

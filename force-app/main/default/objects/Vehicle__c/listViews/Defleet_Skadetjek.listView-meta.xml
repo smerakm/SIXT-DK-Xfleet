@@ -15,14 +15,9 @@
         <value>YES</value>
     </filters>
     <filters>
-        <field>Defleet_transportation_booked__c</field>
+        <field>Vehicle_status__c</field>
         <operation>equals</operation>
         <value>1</value>
-    </filters>
-    <filters>
-        <field>Vehicle_status__c</field>
-        <operation>notEqual</operation>
-        <value>00-</value>
     </filters>
     <label>Defleet: Bestilling af skadestjek</label>
 </ListView>
