@@ -47,3 +47,4 @@ workspace.code-workspace
 .prettierrc
 package-lock.json
 package.json
+manifest/package.xml

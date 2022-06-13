@@ -3,7 +3,10 @@
     <fullName>Mandatory_Deal_Vehicle_Dealer</fullName>
     <active>true</active>
     <description>Dealer must be selected before mark a batch as Deal</description>
-    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Deal&quot;)
+    <errorConditionFormula>OR(
+			ISPICKVAL(Status__c, &quot;Deal&quot;),
+			ISPICKVAL(Status__c, &quot;Deal - Waiting for details&quot;)
+)
 &amp;&amp;
 ISBLANK(vehicleSeller__c)</errorConditionFormula>
     <errorDisplayField>vehicleSeller__c</errorDisplayField>

@@ -158,7 +158,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Vehicle Batch</label>
     <nameField>
-        <displayFormat>{YYYY}-B-{0000}</displayFormat>
+        <displayFormat>{YYYY}-B{0000}</displayFormat>
         <label>Vehicle Batch ID</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>

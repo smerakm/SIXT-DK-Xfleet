@@ -3,7 +3,10 @@
     <fullName>Mandatory_Deal_ExpectedDeliveryDate</fullName>
     <active>true</active>
     <description>Expected Delivery Date needs to be populated before batch can be moved to Deal status</description>
-    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Deal&quot;)
+    <errorConditionFormula>OR(
+			ISPICKVAL(Status__c, &quot;Deal&quot;),
+			ISPICKVAL(Status__c, &quot;Deal - Waiting for details&quot;)
+)
 &amp;&amp;
 ISBLANK(deliveryDate__c)</errorConditionFormula>
     <errorDisplayField>deliveryDate__c</errorDisplayField>
