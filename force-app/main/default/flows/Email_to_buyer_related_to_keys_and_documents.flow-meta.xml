@@ -225,7 +225,7 @@
     <textTemplates>
         <name>emailToNotifyBuyerAboutKeysAndDocuments</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;We are forwarding the following keys and documents today.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;You can follow the shipment on Fedex website with the following tracking no: #Fedex tracking no.#&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;If you can’t see the shipment, it might not be updated in the Fedex system yet. Please try again later.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Hi {!$Record.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;We are forwarding the following keys and documents today.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;You can follow the shipment on Fedex website with the following tracking no: #Fedex tracking no.#&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;If you can’t see the shipment, it might not be updated in the Fedex system yet. Please try again later.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!table}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!$User.Signature}&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>Allrelatedcars</name>
@@ -262,7 +262,7 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <value>
-            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Nummerplade &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Stelnummer &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for forsendelse af reservenøgle &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for afsendelse af registreringsattest &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Dato for afsendelse af COC-dokument &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Nøgler og dokumenter sporings-ID &lt;/th&gt; &lt;/tr&gt;</stringValue>
+            <stringValue>&lt;tr&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; License Plate &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; VIN Number &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Spare Key &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Registration Document &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; COC &lt;/th&gt;     &lt;th style=&quot;border: 1px solid black;&quot;&gt; Tracking ID &lt;/th&gt; &lt;/tr&gt;</stringValue>
         </value>
     </variables>
 </Flow>
