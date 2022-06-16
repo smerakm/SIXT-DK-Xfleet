@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Jylland</fullName>
+        <default>false</default>
+        <label>Jylland</label>
+    </customValue>
+    <customValue>
+        <fullName>Sjælland</fullName>
+        <default>false</default>
+        <label>Sjælland</label>
+    </customValue>
+    <description>SIXT regions, transport split</description>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

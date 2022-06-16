@@ -51,47 +51,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>ActiveCamp__ActiveCampaign_Sync_Status__c</picklist>
-        <values>
-            <fullName>Does Not Meet Sync Criteria</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Successfully Synced</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Waiting For Next Sync</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Waiting For Update</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Damage_check_at_DAL_is_required__c</picklist>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>EUR_DKK__c</picklist>
-        <values>
-            <fullName>DKK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>EUR</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Agriculture</fullName>
@@ -223,17 +182,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Invoice_or_advis__c</picklist>
-        <values>
-            <fullName>Advis</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Invoice</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Ownership</picklist>
         <values>
             <fullName>Other</fullName>
@@ -264,6 +212,17 @@
         </values>
         <values>
             <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Jylland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sjælland</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -315,29 +274,6 @@
         </values>
         <values>
             <fullName>Vehicle Seller</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>priceStructure__c</picklist>
-        <values>
-            <fullName>Corporate rates</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Local Rates</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Public Rate -10%25</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Public Rate -15%25</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Public Rate -5%25</fullName>
             <default>false</default>
         </values>
     </picklistValues>

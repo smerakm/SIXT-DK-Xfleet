@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Station_Account_Number__c</fullName>
+    <fullName>Delivery_address_buyer__c</fullName>
     <externalId>false</externalId>
-    <formula>&quot;210700-&quot; + Vehicle__r.Station__r.Station_Account_Num__c</formula>
+    <formula>Vehicle__r.Buyer_delivery_address__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Station Account Number</label>
+    <label>Delivery address(buyer)</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>

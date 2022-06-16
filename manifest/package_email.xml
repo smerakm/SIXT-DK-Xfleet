@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>Email_for_transport_of_new_cars_BMW_Version</members>
+		<members>Email_for_transport_of_new_cars_Normal</members>
+		<members>Email_for_transport_to_DAL_Defleet</members>
+		<members>Email_for_transport_booking_new_cars_day_to_day</members>
+		<name>Flow</name>
+	</types>
+    <version>55.0</version>
+</Package>

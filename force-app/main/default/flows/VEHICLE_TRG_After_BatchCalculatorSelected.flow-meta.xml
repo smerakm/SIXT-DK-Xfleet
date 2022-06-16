@@ -70,7 +70,7 @@
         <inputAssignments>
             <field>Status__c</field>
             <value>
-                <stringValue>Draft</stringValue>
+                <stringValue>Selected</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

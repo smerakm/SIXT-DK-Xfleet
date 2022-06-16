@@ -205,7 +205,7 @@
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Email_to_buyer_about_keys_EN__c</field>
+            <field>Email_to_buyer_about_keys_DK__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>

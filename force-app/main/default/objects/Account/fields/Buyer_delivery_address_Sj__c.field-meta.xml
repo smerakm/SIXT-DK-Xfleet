@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyer_delivery_address_Sj__c</fullName>
+    <description>If vehicle related Buyer has  “Car defleeted from Sjælland…” NOT empty, AND related station has Region = “Sjælland”, then Vehicle Delivery address=  “Cars defleeted from Sjælland delivered to:” pickup location.</description>
+    <externalId>false</externalId>
+    <formula>/* 2 SUBSTITUTE is way to remove trailing comma &quot;Kystvejen 42, Kastrup, &quot; to &quot;Kystvejen 42, Kastrup&quot; */
+SUBSTITUTE (
+SUBSTITUTE ( 
+/* first check if there is specific address for the region */
+IF (ISBLANK (Cars_defleeted_from_Sj__c),
+				/* if not use Shipping address */
+    IF (ISBLANK(ShippingStreet),NULL,ShippingStreet + &quot;, &quot;)
+    + IF (ISBLANK(ShippingCity),NULL,ShippingCity + &quot;, &quot;)
+    + IF (ISBLANK(ShippingPostalCode),NULL,ShippingPostalCode + &quot;, &quot;)
+    + IF (ISBLANK(ShippingCountry),NULL,ShippingCountry + &quot;, &quot;)
+    /* if there is specific use that one */
+				, IF (ISBLANK(Cars_defleeted_from_Sj__r.LastName), NULL, Cars_defleeted_from_Sj__r.LastName + &quot;, &quot;)
+				+ IF (ISBLANK(Cars_defleeted_from_Sj__r.MailingStreet),NULL,Cars_defleeted_from_Sj__r.MailingStreet + &quot;, &quot;)
+    + IF (ISBLANK(Cars_defleeted_from_Sj__r.MailingCity),NULL,Cars_defleeted_from_Sj__r.MailingCity + &quot;, &quot;)
+    + IF (ISBLANK(Cars_defleeted_from_Sj__r.MailingPostalCode),NULL,Cars_defleeted_from_Sj__r.MailingPostalCode + &quot;, &quot;)
+    + IF (ISBLANK(Cars_defleeted_from_Sj__r.MailingCountry),NULL,Cars_defleeted_from_Sj__r.MailingCountry + &quot;, &quot;)
+)
+/* add some specific charactes to detect last trailing comma */				
+				+ &quot;.*.&quot;,
+&quot;, .*.&quot;, NULL),
+&quot;.*.&quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Address for cars defleeted from Sjælland.</inlineHelpText>
+    <label>Sjælland delivery address</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
