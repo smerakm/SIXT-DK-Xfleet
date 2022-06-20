@@ -24,5 +24,10 @@
         <operation>equals</operation>
         <value>Infleet</value>
     </filters>
+    <filters>
+        <field>Vehicle_Batch__c</field>
+        <operation>contains</operation>
+        <value>0073</value>
+    </filters>
     <label>Infleet: Alle biler</label>
 </ListView>

@@ -12,6 +12,7 @@
     <columns>IRK_code__c</columns>
     <columns>Leasing_code__c</columns>
     <columns>NAME</columns>
+    <columns>Vehicle_Batch__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>IRK_code__c</field>

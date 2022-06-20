@@ -8,6 +8,12 @@
     <columns>Max_KM__c</columns>
     <columns>Prioritized_for_Rental__c</columns>
     <columns>Prioritized_reason__c</columns>
+    <columns>Station__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Prioritized_for_Rental__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
     <label>Prioritized Cars</label>
 </ListView>

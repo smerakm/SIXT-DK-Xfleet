@@ -4,11 +4,17 @@
     <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Deregistered_in_SKAT__c</columns>
+    <columns>NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Buyer_Contact__c</field>
-        <operation>notEqual</operation>
-        <value>Rævhede</value>
+        <field>Vehicle_status__c</field>
+        <operation>equals</operation>
+        <value>00-,00- - Car is defleeted</value>
     </filters>
-    <label>Defleet: Afregistrering i SKAT</label>
+    <filters>
+        <field>Deregistered_in_SKAT__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Defleet 6: Afregistrering i SKAT</label>
 </ListView>

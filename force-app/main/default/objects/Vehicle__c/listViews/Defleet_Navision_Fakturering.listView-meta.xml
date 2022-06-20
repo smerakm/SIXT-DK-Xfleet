@@ -4,28 +4,23 @@
     <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
     <columns>leasing_Account__c</columns>
+    <columns>Invoice_or_advis__c</columns>
     <columns>Expected_Defleet_Date__c</columns>
     <columns>Sales_Price_Formula__c</columns>
     <columns>Sales_Price_EUR__c</columns>
     <columns>NAME</columns>
     <columns>Invoice_Advis_requested__c</columns>
-    <columns>Leasing_cancelled__c</columns>
     <columns>Ready_for_robot__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Buyer_Contact__c</field>
-        <operation>notEqual</operation>
-        <value>Rævhede</value>
-    </filters>
-    <filters>
-        <field>Buyer_DAL_damage_check_required__c</field>
+        <field>Defleet_Transport_Booked__c</field>
         <operation>equals</operation>
-        <value>Yes</value>
+        <value>Transport booked,Awaiting payment,Rebook transport</value>
     </filters>
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
-        <value>00-</value>
+        <value>00-,00- - Car is defleeted</value>
     </filters>
-    <label>Defleet: Bestil Navision Faktura/Advis</label>
+    <label>Defleet 3: Bestil Navision Faktura/Advis</label>
 </ListView>

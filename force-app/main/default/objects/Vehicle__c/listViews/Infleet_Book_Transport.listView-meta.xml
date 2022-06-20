@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Infleet_Book_Transport</fullName>
-    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
     <columns>Production_Number__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
@@ -14,20 +13,14 @@
     <columns>NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Supplier_ready_Date__c</field>
-        <operation>notEqual</operation>
-    </filters>
-    <filters>
-        <field>Station__c</field>
-        <operation>notEqual</operation>
-    </filters>
-    <filters>
-        <field>Infleet_transportation_booked_date__c</field>
+        <field>Status__c</field>
         <operation>equals</operation>
+        <value>Infleet</value>
     </filters>
     <filters>
-        <field>Planned_Infleet_Date__c</field>
+        <field>Infleet_status__c</field>
         <operation>equals</operation>
+        <value>Transport</value>
     </filters>
     <label>Infleet: Bestil Transport</label>
 </ListView>

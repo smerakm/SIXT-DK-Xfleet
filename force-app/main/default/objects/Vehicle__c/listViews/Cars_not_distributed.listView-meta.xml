@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cars_not_distributed</fullName>
-    <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
+    <booleanFilter>2 AND (1 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>Batch_Status__c</columns>
     <columns>NAME</columns>
     <columns>Vehicle_Batch__c</columns>
-    <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
-    <columns>Model__c</columns>
+    <columns>Car_description_2__c</columns>
+    <columns>color__c</columns>
+    <columns>Leasing_Period__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>Use_type__c</columns>
+    <columns>Required_by_Date__c</columns>
+    <columns>Expected_Delivery_Date__c</columns>
+    <columns>Car_remark__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Batch_Distribution__c</field>
@@ -19,12 +24,16 @@
         <operation>notEqual</operation>
     </filters>
     <filters>
+        <field>Use_type__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
         <field>Batch_Status__c</field>
-        <operation>notEqual</operation>
+        <operation>contains</operation>
         <value>Deal</value>
     </filters>
     <filters>
-        <field>Use_type__c</field>
+        <field>License_plate__c</field>
         <operation>equals</operation>
     </filters>
     <label>Cars not distributed</label>

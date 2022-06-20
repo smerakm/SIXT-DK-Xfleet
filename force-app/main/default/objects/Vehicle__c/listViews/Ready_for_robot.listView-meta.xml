@@ -12,6 +12,11 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
+    <filters>
+        <field>Deregistered_in_SKAT__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
     <label>Ready for robot</label>
     <sharedTo>
         <group>Defleet</group>
