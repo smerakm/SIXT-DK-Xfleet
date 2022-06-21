@@ -1,0 +1,3 @@
+<design:component label="Additional Path">
+	<design:attribute name="picklistField" label="Picklist Field API Name" />
+</design:component>

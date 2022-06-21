@@ -20,6 +20,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Expected_Delivery_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Status_to_Allocation</targetReference>
             </connector>
@@ -72,6 +79,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>formLeasingCodeReady</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -184,6 +198,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>formLeasingCodeReady</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_to_Registration</targetReference>
             </connector>
@@ -226,6 +247,12 @@
     </decisions>
     <description>changed to use &quot;only when record updated to meet criteria&quot; instead of &quot;Is Changed&quot;</description>
     <formulas>
+        <description>formula to determine if Leasing Code is ready on Vehicle when need</description>
+        <name>formLeasingCodeReady</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISPICKVAL({!$Record.Batch_Distribution__c}, &quot;DK - L94&quot;) &amp;&amp; ISBLANK({!$Record.Leasing_code__c}))</expression>
+    </formulas>
+    <formulas>
         <name>NotNull</name>
         <dataType>DateTime</dataType>
         <expression> DATETIMEVALUE(&quot;&quot;)</expression>
@@ -264,6 +291,9 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Infleet_status__c</field>
+        </inputAssignments>
         <inputAssignments>
             <field>Status__c</field>
             <value>
@@ -405,7 +435,7 @@
         <connector>
             <targetReference>Ready_for_Allocation</targetReference>
         </connector>
-        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</filterLogic>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8)</filterLogic>
         <filters>
             <field>Status__c</field>
             <operator>EqualTo</operator>
@@ -450,6 +480,13 @@
         </filters>
         <filters>
             <field>Internal_number__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Leasing_code__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

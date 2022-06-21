@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
+    <decisions>
+        <description>if Batch is already in Deal status then set the Vehicle status automatically to Infleet</description>
+        <name>Is_Batch_already_a_DEAL</name>
+        <label>Is Batch already a DEAL</label>
+        <locationX>182</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>not yet</defaultConnectorLabel>
+        <rules>
+            <name>batchIsDeal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Vehicle_Batch__r.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_status_to_Infleet</targetReference>
+            </connector>
+            <label>Deal</label>
+        </rules>
+    </decisions>
     <description>automatic updates when vehicle is created</description>
     <interviewLabel>VEHICLE_TRG_BeforeInsert {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLE_TRG_BeforeInsert</label>
@@ -27,8 +50,11 @@
         <description>if vehicle group is empty, set the default value from custom setting</description>
         <name>set_default_Vehicle_Group_if_empty</name>
         <label>set default Vehicle Group if empty</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Is_Batch_already_a_DEAL</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Vehicle_Group__c</field>
@@ -46,10 +72,29 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Set_status_to_Infleet</name>
+        <label>Set status to Infleet</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <inputAssignments>
+            <field>Infleet_status__c</field>
+            <value>
+                <stringValue>Confirm delivery</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Infleet</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <description>some information are copied from master Vehicle Batch record</description>
         <name>Updates_from_Batch</name>
         <label>Updates from Batch</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>311</locationY>
         <connector>
             <targetReference>set_default_Vehicle_Group_if_empty</targetReference>
@@ -81,7 +126,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Updates_from_Batch</targetReference>

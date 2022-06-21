@@ -2,6 +2,61 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <decisions>
+        <description>De-Qualifying criteria – vehicle should be moved to status SOLD and defleet status =”” when
+COC document = Sent to buyer
+Registration document =”Sent to buyer”
+Key sent to buyer = True</description>
+        <name>Defleet_Process_Completed</name>
+        <label>Defleet Process Completed?</label>
+        <locationX>182</locationX>
+        <locationY>2687</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_defleet_completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.COC_document__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sent to Buyer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Registration_document__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sent to buyer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Key_sent_to_buyer__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Vehicle_status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>00-</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Re_marketing_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sold</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exit_Defleet_Process_and_set_to_SOLD</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Ready_for_Defleet_in_COBRA</name>
         <label>Ready for Defleet in COBRA ?</label>
         <locationX>182</locationX>
@@ -12,14 +67,7 @@
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes4</name>
-            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7) AND 8</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND 2 AND (3 OR 4) AND (5 OR 6) AND 7</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -28,8 +76,11 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Buyer_Contact__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Pickup_Location__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Defleet_Transport_Booked__c</leftValueReference>
@@ -69,6 +120,7 @@
             <connector>
                 <targetReference>Update_to_Defleet_in_COBRA</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes4</label>
         </rules>
     </decisions>
@@ -83,14 +135,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes5</name>
-            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7) AND 8 AND 9</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND 2 AND (3 OR 4) AND (5 OR 6) AND 7 AND 8</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -99,8 +144,11 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Buyer_Contact__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Pickup_Location__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Defleet_Transport_Booked__c</leftValueReference>
@@ -147,6 +195,7 @@
             <connector>
                 <targetReference>Move_to_Deregister_in_SKAT</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes5</label>
         </rules>
     </decisions>
@@ -161,14 +210,7 @@
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes3</name>
-            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7)</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND 2 AND (3 OR 4) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -177,11 +219,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record__Prior.Buyer_Contact__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Pickup_Location__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record__Prior.Defleet_Transport_Booked__c</leftValueReference>
+                <leftValueReference>$Record.Defleet_Transport_Booked__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transport booked</stringValue>
@@ -211,6 +256,7 @@
             <connector>
                 <targetReference>Update_to_Invoice_Advis</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes3</label>
         </rules>
     </decisions>
@@ -227,13 +273,6 @@
             <name>Yes2</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
@@ -241,14 +280,17 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Buyer_Contact__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Pickup_Location__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Defleet_Transport_Booked__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>Transport booked</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -261,6 +303,7 @@
             <connector>
                 <targetReference>Update_to_Order_Damagecheck</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes2</label>
         </rules>
     </decisions>
@@ -277,24 +320,17 @@
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
+                <leftValueReference>$Record.Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Ready</stringValue>
+                    <stringValue>Defleet</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Vehicle_status__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Defleet_Status__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>00-</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -308,17 +344,13 @@
         <label>Ready for Send Documents &amp; Keys to buyer ?</label>
         <locationX>182</locationX>
         <locationY>2351</locationY>
+        <defaultConnector>
+            <targetReference>Defleet_Process_Completed</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes6</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4 and (5 OR 6) AND 7 AND 8</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5) AND 6 AND 7</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.defleetReadyCheck__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -327,8 +359,11 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Buyer_Contact__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Pickup_Location__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Defleet_Transport_Booked__c</leftValueReference>
@@ -368,6 +403,7 @@
             <connector>
                 <targetReference>Update_to_Send_Documents_Keys_to_buyer</targetReference>
             </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
             <label>Yes6</label>
         </rules>
     </decisions>
@@ -384,10 +420,10 @@
             <name>Yes1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Expected_Defleet_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>ThisAndNextMonth</elementReference>
+                    <stringValue>Defleet</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -407,6 +443,7 @@
             <label>Yes1</label>
         </rules>
     </decisions>
+    <description>set defleet status automatically</description>
     <formulas>
         <name>NotNull</name>
         <dataType>DateTime</dataType>
@@ -439,6 +476,22 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Exit_Defleet_Process_and_set_to_SOLD</name>
+        <label>Exit Defleet Process and set to SOLD</label>
+        <locationX>50</locationX>
+        <locationY>2807</locationY>
+        <inputAssignments>
+            <field>Defleet_Status__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Sold</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Move_to_Deregister_in_SKAT</name>
         <label>Move to Deregister in SKAT</label>
         <locationX>50</locationX>
@@ -446,18 +499,10 @@
         <connector>
             <targetReference>Ready_for_Send_Documents_Keys_to_buyer</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
+        <inputAssignments>
             <field>Defleet_Status__c</field>
-            <operator>EqualTo</operator>
             <value>
                 <stringValue>Deregister in SKAT</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Status__c</field>
-            <value>
-                <stringValue>Operations</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -470,18 +515,10 @@
         <connector>
             <targetReference>Ready_for_Transport</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
+        <inputAssignments>
             <field>Defleet_Status__c</field>
-            <operator>EqualTo</operator>
             <value>
                 <stringValue>Redying</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Infleet_status__c</field>
-            <value>
-                <stringValue>Allocation</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -494,23 +531,8 @@
         <connector>
             <targetReference>Ready_for_Order_Damagecheck</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Supplier_ready_Date__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Station__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <inputAssignments>
-            <field>Infleet_status__c</field>
+            <field>Defleet_Status__c</field>
             <value>
                 <stringValue>Transport</stringValue>
             </value>
@@ -525,18 +547,10 @@
         <connector>
             <targetReference>Ready_for_Deregister_in_SKAT</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
+        <inputAssignments>
             <field>Defleet_Status__c</field>
-            <operator>EqualTo</operator>
             <value>
                 <stringValue>Defleet in COBRA</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Infleet_status__c</field>
-            <value>
-                <stringValue>Infleeted</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -549,18 +563,10 @@
         <connector>
             <targetReference>Ready_for_Defleet_in_COBRA</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
+        <inputAssignments>
             <field>Defleet_Status__c</field>
-            <operator>EqualTo</operator>
             <value>
                 <stringValue>Invoice/Advis</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Infleet_status__c</field>
-            <value>
-                <stringValue>Registration</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -573,18 +579,10 @@
         <connector>
             <targetReference>Ready_for_Invoice_Advis</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
+        <inputAssignments>
             <field>Defleet_Status__c</field>
-            <operator>EqualTo</operator>
             <value>
                 <stringValue>Order Damagecheck</stringValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Infleet_status__c</field>
-            <value>
-                <stringValue>IRK and Leasing Code</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -594,6 +592,9 @@
         <label>Update to Send Documents &amp; Keys to buyer</label>
         <locationX>50</locationX>
         <locationY>2471</locationY>
+        <connector>
+            <targetReference>Defleet_Process_Completed</targetReference>
+        </connector>
         <inputAssignments>
             <field>Defleet_Status__c</field>
             <value>
@@ -608,68 +609,12 @@
         <connector>
             <targetReference>Ready_for_Redying</targetReference>
         </connector>
-        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9)</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Defleet</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>defleetReadyCheck__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Buyer_Contact__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Defleet_Transport_Booked__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Damagecheck_request_email_sent__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Buyer_DAL_damage_check_required__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Deregistered_in_SKAT__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Vehicle_status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>00-</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Expected_Defleet_Date__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Vehicle__c</object>

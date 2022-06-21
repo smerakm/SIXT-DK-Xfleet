@@ -5,15 +5,13 @@
     <errorConditionFormula>AND(
 ISPICKVAL( Defleet_Status__c , &quot;Send Documents &amp; Keys to buyer&quot;),
 OR(
-defleetReadyCheck__c = &quot;Not Ready&quot;,
-ISBLANK( Buyer_Contact__c ),
-NOT(ISPICKVAL( Defleet_Transport_Booked__c , &quot;Transport booked&quot;)),
-NOT(ISPICKVAL( Defleet_Transport_Booked__c , &quot;Awaiting payment&quot;)),
-NOT( Damagecheck_request_email_sent__c ),
-Buyer_DAL_damage_check_required__c = &quot;YES&quot;,
-NOT( Ready_for_robot__c ),
-NOT( Deregistered_in_SKAT__c ),
-NOT(ISPICKVAL(  Vehicle_status__c  , &quot;00- - Car is defleeted&quot;))
+    NOT(defleetReadyCheck__c = &quot;Ready&quot;),
+    NOT(ISPICKVAL(Defleet_Transport_Booked__c  , &quot;Transport booked&quot;)),
+    AND(NOT( Damagecheck_request_email_sent__c ), Buyer_DAL_damage_check_required__c = &quot;Yes&quot;),
+  		ISBLANK(Pickup_Location__c),
+				NOT( Ready_for_robot__c ),
+				NOT(ISPICKVAL(  Vehicle_status__c  , &quot;00-&quot;)),
+				NOT(Deregistered_in_SKAT__c) 
 )
 )</errorConditionFormula>
     <errorMessage>You cannot move Defleet status without filling necessary fields</errorMessage>

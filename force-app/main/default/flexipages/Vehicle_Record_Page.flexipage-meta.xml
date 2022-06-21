@@ -50,6 +50,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>picklistField</name>
+                    <value>Defleet_Status__c</value>
+                </componentInstanceProperties>
                 <componentName>additionalPath</componentName>
                 <identifier>additionalPath</identifier>
                 <visibilityRule>

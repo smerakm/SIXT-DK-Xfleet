@@ -5,8 +5,12 @@
     <description>Cannot move Infleet status to Infleeted without a filled Licence plate and IRK code and Infleet
 Transportation booked date and Station and Supplier Ready date</description>
     <errorConditionFormula>AND(ISPICKVAL( Infleet_status__c , &quot;Infleeted&quot;),
-OR(ISBLANK( Supplier_ready_Date__c ),ISBLANK( Station__c ),
-ISBLANK( Infleet_transportation_booked_date__c ),ISBLANK( IRK_code__c ),ISBLANK( License_plate__c ) 
+    OR(ISBLANK( Supplier_ready_Date__c ),
+							ISBLANK( Station__c ),
+							ISBLANK( Infleet_transportation_booked_date__c ),
+							ISBLANK( IRK_code__c ),
+							AND(ISPICKVAL(Batch_Distribution__c, &quot;DK - L94&quot;), ISBLANK(Leasing_code__c)),
+							ISBLANK( License_plate__c ) 
 )
 )</errorConditionFormula>
     <errorMessage>You cannot move Infleet status to the next step without filling Licence plate and IRK code and Infleet Transportation booked date and Station and Supplier Ready date fields</errorMessage>
