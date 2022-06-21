@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>COBRA status på bilen</help>
+    <label>Bil status</label>
+    <name>Vehicle_status__c</name>
+    <picklistValues>
+        <masterLabel>0 - Car is rented</masterLabel>
+        <translation>0 -  bil udlejet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>00- - Car is defleeted</masterLabel>
+        <translation>00 -- bil er defleetet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1 - Car is ready for rental</masterLabel>
+        <translation>1 - bil klar til udlejning</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10 - Car arrived, but not checked in yet</masterLabel>
+        <translation>10 - bil ankommet men ikke tjekket ind</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>11 - Car is checked in, but rental agreement not closed</masterLabel>
+        <translation>11 - bil tjekket ind men lejeaftale ikke lukket</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3 - Car is not ready, block for a reservation</masterLabel>
+        <translation>3 -  bil ikke klar, block for reservation</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4 - Car is available, but not cleaned</masterLabel>
+        <translation>4  - bil til rådighed men ikke vasket</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>45 - Car is blocked for sale</masterLabel>
+        <translation>45 - bil blokeret for udleje</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 - Car is not available, blocked for workshop etc.</masterLabel>
+        <translation>5 - bil ikke tilgængelig, blokeret pga. værksted etc.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>50 - Car is on station, but not on contract</masterLabel>
+        <translation>50 - bil hos filial men ikke på kontrakt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6 - Car is on workshop</masterLabel>
+        <translation>6 - bil på værksted</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>99 - Car is on checkout</masterLabel>
+        <translation>99 - bil lejet ud</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Antal biler tilgængelig for drift</help>
+    <label>Antal biler i frift</label>
+    <name>Number_Of_Vehicles_in_Operations__c</name>
+</CustomFieldTranslation>

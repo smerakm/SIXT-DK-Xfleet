@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Re_marketing_Status__c</name>
+    <picklistValues>
+        <masterLabel>Not sold</masterLabel>
+        <translation>Ikke solgt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ready to sell</masterLabel>
+        <translation>Klar til salg</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sold</masterLabel>
+        <translation>Solgt</translation>
+    </picklistValues>
+</CustomFieldTranslation>

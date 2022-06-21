@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Faktura eller Advis</label>
+    <name>Invoice_or_advis__c</name>
+    <picklistValues>
+        <masterLabel>Advis</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice</masterLabel>
+        <translation>Faktura</translation>
+    </picklistValues>
+</CustomFieldTranslation>

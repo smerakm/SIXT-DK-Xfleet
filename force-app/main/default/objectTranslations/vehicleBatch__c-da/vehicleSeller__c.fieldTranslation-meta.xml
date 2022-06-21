@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Forhandler</label>
+    <name>vehicleSeller__c</name>
+    <relationshipLabel>Bil batches (bil forhandler)</relationshipLabel>
+</CustomFieldTranslation>

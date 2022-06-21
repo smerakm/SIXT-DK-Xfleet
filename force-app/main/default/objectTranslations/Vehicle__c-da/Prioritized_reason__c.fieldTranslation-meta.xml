@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Årsag til bil prioriteret til udlejning</help>
+    <label>Årsag til prioritering til udlejning</label>
+    <name>Prioritized_reason__c</name>
+</CustomFieldTranslation>

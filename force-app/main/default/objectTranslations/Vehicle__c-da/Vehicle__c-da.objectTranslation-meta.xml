@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Bilen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En bil</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Bil</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Bilerne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Biler</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Biler</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Vehicle Layout</layout>
+        <sections>
+            <label>Yderligere information</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>COBRA Data</section>
+        </sections>
+        <sections>
+            <label>Bil attributter</label>
+            <section>Car Attributes</section>
+        </sections>
+        <sections>
+            <label>Bil bemærkninger</label>
+            <section>Car Remarks</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Defleet Information</section>
+        </sections>
+        <sections>
+            <label>Finansiel/afgift info</label>
+            <section>Financial/Taxation info</section>
+        </sections>
+        <sections>
+            <label>Vigtige datoer</label>
+            <section>Key Dates</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Leasing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Operational info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Re-marketing Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Time and User stamps</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Bil ID</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Felter (min km, max km) kan kun opdateres i COBRA</errorMessage>
+        <name>COBRA_is_master</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Allocation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Allocation_or_Transport</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Defleet_i_Kobra</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Deregister_in_SKAT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Infleeted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Invoice_Advis</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Leasing_code_and_IRK</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Order_Damagecheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Redying</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Registration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Send_DocumentsKeys</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Transport</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_move_to_Transport_Defleet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Selected_Batch_Calculator_same_Batch</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Status_cannot_be_moved_without_price</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>VIN_number_not_updatable</name>
+    </validationRules>
+    <webLinks>
+        <label>Opret en sag til email</label>
+        <name>Create_a_Case_for_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

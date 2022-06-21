@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Dato for forsendelse af COC dokument</label>
+    <name>Date_for_shipment_of_COC_document__c</name>
+</CustomFieldTranslation>

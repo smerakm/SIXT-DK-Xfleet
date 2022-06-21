@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Registrerings dokument</label>
+    <name>Registration_document__c</name>
+    <picklistValues>
+        <masterLabel>In Car</masterLabel>
+        <translation>I bilen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not found</masterLabel>
+        <translation>Ikke fundet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Received at Station</masterLabel>
+        <translation>Modtaget hos filial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Received in HQ</masterLabel>
+        <translation>Modtaget hos HQ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sent to buyer</masterLabel>
+        <translation>Sendt til tilbagekøber</translation>
+    </picklistValues>
+</CustomFieldTranslation>

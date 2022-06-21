@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Kontoen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En konto</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Konto</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Kontiene</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Konti</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Konti</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label>Account detaljer</label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Buyer account</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label>Account detaljer</label>
+            <section>Account details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Leasing Company</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label>Account detaljer</label>
+            <section>Account details</section>
+        </sections>
+        <sections>
+            <label>Leasing kontrakt detaljer</label>
+            <section>Leasing Contract Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Station Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label>Tilbagekøber</label>
+        <name>Buyer</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Forhandler/Importør</label>
+        <name>Dealer_Importer</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Leasing partner</label>
+        <name>Leasing_Company</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Filial</label>
+        <name>Station</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Transport</label>
+        <name>Transporter</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Tilbagekøber faktura eller advis</errorMessage>
+        <name>Invoice_or_advis_required_for_buyer</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label>Se Scrive dokumenter</label>
+        <name>scrive__ViewScriveDocuments</name>
+    </webLinks>
+</CustomObjectTranslation>

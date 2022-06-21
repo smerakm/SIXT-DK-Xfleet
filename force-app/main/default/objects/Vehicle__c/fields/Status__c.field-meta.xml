@@ -5,7 +5,7 @@
     <label>Status</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -14,7 +14,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Procurement</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Procurement</label>
             </value>
             <value>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>L94 regsitrerings afgift</label>
+    <name>L94_registration_tax__c</name>
+</CustomFieldTranslation>

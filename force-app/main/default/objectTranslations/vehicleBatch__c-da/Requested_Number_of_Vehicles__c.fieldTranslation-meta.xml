@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Antal biler vi gerne vil købe</help>
+    <label>Antal biler vi har anmodet om</label>
+    <name>Requested_Number_of_Vehicles__c</name>
+</CustomFieldTranslation>

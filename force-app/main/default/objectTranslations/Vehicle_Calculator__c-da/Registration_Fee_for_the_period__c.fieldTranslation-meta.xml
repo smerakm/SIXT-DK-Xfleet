@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>0 for Valuta og Fuld skat biler</help>
+    <label>Registrerings gebyr for perioden</label>
+    <name>Registration_Fee_for_the_period__c</name>
+</CustomFieldTranslation>

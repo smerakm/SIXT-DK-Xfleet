@@ -16,7 +16,6 @@
         <isOptional>false</isOptional>
     </lookupFilter>
     <referenceTo>Batch_Calculator__c</referenceTo>
-    <relationshipLabel>Vehicles</relationshipLabel>
     <relationshipName>Vehicles</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Aktuel kontrakt gebyr fra leasing partner på denne bil</help>
+    <label>Leasing kontrakt gebyr - aktuel</label>
+    <name>Leasing_contract_fee__c</name>
+</CustomFieldTranslation>

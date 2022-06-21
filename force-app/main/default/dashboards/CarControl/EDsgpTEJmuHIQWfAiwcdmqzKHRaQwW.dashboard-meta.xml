@@ -3,13 +3,13 @@
     <backgroundEndColor>#FFFFFF</backgroundEndColor>
     <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
     <backgroundStartColor>#FFFFFF</backgroundStartColor>
-    <chartTheme>light</chartTheme>
-    <colorPalette>unity</colorPalette>
-    <dashboardChartTheme>light</dashboardChartTheme>
-    <dashboardColorPalette>unity</dashboardColorPalette>
+    <chartTheme>dark</chartTheme>
+    <colorPalette>fire</colorPalette>
+    <dashboardChartTheme>dark</dashboardChartTheme>
+    <dashboardColorPalette>fire</dashboardColorPalette>
     <dashboardGridLayout>
         <dashboardGridComponents>
-            <colSpan>3</colSpan>
+            <colSpan>2</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -19,23 +19,25 @@
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
-                <drillDownUrl>https://sixtdk--dev.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B0Q000002PpfVUAS</drillDownUrl>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFbEAO</drillDownUrl>
+                <footer>Infleet</footer>
                 <groupingSortProperties/>
-                <header>Defleet All</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
-                <indicatorLowColor>#33C14B</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>FleetManagementInfleet/HomescreenCarControl/Defleet_All_XHg</report>
+                <header>Bekræft levering</header>
+                <indicatorBreakpoint1>10.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>100.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F07D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F07D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_AKJ</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
             <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>3</colSpan>
-            <columnIndex>3</columnIndex>
+            <colSpan>2</colSpan>
+            <columnIndex>2</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
@@ -44,47 +46,79 @@
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFfEAO</drillDownUrl>
+                <footer>Infleet</footer>
                 <groupingSortProperties/>
-                <header>Ready for pickup today</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
-                <indicatorLowColor>#33C14B</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>FleetManagementInfleet/HomescreenCarControl/Ready_for_pickup_today_wA4</report>
+                <header>Fordeling til Filialer</header>
+                <indicatorBreakpoint1>10.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>100.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F07D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F07D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_Allocation_yLt</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
             <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>3</colSpan>
+            <colSpan>2</colSpan>
+            <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFeEAO</drillDownUrl>
+                <footer>Infleet</footer>
+                <groupingSortProperties/>
+                <header>IRK &amp; Leasing code</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F07D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F07D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_IRK_Leasing_code_lcy</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
             <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <column>Vehicle__c$COBRA_Model__c</column>
+                    <column>RowCount</column>
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFcEAO</drillDownUrl>
+                <footer>Infleet</footer>
                 <groupingSortProperties/>
-                <header>Overview of cars with kilometres</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
-                <indicatorLowColor>#33C14B</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>FleetManagementInfleet/HomescreenCarControl/Overview_of_cars_with_kilometres_ia5</report>
+                <header>Bestil Transport</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F07D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F07D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_Transport_WGt</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
             <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>3</colSpan>
-            <columnIndex>9</columnIndex>
+            <colSpan>2</colSpan>
+            <columnIndex>8</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
@@ -93,23 +127,258 @@
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFjEAO</drillDownUrl>
+                <footer>Infleet</footer>
                 <groupingSortProperties/>
-                <header>Vehicles with damages to be fixe</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
-                <indicatorLowColor>#33C14B</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>FleetManagementInfleet/HomescreenCarControl/Vehicles_with_damages_to_be_fixe_TW9</report>
+                <header>Registrering i dag</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F57D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F57D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_Registrering_i_dag_beX</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>10</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFhEAO</drillDownUrl>
+                <footer>Infleet</footer>
+                <groupingSortProperties/>
+                <header>Infleet i COBRA</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#F07D05</indicatorHighColor>
+                <indicatorLowColor>#F07D05</indicatorLowColor>
+                <indicatorMiddleColor>#F07D05</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Infleet_Registrering_i_dag_Vkc</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillDownUrl>https://sixtdk.lightning.force.com/lightning/o/Vehicle__c/list?filterName=00B68000000PWFoEAO</drillDownUrl>
+                <footer>Defleet</footer>
+                <groupingSortProperties/>
+                <header>Klargøring</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#080113</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#080113</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Defleet_Klargring_4nj</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>2</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Defleet - Action efter Defleet</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#080113</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#080113</indicatorMiddleColor>
+                <report>HomescreenCarControl/Defleet_Dokumenter_og_ngler_gtd</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Biler med skader på</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
+                <report>HomescreenCarControl/Tjek_for_Vinterdk_vI4</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>6</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Manglende transport bestilling</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#16325C</indicatorHighColor>
+                <indicatorLowColor>#16325C</indicatorLowColor>
+                <indicatorMiddleColor>#16325C</indicatorMiddleColor>
+                <report>HomescreenCarControl/Manglende_transport_bestilling_1il</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>8</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Ready for robot</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#080113</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#080113</indicatorMiddleColor>
+                <report>HomescreenCarControl/Ready_for_robot_DMj</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>10</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Defleet: Vinterdæk skift</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#080113</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#080113</indicatorMiddleColor>
+                <report>HomescreenCarControl/Defleet_Vinterdk_skift_kd8</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Afregistreret i Skat</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#080113</indicatorMiddleColor>
+                <report>HomescreenCarControl/Defleet_Afregistreret_i_Skat_EUK</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>12</rowIndex>
+            <rowSpan>6</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>2</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentChartTheme>light</componentChartTheme>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <footer>Defleet</footer>
+                <groupingSortProperties/>
+                <header>Min KM ikke nået</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#16325C</indicatorHighColor>
+                <indicatorLowColor>#080113</indicatorLowColor>
+                <indicatorMiddleColor>#16325C</indicatorMiddleColor>
+                <metricLabel>Antal biler</metricLabel>
+                <report>HomescreenCarControl/Vehicles_in_Defleet_Min_KM_ikke_net_CXv</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>12</rowIndex>
             <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
-    <dashboardType>LoggedInUser</dashboardType>
+    <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
     <runningUser>kp@sixt.dk12</runningUser>
     <textColor>#000000</textColor>

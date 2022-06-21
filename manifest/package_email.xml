@@ -1,11 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
+		<members>Account.Billing_Address_Formula__c</members>
+		<members>Account.Buyer_delivery_address_Jy__c</members>
+		<members>Account.Buyer_delivery_address_Sj__c</members>
+		<members>Account.Cars_defleeted_from_Jy__c</members>
+		<members>Account.Cars_defleeted_from_Sj__c</members>
+		<members>Account.Internal_Station_Number__c</members>
+		<members>Account.Region__c</members>
+		<members>Activity_Item__c.Delivery_address_buyer__c</members>
+		<members>Activity_Item__c.Station_Account_Number__c</members>
+		<members>Activity_Item__c.Station_Address__c</members>
+		<members>Activity_Item__c.Vehicle_pickup_location__c</members>
+		<members>Vehicle__c.Buyer_delivery_address__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Email_for_transport_booking_new_cars_day_to_day</members>
 		<members>Email_for_transport_of_new_cars_BMW_Version</members>
 		<members>Email_for_transport_of_new_cars_Normal</members>
 		<members>Email_for_transport_to_DAL_Defleet</members>
-		<members>Email_for_transport_booking_new_cars_day_to_day</members>
 		<name>Flow</name>
 	</types>
-    <version>55.0</version>
+	<types>
+		<members>Region</members>
+		<name>GlobalValueSet</name>
+	</types>
+	<types>
+		<members>Account-Buyer account</members>
+		<members>Account-Station Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Procurement</members>
+		<name>Profile</name>
+	</types>
+	<types>
+		<members>Account.Station</members>
+		<name>RecordType</name>
+	</types>
+	<version>53.0</version>
 </Package>

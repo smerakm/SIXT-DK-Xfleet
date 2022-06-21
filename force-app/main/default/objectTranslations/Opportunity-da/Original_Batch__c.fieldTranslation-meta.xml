@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Batch hvor salgsmulighed oprindeligt stammer fra</help>
+    <label></label>
+    <name>Original_Batch__c</name>
+    <relationshipLabel>Salgsmuligheder</relationshipLabel>
+</CustomFieldTranslation>

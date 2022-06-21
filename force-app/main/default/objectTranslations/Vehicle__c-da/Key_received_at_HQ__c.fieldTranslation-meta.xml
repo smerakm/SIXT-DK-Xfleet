@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Nøgle modtaget på HQ</help>
+    <label>Nøgle modtaget på HQ</label>
+    <name>Key_received_at_HQ__c</name>
+</CustomFieldTranslation>

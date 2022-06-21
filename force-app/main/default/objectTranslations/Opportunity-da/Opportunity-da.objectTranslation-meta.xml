@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label></label>
+        <name>DeliveryConfirmationEN</name>
+    </webLinks>
+    <webLinks>
+        <label>Send dokument via Scrive</label>
+        <name>scrive__SendDocumentViaScrive</name>
+    </webLinks>
+    <webLinks>
+        <label>Se Scrive dokument</label>
+        <name>scrive__ViewScriveDocuments</name>
+    </webLinks>
+</CustomObjectTranslation>

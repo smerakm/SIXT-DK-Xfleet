@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label>Service og Skade gruppe</label>
+    <name>Service_and_Damage_Group__c</name>
+    <relationshipLabel>Bilgruppe</relationshipLabel>
+</CustomFieldTranslation>

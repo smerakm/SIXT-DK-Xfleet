@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Korteste holdeperiode fra alle valgte beregninger i måneder</help>
+    <label>Korteste holdeperiode</label>
+    <name>Shortest_Holding_Period__c</name>
+</CustomFieldTranslation>

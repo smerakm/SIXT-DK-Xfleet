@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Alder på bil i måneder i begyndelsen af beregnings periode</help>
+    <label>Bil alder</label>
+    <name>Vehicle_Age__c</name>
+</CustomFieldTranslation>

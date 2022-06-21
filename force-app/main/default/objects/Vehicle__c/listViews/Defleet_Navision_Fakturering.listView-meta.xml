@@ -22,5 +22,10 @@
         <operation>notEqual</operation>
         <value>00-,00- - Car is defleeted</value>
     </filters>
+    <filters>
+        <field>Invoice_Advis_requested__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
     <label>Defleet 3: Bestil Navision Faktura/Advis</label>
 </ListView>

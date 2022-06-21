@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Længe af 2 periode og antaget værditab beregning i måneder</help>
+    <label>Periode 2 længde</label>
+    <name>Period_2_Length__c</name>
+</CustomFieldTranslation>

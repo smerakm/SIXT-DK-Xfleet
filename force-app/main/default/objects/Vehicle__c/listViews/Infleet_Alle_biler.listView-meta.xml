@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Infleet_Alle_biler</fullName>
+    <columns>Planned_Infleet_Date__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Model__c</columns>
     <columns>Deadline_for_Registration__c</columns>
@@ -14,20 +15,12 @@
     <columns>Supplier_ready_Date__c</columns>
     <columns>Infleet_status__c</columns>
     <columns>NAME</columns>
+    <columns>Holding_Period__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>License_plate__c</field>
-        <operation>equals</operation>
-    </filters>
-    <filters>
-        <field>Status__c</field>
-        <operation>equals</operation>
-        <value>Infleet</value>
-    </filters>
-    <filters>
         <field>Vehicle_Batch__c</field>
-        <operation>contains</operation>
-        <value>0073</value>
+        <operation>equals</operation>
+        <value>2022-B0072</value>
     </filters>
     <label>Infleet: Alle biler</label>
 </ListView>

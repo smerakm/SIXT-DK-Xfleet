@@ -134,7 +134,7 @@ Ignore validation errors (status remains unchanged Confirm delivery)</descriptio
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>varIgnore</name>
         <dataType>Boolean</dataType>

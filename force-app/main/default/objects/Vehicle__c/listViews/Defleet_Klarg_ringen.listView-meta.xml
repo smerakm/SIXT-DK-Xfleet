@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_Klarg_ringen</fullName>
+    <booleanFilter>(1 OR 4) AND 2 AND 3 AND (5 OR 7) AND 6</booleanFilter>
+    <columns>Vehicle_status__c</columns>
+    <columns>Remaining_period__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>Car_description_2__c</columns>
+    <columns>Expected_Defleet_Date__c</columns>
+    <columns>Return_Date__c</columns>
+    <columns>Min_is_reached__c</columns>
+    <columns>Max_is_exceeded__c</columns>
+    <columns>checkForWinterTires__c</columns>
+    <columns>Plates_are_removed__c</columns>
+    <columns>Stickers_are_removed__c</columns>
+    <columns>Defleet_damage_check_completed__c</columns>
+    <columns>Ready_for_robot__c</columns>
+    <columns>NAME</columns>
+    <columns>Station__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Expected_Defleet_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH,NEXT_MONTH</value>
+    </filters>
+    <filters>
+        <field>Vehicle_status__c</field>
+        <operation>notEqual</operation>
+        <value>00-</value>
+    </filters>
+    <filters>
+        <field>defleetReadyCheck__c</field>
+        <operation>notEqual</operation>
+        <value>Ready for defleet</value>
+    </filters>
+    <filters>
+        <field>Expected_Defleet_Date__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Station__c</field>
+        <operation>equals</operation>
+        <value>Copenhagen airport</value>
+    </filters>
+    <filters>
+        <field>Vehicle_status__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Station__c</field>
+        <operation>equals</operation>
+        <value>Sixt Kystvejen</value>
+    </filters>
+    <label>Defleet: Klargøringen</label>
+</ListView>

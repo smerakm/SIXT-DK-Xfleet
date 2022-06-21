@@ -7,7 +7,6 @@
     <inlineHelpText>car group, automatically set from acriss code</inlineHelpText>
     <label>Vehicle Group</label>
     <referenceTo>Vehicle_Group__c</referenceTo>
-    <relationshipLabel>Vehicles</relationshipLabel>
     <relationshipName>Vehicles</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Skade gruppe</label>
+    <name>Damage_group__c</name>
+    <picklistValues>
+        <masterLabel>Car body</masterLabel>
+        <translation>Bilens karosseri</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lighting System</masterLabel>
+        <translation>Lys system</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Major Damage</masterLabel>
+        <translation>Alvorlig skade</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Andet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Select All</masterLabel>
+        <translation>Vælg alt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technical Area</masterLabel>
+        <translation>Teknisk område</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tyres</masterLabel>
+        <translation>Hjul</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Windows</masterLabel>
+        <translation>Vinduer</translation>
+    </picklistValues>
+</CustomFieldTranslation>

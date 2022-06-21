@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Hvad er leveringsomkostninger</help>
+    <label>Leverings omkostninger</label>
+    <name>Delivery_cost__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Case Layout</layout>
+        <sections>
+            <label></label>
+            <section>Case information</section>
+        </sections>
+        <sections>
+            <label>Firma kontakt detaljer</label>
+            <section>Company contact details</section>
+        </sections>
+        <sections>
+            <label>Email type</label>
+            <section>Type of email</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Send_Email</name>
+    </quickActions>
+</CustomObjectTranslation>

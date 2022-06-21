@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Bil dato for afsendelse af reg. attest</label>
+    <name>Vehicle_date_for_shipment_of_Reg_attest__c</name>
+</CustomFieldTranslation>

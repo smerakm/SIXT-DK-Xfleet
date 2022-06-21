@@ -3,6 +3,7 @@
     <fullName>Infleet_Registrering</fullName>
     <columns>vinNumber__c</columns>
     <columns>Use_type__c</columns>
+    <columns>Station__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
     <columns>Dealer__c</columns>

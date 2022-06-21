@@ -6,6 +6,7 @@
     <inlineHelpText>This is the date, set by Sixt, when the car is needed from the dealer.</inlineHelpText>
     <label>Required by Date</label>
     <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Date</type>

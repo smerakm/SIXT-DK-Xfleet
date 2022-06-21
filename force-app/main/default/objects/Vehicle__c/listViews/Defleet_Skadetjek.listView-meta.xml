@@ -7,6 +7,7 @@
     <columns>Car_description_2__c</columns>
     <columns>Expected_Defleet_Date__c</columns>
     <columns>NAME</columns>
+    <columns>Damagecheck_request_email_sent__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Buyer_DAL_damage_check_required__c</field>
@@ -26,6 +27,11 @@
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
         <value>00-,00- - Car is defleeted</value>
+    </filters>
+    <filters>
+        <field>Damagecheck_request_email_sent__c</field>
+        <operation>equals</operation>
+        <value>0</value>
     </filters>
     <label>Defleet 2: Bestilling af skadestjek</label>
 </ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Timestamp nøgle sendt til tilbagekøber</help>
+    <label>Nøgle sendt til tilbagekøber timestamp</label>
+    <name>Key_sent_to_buyer_timestamp__c</name>
+</CustomFieldTranslation>

@@ -20,5 +20,10 @@
         <operation>notEqual</operation>
         <value>mwe</value>
     </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Station</value>
+    </filters>
     <label>Alle kontoer</label>
 </ListView>

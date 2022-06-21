@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Årsag til at beregning var valgt eller fravalgt</help>
+    <label>Beslutnings kommetar</label>
+    <name>Decision_Comments__c</name>
+</CustomFieldTranslation>

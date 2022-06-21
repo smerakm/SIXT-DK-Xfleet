@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Batch Calculator</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Batch Calculator</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Batch Calculator Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Initial Purchase</section>
+        </sections>
+        <sections>
+            <label>Operation gebyr</label>
+            <section>Operational fees</section>
+        </sections>
+        <sections>
+            <label>Registrerings gebyr</label>
+            <section>Registration fees</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Summary</section>
+        </sections>
+        <sections>
+            <label>Total købspris</label>
+            <section>Total buy price</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage>Beskriv hvorfor beregning er valgt</errorMessage>
+        <name>DecisionComment_mandatory_for_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vælg leasing partner før beregning sættes i status valgt</errorMessage>
+        <name>Leasing_Account_mandatory_for_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Maks periode længde er 36 måneder</errorMessage>
+        <name>Max_Period_Length</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Kun 1 beregning kan vælges på en bil beregning</errorMessage>
+        <name>Only_one_can_be_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Læg remarketing pris før beregning sættes i status valgt</errorMessage>
+        <name>Remarketing_price_mandatory_for_Selected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vælg bilgruppe før beregning sættes i status valgt</errorMessage>
+        <name>Vehicle_Group_mandatory_for_Selected</name>
+    </validationRules>
+</CustomObjectTranslation>

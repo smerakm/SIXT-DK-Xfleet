@@ -15,7 +15,6 @@
         <isOptional>false</isOptional>
     </lookupFilter>
     <referenceTo>Contact</referenceTo>
-    <relationshipLabel>Vehicles (Pickup Location)</relationshipLabel>
     <relationshipName>Vehicles1</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

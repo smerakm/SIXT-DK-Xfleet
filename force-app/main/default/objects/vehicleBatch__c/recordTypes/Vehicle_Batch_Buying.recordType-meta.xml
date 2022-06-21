@@ -14,16 +14,16 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Deal - Waiting for details</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>No deal</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Offer</fullName>
             <default>true</default>
-        </values>
-        <values>
-            <fullName>Waiting for Dealer</fullName>
-            <default>false</default>
         </values>
     </picklistValues>
 </RecordType>

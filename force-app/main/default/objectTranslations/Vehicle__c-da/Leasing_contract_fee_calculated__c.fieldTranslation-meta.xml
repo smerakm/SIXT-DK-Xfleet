@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Leasing kontrakt gebyr anvendt på valgte bil beregning</help>
+    <label>Leasing kontrakt gebyr - beregnet</label>
+    <name>Leasing_contract_fee_calculated__c</name>
+</CustomFieldTranslation>

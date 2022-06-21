@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Leasing omkostning beregnet for hele perioden (holdeperiode * leasing per måned)</help>
+    <label></label>
+    <name>Leasing_cost_per_period_calculated__c</name>
+</CustomFieldTranslation>

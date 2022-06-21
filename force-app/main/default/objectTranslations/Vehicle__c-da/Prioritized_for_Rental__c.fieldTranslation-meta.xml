@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Bil prioriteret til udlejning</help>
+    <label>Skal prioriteres til udlejning</label>
+    <name>Prioritized_for_Rental__c</name>
+</CustomFieldTranslation>

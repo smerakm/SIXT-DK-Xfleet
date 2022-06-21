@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Leasing rate brugt til batch beregning</help>
+    <label>Rentesats - Batch beregning</label>
+    <name>Interest_Rate_Batch_Calculator__c</name>
+</CustomFieldTranslation>

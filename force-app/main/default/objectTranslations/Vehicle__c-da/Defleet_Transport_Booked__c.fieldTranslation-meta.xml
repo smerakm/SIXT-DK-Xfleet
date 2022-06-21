@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Defleet transport bestilt</label>
+    <name>Defleet_Transport_Booked__c</name>
+    <picklistValues>
+        <masterLabel>Awaiting payment</masterLabel>
+        <translation>Afventer betaling</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rebook transport</masterLabel>
+        <translation>Genbestil transport</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transport booked</masterLabel>
+        <translation>Transport bestilt</translation>
+    </picklistValues>
+</CustomFieldTranslation>

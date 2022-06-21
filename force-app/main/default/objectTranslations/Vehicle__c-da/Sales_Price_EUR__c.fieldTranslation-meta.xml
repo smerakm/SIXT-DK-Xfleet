@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Automatisk beregnet fra salgspris i DKK (rate kan sættes op af admin)</help>
+    <label>Estimeret remarketing pris (EUR)</label>
+    <name>Sales_Price_EUR__c</name>
+</CustomFieldTranslation>

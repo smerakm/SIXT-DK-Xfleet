@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Lead Generation --></label>
+        <name>Lead_Generation</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Relationship Management --></label>
+        <name>Relationship_Management</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Sales Leadership --></label>
+        <name>Sales_Leadership</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Sales Operations --></label>
+        <name>Sales_Operations</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Data Stream --></label>
+        <name>Sixt_DK</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Company Administration --></label>
+        <name>Sixt_Denmark</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Xfleet --></label>
+        <name>Xfleet</name>
+    </customApplications>
     <customLabels>
         <label>Nej</label>
         <name>No</name>
@@ -732,6 +760,10 @@
         <label><!-- to --></label>
         <name>scrive__to</name>
     </customLabels>
+    <customTabs>
+        <label><!-- Delivery and Collection --></label>
+        <name>Delivery_and_Collection</name>
+    </customTabs>
     <flowDefinitions>
         <flows/>
         <fullName>CALCULATIONBATCH_TRG_AfterInsertUpdate</fullName>
@@ -739,6 +771,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Defleet_Status_Change</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Defleet_set_to_Defleet_Status</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>
@@ -959,6 +995,10 @@
         <sections>
             <label><!-- Filial --></label>
             <name>Filial</name>
+        </sections>
+        <sections>
+            <label><!-- Leasing partner --></label>
+            <name>Leasing partner</name>
         </sections>
         <sections>
             <label><!-- Vehicles --></label>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Email vedr. nøgler til tilbagekøber (DK)</label>
+    <name>Email_to_buyer_about_keys_DK__c</name>
+</CustomFieldTranslation>

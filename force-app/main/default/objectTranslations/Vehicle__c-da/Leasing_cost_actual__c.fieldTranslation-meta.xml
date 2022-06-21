@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Månedlig betaling to leasing partner - information modtaget fra leasing partner</help>
+    <label>Leasing omkostning - aktuel</label>
+    <name>Leasing_cost_actual__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Defleet_Status__c</name>
+    <picklistValues>
+        <masterLabel>Defleet in COBRA</masterLabel>
+        <translation>Defleet i COBRA</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deregister in SKAT</masterLabel>
+        <translation>Afregisteret hos SKAT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice/Advis</masterLabel>
+        <translation>Faktura/advis</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Damagecheck</masterLabel>
+        <translation>Bestil skadestjek</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Redying</masterLabel>
+        <translation>Klargørings</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Send Documents &amp; Keys to buyer</masterLabel>
+        <translation>Send dokumenter og nøgler til tilbagekøber</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transport</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Vehicle Batch</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Vehicle Batches</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Vehicle Batch Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Noter</label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Vehicle_Batch_Buying</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Forventet leveringsdato skal lægges ind før batch kan lukkes</errorMessage>
+        <name>Mandatory_Deal_ExpectedDeliveryDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Forhandler skal vælges før batch kan lukkes</errorMessage>
+        <name>Mandatory_Deal_Vehicle_Dealer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Tjek at biler er importeret på batch før den lukkes</errorMessage>
+        <name>Mandatory_Deal_Vehicled_Imported</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vælg en beregning før batch flyttes i status Venter på forhandler</errorMessage>
+        <name>Mandatory_Waiting_Calculation_Selected</name>
+    </validationRules>
+</CustomObjectTranslation>

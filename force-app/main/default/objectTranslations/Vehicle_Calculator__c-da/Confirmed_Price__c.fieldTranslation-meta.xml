@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Pris er accepteret og bekræftet af tilbagekøber</help>
+    <label>Bekræftet pris</label>
+    <name>Confirmed_Price__c</name>
+</CustomFieldTranslation>

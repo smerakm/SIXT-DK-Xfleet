@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label>Fuld afgift bil - omk. for perioden</label>
+    <name>Full_Tax_Car_Cost_for_period__c</name>
+</CustomFieldTranslation>

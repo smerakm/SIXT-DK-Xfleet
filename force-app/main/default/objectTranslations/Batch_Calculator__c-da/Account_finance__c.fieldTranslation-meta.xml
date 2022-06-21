@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Vælg leasing partner (rentesats og kontrakt gebyr vil automatisk blive lagt på)</help>
+    <label>Leasing partner</label>
+    <name>Account_finance__c</name>
+    <relationshipLabel>Batch beregner</relationshipLabel>
+</CustomFieldTranslation>

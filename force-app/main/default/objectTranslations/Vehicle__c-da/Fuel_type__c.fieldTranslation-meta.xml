@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Brændstof type</label>
+    <name>Fuel_type__c</name>
+    <picklistValues>
+        <masterLabel>Diesel</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electric</masterLabel>
+        <translation>El</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hybrid</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hybrid Diesel</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hybrid Petrol</masterLabel>
+        <translation>Hybrid Benzin</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Petrol</masterLabel>
+        <translation>Benzin</translation>
+    </picklistValues>
+</CustomFieldTranslation>

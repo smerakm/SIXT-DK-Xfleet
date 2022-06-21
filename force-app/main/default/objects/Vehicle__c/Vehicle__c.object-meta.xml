@@ -159,21 +159,22 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Vehicle</label>
+    <label>Bil</label>
     <nameField>
         <displayFormat>V-{000000}</displayFormat>
-        <label>Vehicle ID</label>
+        <label>Vehicle Name</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Vehicles</pluralLabel>
+    <pluralLabel>Biler</pluralLabel>
     <searchLayouts>
         <listViewButtons>Create_a_Case_for_Email</listViewButtons>
+        <searchResultsAdditionalFields>Vehicle_Batch__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Car_description_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>vinNumber__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>License_plate__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Model__c</searchResultsAdditionalFields>
         <searchResultsCustomButtons>Create_a_Case_for_Email</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>

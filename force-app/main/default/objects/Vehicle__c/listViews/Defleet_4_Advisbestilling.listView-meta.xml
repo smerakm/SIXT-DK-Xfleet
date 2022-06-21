@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Defleet_4_Advisbestilling</fullName>
+    <columns>Current_KM__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Model__c</columns>
+    <columns>leasing_Account__c</columns>
+    <columns>Buyer_Account__c</columns>
+    <columns>Invoice_Advis_requested__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Defleet_Transport_Booked__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Vehicle_status__c</field>
+        <operation>notEqual</operation>
+        <value>00-,00- - Car is defleeted</value>
+    </filters>
+    <label>Defleet 4: Advisbestilling</label>
+</ListView>

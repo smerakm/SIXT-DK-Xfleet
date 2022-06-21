@@ -24,13 +24,13 @@
         <picklistValueName>IRK and Leasing Code</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Internal_number__c</fieldNames>
         <info>&lt;p&gt;Registrér bilen I COBRA og udfyld Internal ID. &lt;/p&gt;</info>
         <picklistValueName>Infleeted</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>License_plate__c</fieldNames>
-        <info>&lt;p&gt;Registrér bilen hos SKAT og udfyld nummerplade.&lt;/p&gt;</info>
+        <fieldNames>Internal_number__c</fieldNames>
+        <info>&lt;p&gt;Registrér bilen hos SKAT og udfyld nummerplade.&lt;/p&gt;&lt;p&gt;Infleet bilen i Cobra og udfyld Internal number&lt;/p&gt;</info>
         <picklistValueName>Registration</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>

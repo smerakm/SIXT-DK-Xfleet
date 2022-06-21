@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Hvor mange procent af værdi er tabt per måned gennem 1 periode periode</help>
+    <label>Periode 2 sats</label>
+    <name>Period_2_Rate__c</name>
+</CustomFieldTranslation>

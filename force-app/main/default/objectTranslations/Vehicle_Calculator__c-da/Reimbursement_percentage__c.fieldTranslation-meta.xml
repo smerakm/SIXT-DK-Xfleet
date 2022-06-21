@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Kun for DK/L94 biler</help>
+    <label></label>
+    <name>Reimbursement_percentage__c</name>
+</CustomFieldTranslation>

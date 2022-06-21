@@ -8,6 +8,7 @@
     <columns>vinNumber__c</columns>
     <columns>Car_description_2__c</columns>
     <columns>color__c</columns>
+    <columns>Holding_Period__c</columns>
     <columns>Leasing_Period__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>Use_type__c</columns>
