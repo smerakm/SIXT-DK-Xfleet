@@ -1419,6 +1419,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Fleet_Forecast__c.Is_Last_Day_of_Month__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Fleet_Forecast__c.Last_Day__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2030,6 +2035,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.TotalOpportunityQuantity</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Total_Remarketing_Price_DKK__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Total_Remarketing_Price_EUR__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Total_Remarketing_Price_Full_Tax_DKK__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2864,6 +2884,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Vehicle__c.Confirmed_Remarketing_Price_Converted__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Confirmed_Remarketing_Price_DKK__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Confirmed_Remarketing_Price_EUR__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Vehicle__c.Contract_fee_batch__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2929,6 +2969,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Vehicle__c.Deadline_for_Registration_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Vehicle__c.Deadline_for_Registration__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2960,6 +3005,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle__c.Defleet_damage_checked_by__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Defleet_key_reg_COC_done__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3554,6 +3604,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Vehicle__c.Tax_Base__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Vehicle__c.Tax_value_incl_VAT__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3615,6 +3670,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Vehicle__c.Tires_ownership__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Vehicle__c.Total_Buy_Price__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

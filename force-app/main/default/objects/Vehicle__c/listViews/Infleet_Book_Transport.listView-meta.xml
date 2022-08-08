@@ -11,6 +11,7 @@
     <columns>Planned_Infleet_Date__c</columns>
     <columns>Infleet_transportation_booked_date__c</columns>
     <columns>NAME</columns>
+    <columns>Use_type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>
@@ -22,5 +23,5 @@
         <operation>equals</operation>
         <value>Transport</value>
     </filters>
-    <label>Infleet: Bestil Transport</label>
+    <label>Infleet 3: Bestil Transport</label>
 </ListView>

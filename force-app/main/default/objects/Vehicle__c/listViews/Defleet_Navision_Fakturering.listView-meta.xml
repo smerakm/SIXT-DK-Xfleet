@@ -6,8 +6,10 @@
     <columns>leasing_Account__c</columns>
     <columns>Invoice_or_advis__c</columns>
     <columns>Expected_Defleet_Date__c</columns>
-    <columns>Sales_Price_Formula__c</columns>
-    <columns>Sales_Price_EUR__c</columns>
+    <columns>Confirmed_Remarketing_Price_DKK__c</columns>
+    <columns>Confirmed_Remarketing_Price_EUR__c</columns>
+    <columns>Confirmed_Remarketing_Price_Full_Tax_DKK__c</columns>
+    <columns>Buyer_Account__c</columns>
     <columns>NAME</columns>
     <columns>Invoice_Advis_requested__c</columns>
     <columns>Ready_for_robot__c</columns>
@@ -20,7 +22,7 @@
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
-        <value>00-,00- - Car is defleeted</value>
+        <value>00-</value>
     </filters>
     <filters>
         <field>Invoice_Advis_requested__c</field>

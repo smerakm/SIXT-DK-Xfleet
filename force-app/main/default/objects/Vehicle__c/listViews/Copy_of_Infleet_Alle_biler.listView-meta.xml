@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Infleet_Alle_biler</fullName>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Model__c</columns>
+    <columns>Station__c</columns>
+    <columns>Use_type__c</columns>
+    <columns>Batch_Distribution__c</columns>
+    <columns>Dealer__c</columns>
+    <columns>Supplier_ready_Date__c</columns>
+    <columns>Planned_Infleet_Date__c</columns>
+    <columns>leasing_Account__c</columns>
+    <columns>IRK_code__c</columns>
+    <columns>Leasing_code__c</columns>
+    <columns>Infleet_status__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Infleet</value>
+    </filters>
+    <filters>
+        <field>Supplier_ready_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Infleet 1: Bekræft leveringsdato</label>
+</ListView>

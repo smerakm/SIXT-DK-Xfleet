@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
+        <fullName>---</fullName>
+        <default>false</default>
+        <label>--- not yet categorized --</label>
+    </customValue>
+    <customValue>
         <fullName>A</fullName>
         <default>false</default>
         <label>A</label>
@@ -19,6 +24,11 @@
         <fullName>CAZZ</fullName>
         <default>false</default>
         <label>CAZZ</label>
+    </customValue>
+    <customValue>
+        <fullName>CCAR</fullName>
+        <default>false</default>
+        <label>CCAR</label>
     </customValue>
     <customValue>
         <fullName>CDAE</fullName>
@@ -41,6 +51,16 @@
         <label>CDMR</label>
     </customValue>
     <customValue>
+        <fullName>CFAE</fullName>
+        <default>false</default>
+        <label>CFAE</label>
+    </customValue>
+    <customValue>
+        <fullName>CFAH</fullName>
+        <default>false</default>
+        <label>CFAH</label>
+    </customValue>
+    <customValue>
         <fullName>CFMR</fullName>
         <default>false</default>
         <label>CFMR</label>
@@ -59,6 +79,16 @@
         <fullName>CLAR</fullName>
         <default>false</default>
         <label>CLAR</label>
+    </customValue>
+    <customValue>
+        <fullName>CTAR</fullName>
+        <default>false</default>
+        <label>CTAR</label>
+    </customValue>
+    <customValue>
+        <fullName>CVAR</fullName>
+        <default>false</default>
+        <label>CVAR</label>
     </customValue>
     <customValue>
         <fullName>CWAH</fullName>
@@ -81,9 +111,19 @@
         <label>ECAE</label>
     </customValue>
     <customValue>
+        <fullName>ECMH</fullName>
+        <default>false</default>
+        <label>ECMH</label>
+    </customValue>
+    <customValue>
         <fullName>ECMR</fullName>
         <default>false</default>
         <label>ECMR</label>
+    </customValue>
+    <customValue>
+        <fullName>EDAR</fullName>
+        <default>false</default>
+        <label>EDAR</label>
     </customValue>
     <customValue>
         <fullName>ETMR</fullName>
@@ -99,6 +139,16 @@
         <fullName>FFAR</fullName>
         <default>false</default>
         <label>FFAR</label>
+    </customValue>
+    <customValue>
+        <fullName>FSAR</fullName>
+        <default>false</default>
+        <label>FSAR</label>
+    </customValue>
+    <customValue>
+        <fullName>FTAR</fullName>
+        <default>false</default>
+        <label>FTAR</label>
     </customValue>
     <customValue>
         <fullName>FVAR</fullName>
@@ -156,6 +206,11 @@
         <label>ILAR</label>
     </customValue>
     <customValue>
+        <fullName>ITAR</fullName>
+        <default>false</default>
+        <label>ITAR</label>
+    </customValue>
+    <customValue>
         <fullName>IVMR</fullName>
         <default>false</default>
         <label>IVMR</label>
@@ -176,6 +231,11 @@
         <label>IWMR</label>
     </customValue>
     <customValue>
+        <fullName>LCAH</fullName>
+        <default>false</default>
+        <label>LCAH</label>
+    </customValue>
+    <customValue>
         <fullName>LCAR</fullName>
         <default>false</default>
         <label>LCAR</label>
@@ -184,6 +244,11 @@
         <fullName>LDAR</fullName>
         <default>false</default>
         <label>LDAR</label>
+    </customValue>
+    <customValue>
+        <fullName>LFAR</fullName>
+        <default>false</default>
+        <label>LFAR</label>
     </customValue>
     <customValue>
         <fullName>LSAR</fullName>
@@ -199,6 +264,11 @@
         <fullName>LTAR</fullName>
         <default>false</default>
         <label>LTAR</label>
+    </customValue>
+    <customValue>
+        <fullName>PDAE</fullName>
+        <default>false</default>
+        <label>PDAE</label>
     </customValue>
     <customValue>
         <fullName>PDAH</fullName>
@@ -229,6 +299,16 @@
         <fullName>PTAR</fullName>
         <default>false</default>
         <label>PTAR</label>
+    </customValue>
+    <customValue>
+        <fullName>PVAR</fullName>
+        <default>false</default>
+        <label>PVAR</label>
+    </customValue>
+    <customValue>
+        <fullName>PWAH</fullName>
+        <default>false</default>
+        <label>PWAH</label>
     </customValue>
     <customValue>
         <fullName>PWAR</fullName>
@@ -276,9 +356,19 @@
         <label>SVAR</label>
     </customValue>
     <customValue>
+        <fullName>SWAH</fullName>
+        <default>false</default>
+        <label>SWAH</label>
+    </customValue>
+    <customValue>
         <fullName>SWAR</fullName>
         <default>false</default>
         <label>SWAR</label>
+    </customValue>
+    <customValue>
+        <fullName>SWMR</fullName>
+        <default>false</default>
+        <label>SWMR</label>
     </customValue>
     <customValue>
         <fullName>U</fullName>
@@ -306,14 +396,29 @@
         <label>XLAR</label>
     </customValue>
     <customValue>
+        <fullName>XPAR</fullName>
+        <default>false</default>
+        <label>XPAR</label>
+    </customValue>
+    <customValue>
+        <fullName>XSAE</fullName>
+        <default>false</default>
+        <label>XSAE</label>
+    </customValue>
+    <customValue>
+        <fullName>XTAR</fullName>
+        <default>false</default>
+        <label>XTAR</label>
+    </customValue>
+    <customValue>
+        <fullName>XVAE</fullName>
+        <default>false</default>
+        <label>XVAE</label>
+    </customValue>
+    <customValue>
         <fullName>XVAN</fullName>
         <default>false</default>
         <label>XVAN</label>
-    </customValue>
-    <customValue>
-        <fullName>---</fullName>
-        <default>false</default>
-        <label>--- not yet categorized --</label>
     </customValue>
     <description>Acriss Codes used in SIXT DK</description>
     <masterLabel>Acriss Code</masterLabel>

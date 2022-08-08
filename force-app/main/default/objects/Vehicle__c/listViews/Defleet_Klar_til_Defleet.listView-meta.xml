@@ -4,10 +4,9 @@
     <booleanFilter>(1 OR 5) AND 2 AND 3 AND 4 AND 6</booleanFilter>
     <columns>License_plate__c</columns>
     <columns>vinNumber__c</columns>
-    <columns>Station__c</columns>
+    <columns>Return_station__c</columns>
     <columns>Pickup_Location__c</columns>
     <columns>Vehicle_status__c</columns>
-    <columns>Buyer_DAL_damage_check_required__c</columns>
     <columns>Buyer_Account__c</columns>
     <columns>Car_description_2__c</columns>
     <columns>Defleet_Status__c</columns>
@@ -16,6 +15,7 @@
     <columns>Defleet_Transport_Booked__c</columns>
     <columns>Defleet_Coordinator_Comment__c</columns>
     <columns>The_car_is_paid__c</columns>
+    <columns>Remaining_period__c</columns>
     <columns>NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -45,7 +45,7 @@
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
-        <value>00-,00- - Car is defleeted</value>
+        <value>00-</value>
     </filters>
     <label>Defleet 1: Transportbestilling</label>
 </ListView>

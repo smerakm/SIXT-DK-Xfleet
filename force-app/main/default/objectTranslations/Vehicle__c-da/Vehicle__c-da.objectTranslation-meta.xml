@@ -141,6 +141,10 @@
     </validationRules>
     <validationRules>
         <errorMessage></errorMessage>
+        <name>Only_one_Confirmed_Remarketing_Price</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
         <name>Selected_Batch_Calculator_same_Batch</name>
     </validationRules>
     <validationRules>

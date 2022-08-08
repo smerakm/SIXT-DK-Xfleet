@@ -27,6 +27,10 @@
         <translation></translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Ferrari</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Fiat</masterLabel>
         <translation></translation>
     </picklistValues>
@@ -40,6 +44,10 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Hyundai</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Isuzu</masterLabel>
         <translation></translation>
     </picklistValues>
     <picklistValues>

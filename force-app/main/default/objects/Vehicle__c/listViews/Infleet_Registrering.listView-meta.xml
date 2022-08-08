@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Infleet_Registrering</fullName>
+    <booleanFilter>(1 OR 3) AND 2</booleanFilter>
     <columns>vinNumber__c</columns>
     <columns>Use_type__c</columns>
     <columns>Station__c</columns>
@@ -15,10 +16,6 @@
     <columns>Ready_for_robot__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>IRK_code__c</field>
-        <operation>notEqual</operation>
-    </filters>
-    <filters>
         <field>Planned_Infleet_Date__c</field>
         <operation>equals</operation>
         <value>TODAY</value>
@@ -27,5 +24,10 @@
         <field>License_plate__c</field>
         <operation>equals</operation>
     </filters>
-    <label>Infleet: Til registrering i dag</label>
+    <filters>
+        <field>Planned_Infleet_Date__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Infleet 5: Til registrering i dag</label>
 </ListView>

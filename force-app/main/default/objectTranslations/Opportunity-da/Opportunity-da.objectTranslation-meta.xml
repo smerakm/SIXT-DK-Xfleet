@@ -6,6 +6,10 @@
             <label></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label></label>
+            <section>Total Price</section>
+        </sections>
     </layouts>
     <webLinks>
         <label></label>

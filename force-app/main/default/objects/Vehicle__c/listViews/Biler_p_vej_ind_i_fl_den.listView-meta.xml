@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Biler_p_vej_ind_i_fl_den</fullName>
-    <booleanFilter>1 OR 2</booleanFilter>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
     <columns>Expected_Delivery_Date__c</columns>
@@ -11,6 +11,7 @@
     <columns>Vehicle_Batch__c</columns>
     <columns>NAME</columns>
     <columns>Batch_Distribution__c</columns>
+    <columns>Use_type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Expected_Delivery_Date__c</field>
@@ -21,6 +22,10 @@
         <field>Planned_Infleet_Date__c</field>
         <operation>equals</operation>
         <value>NEXT_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>License_plate__c</field>
+        <operation>equals</operation>
     </filters>
     <label>Biler på vej ind i flåden</label>
 </ListView>

@@ -5,6 +5,7 @@
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
+    <columns>ACRISS_Code__c</columns>
     <columns>Use_type__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>Supplier_ready_Date__c</columns>
@@ -22,5 +23,5 @@
         <operation>equals</operation>
         <value>Allocation</value>
     </filters>
-    <label>Infleet: Distribution til Stationer</label>
+    <label>Infleet 2: Distribution til Stationer</label>
 </ListView>

@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>Codes__c</columns>
     <columns>Service_and_Damage_Group__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

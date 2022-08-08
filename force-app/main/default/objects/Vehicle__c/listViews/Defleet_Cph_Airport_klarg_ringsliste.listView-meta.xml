@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Defleet_Cph_Airport_klarg_ringsliste</fullName>
-    <booleanFilter>(1 OR 4) AND 2 AND 3 AND 5 AND 6</booleanFilter>
+    <booleanFilter>(1 OR 4) AND 3 AND 5 AND 6 AND 2</booleanFilter>
     <columns>Vehicle_status__c</columns>
     <columns>Remaining_period__c</columns>
     <columns>License_plate__c</columns>
@@ -9,7 +9,6 @@
     <columns>Expected_Defleet_Date__c</columns>
     <columns>Return_Date__c</columns>
     <columns>Min_is_reached__c</columns>
-    <columns>Max_is_exceeded__c</columns>
     <columns>checkForWinterTires__c</columns>
     <columns>Plates_are_removed__c</columns>
     <columns>Stickers_are_removed__c</columns>
@@ -17,6 +16,7 @@
     <columns>Ready_for_robot__c</columns>
     <columns>NAME</columns>
     <columns>Station__c</columns>
+    <columns>Defleet_Coordinator_Comment__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Expected_Defleet_Date__c</field>
@@ -45,8 +45,8 @@
     </filters>
     <filters>
         <field>Vehicle_status__c</field>
-        <operation>equals</operation>
-        <value>0</value>
+        <operation>notEqual</operation>
+        <value>45</value>
     </filters>
     <label>Defleet: Cph Airport</label>
 </ListView>

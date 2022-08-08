@@ -296,12 +296,12 @@
                 <behavior>Edit</behavior>
                 <field>Service_interval_Years_KM__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Transmission_Type__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Automatic_gears__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Bluetooth__c</field>
@@ -317,10 +317,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Parking_sensor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Towbar__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -357,7 +353,7 @@
                 <field>Internal_number__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>COBRA_Model__c</field>
             </layoutItems>
             <layoutItems>

@@ -161,7 +161,7 @@
         <displayFormat>{YYYY}-B{0000}</displayFormat>
         <label>Vehicle Batch ID</label>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Vehicle Batches</pluralLabel>

@@ -3,7 +3,13 @@
     <fullName>Tax_Base__c</fullName>
     <description>(Steel price + handling cost + delivery cost) * 1.25 + License plate cost + registration cost</description>
     <externalId>false</externalId>
-    <formula>licensePlateCost__c + Final_tax_after_deduction__c + (Sixt_steel_purchase_price__c + Delivery_cost__c + handlingCost__c) * 1.25</formula>
+    <formula>(Sixt_steel_purchase_price__c + Delivery_cost__c + handlingCost__c  +  Price_Aftermarket_accessories_excl_VAT__c )
+
+* 1.25
+
++ Final_tax_after_deduction__c
++ licensePlateCost__c</formula>
+    <inlineHelpText>Prev. formula: licensePlateCost__c + Final_tax_after_deduction__c + (Sixt_steel_purchase_price__c + Delivery_cost__c + handlingCost__c) * 1.25</inlineHelpText>
     <label>Tax Base</label>
     <precision>18</precision>
     <required>false</required>

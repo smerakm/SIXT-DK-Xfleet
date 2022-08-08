@@ -2,12 +2,14 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Minilease_klarmeldte_biler</fullName>
     <columns>Vehicle_Batch__c</columns>
+    <columns>For_sale_as_Minilease__c</columns>
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
     <columns>Use_type__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>Supplier_ready_Date__c</columns>
+    <columns>Deadline_for_Registration_Date__c</columns>
     <columns>Deadline_for_Registration__c</columns>
     <columns>Holding_Period__c</columns>
     <columns>Leasing_Period__c</columns>

@@ -38,20 +38,19 @@
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <column>Vehicle__c$Sales_Price_Confirmed__c</column>
+                    <column>RowCount</column>
                 </chartSummary>
                 <componentType>Metric</componentType>
-                <decimalPrecision>-1</decimalPrecision>
-                <displayUnits>Auto</displayUnits>
+                <decimalPrecision>0</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
                 <groupingSortProperties/>
-                <header>Sales price missing</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
-                <indicatorHighColor>#E81717</indicatorHighColor>
-                <indicatorLowColor>#33C14B</indicatorLowColor>
+                <header>Biler klar til finasiering</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>FleetManagementProcurement/Homescreen/Sales_price_missing_8Go</report>
+                <report>FleetManagementProcurement/Biler_klar_til_finasiering_E10</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -272,12 +271,37 @@
             <rowIndex>13</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <column>Vehicle__c$Sales_Price_Confirmed__c</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>Sales price missing</header>
+                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>35.0</indicatorBreakpoint2>
+                <indicatorHighColor>#E81717</indicatorHighColor>
+                <indicatorLowColor>#33C14B</indicatorLowColor>
+                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
+                <report>FleetManagementProcurement/Homescreen/Sales_price_missing_8Go</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>21</rowIndex>
+            <rowSpan>5</rowSpan>
+        </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>claus.poulsen@wipro.com.sixtdk</runningUser>
+    <runningUser>kp@sixt.dk12</runningUser>
     <textColor>#000000</textColor>
     <title>Procurement and Remarketing home screen</title>
     <titleColor>#000000</titleColor>

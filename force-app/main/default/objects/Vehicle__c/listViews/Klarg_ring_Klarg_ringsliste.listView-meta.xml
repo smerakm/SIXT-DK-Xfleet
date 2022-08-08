@@ -14,7 +14,7 @@
     <columns>Defleet_damage_check_completed__c</columns>
     <columns>Ready_for_robot__c</columns>
     <columns>Deregistered_in_SKAT__c</columns>
-    <columns>Station__c</columns>
+    <columns>Return_station__c</columns>
     <columns>NAME</columns>
     <columns>Defleet_Coordinator_Comment__c</columns>
     <filterScope>Everything</filterScope>
@@ -36,7 +36,7 @@
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
-        <value>00-,00- - Car is defleeted</value>
+        <value>00-</value>
     </filters>
     <label>Defleet: Koordinator Klargøringsliste</label>
 </ListView>

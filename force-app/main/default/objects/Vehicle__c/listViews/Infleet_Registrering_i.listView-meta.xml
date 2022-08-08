@@ -9,14 +9,11 @@
     <columns>leasing_Account__c</columns>
     <columns>IRK_code__c</columns>
     <columns>Leasing_code__c</columns>
+    <columns>Station__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>NAME</columns>
     <columns>Ready_for_robot__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>IRK_code__c</field>
-        <operation>notEqual</operation>
-    </filters>
     <filters>
         <field>Planned_Infleet_Date__c</field>
         <operation>equals</operation>

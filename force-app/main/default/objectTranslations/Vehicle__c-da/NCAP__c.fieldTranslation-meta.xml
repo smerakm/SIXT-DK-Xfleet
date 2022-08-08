@@ -3,6 +3,10 @@
     <label></label>
     <name>NCAP__c</name>
     <picklistValues>
+        <masterLabel>0</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>1</masterLabel>
         <translation></translation>
     </picklistValues>
