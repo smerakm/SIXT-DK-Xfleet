@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>49.0</apiVersion>
     <assignments>
         <name>Set_Count_of_Vehicles</name>
         <label>Set Count of Vehicles</label>
@@ -74,7 +74,7 @@
             <assignToReference>varTotalPrice</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>calculate_SUMs.Sales_Price_Formula__c</elementReference>
+                <elementReference>calculate_SUMs.Confirmed_Remarketing_Price_Converted__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -89,6 +89,27 @@
             <operator>Add</operator>
             <value>
                 <elementReference>calculate_SUMs.Remaining_period__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varTotalConfirmedPriceDKK</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>calculate_SUMs.Confirmed_Remarketing_Price_DKK__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varTotalConfirmedPriceFullTaxDKK</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>calculate_SUMs.Confirmed_Remarketing_Price_Full_Tax_DKK__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varTotalConfirmedPriceEUR</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>calculate_SUMs.Confirmed_Remarketing_Price_EUR__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -174,7 +195,7 @@
     </decisions>
     <description>calculate roll-ups from related Vehicles on an Opportunity
 - total count of vehicles
-- sum of price
+- sum of price (DKK, EUR, Full Tax DKK, and converted) 
 - max of Max KM
 - max of Min KM
 - max of Holding Period</description>
@@ -277,6 +298,24 @@
                 <elementReference>varCountOfVehicles</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Total_Remarketing_Price_DKK__c</field>
+            <value>
+                <elementReference>varTotalConfirmedPriceDKK</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Remarketing_Price_EUR__c</field>
+            <value>
+                <elementReference>varTotalConfirmedPriceEUR</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Remarketing_Price_Full_Tax_DKK__c</field>
+            <value>
+                <elementReference>varTotalConfirmedPriceFullTaxDKK</elementReference>
+            </value>
+        </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
     <runInMode>DefaultMode</runInMode>
@@ -338,6 +377,33 @@
         <value>
             <numberValue>0.0</numberValue>
         </value>
+    </variables>
+    <variables>
+        <description>sum of Confirmed Remarketing Price (DKK)</description>
+        <name>varTotalConfirmedPriceDKK</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>sum of Confirmed Remarketing Price (EUR)</description>
+        <name>varTotalConfirmedPriceEUR</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>sum of Confirmed Remarketing Price Full Tax DKK</description>
+        <name>varTotalConfirmedPriceFullTaxDKK</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
     </variables>
     <variables>
         <name>varTotalPrice</name>

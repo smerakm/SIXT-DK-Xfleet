@@ -4,29 +4,35 @@ public with sharing class VehiclesFromOpportunityController {
     public VehiclesFromOpportunityController() {
     }
 
-    public List<Vehicle__c> getOpportunityVehicles() {
-        List<Vehicle__c> opptyVehicles = [
-            SELECT
-                Production_Number__c,
-                vinNumber__c,
-                Brand__c,
-                Model__c,
-                color__c,
-                Fuel_type__c,
-                kmPrL__c,
-                CO2__c,
-                Navigation__c,
-                Automatic_gears__c,
-                Speed_Pilot__c,
-                Parking_sensor__c,
-                Bluetooth__c,
-                Non_standard_Accessories__c,
-                Sales_Price_Formula__c,
-                Sales_Price_EUR__c
-            FROM Vehicle__c
-            WHERE Opportunity__c = :oppId
-        ];
-        return opptyVehicles;
+    public List<Vehicle__c> OpportunityVehicles {
+        get {
+            if (this.OpportunityVehicles == null || this.OpportunityVehicles.isEmpty()) {
+                this.OpportunityVehicles = [
+                    SELECT
+                        Production_Number__c,
+                        vinNumber__c,
+                        Brand__c,
+                        Model__c,
+                        color__c,
+                        Fuel_type__c,
+                        kmPrL__c,
+                        CO2__c,
+                        Navigation__c,
+                        Automatic_gears__c,
+                        Speed_Pilot__c,
+                        Parking_sensor__c,
+                        Bluetooth__c,
+                        Non_standard_Accessories__c,
+                        Confirmed_Remarketing_Price_DKK__c,
+                        Confirmed_Remarketing_Price_Full_Tax_DKK__c,
+                        Confirmed_Remarketing_Price_EUR__c
+                    FROM Vehicle__c
+                    WHERE Opportunity__c = :oppId
+                ];
+            }
+            return OpportunityVehicles;
+        }
+        set;
     }
 
     public Boolean getIsEUR() {
@@ -38,5 +44,25 @@ public with sharing class VehiclesFromOpportunityController {
             }
         }
         return isEUR;
+    }
+
+    public Boolean getHasFullTaxVehicles() {
+        List<Vehicle__c> vehs = this.OpportunityVehicles;
+        for (Vehicle__c v : vehs) {
+            if (v.Confirmed_Remarketing_Price_Full_Tax_DKK__c != null && v.Confirmed_Remarketing_Price_Full_Tax_DKK__c > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean getHasDKKVehicles() {
+        List<Vehicle__c> vehs = this.OpportunityVehicles;
+        for (Vehicle__c v : vehs) {
+            if (v.Confirmed_Remarketing_Price_DKK__c != null && v.Confirmed_Remarketing_Price_DKK__c > 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }

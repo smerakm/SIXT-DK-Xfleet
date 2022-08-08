@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed_Remarketing_Price_Full_Tax_DKK__c</fullName>
+    <description>price that was confirmed with buyer, for vehicles sell with VAT</description>
+    <externalId>false</externalId>
+    <inlineHelpText>price that was confirmed with buyer, for vehicles sell with VAT</inlineHelpText>
+    <label>Confirmed Remarketing Price Full Tax DKK</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

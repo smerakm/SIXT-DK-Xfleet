@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed_Remarketing_Price_EUR__c</fullName>
+    <description>price that was confirmed with buyer, in case of EUR price</description>
+    <externalId>false</externalId>
+    <inlineHelpText>price that was confirmed with buyer, in case of EUR price</inlineHelpText>
+    <label>Confirmed Remarketing Price (EUR)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -60,13 +60,17 @@
             <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Non_standard_Accessories__c.Label}</apex:facet>
             <apex:outputText value="{!veh.Non_standard_Accessories__c}" />
         </apex:column>
-        <apex:column rendered="{!showAllFields && NOT(IsEUR)}">
-            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Sales_Price_Formula__c.Label + " (DKK)"}</apex:facet>
-            <apex:outputText value="{!veh.Sales_Price_Formula__c}" />
+        <apex:column rendered="{!showAllFields && NOT(IsEUR) && HasDKKVehicles}">
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Confirmed_Remarketing_Price_DKK__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Confirmed_Remarketing_Price_DKK__c}" />
+        </apex:column>
+        <apex:column rendered="{!showAllFields && NOT(IsEUR) && HasFullTaxVehicles}">
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Confirmed_Remarketing_Price_Full_Tax_DKK__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Confirmed_Remarketing_Price_Full_Tax_DKK__c}" />
         </apex:column>
         <apex:column rendered="{!showAllFields && IsEUR}">
-            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Sales_Price_Formula__c.Label + " (EUR)"}</apex:facet>
-            <apex:outputText value="{!veh.Sales_Price_EUR__c}" />
+            <apex:facet name="header">{!$ObjectType.Vehicle__c.fields.Confirmed_Remarketing_Price_EUR__c.Label}</apex:facet>
+            <apex:outputText value="{!veh.Confirmed_Remarketing_Price_EUR__c}" />
         </apex:column>
     </apex:dataTable>
 </apex:component>

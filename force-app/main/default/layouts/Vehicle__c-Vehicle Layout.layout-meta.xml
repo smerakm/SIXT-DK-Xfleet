@@ -71,6 +71,10 @@
                 <behavior>Edit</behavior>
                 <field>Key_label_printed__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Buyer_delivery_address__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -340,8 +344,7 @@
                 <field>Car_remark__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -425,20 +428,8 @@
                 <field>Price_Aftermarket_accessories_excl_VAT__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Tax_value_incl_VAT__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Sales_Price_Formula__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Sales_Price_EUR__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Sales_Price_Confirmed__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -451,6 +442,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Sales_Bonus__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Tax_Base__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Buy_Price__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -477,10 +476,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Final_tax_after_deduction__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Sales_Delta__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -530,8 +525,8 @@
                 <field>Expected_Delivery_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Deadline_for_Registration__c</field>
+                <behavior>Edit</behavior>
+                <field>Deadline_for_Registration_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -597,8 +592,6 @@
                 <behavior>Edit</behavior>
                 <field>Buyer_Account__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Buyer_Contact__c</field>
@@ -606,6 +599,28 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Buyer_DAL_damage_check_required__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Confirmed_Remarketing_Price_DKK__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Confirmed_Remarketing_Price_EUR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Confirmed_Remarketing_Price_Converted__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Sales_Delta__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -721,6 +736,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Key_sent_to_buyer__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Defleet_key_reg_COC_done__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

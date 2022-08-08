@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Base__c</fullName>
+    <description>(Steel price + handling cost + delivery cost) * 1.25 + License plate cost + registration cost</description>
+    <externalId>false</externalId>
+    <formula>licensePlateCost__c + Final_tax_after_deduction__c + (Sixt_steel_purchase_price__c + Delivery_cost__c + handlingCost__c) * 1.25</formula>
+    <label>Tax Base</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

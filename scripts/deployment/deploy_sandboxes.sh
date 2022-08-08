@@ -4,4 +4,4 @@
 #sfdx force:source:deploy $1 --targetusername SIXT-QA
 #sfdx force:source:deploy $1 --targetusername SIXT-UAT
 
-./deploy_multi.sh "$1" "SIXT-DEV SIXT-QA SIXT-UAT"
+./deploy_multi.sh "$1" "$2" "SIXT-DEV SIXT-QA SIXT-UAT"

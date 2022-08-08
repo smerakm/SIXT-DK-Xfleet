@@ -3,8 +3,11 @@
     <fullName>Full_Tax_buy__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-Remarketing_Price_Full_Tax__c &gt; 0,
-Total_buy_price__c * 1.25  +  Total_registration_tax__c,
+  Remarketing_Price_Full_Tax__c &gt; 0,
+/* change 2022-07-05, SIX-342
+				Total_buy_price__c * 1.25  +  Total_registration_tax__c,
+*/
+  (Steel_price__c + Handling_Cost__c + Delivery__c) * 1.25 + License_Plate__c + Total_registration_tax__c, 
 NULL
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

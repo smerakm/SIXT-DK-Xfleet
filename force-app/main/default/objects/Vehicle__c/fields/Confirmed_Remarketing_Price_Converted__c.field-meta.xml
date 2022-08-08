@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed_Remarketing_Price_Converted__c</fullName>
+    <description>system field to have remarketing price always in DKK and same type, so we can compare and sum vehicles</description>
+    <externalId>false</externalId>
+    <formula>/* 1st use just regular Confirmed Remarketing Price (DKK) if exists */
+BLANKVALUE(Confirmed_Remarketing_Price_DKK__c, 
+		/* else use Confirmed Remarketing Price Full Tax if exists */
+  BLANKVALUE(Confirmed_Remarketing_Price_Full_Tax_DKK__c,
+		/* else use Confirmed Remarketing Price (EUR) and convert to DKK */				
+		Confirmed_Remarketing_Price_EUR__c / $Setup.ConversionRate__c.DKK_to_EUR__c)
+)</formula>
+    <inlineHelpText>system field to have remarketing price always in DKK and same type, so we can compare and sum vehicles</inlineHelpText>
+    <label>Confirmed Remarketing Price (Converted)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

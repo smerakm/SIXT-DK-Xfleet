@@ -3,7 +3,7 @@
     <fullName>Sales_Price_Formula__c</fullName>
     <externalId>false</externalId>
     <formula>Selected_Vehicle_Calculator__r.Remarketing_Price__c</formula>
-    <label>Estimated remarketing price</label>
+    <label>Future Value (FV)</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

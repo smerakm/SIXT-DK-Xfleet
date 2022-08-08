@@ -2,38 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <decisions>
-        <name>Infleet_transportation_booked_date_changed</name>
-        <label>Infleet transportation booked date changed?</label>
-        <locationX>182</locationX>
-        <locationY>311</locationY>
-        <defaultConnector>
-            <targetReference>Is_Licence_plate_updated</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Infleet_transportation_booked_date__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Planned_Infleet_Date__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Planned_Infleet_Day</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Is_Defleet_damage_check_completed_updated</name>
         <label>Is Defleet damage check completed updated?</label>
         <locationX>182</locationX>
@@ -263,6 +231,38 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Supplier_Ready_Date_changed</name>
+        <label>Is Supplier Ready Date changed?</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Is_Licence_plate_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_supplier_ready_date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Supplier_ready_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Supplier_ready_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>default_Deadline_for_Registration_field</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_the_car_is_paid_updated</name>
         <label>Is the car is paid updated ?</label>
         <locationX>182</locationX>
@@ -338,16 +338,17 @@
         </rules>
     </decisions>
     <description>Automatically update Vehicle fields : 
+Deadline_for_Registration_Date__c
 License_plate__c
 Key_received_at_HQ__c
 Key_received_at_station__c
 Key_sent_to_buyer__c
-Planned_Infleet_Date__c
 Internal_number_timestamp__c</description>
     <formulas>
-        <name>FormulaforPlannedinfleetday</name>
+        <description>calculate as Supplier Ready Date + 4 weeks (28 days)</description>
+        <name>FormulaDeadlineForRegistration</name>
         <dataType>Date</dataType>
-        <expression>{!$Record.Infleet_transportation_booked_date__c} + 2</expression>
+        <expression>{!$Record.Supplier_ready_Date__c} + 28</expression>
     </formulas>
     <formulas>
         <name>Today</name>
@@ -380,6 +381,31 @@ Internal_number_timestamp__c</description>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>only in Deadline for Registration is not already populated, set it to Supplier ready date + 4 weeks</description>
+        <name>default_Deadline_for_Registration_field</name>
+        <label>default Deadline for Registration field</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Is_Licence_plate_updated</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Deadline_for_Registration_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Deadline_for_Registration_Date__c</field>
+            <value>
+                <elementReference>FormulaDeadlineForRegistration</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Actual_Infleet_day</name>
         <label>Update Actual Infleet day</label>
@@ -536,22 +562,6 @@ Internal_number_timestamp__c</description>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Planned_Infleet_Day</name>
-        <label>Update Planned Infleet Day</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
-        <connector>
-            <targetReference>Is_Licence_plate_updated</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Planned_Infleet_Date__c</field>
-            <value>
-                <elementReference>FormulaforPlannedinfleetday</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_registration_document_time_and_user_stamp</name>
         <label>Update registration document time and user stamp</label>
         <locationX>50</locationX>
@@ -643,16 +653,9 @@ Internal_number_timestamp__c</description>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Infleet_transportation_booked_date_changed</targetReference>
+            <targetReference>Is_Supplier_Ready_Date_changed</targetReference>
         </connector>
         <filterLogic>or</filterLogic>
-        <filters>
-            <field>Infleet_transportation_booked_date__c</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
         <filters>
             <field>License_plate__c</field>
             <operator>IsChanged</operator>
@@ -739,6 +742,13 @@ Internal_number_timestamp__c</description>
         </filters>
         <filters>
             <field>Defleet_Transport_Booked__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Supplier_ready_Date__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

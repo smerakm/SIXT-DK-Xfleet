@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>49.0</apiVersion>
     <decisions>
         <name>Is_opportunity_set</name>
         <label>Is opportunity set</label>
@@ -112,6 +112,27 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Confirmed_Remarketing_Price_DKK__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Confirmed_Remarketing_Price_EUR__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Vehicle__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
@@ -146,7 +167,6 @@
             </value>
         </inputAssignments>
     </subflows>
-    <triggerOrder>200</triggerOrder>
     <variables>
         <name>varCountOfVehicles</name>
         <dataType>Number</dataType>

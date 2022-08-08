@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Sales_Delta__c</fullName>
-    <description>Re-marketing price minus Total buy price, calculated on Selected Vehicle Calculator</description>
+    <description>Re-marketing price minus Total buy price, depends on tax type</description>
     <externalId>false</externalId>
-    <formula>Selected_Vehicle_Calculator__r.Difference__c</formula>
-    <inlineHelpText>Re-marketing price minus Total buy price, calculated on Selected Vehicle Calculator</inlineHelpText>
+    <formula>/* for Full Tax vehicle, use full tax remarketing price (total buy price already calculated based on tax type),
+for other types (DKK, EUR) use converted remarketing price */
+IF(ISBLANK(Confirmed_Remarketing_Price_Full_Tax_DKK__c),
+			/* normal DKK or EUR price */
+			Confirmed_Remarketing_Price_Converted__c -  Total_Buy_Price__c,
+			/* Full Tax */
+			Confirmed_Remarketing_Price_Full_Tax_DKK__c -  Total_Buy_Price__c
+)</formula>
+    <inlineHelpText>Re-marketing price minus Total buy price, depends on tax type</inlineHelpText>
     <label>Sales Delta</label>
     <precision>18</precision>
     <required>false</required>

@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if (( $# < 3 ))
+then
+        echo “USAGE: $0 \<type of manifest, e.g. -x, -m\> \<metadata defintion, e.g. path to package.xml or CustomField:Vehicle__c.VIN_Number__c\> \<list of targetusernames separated by space\>“
+        echo "EXAMPLE: $0 -x ../../manifest/package_ALL.xml \"SIXT-DEV SIXT-QA\""
+fi
+
 # Reset
 Color_Off='\033[0m'       # Text Reset
 
@@ -25,15 +31,19 @@ BWhite='\033[1;37m'       # White
 
 
 ## declare an array variable
-declare -a arr=($2)
+declare -a arr=($3)
 
 ## now loop through the above array
 for i in "${arr[@]}"
 do
    echo "$i"
    # or do whatever with individual element of the array
-   echo "${Purple}deploying $1 to ${BCyan}$i${Color_Off}"
-   sfdx force:source:deploy $1 --targetusername $i $3
-   echo "${BGreen}DONE ($i)!${Color_Off}"
+   echo "${Purple}deploying $2 to ${BCyan}$i${Color_Off}"
+   if sfdx force:source:deploy $1 $2 --targetusername $i $4; then
+      echo "${BGreen}DONE ($i)!${Color_Off}"
+   else
+      echo "${BRed}ERROR! ($i)!${Color_Off}"
+      exit 1
+   fi
 done
 

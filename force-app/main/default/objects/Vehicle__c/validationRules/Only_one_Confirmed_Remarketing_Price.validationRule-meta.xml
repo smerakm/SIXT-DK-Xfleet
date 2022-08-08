@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_one_Confirmed_Remarketing_Price</fullName>
+    <active>true</active>
+    <description>It is allowed to enter only one Confirmed Remarketing Price: DKK, EUR, or DKK full tax</description>
+    <errorConditionFormula>/* add 1 for each Confirmed Remarketing Price field populated, throw validation error if sum is bigger than 1 (so 0 and 1 is allowed) */
+(
+		IF(ISBLANK(Confirmed_Remarketing_Price_DKK__c),0,1)
++ IF(ISBLANK(Confirmed_Remarketing_Price_EUR__c),0,1)
++ IF(ISBLANK(Confirmed_Remarketing_Price_Full_Tax_DKK__c),0,1)
+) &gt; 1</errorConditionFormula>
+    <errorMessage>It is allowed to enter only one Confirmed Remarketing Price: DKK, EUR or Full Tax DKK</errorMessage>
+</ValidationRule>

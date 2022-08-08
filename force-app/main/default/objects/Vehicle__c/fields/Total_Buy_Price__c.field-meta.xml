@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Buy_Price__c</fullName>
+    <description>depends on tax type</description>
+    <externalId>false</externalId>
+    <formula>/* depends on tax type */
+IF(ISPICKVAL(Batch_Distribution__c, &quot;DK - Full tax&quot;),
+   Tax_Base__c,
+			Sixt_steel_purchase_price__c +  licensePlateCost__c + Delivery_cost__c + handlingCost__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>depends on tax type</inlineHelpText>
+    <label>Total Buy Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
