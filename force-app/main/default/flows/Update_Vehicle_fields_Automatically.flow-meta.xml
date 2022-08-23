@@ -31,6 +31,9 @@
         <label>Is Defleet Transport Booked changed ?</label>
         <locationX>182</locationX>
         <locationY>4343</locationY>
+        <defaultConnector>
+            <targetReference>Is_Deregistered_in_SKAT_changed</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes13</name>
@@ -53,6 +56,29 @@
                 <targetReference>Update_Defleet_Transport_Booked_timestamp</targetReference>
             </connector>
             <label>Yes13</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Deregistered_in_SKAT_changed</name>
+        <label>Is Deregistered in SKAT changed?</label>
+        <locationX>182</locationX>
+        <locationY>4679</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes14</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Deregistered_in_SKAT__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Deregistered_in_SKAT_timestamp</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes14</label>
         </rules>
     </decisions>
     <decisions>
@@ -338,6 +364,7 @@
         </rules>
     </decisions>
     <description>Automatically update Vehicle fields : 
+Deregistered_in_SKAT_timestamp__c
 Deadline_for_Registration_Date__c
 License_plate__c
 Key_received_at_HQ__c
@@ -449,8 +476,24 @@ Internal_number_timestamp__c</description>
         <label>Update Defleet Transport Booked timestamp</label>
         <locationX>50</locationX>
         <locationY>4463</locationY>
+        <connector>
+            <targetReference>Is_Deregistered_in_SKAT_changed</targetReference>
+        </connector>
         <inputAssignments>
             <field>Defleet_transportation_booked_timestamp__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Deregistered_in_SKAT_timestamp</name>
+        <label>Update Deregistered in SKAT timestamp</label>
+        <locationX>50</locationX>
+        <locationY>4799</locationY>
+        <inputAssignments>
+            <field>Deregistered_in_SKAT_timestamp__c</field>
             <value>
                 <elementReference>Today</elementReference>
             </value>
