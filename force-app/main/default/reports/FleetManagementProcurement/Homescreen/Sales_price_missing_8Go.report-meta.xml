@@ -16,18 +16,60 @@
         <field>Vehicle__c$Status__c</field>
     </columns>
     <columns>
-        <field>Vehicle__c$Expected_Delivery_Date__c</field>
-    </columns>
-    <columns>
         <field>Vehicle__c$Expected_Defleet_Date__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Vehicle__c$Sales_Price_Confirmed__c</field>
+        <field>Vehicle__c$Confirmed_Remarketing_Price_DKK__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Vehicle__c$Confirmed_Remarketing_Price_EUR__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Vehicle__c$Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$Re_marketing_Status__c</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$Buyer_Account__c</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$Vehicle_Batch__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>Vehicle__c$Sales_Price_Formula__c</column>
+            <column>Vehicle__c$Re_marketing_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Vehicle__c$Vehicle_status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>00-</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Vehicle__c$Confirmed_Remarketing_Price_DKK__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Vehicle__c$Confirmed_Remarketing_Price_EUR__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Vehicle__c$Confirmed_Remarketing_Price_Full_Tax_DKK__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
@@ -38,7 +80,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Vehicle__c$Sales_Price_Formula__c</field>
+        <field>Vehicle__c$Opportunity__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Sales price missing</name>

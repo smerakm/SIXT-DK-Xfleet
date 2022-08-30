@@ -16,7 +16,7 @@
         <field>Fleet_Forecast__c.Defleet_DK__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Fleet_at_the_end_DK__c</field>
     </columns>
     <columns>
@@ -26,11 +26,11 @@
         <field>Fleet_Forecast__c.Long_Term_DK__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Required_at_the_end_DK__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Difference_DK__c</field>
     </columns>
     <columns>
@@ -43,7 +43,7 @@
         <field>Fleet_Forecast__c.Defleet_Valuta__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Fleet_at_the_end_Valuta__c</field>
     </columns>
     <columns>
@@ -53,11 +53,11 @@
         <field>Fleet_Forecast__c.Long_Term_Valuta__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Required_at_the_end_Valuta__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Maximum</aggregateTypes>
         <field>Fleet_Forecast__c.Difference_Valuta__c</field>
     </columns>
     <description>overview of the Fleet Forecast</description>

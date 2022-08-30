@@ -5,6 +5,7 @@
     <columns>License_plate__c</columns>
     <columns>Internal_number__c</columns>
     <columns>Vehicle_status__c</columns>
+    <columns>Pickup_Location__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Ready_for_robot__c</field>
@@ -14,7 +15,7 @@
     <filters>
         <field>Vehicle_status__c</field>
         <operation>notEqual</operation>
-        <value>00-,00- - Car is defleeted</value>
+        <value>00-</value>
     </filters>
     <filters>
         <field>Invoice_Advis_requested__c</field>

@@ -6,6 +6,7 @@
     <columns>vinNumber__c</columns>
     <columns>Brand__c</columns>
     <columns>Model__c</columns>
+    <columns>color__c</columns>
     <columns>Use_type__c</columns>
     <columns>Batch_Distribution__c</columns>
     <columns>Supplier_ready_Date__c</columns>
@@ -15,7 +16,6 @@
     <columns>Leasing_Period__c</columns>
     <columns>Station__c</columns>
     <columns>NAME</columns>
-    <columns>Production_Number__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>

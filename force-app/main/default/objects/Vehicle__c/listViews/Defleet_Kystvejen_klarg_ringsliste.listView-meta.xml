@@ -41,7 +41,7 @@
     <filters>
         <field>Return_station__c</field>
         <operation>equals</operation>
-        <value>6228</value>
+        <value>6228,18153,1853</value>
     </filters>
     <filters>
         <field>Vehicle_status__c</field>

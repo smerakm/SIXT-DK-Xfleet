@@ -63,6 +63,9 @@
         <label>Is Deregistered in SKAT changed?</label>
         <locationX>182</locationX>
         <locationY>4679</locationY>
+        <defaultConnector>
+            <targetReference>Is_Retail_Price_changed</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes14</name>
@@ -257,6 +260,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Retail_Price_changed</name>
+        <label>Is Retail Price changed</label>
+        <locationX>182</locationX>
+        <locationY>5015</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_retail_price_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Retail_Price__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Retail_Price__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Retail_Price_Timestamp</targetReference>
+            </connector>
+            <label>Yes, retail price changed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Supplier_Ready_Date_changed</name>
         <label>Is Supplier Ready Date changed?</label>
         <locationX>182</locationX>
@@ -364,6 +396,7 @@
         </rules>
     </decisions>
     <description>Automatically update Vehicle fields : 
+Retail_Price_Timestamp__c
 Deregistered_in_SKAT_timestamp__c
 Deadline_for_Registration_Date__c
 License_plate__c
@@ -492,6 +525,9 @@ Internal_number_timestamp__c</description>
         <label>Update Deregistered in SKAT timestamp</label>
         <locationX>50</locationX>
         <locationY>4799</locationY>
+        <connector>
+            <targetReference>Is_Retail_Price_changed</targetReference>
+        </connector>
         <inputAssignments>
             <field>Deregistered_in_SKAT_timestamp__c</field>
             <value>
@@ -622,6 +658,19 @@ Internal_number_timestamp__c</description>
             <field>Registration_document_User__c</field>
             <value>
                 <elementReference>userStamp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Retail_Price_Timestamp</name>
+        <label>Update Retail Price Timestamp</label>
+        <locationX>50</locationX>
+        <locationY>5135</locationY>
+        <inputAssignments>
+            <field>Retail_Price_Timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -792,6 +841,13 @@ Internal_number_timestamp__c</description>
         </filters>
         <filters>
             <field>Supplier_ready_Date__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Retail_Price__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

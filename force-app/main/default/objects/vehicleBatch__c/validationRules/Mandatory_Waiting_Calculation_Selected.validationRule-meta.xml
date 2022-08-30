@@ -3,7 +3,11 @@
     <fullName>Mandatory_Waiting_Calculation_Selected</fullName>
     <active>true</active>
     <description>One batch calculation have to be selected before we can move to Deal</description>
-    <errorConditionFormula>System_Number_of_Selected_Calculations__c = 0
-	&amp;&amp; ISPICKVAL(Status__c, &quot;Deal&quot;)</errorConditionFormula>
+    <errorConditionFormula>/* profile name is dependant on the org default value (e.g. Systemadministrator for Danish) and so there is a risk if the language is changed in future for this validation rule to stop working, so better option is to use profile id */
+$Profile.Id &lt;&gt; &apos;00e5I000000pqJ7&apos;
+&amp;&amp;
+System_Number_of_Selected_Calculations__c = 0
+&amp;&amp; 
+ISPICKVAL(Status__c, &quot;Deal&quot;)</errorConditionFormula>
     <errorMessage>Please select one calculation before move to Deal!</errorMessage>
 </ValidationRule>

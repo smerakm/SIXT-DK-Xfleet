@@ -183,6 +183,16 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Retail_Price_Timestamp__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Retail_Price__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Holding_Period_End_Date__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -214,6 +224,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Leasing_Rate_Contract__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Retail_Sales__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -1034,6 +1049,26 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Defleet_Transport_Booked__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Confirmed_Remarketing_Price_Converted__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Confirmed_Remarketing_Price_DKK__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Confirmed_Remarketing_Price_EUR__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
             <table>Vehicle__c</table>
         </columns>
         <masterLabel>Vehicles</masterLabel>
