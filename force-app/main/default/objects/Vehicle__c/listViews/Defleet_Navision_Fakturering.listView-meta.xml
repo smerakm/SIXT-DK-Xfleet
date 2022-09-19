@@ -29,5 +29,10 @@
         <operation>equals</operation>
         <value>0</value>
     </filters>
+    <filters>
+        <field>Buyer_Account__c</field>
+        <operation>notEqual</operation>
+        <value>IKKE SOLGT - DAL Ringsted,IKKE SOLGT - DAL Vamdrup</value>
+    </filters>
     <label>Defleet 3: Bestil Navision Faktura/Advis</label>
 </ListView>

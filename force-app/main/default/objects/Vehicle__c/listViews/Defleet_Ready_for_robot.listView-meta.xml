@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Defleet_Ready_for_robot</fullName>
-    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
     <columns>License_plate__c</columns>
     <columns>Remaining_period__c</columns>
     <columns>vinNumber__c</columns>
@@ -11,11 +11,6 @@
     <columns>Deregistered_in_SKAT__c</columns>
     <columns>NAME</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>Vehicle_status__c</field>
-        <operation>notEqual</operation>
-        <value>00-</value>
-    </filters>
     <filters>
         <field>Ready_for_robot__c</field>
         <operation>equals</operation>
