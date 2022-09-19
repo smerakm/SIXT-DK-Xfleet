@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<!--types>
+		<members>Xfleet</members>
+		<name>CustomApplication</name>
+	</types-->
+	<types>
+		<members>Vehicle__c.Minilease_Estimated_Rental_Price__c</members>
+		<members>Vehicle__c.Minilease_Pickup_Date__c</members>
+		<members>Vehicle__c.Minilease_Reservation_Number__c</members>
+		<members>Vehicle__c.Minilease_Status__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Minilease</members>
+		<members>Minilease/dsyeJfLxkMDYVCElMivYaTEcbUINGC</members>
+		<name>Dashboard</name>
+	</types>
+	<types>
+		<members>Minilease_Home_Page</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>Update_Vehicle_fields_Automatically</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Minilease</members>
+		<name>Group</name>
+	</types>
+	<types>
+		<members>Vehicle__c-Vehicle Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Vehicle__c.Minilease_klarmeldte_biler</members>
+		<members>Vehicle__c.New_mini_lease_cars</members>
+		<members>Vehicle__c.Ready_for_mini_lease_salg</members>
+		<name>ListView</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<name>Profile</name>
+	</types>
+	<types>
+		<members>FleetManagementMinilease</members>
+		<members>FleetManagementMinilease/Minilease_New_Vehicles_cu1</members>
+		<members>FleetManagementMinilease/Minilease_Ready_for_Sale_Vehicles_tpy</members>
+		<members>FleetManagementMinilease/Minilease_Sold_This_Quarter_SQj</members>
+		<name>Report</name>
+	</types>
+	<types>
+		<members>Vehicle_Calculators_with_Vehicles</members>
+		<members>Vehicles</members>
+		<members>Vehicles_and_Batches</members>
+		<name>ReportType</name>
+	</types>
+	<version>55.0</version>
+</Package>

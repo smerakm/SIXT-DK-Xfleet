@@ -278,6 +278,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Status__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Total_Buy_Price__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -314,6 +319,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Vehicle_Group__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Estimated_Rental_Price__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -688,7 +698,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Car_description__c</field>
+            <field>Car_Description__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
@@ -1094,6 +1104,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Confirmed_Remarketing_Price_Full_Tax_DKK__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Reservation_Number__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Pickup_Date__c</field>
             <table>Vehicle__c</table>
         </columns>
         <masterLabel>Vehicles</masterLabel>

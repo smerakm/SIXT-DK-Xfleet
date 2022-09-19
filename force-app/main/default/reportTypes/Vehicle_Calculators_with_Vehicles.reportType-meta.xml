@@ -775,6 +775,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Min_is_reached__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Min_KM__c</field>
             <table>Vehicle_Calculator__c.Vehicles__r</table>
         </columns>
@@ -1200,7 +1205,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Car_description__c</field>
+            <field>Car_Description__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Infleet_Pickup_Location__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Range__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Return_Station_Account__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Reservation_Number__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Pickup_Date__c</field>
             <table>Vehicle_Calculator__c.Vehicles__r</table>
         </columns>
         <masterLabel>Vehicles</masterLabel>

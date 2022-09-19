@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Vehicle__c$Name</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$vinNumber__c</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$Minilease_Reservation_Number__c</field>
+    </columns>
+    <columns>
+        <field>Vehicle__c$Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Vehicle__c$Minilease_Estimated_Rental_Price__c</field>
+    </columns>
+    <currency>DKK</currency>
+    <description>New vehicles that are registered and ready for sale</description>
+    <filter>
+        <criteriaItems>
+            <column>Vehicle__c$Use_type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mini-lease</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Vehicle__c$Minilease_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Ready for sale</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Vehicle__c$Minilease_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Vehicle__c$Minilease_Pickup_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Minilease - Ready for Sale Vehicles</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Vehicles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Vehicle__c$Minilease_Estimated_Rental_Price__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Vehicle__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

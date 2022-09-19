@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_mini_lease_cars</fullName>
+    <columns>NAME</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Model__c</columns>
+    <columns>color__c</columns>
+    <columns>Minilease_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Minilease_Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Use_type__c</field>
+        <operation>equals</operation>
+        <value>Mini-lease</value>
+    </filters>
+    <label>New mini-lease cars</label>
+</ListView>

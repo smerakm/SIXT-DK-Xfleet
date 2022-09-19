@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minilease_Pickup_Date__c</fullName>
+    <description>When a car is sold for minilease, the pickup date (date when customer will pickup the car) must be entered as information for the infleet process</description>
+    <externalId>false</externalId>
+    <inlineHelpText>date when customer will pickup the car</inlineHelpText>
+    <label>Minilease Pickup Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
