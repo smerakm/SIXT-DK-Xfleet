@@ -2,7 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Pickup_Location</fullName>
     <active>true</active>
-    <description>Vehicle Pickup Location from Dealer</description>
+    <description>Vehicle Pickup Location from Dealer or Station</description>
     <label>Pickup Location</label>
     <picklistValues>
         <picklist>ActiveCamp__Account_Relation_Sync_Status__c</picklist>

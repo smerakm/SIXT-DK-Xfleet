@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Defleet_Pickup_Location__c</fullName>
+    <description>pickup location used in Defleet emails</description>
+    <externalId>false</externalId>
+    <formula>/* 2 SUBSTITUTE is way to remove trailing comma &quot;Kystvejen 42, Kastrup, &quot; to &quot;Kystvejen 42, Kastrup&quot; */
+SUBSTITUTE (
+SUBSTITUTE (
+    IF (ISBLANK(Vehicle__r.Pickup_Location__r.FirstName),NULL,Vehicle__r.Pickup_Location__r.FirstName + &quot; &quot;)
+    + Vehicle__r.Pickup_Location__r.LastName + &quot;, &quot;
+    + IF (ISBLANK(Vehicle__r.Pickup_Location__r.MailingStreet),NULL,Vehicle__r.Pickup_Location__r.MailingStreet + &quot;, &quot;)
+    + IF (ISBLANK(Vehicle__r.Pickup_Location__r.MailingCity),NULL,Vehicle__r.Pickup_Location__r.MailingCity + &quot;, &quot;)
+    + IF (ISBLANK(Vehicle__r.Pickup_Location__r.MailingState),NULL,Vehicle__r.Pickup_Location__r.MailingState + &quot;, &quot;)
+    + IF (ISBLANK(Vehicle__r.Pickup_Location__r.MailingPostalCode),NULL,Vehicle__r.Pickup_Location__r.MailingPostalCode + &quot;, &quot;)
+    + IF (ISBLANK(Vehicle__r.Pickup_Location__r.MailingCountry),NULL,Vehicle__r.Pickup_Location__r.MailingCountry + &quot;, &quot;)
+/* added some specific charactes to detect last trailing comma */
++ &quot;.*.&quot;,
+&quot;, .*.&quot;, NULL),
+&quot;.*.&quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>pickup location used in Defleet emails</inlineHelpText>
+    <label>Vehicle Defleet Pickup Location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

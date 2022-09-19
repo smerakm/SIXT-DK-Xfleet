@@ -14,7 +14,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Summer</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Summer</label>
             </value>
             <value>

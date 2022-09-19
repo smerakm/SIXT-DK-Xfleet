@@ -97,16 +97,17 @@
             <targetReference>Email_for_transport_to_DAL_Defleet</targetReference>
         </connector>
     </assignments>
-    <description>Email request for transport to DAL from Defleet coordinator</description>
+    <description>Email request for transport to DAL from Defleet coordinator.
+Using new Defleet Pickup Location and Return Station Account Number</description>
     <formulas>
         <name>tableRow</name>
         <dataType>String</dataType>
         <expression>&apos;&lt;tr&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.registration_plate__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Vin_Number__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Brand__c} + &apos; &apos; + {!Loop_through_cars.Vehicle_Model__c} + 
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_pickup_location__c} + 
+&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Vehicle_Defleet_Pickup_Location__c} + 
 &apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Delivery_address_buyer__c} +
-&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Station_Account_Number__c} +                                                                     
+&apos;&lt;/th&gt;&lt;td style=&quot;border: 1px solid black;&quot;&gt;&apos; + {!Loop_through_cars.Return_Station_Account_Number__c} +                                                                     
 &apos;&lt;/th&gt;&lt;/tr&gt;&apos;</expression>
     </formulas>
     <interviewLabel>Email to Dal {!$Flow.CurrentDateTime}</interviewLabel>
@@ -191,12 +192,12 @@
         <outputReference>Allrelatedcars</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Vehicle_Vin_Number__c</queriedFields>
-        <queriedFields>Vehicle_pickup_location__c</queriedFields>
+        <queriedFields>Vehicle_Defleet_Pickup_Location__c</queriedFields>
         <queriedFields>Vehicle_Brand__c</queriedFields>
         <queriedFields>Delivery_address_buyer__c</queriedFields>
         <queriedFields>registration_plate__c</queriedFields>
         <queriedFields>Vehicle_Model__c</queriedFields>
-        <queriedFields>Station_Account_Number__c</queriedFields>
+        <queriedFields>Return_Station_Account_Number__c</queriedFields>
     </recordLookups>
     <start>
         <locationX>50</locationX>

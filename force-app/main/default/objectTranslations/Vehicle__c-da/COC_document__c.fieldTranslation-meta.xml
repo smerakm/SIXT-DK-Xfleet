@@ -4,6 +4,14 @@
     <label>COC dokument</label>
     <name>COC_document__c</name>
     <picklistValues>
+        <masterLabel>COC ordered</masterLabel>
+        <translation>COC bestilt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not necessary</masterLabel>
+        <translation>Ikke nødvendigt</translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Received in HQ</masterLabel>
         <translation>Modtaget hos Car Control</translation>
     </picklistValues>

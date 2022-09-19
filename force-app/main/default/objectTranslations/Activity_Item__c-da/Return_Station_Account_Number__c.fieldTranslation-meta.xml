@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
-    <label>Bil afhentnings sted</label>
-    <name>Vehicle_pickup_location__c</name>
+    <label></label>
+    <name>Return_Station_Account_Number__c</name>
 </CustomFieldTranslation>

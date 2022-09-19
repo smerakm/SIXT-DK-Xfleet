@@ -24,6 +24,16 @@
                 <default>false</default>
                 <label>Sent to Buyer</label>
             </value>
+            <value>
+                <fullName>Not necessary</fullName>
+                <default>false</default>
+                <label>Not necessary</label>
+            </value>
+            <value>
+                <fullName>COC ordered</fullName>
+                <default>false</default>
+                <label>COC ordered</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

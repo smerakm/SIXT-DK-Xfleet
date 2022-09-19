@@ -28,12 +28,20 @@
                 <field>Vehicle_pickup_location__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Vehicle_Defleet_Pickup_Location__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Delivery_address__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Station_Account_Number__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Return_Station_Account_Number__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

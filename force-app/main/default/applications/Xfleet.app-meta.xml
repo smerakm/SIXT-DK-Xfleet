@@ -143,6 +143,14 @@
         <type>Flexipage</type>
         <profile>Car Control</profile>
     </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Defleet_Manager_Home_Screen</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Station</profile>
+    </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>Vehicle__c</tabs>
     <tabs>vehicleBatch__c</tabs>

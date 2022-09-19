@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Tires_ownership__c</fullName>
+    <fullName>Minilease_Status__c</fullName>
     <externalId>false</externalId>
-    <label>Tires ownership</label>
+    <inlineHelpText>New - new vehicle not yet on the website
+Ready for sale - already added to the website
+Sold - sold for minilease</inlineHelpText>
+    <label>Minilease Status</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -13,14 +16,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Own</fullName>
+                <fullName>New</fullName>
                 <default>true</default>
-                <label>Own</label>
+                <label>New</label>
             </value>
             <value>
-                <fullName>Rental</fullName>
+                <fullName>Ready for sale</fullName>
                 <default>false</default>
-                <label>Rental</label>
+                <label>Ready for sale</label>
+            </value>
+            <value>
+                <fullName>Sold</fullName>
+                <default>false</default>
+                <label>Sold</label>
             </value>
         </valueSetDefinition>
     </valueSet>

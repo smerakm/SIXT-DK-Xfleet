@@ -4,7 +4,7 @@
     <description>Calculated based on Remaining period from COBRA.
 Date when we expect to defleet the vehicle.</description>
     <externalId>false</externalId>
-    <formula>TODAY() + Remaining_period__c</formula>
+    <formula>IF(Remaining_period__c &gt; 0, TODAY() + Remaining_period__c, Expected_defleet_timestamp__c)</formula>
     <inlineHelpText>Date when we expect to defleet the vehicle.</inlineHelpText>
     <label>Expected Defleet Date</label>
     <required>false</required>

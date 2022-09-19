@@ -5,9 +5,7 @@
     <formula>IF(AND( Defleet_damage_check_completed__c =true,
  checkForWinterTires__c=true,
  Stickers_are_removed__c=true,
-  Max_is_exceeded__c = false,
- OR(AND( Min_is_reached__c =true,Plates_are_removed__c=true),
- Plates_are_removed__c=false)
+ Plates_are_removed__c=true
  ), &apos;Ready&apos;, &apos;Not Ready&apos;)</formula>
     <label>Defleet Ready Check</label>
     <required>false</required>
