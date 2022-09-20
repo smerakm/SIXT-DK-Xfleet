@@ -3,6 +3,7 @@
     <fullName>Cannot_move_to_Redying</fullName>
     <active>false</active>
     <errorConditionFormula>AND(
+NOT($Permission.Bypass_Vehicle_Validations),
 ISPICKVAL( Defleet_Status__c , &quot;Redying&quot;),
 OR(
 defleetReadyCheck__c = &quot;Ready&quot;,

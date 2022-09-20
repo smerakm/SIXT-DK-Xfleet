@@ -6,6 +6,8 @@
     <errorConditionFormula>/* profile name is dependant on the org default value (e.g. Systemadministrator for Danish) and so there is a risk if the language is changed in future for this validation rule to stop working, so better option is to use profile id */
 $Profile.Id &lt;&gt; &apos;00e5I000000pqJ7&apos;
 	&amp;&amp;
+NOT($Permission.Bypass_Vehicle_Validations)    
+	&amp;&amp;
 NOT(ISBLANK(Internal_number__c))
 	&amp;&amp;
 OR( ISCHANGED(Min_KM__c),

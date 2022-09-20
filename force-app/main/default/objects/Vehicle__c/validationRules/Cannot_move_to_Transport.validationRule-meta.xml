@@ -3,7 +3,9 @@
     <fullName>Cannot_move_to_Transport</fullName>
     <active>true</active>
     <description>Cannot move Infleet status to Transport without filled Station and Supplier Ready date</description>
-    <errorConditionFormula>AND(ISPICKVAL( Infleet_status__c , &quot;Transport&quot;),
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Vehicle_Validations),
+        ISPICKVAL( Infleet_status__c , &quot;Transport&quot;),
 OR(ISBLANK( Supplier_ready_Date__c ),ISBLANK( Station__c ) 
 ) 
 )</errorConditionFormula>

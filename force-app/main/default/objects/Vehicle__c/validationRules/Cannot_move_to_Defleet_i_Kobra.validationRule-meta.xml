@@ -3,6 +3,7 @@
     <fullName>Cannot_move_to_Defleet_i_Kobra</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
+NOT($Permission.Bypass_Vehicle_Validations),
 ISPICKVAL( Defleet_Status__c , &quot;Defleet in COBRA&quot;),
 OR(
     NOT(defleetReadyCheck__c = &quot;Ready&quot;),

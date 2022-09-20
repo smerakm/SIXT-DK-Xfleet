@@ -3,6 +3,7 @@
     <fullName>Cannot_move_to_Deregister_in_SKAT</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
+NOT($Permission.Bypass_Vehicle_Validations),
 ISPICKVAL( Defleet_Status__c , &quot;Deregister in SKAT&quot;),
 OR(
     NOT(defleetReadyCheck__c = &quot;Ready&quot;),
