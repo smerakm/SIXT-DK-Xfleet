@@ -34,7 +34,7 @@
     <layouts>
         <layout>Vehicle Layout</layout>
         <sections>
-            <label>Yderligere information</label>
+            <label></label>
             <section>Additional Information</section>
         </sections>
         <sections>
@@ -42,11 +42,11 @@
             <section>COBRA Data</section>
         </sections>
         <sections>
-            <label>Bil attributter</label>
+            <label></label>
             <section>Car Attributes</section>
         </sections>
         <sections>
-            <label>Bil bemærkninger</label>
+            <label></label>
             <section>Car Remarks</section>
         </sections>
         <sections>
@@ -58,16 +58,20 @@
             <section>Defleet Information</section>
         </sections>
         <sections>
-            <label>Finansiel/afgift info</label>
+            <label></label>
             <section>Financial/Taxation info</section>
         </sections>
         <sections>
-            <label>Vigtige datoer</label>
+            <label></label>
             <section>Key Dates</section>
         </sections>
         <sections>
             <label></label>
             <section>Leasing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Minilease</section>
         </sections>
         <sections>
             <label></label>

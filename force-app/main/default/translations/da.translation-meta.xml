@@ -985,6 +985,19 @@
         <fullName>VEHICLE_TRG_RollUps_to_Opportunity</fullName>
     </flowDefinitions>
     <reportTypes>
+        <description><!-- Vehicle Calculators and Vehicles --></description>
+        <label><!-- Vehicle Calculators and Vehicles --></label>
+        <name>Vehicle_Calculators_with_Vehicles</name>
+        <sections>
+            <label><!-- Vehicle Calculators --></label>
+            <name>Vehicle Calculators</name>
+        </sections>
+        <sections>
+            <label><!-- Vehicles --></label>
+            <name>Vehicles</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Vehicles --></description>
         <label><!-- Vehicles --></label>
         <name>Vehicles</name>
@@ -999,6 +1012,19 @@
         <sections>
             <label><!-- Leasing partner --></label>
             <name>Leasing partner</name>
+        </sections>
+        <sections>
+            <label><!-- Vehicles --></label>
+            <name>Vehicles</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Vehicles and Batches --></description>
+        <label><!-- Vehicles and Batches --></label>
+        <name>Vehicles_and_Batches</name>
+        <sections>
+            <label><!-- Batches --></label>
+            <name>Batches</name>
         </sections>
         <sections>
             <label><!-- Vehicles --></label>

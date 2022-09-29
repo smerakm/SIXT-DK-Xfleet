@@ -24,6 +24,10 @@
         <translation>11 - bil tjekket ind men lejeaftale ikke lukket</translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>2 - Default</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>3 - Car is not ready, block for a reservation</masterLabel>
         <translation>3 -  bil ikke klar, block for reservation</translation>
     </picklistValues>

@@ -145,6 +145,14 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>Tab</actionName>
+        <content>Minilease_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Car Sales</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
         <content>Defleet_Manager_Home_Screen</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
