@@ -7,6 +7,9 @@
     <columns>Model__c</columns>
     <columns>color__c</columns>
     <columns>Minilease_Status__c</columns>
+    <columns>Minilease_Estimated_Rental_Price__c</columns>
+    <columns>Minilease_Reservation_Number__c</columns>
+    <columns>Minilease_Pickup_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Minilease_Status__c</field>

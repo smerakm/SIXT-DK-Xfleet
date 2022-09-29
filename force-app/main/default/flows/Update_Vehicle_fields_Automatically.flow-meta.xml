@@ -509,6 +509,7 @@ Key_received_at_station__c
 Key_sent_to_buyer__c
 Internal_number_timestamp__c
 Expected_defleet_timestamp__c</description>
+    <environments>Default</environments>
     <formulas>
         <description>calculate as Supplier Ready Date + 4 weeks (28 days)</description>
         <name>FormulaDeadlineForRegistration</name>

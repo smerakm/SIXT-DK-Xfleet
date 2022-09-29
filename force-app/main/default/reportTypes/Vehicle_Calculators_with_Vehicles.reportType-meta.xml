@@ -1205,7 +1205,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Car_Description__c</field>
+            <field>Car_description__c</field>
             <table>Vehicle_Calculator__c.Vehicles__r</table>
         </columns>
         <columns>

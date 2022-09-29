@@ -16,7 +16,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$Minilease_Estimated_Rental_Price__c</field>
     </columns>
-    <currency>DKK</currency>
     <description>vehicles that have been sold and are ready for pickup this quarter</description>
     <filter>
         <criteriaItems>

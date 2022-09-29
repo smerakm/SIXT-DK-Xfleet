@@ -16,7 +16,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Vehicle__c$Minilease_Estimated_Rental_Price__c</field>
     </columns>
-    <currency>DKK</currency>
     <description>New vehicles that need to be registered on website</description>
     <filter>
         <criteriaItems>
