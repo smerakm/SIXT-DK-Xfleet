@@ -155,7 +155,7 @@
                 <field>Leasing_cancelled__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Leasing_Cost_Per_Month__c</field>
             </layoutItems>
             <layoutItems>

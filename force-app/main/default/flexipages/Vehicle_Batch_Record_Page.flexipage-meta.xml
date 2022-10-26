@@ -207,6 +207,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>taralex:XappexFilesClassic</componentName>
+                <identifier>taralex_XappexFilesClassic</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-725e84dd-28cf-4e69-8c73-f13a7c8710dd</value>

@@ -234,6 +234,13 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Leasing_Algorithm__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Ownership</picklist>
         <values>
             <fullName>Other</fullName>
