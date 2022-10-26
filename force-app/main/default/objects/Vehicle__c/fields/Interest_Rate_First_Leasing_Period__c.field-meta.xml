@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interest_Rate_First_Leasing_Period__c</fullName>
+    <description>&quot;Del rente - interest first period before first full month&quot;
+=((end of mont-registration date)*leasing rate*total buy price)/360</description>
+    <externalId>false</externalId>
+    <formula>/* calculate end of month = (ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) */
+((ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) - Registration_Date__c )*(Total_Buy_Price__c * Leasing_Rate_Contract__c )/360</formula>
+    <inlineHelpText>=((end of mont-registration date)*leasing rate*total buy price)/360</inlineHelpText>
+    <label>Interest Rate First Leasing Period</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

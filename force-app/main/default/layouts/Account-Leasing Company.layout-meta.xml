@@ -135,6 +135,10 @@
                 <behavior>Edit</behavior>
                 <field>Contract_end_date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Leasing_Algorithm__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

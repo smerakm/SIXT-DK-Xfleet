@@ -154,6 +154,18 @@
                 <behavior>Edit</behavior>
                 <field>Leasing_cancelled__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Leasing_Cost_Per_Month__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Interest_Rate_First_Leasing_Period__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Leasing_Cost_1st_Month__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
