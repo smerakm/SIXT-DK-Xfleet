@@ -166,6 +166,10 @@
                 <behavior>Readonly</behavior>
                 <field>Leasing_Cost_1st_Month__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Leasing_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
