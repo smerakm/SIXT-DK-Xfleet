@@ -40,6 +40,7 @@
         <fieldNames>vehicleSeller__c</fieldNames>
         <fieldNames>Description__c</fieldNames>
         <fieldNames>Requested_Number_of_Vehicles__c</fieldNames>
+        <fieldNames>Vehicle_Group__c</fieldNames>
         <info>&lt;p&gt;Select Importer and Dealer.&lt;/p&gt;&lt;p&gt;Calculate holding and leasing costs for batch for different periods and select calculators.&lt;/p&gt;</info>
         <picklistValueName>Offer</picklistValueName>
     </pathAssistantSteps>
