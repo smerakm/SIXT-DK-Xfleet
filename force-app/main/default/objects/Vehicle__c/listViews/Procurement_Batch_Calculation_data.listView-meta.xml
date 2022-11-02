@@ -2,7 +2,31 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Procurement_Batch_Calculation_data</fullName>
     <columns>NAME</columns>
-    <columns>leasing_Account__c</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Vehicle_Batch__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Model__c</columns>
+    <columns>L94_Monthly_Cost__c</columns>
+    <columns>L94_Period_cost__c</columns>
+    <columns>Valuta_Car_Monthly_Cost__c</columns>
+    <columns>Valuta_Car_Period_cost__c</columns>
+    <columns>Full_tax_Monthly_cost__c</columns>
+    <columns>Full_tax_Period_cost__c</columns>
+    <columns>Use_type__c</columns>
+    <columns>Batch_Distribution__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Batch_Distribution__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Selected_Batch_Calculator__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Batch_Status__c</field>
+        <operation>equals</operation>
+        <value>Deal</value>
+    </filters>
     <label>Procurement: Batch Calculation data</label>
 </ListView>
