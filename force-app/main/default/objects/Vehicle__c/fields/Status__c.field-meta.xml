@@ -5,7 +5,7 @@
     <label>Status</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -36,6 +36,11 @@
                 <fullName>Sold</fullName>
                 <default>false</default>
                 <label>Sold</label>
+            </value>
+            <value>
+                <fullName>Stock Car</fullName>
+                <default>false</default>
+                <label>Stock Car</label>
             </value>
         </valueSetDefinition>
     </valueSet>
