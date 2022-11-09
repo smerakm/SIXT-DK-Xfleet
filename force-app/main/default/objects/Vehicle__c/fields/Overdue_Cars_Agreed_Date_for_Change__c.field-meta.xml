@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_Cars_Agreed_Date_for_Change__c</fullName>
+    <description>Date that was agreed for vehicle change for long term rent cars which needs to be defleeted before end of rent period</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Overdue Cars – aftalt dato for bilbytte</inlineHelpText>
+    <label>Overdue Cars – Agreed Date for Change</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -491,6 +491,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Tax_value_incl_VAT__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Final_tax_after_deduction__c</field>
             </layoutItems>
             <layoutItems>
@@ -693,6 +697,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Defleet_Coordinator_Comment__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Overdue_Cars_Agreed_Date_for_Change__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
