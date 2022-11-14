@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>process to recalculate already selected vehicle calculators for all vehicles on the batch</description>
+    <flowDefinition>Re_calculate_Vehicle_Calculators_for_Batch</flowDefinition>
+    <label>Re-calculate Vehicle Calculators</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>
