@@ -2,6 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <description>Change Vehicle Infleet status to Confirm delivery when Vehicle Batch status is Deal</description>
+    <environments>Default</environments>
     <interviewLabel>Infleet status to Confirm delivery {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Infleet status to Confirm delivery</label>
     <processMetadataValues>
@@ -28,12 +29,22 @@
         <label>Vehicle Infleet Status to Confirm delivery</label>
         <locationX>176</locationX>
         <locationY>335</locationY>
+        <connector>
+            <targetReference>Vehicle_Status_to_Stock_car</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Vehicle_Batch__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Use_type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Stock Car</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -46,6 +57,34 @@
             <field>Status__c</field>
             <value>
                 <stringValue>Infleet</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Vehicle__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Vehicle_Status_to_Stock_car</name>
+        <label>Vehicle Status to Stock car</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Vehicle_Batch__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Use_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Stock Car</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Stock Car</stringValue>
             </value>
         </inputAssignments>
         <object>Vehicle__c</object>

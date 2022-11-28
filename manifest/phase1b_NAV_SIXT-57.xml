@@ -3,6 +3,8 @@
 	<types>
 		<members>CalculationsLeasing</members>
 		<members>CalculationsLeasing_Test</members>
+		<members>FixedRateLoanUtility</members>
+		<members>FixedRateLoanUtility_Test</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
