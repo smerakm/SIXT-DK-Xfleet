@@ -41,7 +41,7 @@
         <name>Lock_calculation_record_after_is_Selected</name>
         <label>Lock calculation record after is Selected</label>
         <locationX>50</locationX>
-        <locationY>1271</locationY>
+        <locationY>1391</locationY>
         <actionName>LockingUtility</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -62,7 +62,7 @@
     <apiVersion>54.0</apiVersion>
     <decisions>
         <name>Is_in_Draft</name>
-        <label>Is in Draft?</label>
+        <label>Is in Draft or New?</label>
         <locationX>182</locationX>
         <locationY>335</locationY>
         <defaultConnector>
@@ -71,7 +71,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>yes_Draft</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -79,17 +79,24 @@
                     <stringValue>Draft</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Calculate_Tax_and_Holding_Costs</targetReference>
             </connector>
-            <label>yes, Draft</label>
+            <label>yes, Draft or New</label>
         </rules>
     </decisions>
     <decisions>
         <name>Is_Selected</name>
         <label>Is Selected?</label>
         <locationX>182</locationX>
-        <locationY>911</locationY>
+        <locationY>1031</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Selected</name>
@@ -108,12 +115,26 @@
             <label>Selected</label>
         </rules>
     </decisions>
-    <description>automatic recalculation of tax, service and damage</description>
+    <description>automatic recalculation of tax, service and damage
+default value for Future Value (FV)</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formDefaultFutureValue</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Vehicle__r.Sixt_purchase_price_excl_VAT__c} * (100 - {!$Record.Period__c}) / 100</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
     <formulas>
         <description>calculate Vehicle Group id, first from vehicle itself, or from related batch if it is empty on vehicle</description>
         <name>VehicleGroupFormula</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Vehicle__r.Vehicle_Group__r.Service_and_Damage_Group__c}</expression>
+        <expression>IF(ISBLANK({!$Record.Vehicle__r.Vehicle_Group__c}), {!$Record.Vehicle__r.Vehicle_Batch__r.Vehicle_Group__r.Service_and_Damage_Group__c},
+{!$Record.Vehicle__r.Vehicle_Group__r.Service_and_Damage_Group__c})</expression>
     </formulas>
     <interviewLabel>VEHICLECALCULATOR_TRG_AfterInsertUpdate {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLECALCULATOR_TRG_AfterInsertUpdate</label>
@@ -137,10 +158,34 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Default_Future_Value</name>
+        <label>Default Future Value</label>
+        <locationX>50</locationX>
+        <locationY>815</locationY>
+        <connector>
+            <targetReference>Is_Selected</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Remarketing_Price__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Remarketing_Price__c</field>
+            <value>
+                <elementReference>formDefaultFutureValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Discard_previously_Selected_Calculation</name>
         <label>Discard previously Selected Calculation</label>
         <locationX>50</locationX>
-        <locationY>1031</locationY>
+        <locationY>1151</locationY>
         <connector>
             <targetReference>Set_Selected_calculator_on_Vehicle_record</targetReference>
         </connector>
@@ -150,6 +195,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Vehicle__r.Selected_Vehicle_Calculator__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -166,7 +218,7 @@
         <locationX>50</locationX>
         <locationY>695</locationY>
         <connector>
-            <targetReference>Is_Selected</targetReference>
+            <targetReference>Default_Future_Value</targetReference>
         </connector>
         <inputAssignments>
             <field>Contract_Fee_On_delivery__c</field>
@@ -186,7 +238,7 @@
         <name>Set_Selected_calculator_on_Vehicle_record</name>
         <label>Set Selected calculator on Vehicle record</label>
         <locationX>50</locationX>
-        <locationY>1151</locationY>
+        <locationY>1271</locationY>
         <connector>
             <targetReference>Lock_calculation_record_after_is_Selected</targetReference>
         </connector>
