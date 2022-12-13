@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cars_Count_and_Price_Text_EN__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Number_Of_Vehicles__c) + &quot; cars at a total price of &quot; +   Amount_with_Currency_SYSTEM__c</formula>
+    <label>Cars Count and Price Text EN</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

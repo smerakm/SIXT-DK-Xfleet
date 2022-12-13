@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>VehiclesFromOpportunityController</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>VehiclesFromOpportunity</members>
+		<name>ApexComponent</name>
+	</types>
+	<types>
+		<members>DeliveryConfirmationVehiclesDA</members>
+		<members>DeliveryConfirmationVehiclesEN</members>
+		<name>ApexPage</name>
+	</types>
+	<types>
+		<members>Opportunity.Billing_address__c</members>
+		<members>Opportunity.Billing_Country__c</members>
+		<members>Opportunity.Billing_Street__c</members>
+		<members>Opportunity.Cars_Count_and_Price_Text_EN__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Minilease</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<name>Profile</name>
+	</types>
+	<version>56.0</version>
+</Package>

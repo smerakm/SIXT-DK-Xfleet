@@ -11,6 +11,6 @@
         </style>
     </head>
     <body>
-        <c:VehiclesFromOpportunity opportunityId="{!opportunity.Id}" showAllFields="false"/>
+        <c:VehiclesFromOpportunity opportunityId="{!opportunity.Id}" showAllFields="true"/>
     </body>
 </apex:page>

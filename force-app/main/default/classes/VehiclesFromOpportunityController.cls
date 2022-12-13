@@ -9,7 +9,6 @@ public with sharing class VehiclesFromOpportunityController {
             if (this.OpportunityVehicles == null || this.OpportunityVehicles.isEmpty()) {
                 this.OpportunityVehicles = [
                     SELECT
-                        Production_Number__c,
                         vinNumber__c,
                         Brand__c,
                         Model__c,
@@ -25,7 +24,8 @@ public with sharing class VehiclesFromOpportunityController {
                         Non_standard_Accessories__c,
                         Confirmed_Remarketing_Price_DKK__c,
                         Confirmed_Remarketing_Price_Full_Tax_DKK__c,
-                        Confirmed_Remarketing_Price_EUR__c
+                        Confirmed_Remarketing_Price_EUR__c,
+                        Registration_Date__c
                     FROM Vehicle__c
                     WHERE Opportunity__c = :oppId
                 ];
