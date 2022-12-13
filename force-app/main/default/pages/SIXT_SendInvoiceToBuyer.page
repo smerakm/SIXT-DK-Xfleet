@@ -1,0 +1,17 @@
+<apex:page standardController="Vehicle__c" tabStyle="Vehicle__c" recordSetVar="AllVehicles">
+    <!-- Add below each field you reference in your Flow -->
+    <apex:repeat value="{!AllVehicles}" var="row" rendered="false">
+        {!row.vinNumber__c}
+        {!row.Buyer_Account__r.Navision_Account__c}
+        {!row.Buyer_Account__r.Invoice_or_advis__c}
+        {!row.Buyer_Account__r.EUR_DKK__c}        
+        {!row.Confirmed_Remarketing_Price_DKK__c}
+        {!row.Confirmed_Remarketing_Price_Full_Tax_DKK__c}
+        {!row.Confirmed_Remarketing_Price_EUR__c}
+    </apex:repeat>
+    <!-- Runs your Flow -->
+    <flow:interview name="SCR_Defleet_Send_Invoice_to_Buyer"
+          finishLocation="{!URLFOR($Action.Vehicle__c.List,$ObjectType.Vehicle__c)}">
+        <apex:param name="setSelectedVehicles" value="{!Selected}"/>
+    </flow:interview>    
+</apex:page>

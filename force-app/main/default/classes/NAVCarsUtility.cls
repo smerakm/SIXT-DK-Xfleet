@@ -30,6 +30,7 @@ public with sharing class NAVCarsUtility {
         }
         // not already scheduled, schedule NEW
         NAVCarsIntegrationBatchable theBatch = new NAVCarsIntegrationBatchable();
+        // TODO scope size
         return System.scheduleBatch(theBatch, BATCH_JOB_NAV_CARS_JOB_NAME, delay);
     }
 
@@ -57,7 +58,12 @@ public with sharing class NAVCarsUtility {
                 mVehicles.put(veh.Id, veh);
             }
             // get the aggregated roll-ups for Integration Requests on these vehicles
-            AggregateResult[] groupedIntegrationResults = [SELECT Vehicle__c, Status__c, count(id) FROM Integration_Request__c GROUP BY Vehicle__c, Status__c];
+            AggregateResult[] groupedIntegrationResults = [
+                SELECT Vehicle__c, Status__c, count(id)
+                FROM Integration_Request__c
+                WHERE Vehicle__c IN :vehicles4UpdateIds
+                GROUP BY Vehicle__c, Status__c
+            ];
             for (AggregateResult ar : groupedIntegrationResults) {
                 Id vehicleId = (Id) ar.get('Vehicle__c');
                 Vehicle__c veh = mVehicles.get(vehicleId);

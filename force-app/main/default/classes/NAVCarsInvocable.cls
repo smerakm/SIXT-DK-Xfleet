@@ -24,7 +24,7 @@ public with sharing class NAVCarsInvocable {
             // GET
             if (String.isNotBlank(req.filterValue)) {
                 navApi = new NAVCarsGet();
-                reqParams = req.filterValue;    
+                reqParams = req.filterValue;
             } else {
                 navApi = new NAVCarsGet(req.vinNumber);
             }
@@ -92,16 +92,27 @@ public with sharing class NAVCarsInvocable {
         @InvocableVariable(label='Query Filter' description='value of filter for Query/GET request')
         public String filterValue;
 
+        @InvocableVariable(label='Quantity' description='quantity for invoice')
+        public Integer quantity;
+
+        @InvocableVariable(label='Add to Document' description='add invoice to existing document')
+        public Boolean addToDoc;
+
         // convert this instance of NavisionCarsRequest to NAVCarsObject for API calls
         public NAVCarsObject convertToNAVCarsObject() {
-            NAVCarsObject navCar = new NAVCarsObject(this.vinNumber, this.registrationNumber, this.vatType);
-            //navCar.Vin_No = this.vinNumber;
-            //navCar.regNo = this.registrationNumber;
-            //navCar.vatType = this.vatType;
-            navCar.createAmount = this.amount;
-            if (String.isNotBlank(this.extDocNo)) navCar.creatExtDocNo = this.extDocNo;
-            if (String.isNotBlank(this.accNumberInvoice)) navCar.createInvoice = this.accNumberInvoice;
-            if (String.isNotBlank(this.accNumberQuote)) navCar.createQuote = this.accNumberQuote;
+            NAVCarsObject navCar;
+            // is this invoice request?
+            if (this.amount != null) {
+                // yes, create invoice api request
+                String extDocNo = String.isBlank(this.extDocNo) ? null : this.extDocNo;
+                String invoiceAcc = String.isBlank(this.accNumberInvoice) ? null : this.accNumberInvoice;
+                String quoteAcc = String.isBlank(this.accNumberQuote) ? null : this.accNumberQuote;
+                Integer quantity = this.quantity == null ? 1 : this.quantity;
+                navCar = new NAVCarsObject(this.amount, extDocNo, invoiceAcc, quoteAcc, quantity, this.addToDoc);
+            } else {
+                // no, car update
+                navCar = new NAVCarsObject(this.vinNumber, this.registrationNumber, this.vatType);
+            }
             return navCar;
         }
     }
