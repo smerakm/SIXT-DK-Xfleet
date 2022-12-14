@@ -13,6 +13,11 @@ public with sharing class NAVCarsUtility {
     }
 
     public static Id scheduleNAVCarsIntegrationBatch(Integer delay) {
+        // are there any integration request to process?
+        List<Integration_Request__c> irCheck = [SELECT id FROM Integration_Request__c WHERE Status__c = null LIMIT 1];
+        if (irCheck.isEmpty()) {
+            return null;
+        }
         // is the job already scheduled?
         List<CronJobDetail> cronJobs = [SELECT Id, Name FROM CronJobDetail WHERE Name = :BATCH_JOB_NAV_CARS_JOB_NAME];
         if (cronJobs.size() > 0) {
