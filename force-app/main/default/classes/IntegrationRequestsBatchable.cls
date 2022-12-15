@@ -1,5 +1,7 @@
 public with sharing class IntegrationRequestsBatchable implements Database.Batchable<sObject>, Database.AllowsCallouts, Database.Stateful {
     public Map<String, String> SUPPORTED_API_CALLS;
+    public Boolean isAnyFailedRequest = false;
+    public Integer failedRequestCount = 0;
 
     public static final String ERROR_NO_VEHICLE = 'Vehicle has not been assigned to the request!';
     public static final String ERROR_WRONG_METHOD = 'Method undefinied!';
@@ -48,6 +50,10 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
                 ir.Status__c = IntegrationRequestsUtility.STATUS_FAILED;
                 ir.Message__c = ERROR_NO_VEHICLE;
             }
+            if (ir.Status__c.equals(IntegrationRequestsUtility.STATUS_FAILED) && !isAnyFailedRequest) {
+                isAnyFailedRequest = true;
+                failedRequestCount++;
+            }
         }
         update scope;
     }
@@ -57,6 +63,10 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
         IntegrationRequestsUtility.updateIntegrationRequestsRollups();
         // set the timestamp when the job was finished
         IntegrationRequestsUtility.setLastJobRunTime(System.now());
+        // any failed request?
+        if (isAnyFailedRequest) {
+            IntegrationRequestsUtility.notifyAdminsAboutFailedRequests(failedRequestCount);
+        }
     }
 
     private Integration_Request__c processSingleRequest(Integration_Request__c req, Vehicle__c veh) {

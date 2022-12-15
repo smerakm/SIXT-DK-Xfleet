@@ -5,7 +5,13 @@ public with sharing class IntegrationRequestsUtility {
     public static final String STATUS_SUCCESS = 'Success';
     public static final String STATUS_FAILED = 'Failed';
 
-    public static final Set<String> JOB_IN_PROGRESS_STATUSES = new Set<String>{'Queued', 'Preparing', 'Processing'};
+    public static final Set<String> JOB_IN_PROGRESS_STATUSES = new Set<String>{ 'Queued', 'Preparing', 'Processing' };
+
+    public static final String FAILED_REQUESTS_REPORT_NAME = 'Failed_Integration_Requests_ksj';
+    public static final String ADMIN_GROUP_NAME = 'Xfleet_Admins';
+    public static final String NOTIFICATION_TITLE_FAILED_REQS = 'Failed Integration Requests';
+    public static final String NOTIFICATION_BODY_FAILED_REQS_PART_1 = 'Integration job processed with ';
+    public static final String NOTIFICATION_BODY_FAILED_REQS_PART_2 = ' Failed Integration Requests';
 
     @InvocableMethod(label='Xfleet Integration Job Run' description='Manually trigger Xfleet Integration Job run!')
     public static void runNavisionIntegrationJob() {
@@ -91,6 +97,32 @@ public with sharing class IntegrationRequestsUtility {
             // update vehicles
             update mVehicles.values();
         }
+    }
+
+    public static void notifyAdminsAboutFailedRequests(Integer failedReqCount) {
+        // Get the Id for our custom notification type
+        CustomNotificationType notificationType = [SELECT Id, DeveloperName FROM CustomNotificationType WHERE DeveloperName = 'Xfleet_Notification'];
+
+        Messaging.CustomNotification notification = new Messaging.CustomNotification();
+        // Set the contents for the notification
+        notification.setTitle(NOTIFICATION_TITLE_FAILED_REQS);
+        String notificationBody = NOTIFICATION_BODY_FAILED_REQS_PART_1;
+        if (failedReqCount != null) {
+            notificationBody += String.valueOf(failedReqCount) + NOTIFICATION_BODY_FAILED_REQS_PART_2;
+        }  else {
+            notificationBody += '?' + NOTIFICATION_BODY_FAILED_REQS_PART_2;
+        }
+        notification.setBody(notificationBody);
+
+        // Set the notification type and target
+        notification.setNotificationTypeId(notificationType.Id);
+        // set target to failed requests report
+        Id targetId = [SELECT Id, DeveloperName FROM Report WHERE DeveloperName = :FAILED_REQUESTS_REPORT_NAME LIMIT 1].Id;
+        notification.setTargetId(targetId);
+
+        // Actually send the notification
+        Id adminGroupId = [SELECT Id FROM Group WHERE NAME = :ADMIN_GROUP_NAME LIMIT 1].Id;
+        notification.send(new Set<String>{ adminGroupId });
     }
 
     public static Integer getJobDelay() {
