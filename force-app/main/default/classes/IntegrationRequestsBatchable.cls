@@ -34,7 +34,7 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
         }
         // query vehicles data
         Map<Id, Vehicle__c> mVehicles = new Map<Id, Vehicle__c>(
-            [SELECT vinNumber__c, License_plate__c, Batch_Distribution__c FROM Vehicle__c WHERE Id IN :mVehicle2Request.keySet()]
+            [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE Id IN :mVehicle2Request.keySet()]
         );
         System.debug(LoggingLevel.DEBUG, 'execute integration requests with these vehicles: ' + mVehicles);
         for (Integration_Request__c ir : scope) {

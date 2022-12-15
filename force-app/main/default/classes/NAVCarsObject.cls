@@ -16,7 +16,7 @@ public with sharing class NAVCarsObject {
     public NAVCarsObject(String vinNo, String regNo, String vatType) {
         this.Vin_No = vinNo;
         this.regNo = regNo;
-        this.vatType = vatType;
+        this.vatType = convertToNAVVatType(vatType);
     }
 
     // constructor used for Invoice or Advi
@@ -27,5 +27,26 @@ public with sharing class NAVCarsObject {
         this.createQuote = createQuote;
         this.createAddToDoc = createAddToDoc;
         this.createQuantity = createQuantity;
+    }
+
+    public String convertToNAVVatType() {
+        return convertToNAVVatType(this.vatType);
+    }
+
+    public String convertToNAVVatType(String vatTypeXfleet) {
+        if (vatTypeXfleet == null) {
+            return null;
+        } else if (vatTypeXfleet.equalsIgnoreCase('DK - L94')) {
+            return 'L94';
+        } else if (vatTypeXfleet.equalsIgnoreCase('Valuta')) {
+            return 'VALUTA';
+        } else if (vatTypeXfleet.equalsIgnoreCase('DK - Full tax')) {
+            return 'FULD MOMS';
+        } else if (vatTypeXfleet.equalsIgnoreCase('DK - Tax type not determined')) {
+            return null;
+        } else {
+            // do not convert (in case already converted)
+            return vatTypeXfleet;
+        }
     }
 }
