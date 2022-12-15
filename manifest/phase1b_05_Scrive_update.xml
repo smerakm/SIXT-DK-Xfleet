@@ -14,6 +14,7 @@
 		<name>ApexPage</name>
 	</types>
 	<types>
+		<members>Opportunity.After_X_months_Text_EN__c</members>
 		<members>Opportunity.Billing_address__c</members>
 		<members>Opportunity.Billing_Country__c</members>
 		<members>Opportunity.Billing_Street__c</members>
