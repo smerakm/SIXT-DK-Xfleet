@@ -47,7 +47,8 @@ public with sharing class IntegrationRequestsUtility {
         // not already scheduled, schedule NEW
         IntegrationRequestsBatchable theBatch = new IntegrationRequestsBatchable();
         // TODO scope size
-        return System.scheduleBatch(theBatch, BATCH_JOB_NAME, delay);
+        Integer batchSize = getBatchSize();
+        return System.scheduleBatch(theBatch, BATCH_JOB_NAME, delay, batchSize);
     }
 
     public static void updateIntegrationRequestsRollups() {
@@ -117,17 +118,32 @@ public with sharing class IntegrationRequestsUtility {
         // Set the notification type and target
         notification.setNotificationTypeId(notificationType.Id);
         // set target to failed requests report
-        Id targetId = [SELECT Id, DeveloperName FROM Report WHERE DeveloperName = :FAILED_REQUESTS_REPORT_NAME LIMIT 1].Id;
-        notification.setTargetId(targetId);
+        try {
+            Id targetId = [SELECT Id, DeveloperName FROM Report WHERE DeveloperName = :FAILED_REQUESTS_REPORT_NAME LIMIT 1].Id;
+            notification.setTargetId(targetId);
+        } catch (System.QueryException qe) {
+            String targetRef = '{"type": "standard__objectPage","attributes": {"objectApiName": "Integration_Request__c","actionName": "list"},"state": {"filterName": "Recent"}}';
+            notification.setTargetPageRef(targetRef);
+        }
 
         // Actually send the notification
-        Id adminGroupId = [SELECT Id FROM Group WHERE NAME = :ADMIN_GROUP_NAME LIMIT 1].Id;
-        notification.send(new Set<String>{ adminGroupId });
+        Id receiverId;
+        try {
+            receiverId = [SELECT Id FROM Group WHERE NAME = :ADMIN_GROUP_NAME LIMIT 1].Id;
+        } catch (System.QueryException qe) {
+            receiverId = UserInfo.getUserId();
+        }
+        notification.send(new Set<String>{ receiverId });
     }
 
     public static Integer getJobDelay() {
         IntegrationSettings__c settings = IntegrationSettings__c.getInstance();
         return (Integer) settings.Batch_Job_Delay_in_minutes__c;
+    }
+
+    public static Integer getBatchSize() {
+        IntegrationSettings__c settings = IntegrationSettings__c.getInstance();
+        return (Integer) settings.Batch_Size__c;
     }
 
     public static Datetime getLastJobRunTime() {

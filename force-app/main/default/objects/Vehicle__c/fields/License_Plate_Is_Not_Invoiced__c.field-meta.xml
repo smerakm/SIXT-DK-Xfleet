@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Plate_Is_Not_Invoiced__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>License Plate invoice process was run, but because of related Dealer we are not sending invoice (e.g. Dealer is out of DK)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>License Plate invoice process was run, but because of related Dealer we are not sending invoice (e.g. Dealer is out of DK)</inlineHelpText>
+    <label>License Plate Is Not Invoiced</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

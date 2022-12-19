@@ -2,7 +2,7 @@ public abstract with sharing class NAVCars {
     
     // Named Credentials
     private static final String NAMED_CREDENTIAL_TEST = 'NavisionTEST';
-    private static final String NAMED_CREDENTIAL_PROD = 'MareksMockBee';
+    private static final String NAMED_CREDENTIAL_PROD = 'NavisionPROD';
 
     //private static final String NAMED_CREDENTIAL_TEST = 'https://178.209.171.36:7048/DynamicsNAV100/ODataV4';
     //private static final String NAMED_CREDENTIAL_TEST = 'https://nav.sixt.dk:7048/DynamicsNAV100/ODataV4';
@@ -40,15 +40,6 @@ public abstract with sharing class NAVCars {
         }
         System.debug(LoggingLevel.DEBUG, 'Navision endpoint: ' + endpoint);
         return endpoint;
-    }
-
-    private HttpRequest setBasicAuth(HttpRequest r) {
-        String username = 'frp';
-        String password = '!Sixt123';
-        Blob headerValue = Blob.valueOf(username + ':' + password);
-        String authorizationHeader = 'BASIC ' + EncodingUtil.base64Encode(headerValue);
-        r.setHeader('Authorization', authorizationHeader);
-        return r;
     }
 
     public abstract HttpRequest prepareRequest(Object params);

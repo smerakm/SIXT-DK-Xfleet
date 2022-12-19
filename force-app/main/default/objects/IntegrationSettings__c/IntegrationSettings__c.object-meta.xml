@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>setting for using Integration Requests</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Xfleet Integration</label>
+    <visibility>Public</visibility>
+</CustomObject>

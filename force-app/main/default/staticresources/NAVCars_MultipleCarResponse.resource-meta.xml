@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>text/plain</contentType>
+    <description>Success response mock for Navision Cars API - GET return several cars records</description>
+</StaticResource>

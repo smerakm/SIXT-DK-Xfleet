@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_Job_Delay_in_minutes__c</fullName>
+    <defaultValue>3</defaultValue>
+    <description>integration job is scheduled to run after X minutes after &quot;trigger&quot;</description>
+    <externalId>false</externalId>
+    <inlineHelpText>integration job is scheduled to run after X minutes after &quot;trigger&quot;</inlineHelpText>
+    <label>Batch Job Delay (in minutes)</label>
+    <precision>2</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

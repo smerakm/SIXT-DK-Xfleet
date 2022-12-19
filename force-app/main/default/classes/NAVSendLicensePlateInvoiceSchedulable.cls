@@ -1,7 +1,7 @@
-public with sharing class NAVSendLicensePlateInvoceSchedulable implements System.Schedulable {
+public with sharing class NAVSendLicensePlateInvoiceSchedulable implements System.Schedulable {
     private static final String ERROR_MSG_BAD_DATA = 'License plate cost or dealer navision number is missing';
 
-    public NAVSendLicensePlateInvoceSchedulable() {
+    public NAVSendLicensePlateInvoiceSchedulable() {
     }
 
     public void execute(SchedulableContext sc) {
@@ -33,7 +33,7 @@ public with sharing class NAVSendLicensePlateInvoceSchedulable implements System
     public static Integration_Request__c createLicensePlateInvoiceRequest(Vehicle__c v) {
         Integration_Request__c ir = new Integration_Request__c();
         ir.Vehicle__c = v.Id;
-        ir.API_Method__c = NAVCarsIntegrationBatchable.METHOD_INVOICE;
+        ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_INVOICE;
         NAVCarsObject navCar = new NAVCarsObject(v.licensePlateCost__c, null, v.Dealer__r.Navision_Account__c, null, 1, true);
         ir.Data__c = JSON.serialize(navCar, true);
         // if some data are missing mark the requested as failed
