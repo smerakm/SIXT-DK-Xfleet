@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Confirmation_Comment__c</fullName>
+    <description>line displayed in Delivery Confirmation after number of vehicles and total price</description>
+    <externalId>false</externalId>
+    <inlineHelpText>line displayed in Delivery Confirmation after number of vehicles and total price</inlineHelpText>
+    <label>Delivery Confirmation Comment</label>
+    <length>90</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

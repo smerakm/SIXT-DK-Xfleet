@@ -19,7 +19,13 @@
 		<members>Opportunity.Billing_Country__c</members>
 		<members>Opportunity.Billing_Street__c</members>
 		<members>Opportunity.Cars_Count_and_Price_Text_EN__c</members>
+		<members>Opportunity.Delivery_Confirmation_Comment__c</members>
+		<members>Opportunity.Registration_Date_for_Scrive__c</members>
 		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Opportunity-Opportunity Layout</members>
+		<name>Layout</name>
 	</types>
 	<types>
 		<members>Admin</members>
