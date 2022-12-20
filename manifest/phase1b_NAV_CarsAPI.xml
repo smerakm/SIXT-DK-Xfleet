@@ -65,6 +65,14 @@
 		<name>CustomObject</name>
 	</types>
 	<types>
+		<members>Xfleet_Notification</members>
+		<name>CustomNotificationType</name>
+	</types>
+	<types>
+		<members>NAVBasicAuth</members>
+		<name>ExternalCredential</name>
+	</types>
+	<types>
 		<members>Vehicle_Record_Page</members>
 		<name>FlexiPage</name>
 	</types>
@@ -84,6 +92,15 @@
 		<members>Integration_Requests_Processor__mdt-Integration Requests Processor Layout</members>
 		<members>Vehicle__c-Vehicle Layout</members>
 		<name>Layout</name>
+	</types>
+	<types>
+		<members>NavisionTEST</members>
+		<members>NavisionPROD</members>
+		<name>NamedCredential</name>
+	</types>
+	<types>
+		<members>Navision_Integration</members>
+		<name>PermissionSet</name>
 	</types>
 	<types>
 		<members>Admin</members>
