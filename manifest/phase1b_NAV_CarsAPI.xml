@@ -68,6 +68,10 @@
 		<members>Xfleet_Notification</members>
 		<name>CustomNotificationType</name>
 	</types>
+		<types>
+		<members>Integration_Request__c</members>
+		<name>CustomTab</name>
+	</types>
 	<types>
 		<members>NAVBasicAuth</members>
 		<name>ExternalCredential</name>

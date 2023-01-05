@@ -1,8 +1,8 @@
 public with sharing class NAVUpdateVehiclesFromNAVSchedulable implements System.Schedulable {
     private Datetime modifiedAfter;
 
-    public NAVUpdateVehiclesFromNAVSchedulable(Datetime modifiedAfter) {
-        this.modifiedAfter = modifiedAfter;
+    public NAVUpdateVehiclesFromNAVSchedulable() {
+        this.modifiedAfter = System.now().addHours(-36); // need to run every day!
     }
 
     public void execute(SchedulableContext sc) {
