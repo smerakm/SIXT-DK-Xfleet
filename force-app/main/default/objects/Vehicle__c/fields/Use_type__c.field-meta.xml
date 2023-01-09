@@ -28,6 +28,16 @@
                 <label>Stock Car</label>
             </value>
             <value>
+                <fullName>Taxcompany</fullName>
+                <default>false</default>
+                <label>Taxcompany</label>
+            </value>
+            <value>
+                <fullName>Direkte Salg</fullName>
+                <default>false</default>
+                <label>Direkte Salg</label>
+            </value>
+            <value>
                 <fullName>Long-term</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
