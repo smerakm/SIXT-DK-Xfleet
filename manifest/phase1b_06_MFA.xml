@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>MFA_Force_SSO_login</members>
+		<members>MFA_Required_for_UI_Logins</members>
+		<members>MFA_Waive_Multi_Factor_Authentication</members>
+		<name>PermissionSet</name>
+	</types>
+	<!--types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Minilease</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<name>Profile</name>
+	</types-->
+	<version>56.0</version>
+</Package>

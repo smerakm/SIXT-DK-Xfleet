@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>It force users to use Single Sign-on for login and prevent login with password
+Shall not be used for admin users, RPA or integration users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>MFA Force SSO login</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>IsSsoEnabled</name>
+    </userPermissions>
+</PermissionSet>
