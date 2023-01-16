@@ -91,8 +91,6 @@ public inherited sharing class CalculationsLeasing {
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
      * Calculates PMT as in excel,
      * calculates the payment for a loan based on constant payments and a constant interest rate
-     * - 𝑃𝑀𝑇=(𝑃𝑉×𝐶−𝐹𝑉)(𝑟/𝑛)/((𝐶−1)*(1+type*r/n)), where C = pow((1+r/n), period)
-     * - https://www.quora.com/What-would-be-the-mathematical-equivalent-for-PMT-Excel-Formula-PMT
      *
      * ────────────────────────────────────────────────────────────────────────────────────────────────
      * @param  presentValue Decimal, PV
@@ -109,11 +107,12 @@ public inherited sharing class CalculationsLeasing {
         System.debug(LoggingLevel.FINE, 'Calculate PMT for: PV=' + presentValue + ', FV=' + futureValue + ', rate=' + interestRate + ', period=' + periodLength + ', type=' + type);
         // 𝑛 is the number of payments per year
         Integer n = 12;
-        // the compounding factor, C = pow((1+r/n), period)
-        Double c = Math.pow(Double.valueOf(1 + interestRate / n), Double.valueOf(periodLength));
-        // payments, calculates the payment for a loan based on constant payments and a constant interest rate.
-        // 𝑃𝑀𝑇=(𝑃𝑉×𝐶−𝐹𝑉)(𝑟/𝑛)/((𝐶−1)*(1+type*r/n)), where C = pow((1+r/n), period)
-        Decimal pmt = ((presentValue * c - futureValue) * (interestRate / n)) / ((c - 1) * (1 + type * interestRate / n));
+        
+        Double r = Double.valueOf(interestRate/n);
+        Double pv = Double.valueOf(presentValue)*-1; // present value is negative
+        Double fv = Double.valueOf(futureValue);
+        
+        Decimal pmt = FixedRateLoanUtility.pmt(r, periodLength, pv, fv, type);
         return pmt;
     }
 

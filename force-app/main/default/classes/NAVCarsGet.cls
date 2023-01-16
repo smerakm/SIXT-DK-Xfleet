@@ -49,7 +49,8 @@ public with sharing class NAVCarsGet extends NAVCars {
     // method to get cars information from NAV
     // no filter
     public Map<String, NAVCarsObject> getCarsModifiedAfter(Datetime lastModifiedAt) {
-        return getCars('modifiedAt gt ' + lastModifiedAt);
+        String lastModifiedAtString = lastModifiedAt.formatGMT('yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'');
+        return getCars('modifiedAt gt ' + lastModifiedAtString);
     }
 
     // method to get cars information from NAV
