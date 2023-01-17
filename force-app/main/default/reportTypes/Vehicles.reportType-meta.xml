@@ -178,6 +178,16 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_ready_for_sale_timestamp__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_Carcontrol_Check__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Range__c</field>
             <table>Vehicle__c</table>
         </columns>
@@ -189,6 +199,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Holding_Period__c</field>
+            <table>Vehicle__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Minilease_car_sold_timestamp__c</field>
             <table>Vehicle__c</table>
         </columns>
         <columns>
