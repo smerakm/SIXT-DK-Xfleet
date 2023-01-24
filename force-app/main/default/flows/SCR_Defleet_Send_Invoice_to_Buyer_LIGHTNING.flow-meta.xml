@@ -11,7 +11,6 @@
             <targetReference>Log_Integration_Message_Advis</targetReference>
         </connector>
         <faultConnector>
-            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <flowTransactionModel>Automatic</flowTransactionModel>
@@ -64,6 +63,7 @@
             <targetReference>Log_Integration_Message_Invoice</targetReference>
         </connector>
         <faultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
         <flowTransactionModel>Automatic</flowTransactionModel>
@@ -109,8 +109,8 @@
     <assignments>
         <name>Add_Error_Currency_Does_Not_Match</name>
         <label>Add Error Currency Does Not Match</label>
-        <locationX>1106</locationX>
-        <locationY>638</locationY>
+        <locationX>1238</locationX>
+        <locationY>734</locationY>
         <assignmentItems>
             <assignToReference>varParamsMissing</assignToReference>
             <operator>Assign</operator>
@@ -288,7 +288,6 @@
             </value>
         </assignmentItems>
         <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>Add_Error_Currency_Does_Not_Match</targetReference>
         </connector>
     </assignments>
@@ -321,7 +320,22 @@
             </value>
         </assignmentItems>
         <connector>
-            <isGoTo>true</isGoTo>
+            <targetReference>Add_Error_Currency_Does_Not_Match</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Validation_Error_VAT_is_missing</name>
+        <label>Set Validation Error - VAT is missing</label>
+        <locationX>1634</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>varValidationErrorText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>VAT type is missing</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
             <targetReference>Add_Error_Currency_Does_Not_Match</targetReference>
         </connector>
     </assignments>
@@ -338,7 +352,6 @@
             </value>
         </assignmentItems>
         <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>Add_Error_Currency_Does_Not_Match</targetReference>
         </connector>
     </assignments>
@@ -400,9 +413,10 @@
     <decisions>
         <name>Check_if_any_parameter_is_missing</name>
         <label>Check if any parameter is missing</label>
-        <locationX>1106</locationX>
+        <locationX>1238</locationX>
         <locationY>398</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Create_Selected_Vehicles_Text</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>all populated</defaultConnectorLabel>
@@ -465,6 +479,28 @@
                 <targetReference>Set_Validation_Error_amount_is_missing</targetReference>
             </connector>
             <label>Invoice Price is missing</label>
+        </rules>
+        <rules>
+            <name>VAT_Type_is_missing</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_Selected_Vehicles_Text.Batch_Distribution__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Create_Selected_Vehicles_Text.Batch_Distribution__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DK - Tax type not determined</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Validation_Error_VAT_is_missing</targetReference>
+            </connector>
+            <label>VAT Type is missing</label>
         </rules>
     </decisions>
     <decisions>
@@ -561,7 +597,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <recordCreates>
         <name>Log_Integration_Request_Successes_1</name>
         <label>Log Integration Request Successes</label>
-        <locationX>1810</locationX>
+        <locationX>1282</locationX>
         <locationY>1790</locationY>
         <inputReference>varIRLogList</inputReference>
     </recordCreates>
@@ -612,7 +648,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
         <description>update vehicles for which was invoice successfully created in NAV</description>
         <name>Update_Invoice_Requested_flag_partly</name>
         <label>Update Invoice Requested flag - partly</label>
-        <locationX>1810</locationX>
+        <locationX>1282</locationX>
         <locationY>1670</locationY>
         <connector>
             <targetReference>Log_Integration_Request_Successes_1</targetReference>
@@ -671,7 +707,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Buyer_Name__c&quot;,&quot;guid&quot;:&quot;column-a1f2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Buyer Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Navision_Account_Number__c&quot;,&quot;guid&quot;:&quot;column-b695&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Buyer Navision Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Currency__c&quot;,&quot;guid&quot;:&quot;column-0b55&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Buyer Currency&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Invoice_or_advis__c&quot;,&quot;guid&quot;:&quot;column-7c4a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Invoice or advis&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;vinNumber__c&quot;,&quot;guid&quot;:&quot;column-5398&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Buyer_Invoice_Amount__c&quot;,&quot;guid&quot;:&quot;column-db6d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Buyer Invoice Amount&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Buyer_Name__c&quot;,&quot;guid&quot;:&quot;column-a1f2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Buyer Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Navision_Account_Number__c&quot;,&quot;guid&quot;:&quot;column-b695&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Buyer Navision Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Currency__c&quot;,&quot;guid&quot;:&quot;column-0b55&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Buyer Currency&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Invoice_or_advis__c&quot;,&quot;guid&quot;:&quot;column-7c4a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Invoice or advis&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;vinNumber__c&quot;,&quot;guid&quot;:&quot;column-5398&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Buyer_Invoice_Amount__c&quot;,&quot;guid&quot;:&quot;column-db6d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Buyer Invoice Amount&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Batch_Distribution__c&quot;,&quot;guid&quot;:&quot;column-0721&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;VAT Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Batch Distribution&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -704,7 +740,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1810</locationX>
+        <locationX>1282</locationX>
         <locationY>1550</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -774,7 +810,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Buyer_Name__c&quot;,&quot;guid&quot;:&quot;column-a7e4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Buyer Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Navision_Account_Number__c&quot;,&quot;guid&quot;:&quot;column-7aca&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Buyer Navision Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Currency__c&quot;,&quot;guid&quot;:&quot;column-d01f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Buyer Currency&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Invoice_or_advis__c&quot;,&quot;guid&quot;:&quot;column-5011&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Invoice or advis&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;vinNumber__c&quot;,&quot;guid&quot;:&quot;column-2dbc&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Buyer_Invoice_Amount__c&quot;,&quot;guid&quot;:&quot;column-d30b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Buyer Invoice Amount&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Buyer_Name__c&quot;,&quot;guid&quot;:&quot;column-a7e4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Buyer Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Navision_Account_Number__c&quot;,&quot;guid&quot;:&quot;column-7aca&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Buyer Navision Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Buyer_Currency__c&quot;,&quot;guid&quot;:&quot;column-d01f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Buyer Currency&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Invoice_or_advis__c&quot;,&quot;guid&quot;:&quot;column-5011&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Invoice or advis&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;vinNumber__c&quot;,&quot;guid&quot;:&quot;column-2dbc&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Buyer_Invoice_Amount__c&quot;,&quot;guid&quot;:&quot;column-d30b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Buyer Invoice Amount&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Batch_Distribution__c&quot;,&quot;guid&quot;:&quot;column-6769&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;VAT Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Batch Distribution&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>

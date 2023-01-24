@@ -6,7 +6,7 @@
         <name>Is_Buyer_SIXT_or_empty</name>
         <label>Is Buyer SIXT or empty?</label>
         <locationX>380</locationX>
-        <locationY>6695</locationY>
+        <locationY>7487</locationY>
         <defaultConnector>
             <targetReference>Set_Operating_Leasing</targetReference>
         </defaultConnector>
@@ -38,7 +38,7 @@
         <name>Is_Defleet_damage_check_completed_updated</name>
         <label>Is Defleet damage check completed updated?</label>
         <locationX>380</locationX>
-        <locationY>4007</locationY>
+        <locationY>4127</locationY>
         <defaultConnector>
             <targetReference>Is_Defleet_Transport_Booked_changed</targetReference>
         </defaultConnector>
@@ -63,7 +63,7 @@
         <name>Is_Defleet_Transport_Booked_changed</name>
         <label>Is Defleet Transport Booked changed ?</label>
         <locationX>380</locationX>
-        <locationY>4343</locationY>
+        <locationY>4463</locationY>
         <defaultConnector>
             <targetReference>Is_Deregistered_in_SKAT_changed</targetReference>
         </defaultConnector>
@@ -95,7 +95,7 @@
         <name>Is_Deregistered_in_SKAT_changed</name>
         <label>Is Deregistered in SKAT changed?</label>
         <locationX>380</locationX>
-        <locationY>4679</locationY>
+        <locationY>4799</locationY>
         <defaultConnector>
             <targetReference>Is_Retail_Price_changed</targetReference>
         </defaultConnector>
@@ -121,7 +121,7 @@
         <name>Is_empty_Return_Station</name>
         <label>Is empty Return Station?</label>
         <locationX>182</locationX>
-        <locationY>6143</locationY>
+        <locationY>6935</locationY>
         <defaultConnector>
             <targetReference>Query_Station_Account</targetReference>
         </defaultConnector>
@@ -146,7 +146,7 @@
         <name>Is_Infleet_Damage_check_completed_checked</name>
         <label>Is Infleet Damage check completed checked ?</label>
         <locationX>380</locationX>
-        <locationY>3671</locationY>
+        <locationY>3791</locationY>
         <defaultConnector>
             <targetReference>Is_Defleet_damage_check_completed_updated</targetReference>
         </defaultConnector>
@@ -171,7 +171,7 @@
         <name>Is_Internal_number_changed</name>
         <label>Is Internal number changed ?</label>
         <locationX>380</locationX>
-        <locationY>1991</locationY>
+        <locationY>2111</locationY>
         <defaultConnector>
             <targetReference>Is_Registration_document_updated</targetReference>
         </defaultConnector>
@@ -196,7 +196,7 @@
         <name>Is_it_Minilease_vehicle</name>
         <label>Is it Minilease vehicle?</label>
         <locationX>380</locationX>
-        <locationY>5687</locationY>
+        <locationY>6479</locationY>
         <defaultConnector>
             <targetReference>Is_Return_Station_Changed</targetReference>
         </defaultConnector>
@@ -222,7 +222,7 @@
         <name>Is_Key_received_at_HQ_updated</name>
         <label>Is Key received at HQ updated?</label>
         <locationX>380</locationX>
-        <locationY>983</locationY>
+        <locationY>1103</locationY>
         <defaultConnector>
             <targetReference>Is_Key_received_at_station_updated</targetReference>
         </defaultConnector>
@@ -247,7 +247,7 @@
         <name>Is_Key_received_at_station_updated</name>
         <label>Is Key received at station updated?</label>
         <locationX>380</locationX>
-        <locationY>1319</locationY>
+        <locationY>1439</locationY>
         <defaultConnector>
             <targetReference>Is_Key_sent_to_buyer_updated</targetReference>
         </defaultConnector>
@@ -272,7 +272,7 @@
         <name>Is_Key_sent_to_buyer_updated</name>
         <label>Is Key sent to buyer updated ?</label>
         <locationX>380</locationX>
-        <locationY>1655</locationY>
+        <locationY>1775</locationY>
         <defaultConnector>
             <targetReference>Is_Internal_number_changed</targetReference>
         </defaultConnector>
@@ -319,32 +319,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Is_License_Plate_Updated</name>
-        <label>Is License Plate Updated?</label>
-        <locationX>380</locationX>
-        <locationY>7031</locationY>
-        <defaultConnectorLabel>no</defaultConnectorLabel>
-        <rules>
-            <name>yes_license_plate_updated</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.License_plate__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_License_Plate_System_field</targetReference>
-            </connector>
-            <label>yes, license plate updated</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Is_Registration_document_updated</name>
         <label>Is Registration document updated ?</label>
         <locationX>380</locationX>
-        <locationY>2327</locationY>
+        <locationY>2447</locationY>
         <defaultConnector>
             <targetReference>Is_the_car_is_paid_updated</targetReference>
         </defaultConnector>
@@ -369,7 +347,7 @@
         <name>Is_Retail_Price_changed</name>
         <label>Is Retail Price changed</label>
         <locationX>380</locationX>
-        <locationY>5015</locationY>
+        <locationY>5135</locationY>
         <defaultConnector>
             <targetReference>No_Remaining_period_Timestamp</targetReference>
         </defaultConnector>
@@ -401,7 +379,7 @@
         <name>Is_Return_Station_Changed</name>
         <label>Is Return Station Changed?</label>
         <locationX>380</locationX>
-        <locationY>6023</locationY>
+        <locationY>6815</locationY>
         <defaultConnector>
             <targetReference>Is_Buyer_SIXT_or_empty</targetReference>
         </defaultConnector>
@@ -458,7 +436,7 @@
         <name>Is_the_car_is_paid_updated</name>
         <label>Is the car is paid updated ?</label>
         <locationX>380</locationX>
-        <locationY>2663</locationY>
+        <locationY>2783</locationY>
         <defaultConnector>
             <targetReference>Is_the_car_is_released_updated</targetReference>
         </defaultConnector>
@@ -483,7 +461,7 @@
         <name>Is_the_car_is_picked_up_updated</name>
         <label>Is the car is picked up updated ?</label>
         <locationX>380</locationX>
-        <locationY>3335</locationY>
+        <locationY>3455</locationY>
         <defaultConnector>
             <targetReference>Is_Infleet_Damage_check_completed_checked</targetReference>
         </defaultConnector>
@@ -508,7 +486,7 @@
         <name>Is_the_car_is_released_updated</name>
         <label>Is the car is released updated ?</label>
         <locationX>380</locationX>
-        <locationY>2999</locationY>
+        <locationY>3119</locationY>
         <defaultConnector>
             <targetReference>Is_the_car_is_picked_up_updated</targetReference>
         </defaultConnector>
@@ -530,12 +508,64 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Minilease_ready_for_sale</name>
+        <label>Minilease status is ready for sale</label>
+        <locationX>380</locationX>
+        <locationY>5807</locationY>
+        <defaultConnector>
+            <targetReference>Minilease_status_is_sold</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ready_for_sale</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Minilease_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for sale</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ready_for_sale_timestamp</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Ready for sale</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Minilease_status_is_sold</name>
+        <label>Minilease status is sold</label>
+        <locationX>380</locationX>
+        <locationY>6143</locationY>
+        <defaultConnector>
+            <targetReference>Is_it_Minilease_vehicle</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Minilease_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sold</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sold_timestamp</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Sold</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>No_Remaining_period_Timestamp</name>
         <label>Is the remaining period 0?</label>
         <locationX>380</locationX>
-        <locationY>5351</locationY>
+        <locationY>5471</locationY>
         <defaultConnector>
-            <targetReference>Is_it_Minilease_vehicle</targetReference>
+            <targetReference>Minilease_ready_for_sale</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -568,7 +598,9 @@ Key_received_at_HQ__c
 Key_received_at_station__c
 Key_sent_to_buyer__c
 Internal_number_timestamp__c
-Expected_defleet_timestamp__c</description>
+Expected_defleet_timestamp__c
+Minilease_ready_for_sale_timestamp__c
+Minilease_car_sold_timestamp__c</description>
     <environments>Default</environments>
     <formulas>
         <description>calculate as Supplier Ready Date + 4 weeks (28 days)</description>
@@ -579,10 +611,7 @@ Expected_defleet_timestamp__c</description>
     <formulas>
         <name>LicensePlateSystem</name>
         <dataType>String</dataType>
-        <expression>IF(CONTAINS({!$Record.License_plate__c}, &quot; &quot;),
-{!$Record.License_plate__c}, 
-LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_plate__c}, LEN({!$Record.License_plate__c})-2)
-)</expression>
+        <expression>SUBSTITUTE({!$Record.License_plate__c}, &quot; &quot;, &quot;&quot;)</expression>
     </formulas>
     <formulas>
         <description>convert text representation of Return Station id from COBRA to number so it could be used in query</description>
@@ -627,7 +656,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Query_Station_Account</name>
         <label>Query Station Account</label>
         <locationX>314</locationX>
-        <locationY>6263</locationY>
+        <locationY>7055</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Return_Station_lookup</targetReference>
@@ -648,7 +677,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Clear_Return_Station_lookup</name>
         <label>Clear Return Station lookup</label>
         <locationX>50</locationX>
-        <locationY>6263</locationY>
+        <locationY>7055</locationY>
         <connector>
             <targetReference>Is_Buyer_SIXT_or_empty</targetReference>
         </connector>
@@ -683,13 +712,26 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Ready_for_sale_timestamp</name>
+        <label>Ready for sale timestamp</label>
+        <locationX>248</locationX>
+        <locationY>5927</locationY>
+        <connector>
+            <targetReference>Minilease_status_is_sold</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Minilease_ready_for_sale_timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Set_Finance_Leasing</name>
         <label>Set Finance Leasing</label>
         <locationX>248</locationX>
-        <locationY>6815</locationY>
-        <connector>
-            <targetReference>Is_License_Plate_Updated</targetReference>
-        </connector>
+        <locationY>7607</locationY>
         <inputAssignments>
             <field>Leasing_Type__c</field>
             <value>
@@ -702,7 +744,10 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Set_License_Plate_System_field</name>
         <label>Set License Plate (System) field</label>
         <locationX>248</locationX>
-        <locationY>7151</locationY>
+        <locationY>887</locationY>
+        <connector>
+            <targetReference>Is_Key_received_at_HQ_updated</targetReference>
+        </connector>
         <inputAssignments>
             <field>License_Plate_System__c</field>
             <value>
@@ -716,7 +761,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Set_Minilease_status_to_New</name>
         <label>Set Minilease status to New</label>
         <locationX>248</locationX>
-        <locationY>5807</locationY>
+        <locationY>6599</locationY>
         <connector>
             <targetReference>Is_Return_Station_Changed</targetReference>
         </connector>
@@ -740,10 +785,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Set_Operating_Leasing</name>
         <label>Set Operating Leasing</label>
         <locationX>512</locationX>
-        <locationY>6815</locationY>
-        <connector>
-            <targetReference>Is_License_Plate_Updated</targetReference>
-        </connector>
+        <locationY>7607</locationY>
         <inputAssignments>
             <field>Leasing_Type__c</field>
             <value>
@@ -757,7 +799,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Set_Return_Station_lookup</name>
         <label>Set Return Station lookup</label>
         <locationX>314</locationX>
-        <locationY>6383</locationY>
+        <locationY>7175</locationY>
         <connector>
             <targetReference>Is_Buyer_SIXT_or_empty</targetReference>
         </connector>
@@ -770,12 +812,28 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Sold_timestamp</name>
+        <label>Sold timestamp</label>
+        <locationX>248</locationX>
+        <locationY>6263</locationY>
+        <connector>
+            <targetReference>Is_it_Minilease_vehicle</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Minilease_car_sold_timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Actual_Infleet_day</name>
         <label>Update Actual Infleet day</label>
         <locationX>248</locationX>
         <locationY>767</locationY>
         <connector>
-            <targetReference>Is_Key_received_at_HQ_updated</targetReference>
+            <targetReference>Set_License_Plate_System_field</targetReference>
         </connector>
         <inputAssignments>
             <field>Actual_Infleet_Day__c</field>
@@ -789,7 +847,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Defleet_damage_check_user_and_time_stamp</name>
         <label>Update Defleet damage check user and time stamp</label>
         <locationX>248</locationX>
-        <locationY>4127</locationY>
+        <locationY>4247</locationY>
         <connector>
             <targetReference>Is_Defleet_Transport_Booked_changed</targetReference>
         </connector>
@@ -811,7 +869,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Defleet_Transport_Booked_timestamp</name>
         <label>Update Defleet Transport Booked timestamp</label>
         <locationX>248</locationX>
-        <locationY>4463</locationY>
+        <locationY>4583</locationY>
         <connector>
             <targetReference>Is_Deregistered_in_SKAT_changed</targetReference>
         </connector>
@@ -827,7 +885,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Deregistered_in_SKAT_timestamp</name>
         <label>Update Deregistered in SKAT timestamp</label>
         <locationX>248</locationX>
-        <locationY>4799</locationY>
+        <locationY>4919</locationY>
         <connector>
             <targetReference>Is_Retail_Price_changed</targetReference>
         </connector>
@@ -843,9 +901,9 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Expected_defleet_timestamp</name>
         <label>Update Expected defleet timestamp</label>
         <locationX>248</locationX>
-        <locationY>5471</locationY>
+        <locationY>5591</locationY>
         <connector>
-            <targetReference>Is_it_Minilease_vehicle</targetReference>
+            <targetReference>Minilease_ready_for_sale</targetReference>
         </connector>
         <inputAssignments>
             <field>Expected_defleet_timestamp__c</field>
@@ -859,7 +917,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Infleet_damage_check_completed_date_and_user_stampp</name>
         <label>Update Infleet damage check completed date and user stampp</label>
         <locationX>248</locationX>
-        <locationY>3791</locationY>
+        <locationY>3911</locationY>
         <connector>
             <targetReference>Is_Defleet_damage_check_completed_updated</targetReference>
         </connector>
@@ -881,7 +939,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Internal_number_timestamp</name>
         <label>Update Internal number timestamp</label>
         <locationX>248</locationX>
-        <locationY>2111</locationY>
+        <locationY>2231</locationY>
         <connector>
             <targetReference>Is_Registration_document_updated</targetReference>
         </connector>
@@ -897,7 +955,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Key_received_at_HQ_time_and_user_stamp</name>
         <label>Update Key received at HQ time and user stamp</label>
         <locationX>248</locationX>
-        <locationY>1103</locationY>
+        <locationY>1223</locationY>
         <connector>
             <targetReference>Is_Key_received_at_station_updated</targetReference>
         </connector>
@@ -919,7 +977,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_key_received_at_station_time_and_user_stamp</name>
         <label>Update key received at station time and user stamp</label>
         <locationX>248</locationX>
-        <locationY>1439</locationY>
+        <locationY>1559</locationY>
         <connector>
             <targetReference>Is_Key_sent_to_buyer_updated</targetReference>
         </connector>
@@ -941,7 +999,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Key_sent_to_buyer_timestamp</name>
         <label>Update Key sent to buyer time and user stamp</label>
         <locationX>248</locationX>
-        <locationY>1775</locationY>
+        <locationY>1895</locationY>
         <connector>
             <targetReference>Is_Internal_number_changed</targetReference>
         </connector>
@@ -963,7 +1021,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_registration_document_time_and_user_stamp</name>
         <label>Update registration document time and user stamp</label>
         <locationX>248</locationX>
-        <locationY>2447</locationY>
+        <locationY>2567</locationY>
         <connector>
             <targetReference>Is_the_car_is_paid_updated</targetReference>
         </connector>
@@ -985,7 +1043,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_Retail_Price_Timestamp</name>
         <label>Update Retail Price Timestamp</label>
         <locationX>248</locationX>
-        <locationY>5135</locationY>
+        <locationY>5255</locationY>
         <connector>
             <targetReference>No_Remaining_period_Timestamp</targetReference>
         </connector>
@@ -1001,7 +1059,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_the_car_is_paid_user_and_time_stamp</name>
         <label>Update the car is paid user and time stamp</label>
         <locationX>248</locationX>
-        <locationY>2783</locationY>
+        <locationY>2903</locationY>
         <connector>
             <targetReference>Is_the_car_is_released_updated</targetReference>
         </connector>
@@ -1023,7 +1081,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_the_car_is_picked_up_date_and_user_stamp</name>
         <label>Update the car is picked up date and user stamp</label>
         <locationX>248</locationX>
-        <locationY>3455</locationY>
+        <locationY>3575</locationY>
         <connector>
             <targetReference>Is_Infleet_Damage_check_completed_checked</targetReference>
         </connector>
@@ -1045,7 +1103,7 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         <name>Update_the_car_is_released_time_and_user_stamp</name>
         <label>Update the car is released time and user stamp</label>
         <locationX>248</locationX>
-        <locationY>3119</locationY>
+        <locationY>3239</locationY>
         <connector>
             <targetReference>Is_the_car_is_picked_up_updated</targetReference>
         </connector>
@@ -1205,6 +1263,13 @@ LEFT({!$Record.License_plate__c}, 2) + &quot; &quot; + RIGHT({!$Record.License_p
         </filters>
         <filters>
             <field>License_plate__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Minilease_Status__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>

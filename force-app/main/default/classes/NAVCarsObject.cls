@@ -4,7 +4,7 @@ public with sharing class NAVCarsObject {
     public String vatType { get; set; }
     public Datetime createdAt { get; set; }
     public Datetime modifiedAt { get; set; }
-    public Boolean carIsPaid { get; set; }
+    public Boolean isPaid { get; set; }
     public Decimal createUnitPrice { get; set; }
     public String creatExtDocNo { get; set; }
     public String createInvoice { get; set; } // Account NAV number for invoice

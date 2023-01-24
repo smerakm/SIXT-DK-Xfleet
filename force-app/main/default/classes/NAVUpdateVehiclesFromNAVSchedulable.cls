@@ -21,8 +21,8 @@ public with sharing class NAVUpdateVehiclesFromNAVSchedulable implements System.
             for (Vehicle__c veh : [SELECT vinNumber__c, The_car_is_paid__c FROM Vehicle__c WHERE vinNumber__c IN :navCars.keySet()]) {
                 Boolean vehicleUpdated = false;
                 NAVCarsObject navCarSingle = navCars.get(veh.vinNumber__c);
-                if (navCarSingle.carIsPaid != null && navCarSingle.carIsPaid != veh.The_car_is_paid__c) {
-                    veh.The_car_is_paid__c = navCarSingle.carIsPaid;
+                if (navCarSingle.isPaid != null && navCarSingle.isPaid != veh.The_car_is_paid__c) {
+                    veh.The_car_is_paid__c = navCarSingle.isPaid;
                     vehicleUpdated = true;
                 }
                 // update vehicle only if there is a change
