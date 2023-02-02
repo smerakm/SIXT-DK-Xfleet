@@ -21,6 +21,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Batch_Distribution__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Create_initial_Vehicle_Calculator_0</targetReference>
             </connector>
@@ -29,6 +36,13 @@
         </rules>
     </decisions>
     <description>create new vehicle calculator if it is first time or re-calculate draft calculators</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formulaFutureValueDefault</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Total_Buy_Price__c} * (100 - {!$Record.Selected_Batch_Calculator__r.Period__c}) / 100</expression>
+        <scale>2</scale>
+    </formulas>
     <interviewLabel>VEHICLE_TRG_AfterUpdate {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLE_TRG_After_reRunCalculations</label>
     <processMetadataValues>
@@ -64,7 +78,7 @@
         <inputAssignments>
             <field>Remarketing_Price__c</field>
             <value>
-                <elementReference>$Record.Selected_Batch_Calculator__r.Sales_price__c</elementReference>
+                <elementReference>formulaFutureValueDefault</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -146,6 +160,13 @@
         </filters>
         <filters>
             <field>Vehicle_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Batch_Distribution__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>

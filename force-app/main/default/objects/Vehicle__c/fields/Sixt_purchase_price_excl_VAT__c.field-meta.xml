@@ -3,6 +3,7 @@
     <fullName>Sixt_purchase_price_excl_VAT__c</fullName>
     <description>Total Sixt købspris ex. Moms ex. Afgift</description>
     <externalId>false</externalId>
+    <inlineHelpText>coming from Leverandørfil</inlineHelpText>
     <label>Sixt purchase price excl VAT</label>
     <precision>18</precision>
     <required>false</required>

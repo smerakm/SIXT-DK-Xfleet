@@ -9,7 +9,8 @@ IF(ISPICKVAL(Batch_Distribution__c, &quot;DK - Full tax&quot;),
 			Sixt_steel_purchase_price__c +  licensePlateCost__c + Delivery_cost__c + handlingCost__c
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>depends on tax type</inlineHelpText>
+    <inlineHelpText>depends on tax type, if Full Tax then equals to Tax Base, otherwise it is (Sixt steel purchase price
+ + License Plate Cost + Delivery Cost + Handling Cost)</inlineHelpText>
     <label>Total Buy Price</label>
     <precision>18</precision>
     <required>false</required>
