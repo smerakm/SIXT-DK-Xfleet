@@ -25,6 +25,12 @@ public with sharing class TestUtilitySIXT {
     public final static String VEHICLE_GROUP_NAME = 'Group Unit Test + ' + ACCRIS_CODE;
     public final static String SERVICE_GROUP_NAME = 'Group Unit SERVICE Test + ' + ACCRIS_CODE;
     public final static String BATCH_DESCRIPTION = 'This is Unit Test 534ui';
+    // uncategorized group
+    public final static String ACCRIS_CODE_UNCATEGORIZED = '---';
+    public final static String VEHICLE_GROUP_NAME_UNCATEGORIZED = 'Group Unit Test + ' + ACCRIS_CODE;
+    public final static String SERVICE_GROUP_NAME_UNCATEGORIZED = 'Group Unit SERVICE Test + ' + ACCRIS_CODE;
+
+    public final static String ACCOUNT_DEFAULT_NAME = 'SIXT Unit TEST f23r';
 
     // creates batch together with vehicle group and other required objects
     public static vehicleBatch__c createBatch() {
@@ -38,6 +44,8 @@ public with sharing class TestUtilitySIXT {
 
     // create batch for specified vehicle group and description
     public static vehicleBatch__c createBatch(String batchDescription, Id vehicleGroupId) {
+        // config setup
+        initFleetManagementSettings();
         // Vehicle batch
         VehicleBatch__c testBatch = new VehicleBatch__c();
         testBatch.Description__c = batchDescription;
@@ -81,6 +89,21 @@ public with sharing class TestUtilitySIXT {
         return vGroup;
     }
 
+    // create a uncategorized vehicle group
+    public static Vehicle_Group__c getUncategorizedVehicleGroup() {
+        Vehicle_Group__c vGroup;
+        List<Vehicle_Group__c> vgs = [SELECT Id FROM Vehicle_Group__c WHERE Name = :VEHICLE_GROUP_NAME_UNCATEGORIZED];
+        if (vgs.size() > 0) {
+            vGroup = vgs[0];
+        } else {
+            // Service and Damage Group
+            Service_and_Damage_Group__c sdGroup = createServiceAndDamageSetup(SERVICE_GROUP_NAME_UNCATEGORIZED);
+            // Vehicle Group
+            vGroup = createVehicleGroup(VEHICLE_GROUP_NAME_UNCATEGORIZED, ACCRIS_CODE_UNCATEGORIZED, sdGroup.Id);
+        }
+        return vGroup;
+    }
+
     public static Fleet_Forecast__c createFleetForecast(Id vehicleGroupId, Date firstDay, Date lastDay, Map<String, Object> params) {
         Fleet_Forecast__c ff = new Fleet_Forecast__c();
         ff.Vehicle_Group__c = vehicleGroupId;
@@ -93,7 +116,7 @@ public with sharing class TestUtilitySIXT {
         ff.Year__c = String.valueOf(firstDay.year());
         Integer theMonth = firstDay.month();
         if (theMonth < 10) {
-            ff.Month__c = '0'+theMonth;
+            ff.Month__c = '0' + theMonth;
         } else {
             ff.Month__c = String.valueOf(theMonth);
         }
@@ -125,5 +148,32 @@ public with sharing class TestUtilitySIXT {
         }
         insert testVehicle;
         return testVehicle;
+    }
+
+    // create default account
+    public static Account getDefaultAccount() {
+        Account defAccount;
+        List<Account> accs = [SELECT Id, Name FROM Account WHERE Name = :ACCOUNT_DEFAULT_NAME];
+        if (accs.size() > 0) {
+            defAccount = accs[0];
+        } else {
+            defAccount = new Account(Name = ACCOUNT_DEFAULT_NAME);
+            insert defAccount;
+        }
+        return defAccount;
+    }
+
+    // init Fleet Management Settings
+    public static void initFleetManagementSettings() {
+        FleetManagementConfig__c orgDefaultFleetConfig = FleetManagementConfig__c.getOrgDefaults();
+        if (orgDefaultFleetConfig == null || orgDefaultFleetConfig.Opportunity_default_user__c == null) {
+            orgDefaultFleetConfig = new FleetManagementConfig__c(
+                SetupOwnerId = UserInfo.getOrganizationId(),
+                Opportunity_default_user__c = UserInfo.getUserId(),
+                DefaultOppAccountId__c = getDefaultAccount().Id,
+                Uncategorizied__c = getUncategorizedVehicleGroup().Id
+            );
+            insert orgDefaultFleetConfig;
+        }
     }
 }

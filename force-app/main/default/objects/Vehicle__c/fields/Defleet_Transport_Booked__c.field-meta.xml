@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Defleet_Transport_Booked__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
     <externalId>false</externalId>
     <label>Defleet Transport Booked</label>
     <required>false</required>
@@ -26,6 +27,26 @@
                 <fullName>Rebook transport</fullName>
                 <default>false</default>
                 <label>Rebook transport</label>
+            </value>
+            <value>
+                <fullName>Ikke solgt Dal Vamdrup</fullName>
+                <default>false</default>
+                <label>Ikke solgt Dal Vamdrup</label>
+            </value>
+            <value>
+                <fullName>Ikke solgt  Dal Ringsted</fullName>
+                <default>false</default>
+                <label>Ikke solgt  Dal Ringsted</label>
+            </value>
+            <value>
+                <fullName>Ikke solgt sixt Bilsalg</fullName>
+                <default>false</default>
+                <label>Ikke solgt sixt Bilsalg</label>
+            </value>
+            <value>
+                <fullName>Ikke solgt autorola</fullName>
+                <default>false</default>
+                <label>Ikke solgt autorola</label>
             </value>
         </valueSetDefinition>
     </valueSet>

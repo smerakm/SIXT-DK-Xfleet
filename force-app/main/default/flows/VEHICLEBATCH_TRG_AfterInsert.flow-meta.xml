@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <description>actions after the new Vehicle Batch is created</description>
+    <environments>Default</environments>
     <formulas>
         <description>calculate close date of the opportunity from current date</description>
         <name>formCloseDate</name>
@@ -63,6 +64,12 @@
             <field>Original_Batch__c</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Setup.FleetManagementConfig__c.Opportunity_default_user__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
