@@ -58,8 +58,8 @@ private class CalculationsTax_Test {
         System.assertEquals(15, testResults.assumedValueLostPercent, 'assumed value lost shall be 15%!');
         System.assertEquals(13882.5, testResults.registrationFeeOfAssumedValueLost, 'registration fee assumed value lost shall be 13 882.5!');
         System.assertEquals(78667.5, testResults.residualTaxEndOfLeasing, 'residual tax at the end of leasing period shall be 78668.5!');
-        System.assertEquals(1652, testResults.interestOnResidualTax, 'interest on residual tax shall be 1652!');
-        System.assertEquals(15534.5, testResults.totalPayment, 'total tax shall be 15 534.5!');
+        System.assertEquals(1652.02, testResults.interestOnResidualTax.setScale(2), 'interest on residual tax shall be 1652!');
+        System.assertEquals(15534.52, testResults.totalPayment.setScale(2), 'total tax shall be 15 534.5!');
 
     }
 

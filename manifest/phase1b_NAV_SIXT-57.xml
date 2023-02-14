@@ -3,16 +3,31 @@
 	<types>
 		<members>CalculationsLeasing</members>
 		<members>CalculationsLeasing_Test</members>
+		<members>CalculationsLeasingResidualValue</members>
+		<members>CalculationsLeasingResidualValueBatch</members>
+		<members>CalculationsLeasingResidualValue_Test</members>
+		<members>CalculationsTax</members>
+		<members>CalculationsTax_Test</members>
 		<members>FixedRateLoanUtility</members>
 		<members>FixedRateLoanUtility_Test</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
 		<members>Account.Leasing_Algorithm__c</members>
+		<members>Account.CVR__c</members>
 		<members>Vehicle__c.Interest_Rate_First_Leasing_Period__c</members>
 		<members>Vehicle__c.Leasing_Cost_1st_Month__c</members>
 		<members>Vehicle__c.Leasing_Cost_Per_Month__c</members>
+		<members>Vehicle__c.Depreciation__c</members>
+		<members>Vehicle__c.Interest_Leasing__c</members>
+		<members>Vehicle__c.Redemption_Price_to_Leasing_Account__c</members>
+		<members>Vehicle__c.Proportional_Registration_Fee__c</members>
+		<members>Vehicle__c.Proportional_Registration_Interest__c</members>
 		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Xfleet_Query_Vehicles_for_Residual_Value_Update</members>
+		<name>CustomLabel</name>
 	</types>
 	<types>
 		<members>VEHICLE_TRG_After_CalculateLeasingCost</members>

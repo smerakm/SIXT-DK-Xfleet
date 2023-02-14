@@ -1,60 +1,69 @@
 /**
  * ─────────────────────────────────────────────────────────────────────────────────────────────────┐
- * Utility class to calculate Leasing Cost.
+ * Utility class to calculate Residual Value of leasing in specific period.
  *
  * It provides following functionality:
- * - calculate leasing cost per month
+ * - calculate residual value of leasing for month
  * - algorithm used depends on Leasing Company
  *
  * There are 2 wrappers:
- * - one for inputs (algorithm type, interest rate, period, present value, future value)
+ * - one for inputs (algorithm type, interest rate, period, present value, tax type, montly payment)
  * - one for calculation results
  * ──────────────────────────────────────────────────────────────────────────────────────────────────
  * @author         Marek Smerak      <marek.smerak@wipro.com>
  * @modifiedBy     Marek Smerak      <marek.smerak@wipro.com>
- * @version        2.0
- * @created        2022-10-24
- * @modified       2023-02-06
+ * @version        1.0
+ * @created        2022-02-07
+ * @modified       2023-02-07
  * @systemLayer    Utility
- * @see            SIXT-57
+ * @see            SIXT-54
  * ──────────────────────────────────────────────────────────────────────────────────────────────────
  * @changes
- * v2.0            marek.smerak@wipro.com
- * 2022-10-24      removed tax part (tax part moved to Total Buy Price calculation), 
- *                  algorithm2 added
- *                  add deprication and interest as output attributes
- *
  * v1.0            marek.smerak@wipro.com
- * 2022-10-24      initial version
+ * 2022-02-07      initial version
  *
  * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
  */
-public inherited sharing class CalculationsLeasing {
+public inherited sharing class CalculationsLeasingResidualValue {
     /**
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
-     * Invocable wrapper for holding costs calculation method
+     * Invocable wrapper for residual value calculation method
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    @InvocableMethod(label='Calculate leasing costs' description='Calculate leasing costs for single period' category='Calculation')
-    public static List<CalculationLeasingOutputs> calculateLeasingCost(List<CalculationLeasingInputs> costInputs) {
-        List<CalculationLeasingOutputs> allResults = new List<CalculationLeasingOutputs>();
-        for (CalculationLeasingInputs singleInputs : costInputs) {
-            allResults.add(calculateLeasingCost(singleInputs));
+    @InvocableMethod(label='Calculate residual value' description='Calculate Leasing Residual Value' category='Calculation')
+    public static List<CalculationResidualValueOutputs> calculateResidualValue(List<CalculationResidualValueInputs> costInputs) {
+        List<CalculationResidualValueOutputs> allResults = new List<CalculationResidualValueOutputs>();
+        for (CalculationResidualValueInputs singleInputs : costInputs) {
+            allResults.add(calculateResidualValue(singleInputs));
         }
         return allResults;
     }
 
     /**
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
-     * Calculate leasing cost for one period.
+     * Calculate residual value
      * ────────────────────────────────────────────────────────────────────────────────────────────────
      * @param  costInputs CalculationLeasingInputs
      * @return CalculationLeasingOutputs return calculated leasing cost per month
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    public static CalculationLeasingOutputs calculateLeasingCost(CalculationLeasingInputs costInputs) {
-        // calculate costs
-        CalculationLeasingOutputs result = new CalculationLeasingOutputs();
+    public static CalculationResidualValueOutputs calculateResidualValue(CalculationResidualValueInputs costInputs) {
+        // is it L94?
+        if (costInputs.isL94) {
+            CalculationsTax.CalculationTaxInputs taxInputs = new CalculationsTax.CalculationTaxInputs();
+            taxInputs.leasingPeriodLength = costInputs.periodLength + 1;
+            taxInputs.registrationFee = costInputs.registrationBaseL94;
+            taxInputs.vehicleAge = 0;
+            CalculationsTax.CalculationTaxOutputs taxOutput = CalculationsTax.calculateTax(taxInputs);
+
+            System.debug(LoggingLevel.FINE, 'tax calculated in residual value calculation: ' + taxOutput);
+
+            costInputs.presentValue += taxOutput.totalPayment;
+        }
+
+        System.debug(LoggingLevel.FINE, 'present value (after L94): ' + costInputs.presentValue);
+
+        CalculationResidualValueOutputs result;
         // switch by algorithm
         switch on costInputs.algorithm {
             when 1 {
@@ -73,72 +82,70 @@ public inherited sharing class CalculationsLeasing {
     /**
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
      * Algorithm 1 - used originally by AL
-     * - use PMT, payments are due at the beginning of the period
+     * - use FV, payments are due at the beginning of the period
      * ────────────────────────────────────────────────────────────────────────────────────────────────
      * @param  calcInputs CalculationLeasingInputs
-     * @return Decimal return calculated leasing cost per month
+     * @return Decimal return calculated residual value
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    private static CalculationLeasingOutputs algorithm1(CalculationLeasingInputs calcInputs) {
-        // calculate PMT part with payments at the beginning of the period
-        CalculationLeasingOutputs results = algorithmPMT(calcInputs.presentValue, calcInputs.futureValue, calcInputs.interestRate, calcInputs.periodLength, 1);
+    private static CalculationResidualValueOutputs algorithm1(CalculationResidualValueInputs calcInputs) {
+        System.debug(
+            LoggingLevel.FINE,
+            'Calculate FV algorithm 1 for: PV=' +
+            calcInputs.presentValue +
+            ', monthlyPayment=' +
+            calcInputs.monthlyPayment +
+            ', rate=' +
+            calcInputs.interestRate +
+            ', period=' +
+            calcInputs.periodLength
+        );
+        // 𝑛 is the number of payments per year
+        Integer n = 12;
+
+        Double r = Double.valueOf(calcInputs.interestRate / n);
+        Double pv = Double.valueOf(calcInputs.presentValue) * -1; // present value is negative
+        Double pmt = Double.valueOf(calcInputs.monthlyPayment);
+        // calculate FV part with payments at the BEGINING of the period
+        Double fv = FixedRateLoanUtility.fv(r, calcInputs.periodLength, pmt, pv, 1);
+
+        CalculationResidualValueOutputs results = new CalculationResidualValueOutputs();
+        results.residualValue = fv;
         return results;
     }
 
     /**
      * ───────────────────────────────────────────────────────────────────────────────────────────────┐
      * Algorithm 2 - used originally by Alphabet
-     * - use PMT, payments are due at the end of the period
+     * - use FV, payments are due at the end of the period
      * ────────────────────────────────────────────────────────────────────────────────────────────────
      * @param  calcInputs CalculationLeasingInputs
-     * @return Decimal return calculated leasing cost per month
+     * @return Decimal return calculated residual value
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    private static CalculationLeasingOutputs algorithm2(CalculationLeasingInputs calcInputs) {
-        // calculate PMT part with payments at the beginning of the period
-        CalculationLeasingOutputs results = algorithmPMT(calcInputs.presentValue, calcInputs.futureValue, calcInputs.interestRate, calcInputs.periodLength, 0);
-        return results;
-    }
-
-    /**
-     * ───────────────────────────────────────────────────────────────────────────────────────────────┐
-     * Calculates PMT as in excel,
-     * calculates the payment for a loan based on constant payments and a constant interest rate
-     *
-     * ────────────────────────────────────────────────────────────────────────────────────────────────
-     * @param  presentValue Decimal, PV
-     * @param  futureValue Decimal, FV
-     * @param  interestRate Decimal, r
-     * @param  periodLength Integer, period length in months
-     * @param  type Integer, indicates when payments are due,
-     *                          0 = At the end of the period,
-     *                          1 = At the beginning of the period
-     * @return Decimal return calculated leasing cost per month
-     * ───────────────────────────────────────────────────────────────────────────────────────────────┘
-     */
-    private static CalculationLeasingOutputs algorithmPMT(Decimal presentValue, Decimal futureValue, Decimal interestRate, Integer periodLength, Integer type) {
-        System.debug(LoggingLevel.FINE, 'Calculate PMT for: PV=' + presentValue + ', FV=' + futureValue + ', rate=' + interestRate + ', period=' + periodLength + ', type=' + type);
+    private static CalculationResidualValueOutputs algorithm2(CalculationResidualValueInputs calcInputs) {
+        System.debug(
+            LoggingLevel.FINE,
+            'Calculate FV algorithm 1 for: PV=' +
+            calcInputs.presentValue +
+            ', monthlyPayment=' +
+            calcInputs.monthlyPayment +
+            ', rate=' +
+            calcInputs.interestRate +
+            ', period=' +
+            calcInputs.periodLength
+        );
         // 𝑛 is the number of payments per year
         Integer n = 12;
-        
-        Double r = Double.valueOf(interestRate/n);
-        Double pv = Double.valueOf(presentValue)*-1; // present value is negative
-        Double fv = Double.valueOf(futureValue);
-        
-        Decimal pmt = FixedRateLoanUtility.pmt(r, periodLength, pv, fv, type);
 
-        System.debug(LoggingLevel.FINE, 'PMT calculated as: ' + pmt);
+        Double r = Double.valueOf(calcInputs.interestRate / n);
+        Double pv = Double.valueOf(calcInputs.presentValue) * -1; // present value is negative
+        Double pmt = Double.valueOf(calcInputs.monthlyPayment);
+        // calculate FV part with payments at the END of the period
+        Double fv = FixedRateLoanUtility.fv(r, calcInputs.periodLength, pmt, pv, 0);
 
-        Decimal deprication = presentValue - futureValue;
-        Decimal depricationPerMonth = deprication / periodLength;
-        Decimal interestPerMonth = pmt - depricationPerMonth;
-
-        CalculationLeasingOutputs results = new CalculationLeasingOutputs();
-        results.leasingCostPerMonth = pmt;
-        results.depricationPerMonth = depricationPerMonth;
-        results.interestPerMonth = interestPerMonth;
-
-        System.debug(LoggingLevel.FINE, 'leasing calc results are: ' + results);
+        CalculationResidualValueOutputs results = new CalculationResidualValueOutputs();
+        results.residualValue = fv;
         return results;
     }
 
@@ -148,17 +155,21 @@ public inherited sharing class CalculationsLeasing {
      * so the utility methods can be used from Flows
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    public class CalculationLeasingInputs {
-        @InvocableVariable
+    public class CalculationResidualValueInputs {
+        @InvocableVariable(label='Calculation Algorithm' description='Based on Leasing Company')
         public Integer algorithm; // 1, 2, ...
-        @InvocableVariable
+        @InvocableVariable(label='Leasing Amount' description='Leasing amount (Present Value), total value that needs to be loaned' required=true)
         public Decimal presentValue; // Pv / Købspris, samlet
-        @InvocableVariable
-        public Decimal futureValue; // Fv / Salgspris, delivery confirmation
-        @InvocableVariable
+        @InvocableVariable(label='Monthly Payment' description='Total amount paid to leasing company every month (iterest + derpreciation)' required=true)
+        public Decimal monthlyPayment; // pvr, ydelse
+        @InvocableVariable(label='Interest Rate' description='Interest Rate used in the loan, e.g. 3.75%' required=true)
         public Decimal interestRate; // Rate / Rente
-        @InvocableVariable
+        @InvocableVariable(label='Period Length' description='Leasing period length in months. Period after we want buy out the vehicle' required=true)
         public Integer periodLength; // Nper / leasing period
+        @InvocableVariable(label='Is it L94?' description='Do we need to include vehicle L94 tax in the calculation?' required=true)
+        public Boolean isL94; // true if vehicle is L94 tax type
+        @InvocableVariable(label='Base for L94?' description='If it is L94, we need to know the tax base')
+        public Decimal registrationBaseL94; // Endelig afgift efter fradrag 150%
     }
 
     /**
@@ -167,13 +178,9 @@ public inherited sharing class CalculationsLeasing {
      * so the utility methods can be used from Flows and return values to the flow
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    public class CalculationLeasingOutputs {
+    public class CalculationResidualValueOutputs {
         @InvocableVariable
-        public Decimal leasingCostPerMonth; // Ydelse
-        @InvocableVariable
-        public Decimal depricationPerMonth; // Afskrivninger
-        @InvocableVariable
-        public Decimal interestPerMonth; // Rente
+        public Decimal residualValue; // Ydelse
     }
 
     /**
@@ -181,6 +188,6 @@ public inherited sharing class CalculationsLeasing {
      * Custom exception class for Holding cost simulator
      * ───────────────────────────────────────────────────────────────────────────────────────────────┘
      */
-    public class LeasingCostException extends Exception {
+    public class ResidualValueException extends Exception {
     }
 }

@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Leasing_Cost_1st_Month__c</fullName>
-    <description>Leasing Cost Per Month + Interest Rate First Leasing Period</description>
+    <description>depends on algorithm used by the leasing company, 
+AL use only interest for the 0. period,
+Alphabet includes also depreciation
+
+AL: Leasing Cost Per Month + Interest Rate First Leasing Period
+Alphabet:</description>
     <externalId>false</externalId>
-    <formula>Leasing_Cost_Per_Month__c + Interest_Rate_First_Leasing_Period__c</formula>
-    <inlineHelpText>Leasing Cost Per Month + Interest Rate First Leasing Period</inlineHelpText>
+    <formula>IF(ISPICKVAL(leasing_Account__r.Leasing_Algorithm__c, &quot;1&quot;), 
+   /* algorithm 1 */
+			Leasing_Cost_Per_Month__c + Interest_Rate_First_Leasing_Period__c,
+			/* algorithm 2 (else then 1) */
+			/* get ration of normal month inerest and 1. month interest and use it to calculate partly Depreciation */
+			Leasing_Cost_Per_Month__c + Interest_Rate_First_Leasing_Period__c + (Depreciation__c * Interest_Rate_First_Leasing_Period__c /  Interest_Leasing__c )
+)</formula>
+    <inlineHelpText>depends on algorithm used by the leasing company, 
+AL use only interest for the 1. period,
+Alphabet includes also depreciation
+
+AL: Leasing Cost Per Month + Interest Rate First Leasing Period
+Alphabet: Leasing Cost Per Month * (1</inlineHelpText>
     <label>Leasing Cost 1st Month</label>
     <precision>18</precision>
     <required>false</required>

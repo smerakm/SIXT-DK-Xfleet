@@ -77,7 +77,7 @@ public inherited sharing class CalculationsTax {
         // vehicle registration fee value at the end of the period (original value - value lost)
         result.residualTaxEndOfLeasing = result.registrationFee - result.registrationFeeOfAssumedValueLost;
         // what will be the interest from the value at the end
-        result.interestOnResidualTax = Math.round(result.residualTaxEndOfLeasing * (taxSettings.Interest_Rate__c / 100) * taxInputs.leasingPeriodLength / 12);
+        result.interestOnResidualTax = result.residualTaxEndOfLeasing * (taxSettings.Interest_Rate__c / 100) * taxInputs.leasingPeriodLength / 12;
         // total payment for the period (fee of assumed loss + interest)
         result.totalPayment = result.registrationFeeOfAssumedValueLost + result.interestOnResidualTax;
         return result;

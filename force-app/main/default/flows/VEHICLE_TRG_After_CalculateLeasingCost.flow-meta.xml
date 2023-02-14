@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <description>calculate Proportional Residual Fee and Interest</description>
+        <name>Calculate_L94</name>
+        <label>Calculate L94</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <actionName>CalculationsTax</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Save_L94_results</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>leasingPeriodLength</name>
+            <value>
+                <elementReference>formulaLeasingPeriodPlusOne</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>registrationFee</name>
+            <value>
+                <elementReference>$Record.Final_tax_after_deduction__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>vehicleAge</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
         <description>call apex method to calculate leasing cost per month for the vehicle</description>
         <name>Calculate_Leasing_Cost</name>
         <label>Calculate Leasing Cost</label>
-        <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationX>270</locationX>
+        <locationY>1031</locationY>
         <actionName>CalculationsLeasing</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -39,25 +71,102 @@
         <inputParameters>
             <name>presentValue</name>
             <value>
-                <elementReference>$Record.Total_Buy_Price__c</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>registrationFee</name>
-            <value>
-                <elementReference>$Record.Final_tax_after_deduction__c</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>taxType</name>
-            <value>
-                <elementReference>$Record.Batch_Distribution__c</elementReference>
+                <elementReference>varTotalPriceForFinancing</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
-    <description>if all required information are available calculate monthly leasing cost for the vehicle</description>
+    <assignments>
+        <name>Add_L94_tax_part_to_the_Total_Price</name>
+        <label>Add L94 tax part to the Total Price</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>varTotalPriceForFinancing</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Proportional_Registration_Fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varTotalPriceForFinancing</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Proportional_Registration_Interest__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Calculate_Total_Price_for_Financing</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>total buy price + L94 or bonus</description>
+        <name>Calculate_Total_Price_for_Financing</name>
+        <label>Calculate Total Price for Financing</label>
+        <locationX>270</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>varTotalPriceForFinancing</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Total_Buy_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Calculate_Leasing_Cost</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_it_L94</name>
+        <label>Is it L94?</label>
+        <locationX>270</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Calculate_Total_Price_for_Financing</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>L94</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Batch_Distribution__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DK - L94</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Calculate_L94</targetReference>
+            </connector>
+            <label>L94</label>
+        </rules>
+        <rules>
+            <name>Valuta</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Batch_Distribution__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Valuta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Calculate_Total_Price_for_Financing</targetReference>
+            </connector>
+            <label>Valuta</label>
+        </rules>
+    </decisions>
+    <description>if all required information are available calculate monthly leasing cost for the vehicle
+and also L94</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Leasing Period + 1</description>
+        <name>formulaLeasingPeriodPlusOne</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Leasing_Period__c} + 1</expression>
+        <scale>0</scale>
+    </formulas>
     <formulas>
         <name>interestRateInProcents</name>
         <dataType>Number</dataType>
@@ -94,8 +203,8 @@
     <recordUpdates>
         <name>Save_Calculated_Leasing_Cost_on_Vehicle</name>
         <label>Save Calculated Leasing Cost on Vehicle</label>
-        <locationX>176</locationX>
-        <locationY>455</locationY>
+        <locationX>270</locationX>
+        <locationY>1151</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Leasing_Cost_Per_Month__c</field>
@@ -105,6 +214,18 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Depreciation__c</field>
+            <value>
+                <elementReference>Calculate_Leasing_Cost.depricationPerMonth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_Leasing__c</field>
+            <value>
+                <elementReference>Calculate_Leasing_Cost.interestPerMonth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Leasing_Cost_Per_Month__c</field>
             <value>
                 <elementReference>Calculate_Leasing_Cost.leasingCostPerMonth</elementReference>
@@ -112,11 +233,34 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <start>
+    <recordUpdates>
+        <description>Save calculated L94 fee and interest on the vehicle.</description>
+        <name>Save_L94_results</name>
+        <label>Save L94 results</label>
         <locationX>50</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Add_L94_tax_part_to_the_Total_Price</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Proportional_Registration_Fee__c</field>
+            <value>
+                <elementReference>Calculate_L94.registrationFeeOfAssumedValueLost</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proportional_Registration_Interest__c</field>
+            <value>
+                <elementReference>Calculate_L94.interestOnResidualTax</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>144</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Calculate_Leasing_Cost</targetReference>
+            <targetReference>Is_it_L94</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -173,4 +317,13 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <description>&quot;I alt finansierings-sum&quot; all what need to be financed in leasing</description>
+        <name>varTotalPriceForFinancing</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
 </Flow>
