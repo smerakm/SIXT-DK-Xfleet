@@ -1,4 +1,4 @@
-public with sharing class CalculationsLeasingResidualValueBatch implements Database.Batchable<SObject>, Database.Stateful {
+public with sharing class CalculationsLeasingResidualValueBatch implements Schedulable, Database.Batchable<SObject>, Database.Stateful {
     @TestVisible
     private static final String DEFAULT_QUERY = Label.Xfleet_Query_Vehicles_for_Residual_Value_Update;
 
@@ -15,10 +15,16 @@ public with sharing class CalculationsLeasingResidualValueBatch implements Datab
         this.numberOfUpdatedVehicles = 0;
     }
 
+    // schedulable execute
+    public void execute(SchedulableContext param1) {
+        Database.executeBatch(new CalculationsLeasingResidualValueBatch());
+    }
+
     public Database.QueryLocator start(Database.BatchableContext bc) {
         return Database.getQueryLocator(query);
     }
 
+    // batchable execute
     public void execute(Database.BatchableContext bc, List<Vehicle__c> scope) {
         // get calculation inputs and calculate residual value
         List<CalculationsLeasingResidualValue.CalculationResidualValueInputs> calcInputs = convertVehicleToCalcInputs(scope);

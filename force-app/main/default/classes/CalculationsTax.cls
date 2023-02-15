@@ -77,7 +77,11 @@ public inherited sharing class CalculationsTax {
         // vehicle registration fee value at the end of the period (original value - value lost)
         result.residualTaxEndOfLeasing = result.registrationFee - result.registrationFeeOfAssumedValueLost;
         // what will be the interest from the value at the end
-        result.interestOnResidualTax = result.residualTaxEndOfLeasing * (taxSettings.Interest_Rate__c / 100) * taxInputs.leasingPeriodLength / 12;
+        Decimal taxInterestRate = taxInputs.taxInterestRate;
+        if (taxInterestRate == null) {
+            taxInterestRate = taxSettings.Interest_Rate__c;
+        }
+        result.interestOnResidualTax = result.residualTaxEndOfLeasing * (taxInterestRate / 100) * taxInputs.leasingPeriodLength / 12;
         // total payment for the period (fee of assumed loss + interest)
         result.totalPayment = result.registrationFeeOfAssumedValueLost + result.interestOnResidualTax;
         return result;
@@ -224,6 +228,8 @@ public inherited sharing class CalculationsTax {
         public Integer vehicleAge; // Alder ved ordningens start, mdr
         @InvocableVariable
         public Integer leasingPeriodLength; // Leasingperiode, mdr.
+        @InvocableVariable
+        public Decimal taxInterestRate; // Leasingperiode, mdr.
     }
 
     /**

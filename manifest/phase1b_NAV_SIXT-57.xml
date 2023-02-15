@@ -6,6 +6,7 @@
 		<members>CalculationsLeasingResidualValue</members>
 		<members>CalculationsLeasingResidualValueBatch</members>
 		<members>CalculationsLeasingResidualValue_Test</members>
+		<members>CalculationsLeasingResidualValueBatchTes</members>
 		<members>CalculationsTax</members>
 		<members>CalculationsTax_Test</members>
 		<members>FixedRateLoanUtility</members>

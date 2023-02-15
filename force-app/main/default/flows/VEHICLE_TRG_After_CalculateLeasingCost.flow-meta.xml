@@ -25,6 +25,12 @@
             </value>
         </inputParameters>
         <inputParameters>
+            <name>taxInterestRate</name>
+            <value>
+                <elementReference>$Record.Tax_Interest_Rate__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>vehicleAge</name>
             <value>
                 <numberValue>0.0</numberValue>
