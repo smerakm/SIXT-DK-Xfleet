@@ -21,7 +21,6 @@
     <columns>
         <field>Integration_Request__c.Last_Processing_Time__c</field>
     </columns>
-    <currency>DKK</currency>
     <filter>
         <criteriaItems>
             <column>Integration_Request__c.Status__c</column>
