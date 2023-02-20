@@ -50,6 +50,7 @@
 		<members>Vehicle__c.Buyer_Invoice_Amount__c</members>
 		<members>Vehicle__c.Buyer_Name__c</members>
 		<members>Vehicle__c.Buyer_Navision_Account_Number__c</members>
+		<members>Vehicle__c.Current_Month_in_Leasing__c</members>
 		<members>Vehicle__c.Depreciation__c</members>
 		<members>Vehicle__c.Integration_Requests_Number_Failed__c</members>
 		<members>Vehicle__c.Integration_Requests_Number_Not_Run_Yet__c</members>
@@ -67,6 +68,7 @@
 		<members>Vehicle__c.Proportional_Registration_Fee__c</members>
 		<members>Vehicle__c.Proportional_Registration_Interest__c</members>
 		<members>Vehicle__c.Redemption_Price_to_Leasing_Account__c</members>
+		<members>Vehicle__c.Tax_Interest_Rate__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
