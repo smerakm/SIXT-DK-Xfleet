@@ -10,23 +10,31 @@ public with sharing class NAVCarsObject {
     public String createInvoice { get; set; } // Account NAV number for invoice
     public String createQuote { get; set; } // Account NAV number for advi
     public Integer createQuantity { get; set; }
-    public Boolean createAddToDoc { get; set; }
+    public Boolean createAddToDoc { get; set; } // shall be false, business decision, keep it available in code
+    public String createPickupAddr { get; set; } // pickup address for invoice
+    public String description { get; set; }
+    public Integer km { get; set; }
 
     // constructor used for Create or Update car
-    public NAVCarsObject(String vinNo, String regNo, String vatType) {
+    public NAVCarsObject(String vinNo, String regNo, String vatType, String description, Integer km) {
         this.Vin_No = vinNo;
         this.regNo = regNo;
         this.vatType = convertToNAVVatType(vatType);
+        this.description = description?.left(50);
+        this.km = km;
     }
 
     // constructor used for Invoice or Advi
-    public NAVCarsObject(Decimal amount, String createExtDocNo, String createInvoice, String createQuote, Integer createQuantity, Boolean createAddToDoc) {
+    public NAVCarsObject(Decimal amount, String createExtDocNo, String createInvoice, String createQuote, Integer createQuantity, Boolean createAddToDoc, String description, Integer km, String pickupLocation) {
         this.createUnitPrice = amount;
         this.creatExtDocNo = createExtDocNo;
         this.createInvoice = createInvoice;
         this.createQuote = createQuote;
         this.createAddToDoc = createAddToDoc;
         this.createQuantity = createQuantity;
+        this.km = km;
+        this.description = description?.left(50);
+        this.createPickupAddr = pickupLocation?.left(50);
     }
 
     public String convertToNAVVatType() {

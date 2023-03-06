@@ -9,12 +9,13 @@ public with sharing class NAVCarsInvocable {
     }
 
     public static NavisionCarsResult callNavisionCarsApi(NavisionCarsRequest req) {
+        System.debug('calling navision: ' + req);
         NAVCars navApi;
         Object reqParams;
         // CREATE
         if (req.callMethod.equalsIgnoreCase('CREATE')) {
             navApi = new NAVCarsCreate();
-            reqParams = new NAVCarsObject(req.vinNumber, req.registrationNumber, req.vatType);
+            reqParams = new NAVCarsObject(req.vinNumber, req.registrationNumber, req.vatType, req.vehicleDescription, req.currentKm);
         } else if (req.callMethod.equalsIgnoreCase('UPDATE')) {
             // UPDATE
             navApi = new NAVCarsUpdate(req.vinNumber);
@@ -45,6 +46,7 @@ public with sharing class NAVCarsInvocable {
             }
             theResult.statusMessage = navApiResp.getStatus();
             theResult.message = navApiResp.getBody();
+            theResult.reqData = navApiReq.getBody();
         }
         // is it a failure?
         if (!theResult.isSuccess) {
@@ -98,6 +100,15 @@ public with sharing class NAVCarsInvocable {
         @InvocableVariable(label='Add to Document' description='add invoice to existing document')
         public Boolean addToDoc;
 
+        @InvocableVariable(label='Vehicle Description' description='Vehicle description, like model, etc.')
+        public String vehicleDescription;
+
+        @InvocableVariable(label='Current KM' description='How many kilometers vehicle recorded')
+        public Integer currentKm;
+
+        @InvocableVariable(label='Pickup Location' description='Pickup location to be included in invoice')
+        public String pickupLocation;
+
         // convert this instance of NavisionCarsRequest to NAVCarsObject for API calls
         public NAVCarsObject convertToNAVCarsObject() {
             NAVCarsObject navCar;
@@ -108,10 +119,11 @@ public with sharing class NAVCarsInvocable {
                 String invoiceAcc = String.isBlank(this.accNumberInvoice) ? null : this.accNumberInvoice;
                 String quoteAcc = String.isBlank(this.accNumberQuote) ? null : this.accNumberQuote;
                 Integer quantity = this.quantity == null ? 1 : this.quantity;
-                navCar = new NAVCarsObject(this.amount, extDocNo, invoiceAcc, quoteAcc, quantity, this.addToDoc);
+                Integer km = (Integer)this.currentKm;
+                navCar = new NAVCarsObject(this.amount, extDocNo, invoiceAcc, quoteAcc, quantity, this.addToDoc, this.vehicleDescription, km, this.pickupLocation);
             } else {
                 // no, car update
-                navCar = new NAVCarsObject(this.vinNumber, this.registrationNumber, this.vatType);
+                navCar = new NAVCarsObject(this.vinNumber, this.registrationNumber, this.vatType, this.vehicleDescription, this.currentKm);
             }
             return navCar;
         }
@@ -129,5 +141,8 @@ public with sharing class NAVCarsInvocable {
 
         @InvocableVariable
         public Boolean isSuccess;
+
+        @InvocableVariable
+        public String reqData;
     }
 }

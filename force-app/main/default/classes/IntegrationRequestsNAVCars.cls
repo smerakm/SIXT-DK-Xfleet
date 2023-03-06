@@ -25,7 +25,7 @@ public with sharing class IntegrationRequestsNAVCars implements IntegrationReque
             if (String.isNotBlank(req.Data__c)) {
                 theCar = (NAVCarsObject)JSON.deserialize(req.Data__c, NAVCarsObject.class);
             } else {
-                theCar = new NAVCarsObject(veh.vinNumber__c, veh.License_Plate_System__c, veh.Batch_Distribution__c);
+                theCar = new NAVCarsObject(veh.vinNumber__c, veh.License_Plate_System__c, veh.Batch_Distribution__c, veh.Car_description_2__c, (Integer)veh.Current_KM__c);
             }
             HttpRequest navApiReq = navApi.prepareRequest(theCar);
             HttpResponse navApiResp = navApi.call(navApiReq);

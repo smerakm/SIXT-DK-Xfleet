@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>IntegrationRequestsBatchable</members>
+		<members>IntegrationRequestsNAVCars</members>
+		<members>IntegrationRequestsNAVCars_Test</members>
+		<members>IntegrationRequestsProcess</members>
+		<members>IntegrationRequestsUtility</members>
+		<members>IntegrationRequestsUtility_Test</members>
+		<members>NAVCars</members>
+		<members>NAVCarsCreate</members>
+		<members>NAVCarsGet</members>
+		<members>NAVCarsInvocable</members>
+		<members>NAVCarsObject</members>
+		<members>NAVCarsUpdate</members>
+		<members>NAVCars_Test</members>
+		<members>NAVSendLicensePlateInvoiceSchedulable</members>
+		<members>NAVUpdateVehiclesFromNAVSchedulable</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Contact.Mailing_Address_Formula__c</members>
+		<members>Vehicle__c.Defleet_Pickup_Location_Address__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Xfleet_Integration_Request_Vehicle_Fields</members>
+		<name>CustomLabel</name>
+	</types>
+	<types>
+		<members>SCR_Defleet_Send_Invoice_to_Buyer_LIGHTNING</members>
+		<members>SCR_Integration_Request_Run_The_Job</members>
+		<members>SCR_NAV_Utility_Flow</members>
+		<members>VEHICLE_TRG_After_NavisionVehicle</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Minilease</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<name>Profile</name>
+	</types>
+	<version>57.0</version>
+</Package>

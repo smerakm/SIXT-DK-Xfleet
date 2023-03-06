@@ -7,7 +7,7 @@ public with sharing class NAVSendLicensePlateInvoiceSchedulable implements Syste
     public void execute(SchedulableContext sc) {
         // get newly registered vehicles where invoice hasn't been sent yet
         List<Vehicle__c> vehicles = [
-            SELECT LicensePlateCost__c, License_Plate_Invoice_Sent__c, Dealer__r.Navision_Account__c, Dealer__r.EUR_DKK__c, Dealer__c
+            SELECT LicensePlateCost__c, License_Plate_Invoice_Sent__c, Dealer__r.Navision_Account__c, Dealer__r.EUR_DKK__c, Dealer__c, License_Plate_System__c
             FROM Vehicle__c
             WHERE License_plate__c != NULL AND License_Plate_Invoice_Sent__c = FALSE
             LIMIT 5000
@@ -34,7 +34,17 @@ public with sharing class NAVSendLicensePlateInvoiceSchedulable implements Syste
         Integration_Request__c ir = new Integration_Request__c();
         ir.Vehicle__c = v.Id;
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_INVOICE;
-        NAVCarsObject navCar = new NAVCarsObject(v.licensePlateCost__c, null, v.Dealer__r.Navision_Account__c, null, 1, true);
+        NAVCarsObject navCar = new NAVCarsObject(
+            v.licensePlateCost__c,
+            null,
+            v.Dealer__r.Navision_Account__c,
+            null,
+            1,
+            false,
+            v.License_Plate_System__c,
+            null,
+            null
+        );
         ir.Data__c = JSON.serialize(navCar, true);
         // if some data are missing mark the requested as failed
         if (v.licensePlateCost__c == null || v.Dealer__c == null || String.isBlank(v.Dealer__r.Navision_Account__c)) {

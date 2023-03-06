@@ -3,6 +3,7 @@ public with sharing class NAVCars_Test {
     private final static String TEST_VIN_NO = 'VR3FBYHZTMY528656';
     private final static String TEST_REG_NO = 'DF 75664';
     private final static String TEST_VAT_TYPE = 'VALUTA';
+    private final static String TEST_DESCRIPTION = 'Yeti 2023';
 
     private final static String MOCK_SINGLE_CAR = 'NAVCars_SingleCarResponse';
     private final static String MOCK_MULTIPLE_CARS = 'NAVCars_MultipleCarResponse';
@@ -21,7 +22,7 @@ public with sharing class NAVCars_Test {
 
         // test the call out
         NAVCars navApi = new NAVCarsCreate();
-        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, null, null);
+        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, null, null, null, null);
         HttpRequest navApiReq = navApi.prepareRequest(reqParams);
         HttpResponse navApiResp = navApi.call(navApiReq);
 
@@ -41,7 +42,7 @@ public with sharing class NAVCars_Test {
 
         // test the call out
         NAVCars navApi = new NAVCarsUpdate(TEST_VIN_NO);
-        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, TEST_REG_NO, TEST_VAT_TYPE);
+        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, TEST_REG_NO, TEST_VAT_TYPE, TEST_DESCRIPTION, null);
         HttpRequest navApiReq = navApi.prepareRequest(reqParams);
         HttpResponse navApiResp = navApi.call(navApiReq);
 
@@ -61,7 +62,7 @@ public with sharing class NAVCars_Test {
 
         // test the call out
         NAVCars navApi = new NAVCarsUpdate(TEST_VIN_NO);
-        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, TEST_REG_NO, TEST_VAT_TYPE);
+        NAVCarsObject reqParams = new NAVCarsObject(TEST_VIN_NO, TEST_REG_NO, TEST_VAT_TYPE, TEST_DESCRIPTION, 5);
         HttpRequest navApiReq = navApi.prepareRequest(reqParams);
         HttpResponse navApiResp = navApi.call(navApiReq);
 

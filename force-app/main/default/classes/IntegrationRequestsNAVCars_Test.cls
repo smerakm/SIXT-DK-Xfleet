@@ -7,6 +7,8 @@ public class IntegrationRequestsNAVCars_Test {
     private final static String MOCK_MULTIPLE_CARS = 'NAVCars_MultipleCarResponse';
     private final static String MOCK_ERROR = 'NAVCars_ErrorResponse';
 
+    private final static String VEHICLE_QUERY = 'SELECT id, vinNumber__c, License_Plate_System__c, Batch_Distribution__c, Car_description_2__c, Current_KM__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN';
+
     @TestSetup
     static void makeData() {
         // Xfleet dependency on Vehicle__c
@@ -25,7 +27,7 @@ public class IntegrationRequestsNAVCars_Test {
         // Set the mock callout mode
         Test.setMock(HttpCalloutMock.class, mock);
 
-        Vehicle__c veh = [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN];
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_CREATE;
         ir.Vehicle__c = veh.Id;
@@ -47,7 +49,7 @@ public class IntegrationRequestsNAVCars_Test {
         // Set the mock callout mode
         Test.setMock(HttpCalloutMock.class, mock);
 
-        Vehicle__c veh = [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN];
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
         veh.Batch_Distribution__c = 'DK - Tax type not determined';
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_UPDATE;
@@ -70,12 +72,22 @@ public class IntegrationRequestsNAVCars_Test {
         // Set the mock callout mode
         Test.setMock(HttpCalloutMock.class, mock);
 
-        Vehicle__c veh = [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN];
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_INVOICE;
         ir.Vehicle__c = veh.Id;
         // construct data
-        NAVCarsObject theData = new NAVCarsObject(125000, 'unittestNAV2367', 'B028232', null, 1, false);
+        NAVCarsObject theData = new NAVCarsObject(
+            125000,
+            'unittestNAV2367',
+            'B028232',
+            null,
+            1,
+            false,
+            'This is very long description of the vehicle tha50t shall be invoiced',
+            349,
+            'Non known dealer, Very long street 1234, New Hampshire, 19600'
+        );
         ir.Data__c = JSON.serialize(theData, true);
         // test request processing
         IntegrationRequestsNAVCars testProcessor = new IntegrationRequestsNAVCars();
@@ -96,7 +108,7 @@ public class IntegrationRequestsNAVCars_Test {
         // Set the mock callout mode
         Test.setMock(HttpCalloutMock.class, mock);
 
-        Vehicle__c veh = [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN];
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_CREATE;
         ir.Vehicle__c = veh.Id;
@@ -109,7 +121,7 @@ public class IntegrationRequestsNAVCars_Test {
 
     @isTest
     public static void methodNotSupportedNegative() {
-        Vehicle__c veh = [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN];
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = 'UnitTest';
         ir.Vehicle__c = veh.Id;

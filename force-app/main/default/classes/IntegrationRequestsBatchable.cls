@@ -6,6 +6,8 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
     public static final String ERROR_NO_VEHICLE = 'Vehicle has not been assigned to the request!';
     public static final String ERROR_WRONG_METHOD = 'Method undefinied!';
 
+    public static final String VEHICLE_FIELDS = Label.Xfleet_Integration_Request_Vehicle_Fields;
+
     public IntegrationRequestsBatchable() {
         // get supported calls
         SUPPORTED_API_CALLS = new Map<String, String>();
@@ -35,9 +37,9 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
             }
         }
         // query vehicles data
-        Map<Id, Vehicle__c> mVehicles = new Map<Id, Vehicle__c>(
-            [SELECT vinNumber__c, License_plate_System__c, Batch_Distribution__c FROM Vehicle__c WHERE Id IN :mVehicle2Request.keySet()]
-        );
+        String vehiclesQuery = 'SELECT ' + String.escapeSingleQuotes(VEHICLE_FIELDS) + ' FROM Vehicle__c WHERE Id IN :vehIds';
+        Map<String, Object> vehiclesQueryParams = new Map<String, Object>{ 'vehIds' => mVehicle2Request.keySet() };
+        Map<Id, Vehicle__c> mVehicles = new Map<Id, Vehicle__c>((List<Vehicle__c>)Database.queryWithBinds(vehiclesQuery, vehiclesQueryParams, AccessLevel.SYSTEM_MODE));
         System.debug(LoggingLevel.DEBUG, 'execute integration requests with these vehicles: ' + mVehicles);
         for (Integration_Request__c ir : scope) {
             // set Integration Request processed timestamp

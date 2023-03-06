@@ -22,4 +22,12 @@
         <shortDescription>Yes</shortDescription>
         <value>Yes</value>
     </labels>
+    <labels>
+        <fullName>Xfleet_Integration_Request_Vehicle_Fields</fullName>
+        <categories>Xfleet, query</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Xfleet Integration Request Vehicle Fields</shortDescription>
+        <value>id, vinNumber__c, License_Plate_System__c, Batch_Distribution__c, Car_description_2__c, Current_KM__c</value>
+    </labels>
 </CustomLabels>
