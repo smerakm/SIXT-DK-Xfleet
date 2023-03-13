@@ -3,6 +3,8 @@ public abstract with sharing class NAVCars {
     // Named Credentials
     private static final String NAMED_CREDENTIAL_TEST = 'NavisionTEST';
     private static final String NAMED_CREDENTIAL_PROD = 'NavisionPROD';
+    // API suffix
+    private static final String CARS_API = 'Cars';
 
     //private static final String NAMED_CREDENTIAL_TEST = 'https://178.209.171.36:7048/DynamicsNAV100/ODataV4';
     //private static final String NAMED_CREDENTIAL_TEST = 'https://nav.sixt.dk:7048/DynamicsNAV100/ODataV4';
@@ -21,23 +23,21 @@ public abstract with sharing class NAVCars {
     }
 
     public virtual String getEndpoint() {
-        // TODO named credentials: 
+        // named credentials: 
         String endpoint = 'callout:';
-        //String endpoint = '';
         // is it sandbox?
         if ([SELECT IsSandbox FROM Organization].IsSandbox) {
             endpoint += NAMED_CREDENTIAL_TEST;
         } else {
             endpoint += NAMED_CREDENTIAL_PROD;
         }
-        // add constant 'Sixt' organization
-        endpoint += '/Company(\'Sixt\')';
+        // API name / suffix:
+        endpoint += '/' + CARS_API;
         // is it for specific vehicle?
         if (String.isNotBlank(this.vinNo)) {
-            endpoint += '/Cars(\'' + this.vinNo + '\')';
-        } else {
-            endpoint += '/Cars';   
+            endpoint += '(\'' + this.vinNo + '\')';
         }
+
         System.debug(LoggingLevel.DEBUG, 'Navision endpoint: ' + endpoint);
         return endpoint;
     }
