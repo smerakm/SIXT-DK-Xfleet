@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proportional_Registration_Interest__c</fullName>
+    <description>Forholds-mæssig rente
+interest on Residual tax</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Forholds-mæssig rente
+interest on Residual tax</inlineHelpText>
+    <label>Proportional Registration Interest</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

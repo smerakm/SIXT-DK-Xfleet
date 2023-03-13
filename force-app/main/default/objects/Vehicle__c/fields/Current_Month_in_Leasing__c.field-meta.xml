@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Month_in_Leasing__c</fullName>
+    <description>based on registration date, shows in which month of leasing period the vehicle currently is</description>
+    <externalId>false</externalId>
+    <formula>/* To find the number of months between two dates, subtract the year of the earlier date from the year of the later date and multiply the difference by 12. 
+ * Next, subtract the month of the earlier date from the month of the later date, and add that difference to the value of the first set of operations. 
+	* ((YEAR(date_1) - YEAR(date_2))*12) + (MONTH(date_1) - MONTH(date_2))
+	*/
+((YEAR(TODAY()) - YEAR(Registration_Date__c))*12) + (MONTH(TODAY()) - MONTH(Registration_Date__c))</formula>
+    <inlineHelpText>based on registration date, shows in which month of leasing period the vehicle currently is</inlineHelpText>
+    <label>Current Month in Leasing</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

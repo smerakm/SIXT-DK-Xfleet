@@ -8,10 +8,26 @@
         <value>No</value>
     </labels>
     <labels>
+        <fullName>Xfleet_Query_Vehicles_for_Residual_Value_Update</fullName>
+        <categories>Xfleet, query, batch</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Xfleet Query Vehicles for Residual Value Update</shortDescription>
+        <value>SELECT Id, Redemption_Price_to_Leasing_Account__c, Current_Month_in_Leasing__c, leasing_Account__r.Leasing_Algorithm__c, Leasing_Rate_Contract__c, Batch_Distribution__c, Leasing_Cost_Per_Month__c, Total_Buy_Price__c, Final_tax_after_deduction__c  FROM Vehicle__c WHERE Status__c != &apos;Sold&apos; AND Current_Month_in_Leasing__c != null AND Leasing_Cost_Per_Month__c != null</value>
+    </labels>
+    <labels>
         <fullName>Yes</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Yes</shortDescription>
         <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>Xfleet_Integration_Request_Vehicle_Fields</fullName>
+        <categories>Xfleet, query</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Xfleet Integration Request Vehicle Fields</shortDescription>
+        <value>id, vinNumber__c, License_Plate_System__c, Batch_Distribution__c, Car_description_2__c, Current_KM__c</value>
     </labels>
 </CustomLabels>

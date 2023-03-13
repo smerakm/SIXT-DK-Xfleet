@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Interest_Rate__c</fullName>
+    <defaultValue>$Setup.TaxCalculation__c.Interest_Rate__c</defaultValue>
+    <description>interest rate for L94 tax, it is set by tax agency (SKAT), on vehicle we store the actual value at the time when the vehicle has been registered</description>
+    <externalId>false</externalId>
+    <inlineHelpText>interest rate for L94 tax, it is set by tax agency (SKAT), on vehicle we store the actual value at the time when the vehicle has been registered</inlineHelpText>
+    <label>Tax Interest Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

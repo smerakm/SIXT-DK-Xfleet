@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mailing_Address_Formula__c</fullName>
+    <description>internal formula to convert address to text</description>
+    <externalId>false</externalId>
+    <formula>/* 2 SUBSTITUTE is way to remove trailing comma &quot;Kystvejen 42, Kastrup, &quot; to &quot;Kystvejen 42, Kastrup&quot; */
+SUBSTITUTE (
+SUBSTITUTE (
+    IF (ISBLANK(FirstName),NULL,FirstName + &quot; &quot;)
+    + LastName + &quot;, &quot;
+    + IF (ISBLANK(MailingStreet),NULL,MailingStreet + &quot;, &quot;)
+    + IF (ISBLANK(MailingCity),NULL,MailingCity + &quot;, &quot;)
+/* remove because 50 chars limit in NAV    + IF (ISBLANK(MailingState),NULL,MailingState + &quot;, &quot;) */
+    + IF (ISBLANK(MailingPostalCode),NULL,MailingPostalCode + &quot;, &quot;)
+/* remove because 50 chars limit in NAV    + IF (ISBLANK(MailingCountry),NULL,MailingCountry + &quot;, &quot;) */
+/* added some specific charactes to detect last trailing comma */
++ &quot;.*.&quot;,
+&quot;, .*.&quot;, NULL),
+&quot;.*.&quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>internal formula to convert address to text</inlineHelpText>
+    <label>Mailing Address Formula</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

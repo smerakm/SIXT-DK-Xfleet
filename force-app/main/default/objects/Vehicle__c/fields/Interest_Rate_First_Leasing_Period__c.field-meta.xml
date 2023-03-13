@@ -7,7 +7,7 @@
     <formula>/* calculate end of month = (ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) */
 IF(ISPICKVAL(Batch_Distribution__c, &quot;DK - L94&quot;), 
     /* for L94 the base is Total Buy Price + L94 registration fee */
-			((ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) - Registration_Date__c )*((Total_Buy_Price__c + Selected_Vehicle_Calculator__r.L94_registration_tax__c) * Leasing_Rate_Contract__c )/360,
+			((ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) - Registration_Date__c )*((Total_Buy_Price__c + Proportional_Registration_Fee__c + Proportional_Registration_Interest__c) * Leasing_Rate_Contract__c )/360,
 			 /* for Valuta or Full Tax is the base Total Buy Price */
 			((ADDMONTHS(DATE(YEAR(Registration_Date__c), MONTH(Registration_Date__c), 1), 1) - 1) - Registration_Date__c )*(Total_Buy_Price__c * Leasing_Rate_Contract__c )/360
 )</formula>

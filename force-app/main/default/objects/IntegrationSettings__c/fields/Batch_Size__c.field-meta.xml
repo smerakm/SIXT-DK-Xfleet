@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_Size__c</fullName>
+    <defaultValue>200</defaultValue>
+    <description>How many Integration Request are processed in one batch run. Choose lower number if you have issue with timeout or limits.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many Integration Request are processed in one batch run. Choose lower number if you have issue with timeout or limits.</inlineHelpText>
+    <label>Batch Size</label>
+    <precision>4</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
