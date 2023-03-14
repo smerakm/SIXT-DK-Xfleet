@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>vehicleBatch__c.Requested_DK_Mini_lease__c</members>
+		<members>vehicleBatch__c.Requested_DK_Short_term__c</members>
+		<members>vehicleBatch__c.Requested_Valuta_Vehicles__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>vehicleBatch__c-Vehicle Batch Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Vehicle_Batch_Lifecycle</members>
+		<name>PathAssistant</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Minilease</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<name>Profile</name>
+	</types>
+	<types>
+		<members>vehicleBatch__c.Requested_Vehicles_does_not_match</members>
+		<name>ValidationRule</name>
+	</types>
+	<version>57.0</version>
+</Package>

@@ -12,19 +12,20 @@
         <picklistValueName>Canceled</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>vehicleImporter__c</fieldNames>
-        <fieldNames>vehicleSeller__c</fieldNames>
-        <fieldNames>Number_Of_Vehicles__c</fieldNames>
         <fieldNames>Required_by_Date__c</fieldNames>
+        <fieldNames>Requested_Number_of_Vehicles__c</fieldNames>
+        <fieldNames>Requested_DK_Mini_lease__c</fieldNames>
+        <fieldNames>Requested_DK_Short_term__c</fieldNames>
+        <fieldNames>Requested_Valuta_Vehicles__c</fieldNames>
         <info>&lt;p&gt;Deal is finished, Opportunity automatically created for Re-Marketing.&lt;/p&gt;</info>
         <picklistValueName>Deal</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>vehicleImporter__c</fieldNames>
-        <fieldNames>vehicleSeller__c</fieldNames>
         <fieldNames>deliveryDate__c</fieldNames>
         <fieldNames>Required_by_Date__c</fieldNames>
-        <fieldNames>System_Number_of_Selected_Calculations__c</fieldNames>
+        <fieldNames>Requested_DK_Mini_lease__c</fieldNames>
+        <fieldNames>Requested_DK_Short_term__c</fieldNames>
+        <fieldNames>Requested_Valuta_Vehicles__c</fieldNames>
         <info>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Set Expected Delivery Date and Required by Date.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Contact Dealer with the requirements.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Import vehicles when information are provided by Dealer.&lt;/p&gt;</info>
         <picklistValueName>Deal - Waiting for details</picklistValueName>
     </pathAssistantSteps>

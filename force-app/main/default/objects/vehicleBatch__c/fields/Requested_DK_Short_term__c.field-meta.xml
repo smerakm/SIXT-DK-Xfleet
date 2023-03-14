@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_DK_Short_term__c</fullName>
+    <description>Number of Vehicles from this batch that are planned to be used as DK vehicle with use type Short-term.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of Vehicles from this batch that are planned to be used as DK vehicle with use type Short-term.</inlineHelpText>
+    <label>Requested DK – Short-term</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

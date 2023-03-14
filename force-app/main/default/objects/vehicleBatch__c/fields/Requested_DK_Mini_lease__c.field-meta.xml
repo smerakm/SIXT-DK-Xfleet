@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_DK_Mini_lease__c</fullName>
+    <description>Number of Vehicles from this batch that are planned to be used as DK vehicle with use type Mini-lease.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of Vehicles from this batch that are planned to be used as DK vehicle with use type Mini-lease.</inlineHelpText>
+    <label>Requested DK – Mini-lease</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Vehicles_does_not_match</fullName>
+    <active>true</active>
+    <description>If there are any DK/Valuta and use type specified requested number of vehicle, then the sum must match the original Number of Requested Vehicles</description>
+    <errorConditionFormula>AND(
+    BLANKVALUE(Requested_DK_Mini_lease__c,0) +  BLANKVALUE(Requested_DK_Short_term__c,0) +  BLANKVALUE(Requested_Valuta_Vehicles__c,0) &lt;&gt;  Requested_Number_of_Vehicles__c,
+				OR(
+								NOT(ISBLANK(Requested_DK_Mini_lease__c)),
+								NOT(ISBLANK(Requested_DK_Short_term__c)),
+								NOT(ISBLANK(Requested_Valuta_Vehicles__c))
+				)				
+	)</errorConditionFormula>
+    <errorMessage>Number of Request DK and Valuta vehicles is not the same as original Number of Requested Vehicles. Please check the requested numbers.</errorMessage>
+</ValidationRule>
