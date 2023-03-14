@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Defleet_Pickup_Location_Address__c</fullName>
-    <description>system field to convert address to text</description>
+    <description>system field to convert address to text used in Buyer invoice in NAV</description>
     <externalId>false</externalId>
-    <formula>Pickup_Location__r.Mailing_Address_Formula__c</formula>
+    <formula>Buyer_delivery_address__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>system field to convert address to text</inlineHelpText>
+    <inlineHelpText>system field to convert address to text used in Buyer invoice in NAV</inlineHelpText>
     <label>Defleet Pickup Location Address</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

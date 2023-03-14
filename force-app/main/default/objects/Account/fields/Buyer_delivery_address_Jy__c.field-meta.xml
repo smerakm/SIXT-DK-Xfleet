@@ -12,13 +12,13 @@ IF (ISBLANK (Cars_defleeted_from_Jy__c),
     IF (ISBLANK(ShippingStreet),NULL,ShippingStreet + &quot;, &quot;)
     + IF (ISBLANK(ShippingCity),NULL,ShippingCity + &quot;, &quot;)
     + IF (ISBLANK(ShippingPostalCode),NULL,ShippingPostalCode + &quot;, &quot;)
-    + IF (ISBLANK(ShippingCountry),NULL,ShippingCountry + &quot;, &quot;)
+    /* NAV country in omited for 50 chars limit + IF (ISBLANK(ShippingCountry),NULL,ShippingCountry + &quot;, &quot;)*/
     /* if there is specific use that one */
 				, IF (ISBLANK(Cars_defleeted_from_Jy__r.LastName), NULL, Cars_defleeted_from_Jy__r.LastName + &quot;, &quot;)
 				+ IF (ISBLANK(Cars_defleeted_from_Jy__r.MailingStreet),NULL,Cars_defleeted_from_Jy__r.MailingStreet + &quot;, &quot;)
     + IF (ISBLANK(Cars_defleeted_from_Jy__r.MailingCity),NULL,Cars_defleeted_from_Jy__r.MailingCity + &quot;, &quot;)
     + IF (ISBLANK(Cars_defleeted_from_Jy__r.MailingPostalCode),NULL,Cars_defleeted_from_Jy__r.MailingPostalCode + &quot;, &quot;)
-    + IF (ISBLANK(Cars_defleeted_from_Jy__r.MailingCountry),NULL,Cars_defleeted_from_Jy__r.MailingCountry + &quot;, &quot;)
+    /* NAV country in omited for 50 chars limit + IF (ISBLANK(Cars_defleeted_from_Jy__r.MailingCountry),NULL,Cars_defleeted_from_Jy__r.MailingCountry + &quot;, &quot;)*/
 )
 /* add some specific charactes to detect last trailing comma */				
 				+ &quot;.*.&quot;,
