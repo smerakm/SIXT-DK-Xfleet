@@ -28,7 +28,8 @@
             <label>yes, moved to Infleet</label>
         </rules>
     </decisions>
-    <description>create or update the vehicle in Navision</description>
+    <description>create or update the vehicle in Navision
+v6 - exclude vehicles in Procurement status</description>
     <environments>Default</environments>
     <interviewLabel>VEHICLE_TRG_After_NavisionVehicle {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLE_TRG_After_NavisionVehicle</label>
@@ -97,7 +98,7 @@
         <connector>
             <targetReference>Just_moved_to_Infleet</targetReference>
         </connector>
-        <filterLogic>(1 AND 4) OR 2 OR 3 OR 5</filterLogic>
+        <filterLogic>((1 AND 4) OR 2 OR 3 OR 5) AND 6</filterLogic>
         <filters>
             <field>Status__c</field>
             <operator>IsChanged</operator>
@@ -131,6 +132,13 @@
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Procurement</stringValue>
             </value>
         </filters>
         <object>Vehicle__c</object>

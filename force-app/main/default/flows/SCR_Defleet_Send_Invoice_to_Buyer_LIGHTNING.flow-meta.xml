@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Create_Advis</name>
         <label>Create Advis</label>
-        <locationX>1018</locationX>
+        <locationX>1546</locationX>
         <locationY>1430</locationY>
         <actionName>NAVCarsInvocable</actionName>
         <actionType>apex</actionType>
@@ -11,7 +11,7 @@
             <targetReference>Log_CreateQuote</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>Error_Screen</targetReference>
+            <targetReference>Update_Invoice_Requested_flag_partly</targetReference>
         </faultConnector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
@@ -67,7 +67,7 @@
     <actionCalls>
         <name>Send_Invoice</name>
         <label>Send Invoice</label>
-        <locationX>1546</locationX>
+        <locationX>2602</locationX>
         <locationY>1430</locationY>
         <actionName>NAVCarsInvocable</actionName>
         <actionType>apex</actionType>
@@ -76,7 +76,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>Error_Screen</targetReference>
+            <targetReference>Update_Invoice_Requested_flag_partly</targetReference>
         </faultConnector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
@@ -133,7 +133,7 @@
     <assignments>
         <name>Add_Error_Currency_Does_Not_Match</name>
         <label>Add Error</label>
-        <locationX>1502</locationX>
+        <locationX>1766</locationX>
         <locationY>734</locationY>
         <assignmentItems>
             <assignToReference>varParamsMissing</assignToReference>
@@ -156,7 +156,7 @@
     <assignments>
         <name>Log_CreateInvoice</name>
         <label>Log CreateInvoice</label>
-        <locationX>1546</locationX>
+        <locationX>2602</locationX>
         <locationY>1550</locationY>
         <assignmentItems>
             <assignToReference>varCreateInvoiceOrQuoteText</assignToReference>
@@ -172,7 +172,7 @@
     <assignments>
         <name>Log_CreateQuote</name>
         <label>Log CreateQuote</label>
-        <locationX>1018</locationX>
+        <locationX>1546</locationX>
         <locationY>1550</locationY>
         <assignmentItems>
             <assignToReference>varCreateInvoiceOrQuoteText</assignToReference>
@@ -189,7 +189,7 @@
         <description>to log successful integration request</description>
         <name>Log_Integration_Message</name>
         <label>Log Integration Message</label>
-        <locationX>1282</locationX>
+        <locationX>2074</locationX>
         <locationY>2150</locationY>
         <assignmentItems>
             <assignToReference>varIRLogRecord.API_Method__c</assignToReference>
@@ -233,7 +233,7 @@
     <assignments>
         <name>Log_Integration_Request_List</name>
         <label>Log Integration Request List</label>
-        <locationX>1282</locationX>
+        <locationX>2074</locationX>
         <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>varIRLogList</assignToReference>
@@ -249,7 +249,7 @@
     <assignments>
         <name>Set_Validation_Error_amount_is_missing</name>
         <label>Set Validation Error - amount is missing</label>
-        <locationX>1370</locationX>
+        <locationX>1634</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -265,7 +265,7 @@
     <assignments>
         <name>Set_Validation_Error_Buyer_Navision_Number_is_missing</name>
         <label>Set Validation Error - Buyer Navision Number is missing</label>
-        <locationX>1106</locationX>
+        <locationX>1370</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -281,7 +281,7 @@
     <assignments>
         <name>Set_Validation_Error_Current_KM_is_missing</name>
         <label>Set Validation Error - Current KM is missing</label>
-        <locationX>2162</locationX>
+        <locationX>2426</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -297,7 +297,7 @@
     <assignments>
         <name>Set_Validation_Error_mismatch_currencies</name>
         <label>Set Validation Error - mismatch currencies</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -313,7 +313,7 @@
     <assignments>
         <name>Set_Validation_Error_PIckup_Location_is_missing</name>
         <label>Set Validation Error - Pickup Location</label>
-        <locationX>1898</locationX>
+        <locationX>2162</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -329,7 +329,7 @@
     <assignments>
         <name>Set_Validation_Error_VAT_is_missing</name>
         <label>Set Validation Error - VAT is missing</label>
-        <locationX>1634</locationX>
+        <locationX>1898</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -345,7 +345,7 @@
     <assignments>
         <name>Set_Validation_Error_VIN_is_missing</name>
         <label>Set Validation Error - VIN is missing</label>
-        <locationX>842</locationX>
+        <locationX>1106</locationX>
         <locationY>518</locationY>
         <assignmentItems>
             <assignToReference>varValidationErrorText</assignToReference>
@@ -361,7 +361,7 @@
     <assignments>
         <name>Update_Success_Count</name>
         <label>Update Success Count and Collection</label>
-        <locationX>1282</locationX>
+        <locationX>2074</locationX>
         <locationY>2390</locationY>
         <assignmentItems>
             <assignToReference>varCountOfSucces</assignToReference>
@@ -391,7 +391,7 @@
     <decisions>
         <name>Any_parameters_are_missing</name>
         <label>Any parameters are missing?</label>
-        <locationX>490</locationX>
+        <locationX>754</locationX>
         <locationY>950</locationY>
         <defaultConnector>
             <targetReference>ConfirmationScreen</targetReference>
@@ -416,7 +416,7 @@
     <decisions>
         <name>Check_if_any_parameter_is_missing</name>
         <label>Check if any parameter is missing</label>
-        <locationX>1502</locationX>
+        <locationX>1766</locationX>
         <locationY>398</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
@@ -539,7 +539,7 @@
     <decisions>
         <name>Invoice_or_Advis</name>
         <label>Invoice or Advis?</label>
-        <locationX>1282</locationX>
+        <locationX>2074</locationX>
         <locationY>1310</locationY>
         <defaultConnector>
             <targetReference>Send_Invoice</targetReference>
@@ -562,7 +562,8 @@
         </rules>
     </decisions>
     <description>Send invoice or Quote/Advis to Navision with Buyer Accout
-Lightning version</description>
+Lightning version
+improved Fault processing</description>
     <environments>Default</environments>
     <formulas>
         <name>currentConfirmedPriceCurrency</name>
@@ -583,7 +584,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <loops>
         <name>Call_Navision_One_by_One</name>
         <label>Call Navision One-by-One</label>
-        <locationX>930</locationX>
+        <locationX>1458</locationX>
         <locationY>1190</locationY>
         <collectionReference>Get_Vehicles_Information</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -597,7 +598,7 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <loops>
         <name>Create_Selected_Vehicles_Text</name>
         <label>Create Selected Vehicles Text</label>
-        <locationX>490</locationX>
+        <locationX>754</locationX>
         <locationY>278</locationY>
         <collectionReference>Get_Vehicles_Information</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -630,21 +631,34 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <recordCreates>
         <name>Log_Integration_Request_Successes_1</name>
         <label>Log Integration Request Successes</label>
-        <locationX>1282</locationX>
-        <locationY>1790</locationY>
+        <locationX>1810</locationX>
+        <locationY>1670</locationY>
+        <connector>
+            <targetReference>Error_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Unexpected_Error</targetReference>
+        </faultConnector>
         <inputReference>varIRLogList</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Log_Integration_Request_Successes_2</name>
         <label>Log Integration Request Successes</label>
-        <locationX>930</locationX>
-        <locationY>2846</locationY>
+        <locationX>1458</locationX>
+        <locationY>2726</locationY>
+        <connector>
+            <targetReference>Success_Message</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_in_log_IRs</targetReference>
+        </faultConnector>
         <inputReference>varIRLogList</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Get_Vehicles_Information</name>
         <label>Get Vehicles Information</label>
-        <locationX>490</locationX>
+        <locationX>754</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -667,10 +681,10 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <recordUpdates>
         <name>Update_Invoice_Requested_flag</name>
         <label>Update Invoice Requested flag</label>
-        <locationX>930</locationX>
+        <locationX>1458</locationX>
         <locationY>2606</locationY>
         <connector>
-            <targetReference>Success_Message</targetReference>
+            <targetReference>Log_Integration_Request_Successes_2</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_in_Vehicles_records_update</targetReference>
@@ -681,17 +695,20 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
         <description>update vehicles for which was invoice successfully created in NAV</description>
         <name>Update_Invoice_Requested_flag_partly</name>
         <label>Update Invoice Requested flag - partly</label>
-        <locationX>1282</locationX>
-        <locationY>1670</locationY>
+        <locationX>1810</locationX>
+        <locationY>1550</locationY>
         <connector>
             <targetReference>Log_Integration_Request_Successes_1</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Unexpected_Error</targetReference>
+        </faultConnector>
         <inputReference>varCollectionVehicles2Update</inputReference>
     </recordUpdates>
     <screens>
         <name>ConfirmationScreen</name>
         <label>Confirmation</label>
-        <locationX>930</locationX>
+        <locationX>1458</locationX>
         <locationY>1070</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -751,9 +768,25 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Error_in_log_IRs</name>
+        <label>Error in log IRs</label>
+        <locationX>1938</locationX>
+        <locationY>2846</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_ErrorSFDCScreenText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Invoices/Advis have been successfully created in Navision for {!varCountOfSucces} vehicles, but we system couldn&apos;t log Integration Request in Xfleet! &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Error_in_Vehicles_records_update</name>
         <label>Error in Vehicles records update</label>
-        <locationX>1410</locationX>
+        <locationX>2202</locationX>
         <locationY>2726</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -773,17 +806,14 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1282</locationX>
-        <locationY>1550</locationY>
+        <locationX>1810</locationX>
+        <locationY>1790</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Update_Invoice_Requested_flag_partly</targetReference>
-        </connector>
         <fields>
             <name>ErrorScreenText</name>
-            <fieldText>&lt;p&gt;Error in integration for vehicle {!Call_Navision_One_by_One.vinNumber__c}:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Invoice has been successfully create for {!varCountOfSucces} vehicles.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Error in integration for vehicle {!Call_Navision_One_by_One.vinNumber__c}:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Invoice has been successfully create for other {!varCountOfSucces} vehicles.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -856,14 +886,11 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
     <screens>
         <name>Success_Message</name>
         <label>Success Message</label>
-        <locationX>930</locationX>
-        <locationY>2726</locationY>
+        <locationX>1458</locationX>
+        <locationY>2846</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Log_Integration_Request_Successes_2</targetReference>
-        </connector>
         <fields>
             <name>SuccesScreenText</name>
             <fieldText>&lt;p&gt;Invoices or Advis have been successfully requested in Navision for {!varCountOfSucces} vehicles and Invoice/Advis Requested flag successfully set.&lt;/p&gt;</fieldText>
@@ -872,8 +899,24 @@ BLANKVALUE({!Call_Navision_One_by_One.Confirmed_Remarketing_Price_Full_Tax_DKK__
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Unexpected_Error</name>
+        <label>Unexpected Error</label>
+        <locationX>2338</locationX>
+        <locationY>1670</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Unexpected_Error_Text</name>
+            <fieldText>&lt;p&gt;Unexpected Error happened. Please contact System Administrator.&lt;/p&gt;&lt;p&gt;It is possible that invoice was successfully send for some ({!varCountOfSucces}) of selected vehicles, but we couldn&apos;t log it in Xfleet.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>364</locationX>
+        <locationX>628</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Vehicles_Information</targetReference>
