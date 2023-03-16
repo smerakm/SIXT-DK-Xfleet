@@ -6,7 +6,9 @@
 			/* change 2022-07-05, SIX-342
 			Vehicle__r.Final_tax_after_deduction__c + (Vehicle__r.Sixt_steel_purchase_price__c + Total_establishing_cost__c) * 1.25,
 			*/
-			Vehicle__r.Final_tax_after_deduction__c + Vehicle__r.licensePlateCost__c + (Vehicle__r.Sixt_steel_purchase_price__c + Vehicle__r.Delivery_cost__c + Vehicle__r.handlingCost__c) * 1.25, 
+			/* change 2023-03-15, VAT excluded
+			Vehicle__r.Final_tax_after_deduction__c + Vehicle__r.licensePlateCost__c + (Vehicle__r.Sixt_steel_purchase_price__c + Vehicle__r.Delivery_cost__c + Vehicle__r.handlingCost__c) * 1.25, */
+			Vehicle__r.Sixt_steel_purchase_price__c +  Total_establishing_cost__c + Vehicle__r.Final_tax_after_deduction__c,
 			Vehicle__r.Sixt_steel_purchase_price__c +  Total_establishing_cost__c
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

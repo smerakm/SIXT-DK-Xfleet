@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <formula>/* depends on tax type */
 IF(ISPICKVAL(Batch_Distribution__c, &quot;DK - Full tax&quot;),
-   Tax_Base__c,
+   Sixt_steel_purchase_price__c +  licensePlateCost__c + Delivery_cost__c + handlingCost__c +  Final_tax_after_deduction__c,
 			Sixt_steel_purchase_price__c +  licensePlateCost__c + Delivery_cost__c + handlingCost__c
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

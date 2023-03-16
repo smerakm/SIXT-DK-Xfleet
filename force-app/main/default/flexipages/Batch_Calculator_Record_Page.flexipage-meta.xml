@@ -800,8 +800,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Difference__c</fieldItem>
-                <identifier>RecordDifference_cField3</identifier>
+                <fieldItem>Record.Diffrence_Full_Tax__c</fieldItem>
+                <identifier>RecordDiffrence_Full_Tax_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fa045163-378a-4127-846e-395ac1697c58</name>
@@ -1088,6 +1088,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
                 <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>

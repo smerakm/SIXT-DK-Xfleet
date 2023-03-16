@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market Data_v6</fullName>
+    <types>
+        <members>Vehicle__c.Total_Buy_Price__c</members>
+        <members>Batch_Calculator__c.Full_Tax_buy__c</members>
+        <members>Vehicle_Calculator__c.Total_buy_price__c</members>
+        <name>CustomField</name>
+    </types>
+	<types>
+		<members>Batch_Calculator_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+    <version>57.0</version>
+</Package>
