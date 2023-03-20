@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Purchase_Value__c</fullName>
+    <description>Price we should buy the car for a profit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Price we should buy the car for a profit</inlineHelpText>
+    <label>Max Purchase Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

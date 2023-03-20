@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market Data_v6</fullName>
+    <types>
+        <members>Market_Value__c.Competitive_Vehicles_For_Sale__c</members>
+        <members>Market_Value__c.MDS_Competitive_Vehicles_Sold__c</members>
+        <members>Market_Value__c.MDS_Make__c</members>
+        <members>Market_Value__c.MDS_Market__c</members>
+        <members>Market_Value__c.MDS_Overall__c</members>
+        <members>Market_Value__c.MDS_Similar__c</members>
+        <members>Market_Value__c.Max_Purchase_Value__c</members>
+        <members>Market_Value__c.Price_date__c</members>
+        <members>Market_Value__c.Retail_Currency__c</members>
+        <members>Market_Value__c.Retail_Value__c</members>
+        <members>Market_Value__c.Vehicle__c</members>
+        <members>Market_Value__c.identMake__c</members>
+        <members>Market_Value__c.identModel__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Market_Value__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Market_Value__c-Market Value Layout</members>
+        <members>Vehicle__c-Vehicle Layout</members>
+        <name>Layout</name>
+    </types>
+	<types>
+		<members>Vehicle_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+    <types>
+        <members>Admin</members>
+        <members>Car Control</members>
+        <members>Car Sales</members>
+        <members>Procurement</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>FleetManagementProcurement/Copy_of_Market_Value_for_a_Vehicle_DE_e4X</members>
+        <members>FleetManagementProcurement/Market_Value_for_a_Vehicle_y8c</members>
+        <members>FleetManagementProcurement/Market_Value_Deep_Dive_DE_ybC</members>
+        <members>FleetManagementProcurement/Market_Value_Split_LJN</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>Vehicle_Batches_with_Vehicles_with_Market_Values</members>
+        <name>ReportType</name>
+    </types>
+    <version>57.0</version>
+</Package>

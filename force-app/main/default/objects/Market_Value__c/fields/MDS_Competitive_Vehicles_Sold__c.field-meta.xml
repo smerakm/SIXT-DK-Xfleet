@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDS_Competitive_Vehicles_Sold__c</fullName>
+    <description>Number of similar cars sold within the last 45 days</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of similar cars sold within the last 45 days</inlineHelpText>
+    <label>MDS-Competitive Vehicles Sold</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
