@@ -12,7 +12,7 @@
         <picklistValueName>Canceled</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <fieldNames>Required_by_Date__c</fieldNames>
+        <fieldNames>deliveryDate__c</fieldNames>
         <fieldNames>Requested_Number_of_Vehicles__c</fieldNames>
         <fieldNames>Requested_DK_Mini_lease__c</fieldNames>
         <fieldNames>Requested_DK_Short_term__c</fieldNames>
@@ -22,7 +22,7 @@
     </pathAssistantSteps>
     <pathAssistantSteps>
         <fieldNames>deliveryDate__c</fieldNames>
-        <fieldNames>Required_by_Date__c</fieldNames>
+        <fieldNames>Requested_Number_of_Vehicles__c</fieldNames>
         <fieldNames>Requested_DK_Mini_lease__c</fieldNames>
         <fieldNames>Requested_DK_Short_term__c</fieldNames>
         <fieldNames>Requested_Valuta_Vehicles__c</fieldNames>

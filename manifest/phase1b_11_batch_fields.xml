@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
+		<members>vehicleBatch__c.Available_for_Detail_Forecast_Split__c</members>
 		<members>vehicleBatch__c.Requested_DK_Mini_lease__c</members>
 		<members>vehicleBatch__c.Requested_DK_Short_term__c</members>
 		<members>vehicleBatch__c.Requested_Valuta_Vehicles__c</members>
+		<members>vehicleBatch__c.Number_Of_Not_Yet_Imported_Vehicles__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>

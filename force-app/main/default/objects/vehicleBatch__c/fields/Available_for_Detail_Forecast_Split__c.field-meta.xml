@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_for_Detail_Forecast_Split__c</fullName>
+    <description>Can we use this batch in details forecast split, i.e. use type and distribution, or only requested/not yet imported vehicle number is available in forecast?
+If any the split information is not available or at least 1 vehicle is already imported, we can&apos;t use detailed split information in the forecast.</description>
+    <externalId>false</externalId>
+    <formula>AND(
+				/* when there is no vehicle imported into Xfleet */
+				Number_Of_Vehicles__c = 0,
+				/* and there are information about forecast split */
+				 Requested_DK_Mini_lease__c  +  Requested_DK_Short_term__c  +  Requested_Valuta_Vehicles__c &gt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Can we use this batch in details forecast split, i.e. use type and distribution, or only requested/not yet imported vehicle number is available in forecast?</inlineHelpText>
+    <label>Available for Detail Forecast Split</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
