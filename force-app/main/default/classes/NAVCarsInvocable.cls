@@ -109,6 +109,9 @@ public with sharing class NAVCarsInvocable {
         @InvocableVariable(label='Pickup Location' description='Pickup location to be included in invoice')
         public String pickupLocation;
 
+        @InvocableVariable(label='Use Alternative Account' description='Alternative account shall be used for License plate invoice')
+        public Boolean useAlternativeAccount;
+
         // convert this instance of NavisionCarsRequest to NAVCarsObject for API calls
         public NAVCarsObject convertToNAVCarsObject() {
             NAVCarsObject navCar;
@@ -120,7 +123,7 @@ public with sharing class NAVCarsInvocable {
                 String quoteAcc = String.isBlank(this.accNumberQuote) ? null : this.accNumberQuote;
                 Integer quantity = this.quantity == null ? 1 : this.quantity;
                 Integer km = (Integer)this.currentKm;
-                navCar = new NAVCarsObject(this.amount, extDocNo, invoiceAcc, quoteAcc, quantity, this.addToDoc, this.vehicleDescription, km, this.pickupLocation);
+                navCar = new NAVCarsObject(this.amount, extDocNo, invoiceAcc, quoteAcc, quantity, this.addToDoc, this.vehicleDescription, km, this.pickupLocation, this.useAlternativeAccount);
             } else {
                 // no, car update
                 navCar = new NAVCarsObject(this.vinNumber, this.registrationNumber, this.vatType, this.vehicleDescription, this.currentKm);

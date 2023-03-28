@@ -14,6 +14,7 @@ public with sharing class NAVCarsObject {
     public String createPickupAddr { get; set; } // pickup address for invoice
     public String description { get; set; }
     public Integer km { get; set; }
+    public Boolean createAlternativeAccount {get; set;} // an optional parameter and when set to true uses the alternative account (210850)
 
     // constructor used for Create or Update car
     public NAVCarsObject(String vinNo, String regNo, String vatType, String description, Integer km) {
@@ -24,8 +25,13 @@ public with sharing class NAVCarsObject {
         this.km = km;
     }
 
-    // constructor used for Invoice or Advi
+    // constructor used for Invoice or Advi (default createAlternativeAccount as False)
     public NAVCarsObject(Decimal amount, String createExtDocNo, String createInvoice, String createQuote, Integer createQuantity, Boolean createAddToDoc, String description, Integer km, String pickupLocation) {
+        this(amount, createExtDocNo, createInvoice, createQuote, createQuantity, createAddToDoc, description, km, pickupLocation, false);
+    }
+
+    // constructor used for Invoice or Advi
+    public NAVCarsObject(Decimal amount, String createExtDocNo, String createInvoice, String createQuote, Integer createQuantity, Boolean createAddToDoc, String description, Integer km, String pickupLocation, Boolean useAlternativeAccount) {
         this.createUnitPrice = amount;
         this.creatExtDocNo = createExtDocNo;
         this.createInvoice = createInvoice;
@@ -35,6 +41,7 @@ public with sharing class NAVCarsObject {
         this.km = km;
         this.description = description?.left(50);
         this.createPickupAddr = pickupLocation?.left(50);
+        this.createAlternativeAccount = useAlternativeAccount;
     }
 
     public String convertToNAVVatType() {

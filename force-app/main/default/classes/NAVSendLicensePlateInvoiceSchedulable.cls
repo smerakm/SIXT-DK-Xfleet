@@ -1,5 +1,6 @@
 public with sharing class NAVSendLicensePlateInvoiceSchedulable implements System.Schedulable {
     private static final String ERROR_MSG_BAD_DATA = 'License plate cost or dealer navision number is missing';
+    private static final String DESCRIPTION_PREFIX = 'License plate: ';
 
     public NAVSendLicensePlateInvoiceSchedulable() {
     }
@@ -41,9 +42,10 @@ public with sharing class NAVSendLicensePlateInvoiceSchedulable implements Syste
             null,
             1,
             false,
-            v.License_Plate_System__c,
+            DESCRIPTION_PREFIX + v.License_Plate_System__c,
             null,
-            null
+            null,
+            true
         );
         ir.Data__c = JSON.serialize(navCar, true);
         // if some data are missing mark the requested as failed
