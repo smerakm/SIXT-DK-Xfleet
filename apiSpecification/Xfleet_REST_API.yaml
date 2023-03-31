@@ -1,0 +1,376 @@
+openapi: 3.0.0
+info:
+  title: SIXT - Xfleet
+  description: REST API available to login users to Xfleet
+  version: 1.0.0
+servers:
+  - url: https://{instance_url}/services/apexrest/Xfleet
+    variables:
+      instance_url:
+        description: The base URL for the instance, obtained from the login response
+        default: sixtdk.my.salesforce.com
+tags:
+  - name: Vehicle
+    description: To query, create and update Vehicle in Xfleet.
+  - name: InvoiceRequest
+    description: Invoice Request API
+paths:
+  /Vehicle:
+    post:
+      tags:
+        - Vehicle
+      summary: create a vehicle
+      description: Creates vehicle in Xfleet.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VehicleCreate'
+      responses:
+        '201':
+          description: Created
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VehicleResponse'
+  /Vehicle/{vehicleId}:
+    patch:
+      tags:
+        - Vehicle
+      summary: update a vehicle
+      description: update different parameters on the vehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vehicle'
+            example: |-
+              {
+                "buyerAccountName": "BILSALG",
+                "confirmedRemarketingPriceDKK": 133999,
+                "remarketingStatus": "Sold"
+              }
+      parameters:
+        - name: vehicleId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: a0AAO000000IjWB2B0
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VehicleResponse'
+    get:
+      tags:
+        - Vehicle
+      summary: query a vehicle
+      description: >-
+        Get operation on single Vehicle record in Xfleet. Return all fields that
+        are viewable by the API user.
+      parameters:
+        - name: vehicleId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: a0AAO000000IjWB2B0
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+  /services/apexrest/Xfleet/InvoiceRequest:
+    post:
+      tags:
+        - InvoiceRequest
+      summary: create Invoice Request
+      description: Creates invoice request in Xfleet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceRequest'
+      responses:
+        '201':
+          description: Created
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceRequestResponse'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Vehicle:
+      type: object
+      properties:
+        acrissCode:
+          type: string
+          description: ACRISS code
+          example: FWAR
+        airbagsNumber:
+          type: integer
+          description: number of airbags
+          example: 6
+        automaticGears:
+          type: boolean
+        bluetooth:
+          type: boolean
+        brandName:
+          type: string
+          enum:
+            - Alfa Romeo
+            - Audi
+            - BMW
+            - Citroën
+            - Cupra
+            - DS
+            - Ferrari
+            - Fiat
+            - Ford
+            - Honda
+            - Hyundai
+            - Isuzu
+            - Jaguar
+            - Jeep
+            - Kia
+            - Land Rover
+            - Lexus
+            - Mazda
+            - Mercedes-Benz
+            - MG
+            - Mitsubishi
+            - Nissan
+            - Opel
+            - Peugeot
+            - Polestar
+            - Porsche
+            - Renault
+            - Seat
+            - Skoda
+            - Suzuki
+            - Tesla
+            - Toyota
+            - Volvo
+            - VW
+        buyerAccountName:
+          type: string
+          example: IKKE SOLG - BILSALG
+        co2:
+          type: integer
+          maximum: 9999
+          example: 95
+        colorName:
+          type: string
+          maxLength: 100
+          example: red
+        confirmedRemarketingPriceDKK:
+          type: integer
+          example: 133999
+        consumptionKmPerLiter:
+          type: number
+          format: float
+          example: 19.6
+        cruiseControl:
+          type: boolean
+        deeplink:
+          type: string
+          example: >-
+            https://sixtbilsalg.dk/bil/LAND-ROVER-Range-Rover-Evoque-PHEV-300-HK-SE-276
+        deliveryCostsRetailDKK:
+          type: integer
+          example: 2000
+        equipmentList:
+          type: string
+          example: >-
+            Tonede ruder, Driving assistent, Parking assistent inkl.
+            Bakkamera,El-indfoldelige sidespejle
+        externalId:
+          type: string
+          example: h3459hk323
+        firstRegistrationDate:
+          type: string
+          format: date
+          example: 2019-10-28T00:00:00.000Z
+        fuelType:
+          type: string
+          enum:
+            - DI
+            - EL
+            - HBBP
+            - HBD
+            - BE
+            - HBB
+        licensePlateCostsDKK:
+          type: integer
+          example: 1180
+        mileage:
+          type: integer
+          example: 13724
+        modelName:
+          type: string
+          maxLength: 255
+          example: 320d Touring M-Sport
+        navigation:
+          type: boolean
+        ncap:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+        parkingSensor:
+          type: boolean
+        range:
+          type: integer
+          example: 350
+        regNo:
+          type: string
+          maxLength: 18
+        remarketingStatus:
+          type: string
+          enum:
+            - Ready to sell
+            - Sold
+            - Not sold
+        repurchasePriceDKK:
+          type: integer
+          example: 115000
+        retailPriceDKK:
+          type: integer
+          example: 135000
+        retailSales:
+          type: boolean
+        seatbeltAlarmsNumber:
+          type: integer
+          example: 7
+        serviceInterval:
+          type: string
+          maxLength: 255
+        status:
+          type: string
+          enum:
+            - Procurement
+            - Infleet
+            - Operations
+            - Defleet
+            - Sold
+            - Stock Car
+          example: Stock Car
+        tankSize:
+          type: integer
+          example: 61
+        tireOwnership:
+          type: string
+          enum:
+            - Own
+            - Rental
+        tireSize:
+          type: string
+          maxLength: 255
+          example: 225/45 for - 255/40 R18 bag
+        tireType:
+          type: string
+          enum:
+            - Summer
+            - Winter
+            - All Season
+        vehicleBatchName:
+          type: string
+          example: 2023-C00123
+        vin:
+          type: string
+          maxLength: 25
+          example: WF0YXXTTGGGG12345
+    VehicleCreate:
+      allOf:
+        - $ref: '#/components/schemas/Vehicle'
+        - type: object
+          required:
+            - vin
+    VehicleResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: a0AAO000000IjWB2B0
+    InvoiceRequest:
+      type: object
+      required:
+        - vehicleId
+        - vin
+        - customerName
+        - customerAddress
+        - customerPriceDKK
+        - salesPersonName
+      properties:
+        vehicleId:
+          type: string
+          minLength: 18
+          maxLength: 18
+          example: a0AAO000000a32j7B1
+        vin:
+          type: string
+          example: WF0YXXTTGGGG12345
+        customerName:
+          type: string
+          maxLength: 50
+          example: Jens Jensen
+        customerAddress:
+          type: string
+          maxLength: 50
+          example: Kongshøjvej 53, København, 1218
+        customerPriceDKK:
+          type: integer
+          example: 222000
+        salesPersonName:
+          type: string
+          maxLength: 50
+          example: Nils Nilsen
+        exchangeVehicleId:
+          type: string
+          minLength: 18
+          maxLength: 18
+          example: a0AAO000000m11i2AA
+    InvoiceRequestResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: a0BAO000000IxAS1A0
+        navisionId:
+          type: string
+          example: kl35h29rhb342l
+security:
+  - bearerAuth: []
