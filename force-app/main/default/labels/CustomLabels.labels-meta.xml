@@ -30,4 +30,24 @@
         <shortDescription>Xfleet Integration Request Vehicle Fields</shortDescription>
         <value>id, vinNumber__c, License_Plate_System__c, Batch_Distribution__c, Car_description_2__c, Current_KM__c</value>
     </labels>
+    <labels>
+        <fullName>Xfleet_Label_License_Plate_Invoice_Description</fullName>
+        <categories>Xfleet, NAV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Xfleet Label License Plate Invoice Description</shortDescription>
+        <value>Finansieringsselskab: {{leasing_Account__r.Name}}</value>
+    </labels>
+    <labels>
+        <fullName>Xfleet_Query_Vehicles_for_License_Plate_Invoice</fullName>
+        <categories>Xfleet, query, NAV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Xfleet Query Vehicles for License Plate Invoice</shortDescription>
+        <value>SELECT LicensePlateCost__c, License_Plate_Invoice_Sent__c, Dealer__r.Navision_Account__c, Dealer__r.EUR_DKK__c, Dealer__c, License_Plate_System__c, leasing_Account__r.Name
+FROM Vehicle__c
+WHERE License_plate__c != NULL 
+AND License_Plate_Invoice_Sent__c = FALSE
+LIMIT 5000</value>
+    </labels>
 </CustomLabels>

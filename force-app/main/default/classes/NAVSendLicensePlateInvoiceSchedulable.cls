@@ -1,18 +1,14 @@
 public with sharing class NAVSendLicensePlateInvoiceSchedulable implements System.Schedulable {
     private static final String ERROR_MSG_BAD_DATA = 'License plate cost or dealer navision number is missing';
-    private static final String DESCRIPTION_PREFIX = 'License plate: ';
+    private static final String QUERY_VEHICLES = Label.Xfleet_Query_Vehicles_for_License_Plate_Invoice;
+    private static final String LABEL_INVOICE_DESCRIPTION = Label.Xfleet_Label_License_Plate_Invoice_Description;
 
     public NAVSendLicensePlateInvoiceSchedulable() {
     }
 
     public void execute(SchedulableContext sc) {
         // get newly registered vehicles where invoice hasn't been sent yet
-        List<Vehicle__c> vehicles = [
-            SELECT LicensePlateCost__c, License_Plate_Invoice_Sent__c, Dealer__r.Navision_Account__c, Dealer__r.EUR_DKK__c, Dealer__c, License_Plate_System__c
-            FROM Vehicle__c
-            WHERE License_plate__c != NULL AND License_Plate_Invoice_Sent__c = FALSE
-            LIMIT 5000
-        ];
+        List<Vehicle__c> vehicles = Database.query(QUERY_VEHICLES, AccessLevel.SYSTEM_MODE);
         // and create Integration Request for them
         List<Integration_Request__c> irs = new List<Integration_Request__c>();
         for (Vehicle__c v : vehicles) {
@@ -35,6 +31,8 @@ public with sharing class NAVSendLicensePlateInvoiceSchedulable implements Syste
         Integration_Request__c ir = new Integration_Request__c();
         ir.Vehicle__c = v.Id;
         ir.API_Method__c = IntegrationRequestsNAVCars.METHOD_INVOICE;
+        // invoice description
+        String invoiceDescription = UtilityCommon.mergeFieldsIntoString(LABEL_INVOICE_DESCRIPTION, v);
         NAVCarsObject navCar = new NAVCarsObject(
             v.licensePlateCost__c,
             null,
@@ -42,7 +40,7 @@ public with sharing class NAVSendLicensePlateInvoiceSchedulable implements Syste
             null,
             1,
             false,
-            DESCRIPTION_PREFIX + v.License_Plate_System__c,
+            invoiceDescription,
             null,
             null,
             true
