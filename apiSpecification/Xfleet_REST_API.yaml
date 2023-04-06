@@ -184,7 +184,7 @@ components:
         buyerAccountName:
           type: string
           example: IKKE SOLG - BILSALG
-        co2:
+        co2Emissions:
           type: integer
           maximum: 9999
           example: 95

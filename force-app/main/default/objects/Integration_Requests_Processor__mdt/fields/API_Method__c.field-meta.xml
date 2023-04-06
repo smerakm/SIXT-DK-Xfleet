@@ -25,6 +25,16 @@
                 <default>false</default>
                 <label>NAV-createInvoiceQuote</label>
             </value>
+            <value>
+                <fullName>AutoIT-upsertCar</fullName>
+                <default>false</default>
+                <label>AutoIT-upsertCar</label>
+            </value>
+            <value>
+                <fullName>AutoIT-carStatusUpdate</fullName>
+                <default>false</default>
+                <label>AutoIT-carStatusUpdate</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

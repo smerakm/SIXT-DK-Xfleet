@@ -17,10 +17,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <userLicense>Salesforce</userLicense>
+    <userLicense>Salesforce Platform</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AddDirectMessageMembers</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -32,7 +36,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CanUseNewDashboardBuilder</name>
+        <name>AssignTopics</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -52,7 +56,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CreateCustomizeDashboards</name>
+        <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -64,11 +68,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CreateReportInLightning</name>
+        <name>CreateTopics</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>DelegatedTwoFactor</name>
+        <name>CustomMobileAppsAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -76,23 +84,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditMyDashboards</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditMyReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditOppLineItemUnitPrice</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditPublicFilters</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditTask</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditTopics</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -104,11 +100,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ExportReport</name>
+        <name>ForceTwoFactor</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>LightningConsoleAllowedForUser</name>
+        <name>IsSsoEnabled</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -120,15 +116,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>RunFlow</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>RunReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ScheduleReports</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -140,10 +136,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubmitMacrosAllowed</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>SubscribeToLightningDashboards</name>
     </userPermissions>
     <userPermissions>
@@ -152,11 +144,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>TransferAnyEntity</name>
+        <name>TransactionalEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewAllForecasts</name>
+        <name>UseWebLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -165,14 +157,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewMyTeamsDashboards</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewPublicDashboards</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

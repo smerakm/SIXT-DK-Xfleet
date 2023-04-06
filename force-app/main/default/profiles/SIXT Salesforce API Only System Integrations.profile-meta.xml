@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>AutoITVehicle</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AutoITVehicleObject</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AutoITVehicleUpsert</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IntegrationRequestsAutoITVehicle</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <custom>true</custom>
+    <description>Basic profile for Integration users to Xfleet.
+Use Permission Sets for objects and fields access!</description>
+    <userLicense>Salesforce Integration</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiUserOnly</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterInternalUser</name>
+    </userPermissions>
+</Profile>

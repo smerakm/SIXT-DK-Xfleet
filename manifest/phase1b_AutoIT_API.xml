@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>AutoITVehicle</members>
+		<members>AutoITVehicleObject</members>
+		<members>AutoITVehicleUpsert</members>
+		<members>IntegrationRequestsAutoITVehicle</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>AutoIT_Inbound</members>
+		<name>ConnectedApp</name>
+	</types>
+	<types>
+		<members>Integration_Request__c.API_Method__c</members>
+		<members>Integration_Requests_Processor__mdt.API_Method__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Integration_Requests_Processor.AutoIT_upsertCar</members>
+		<!--members>Integration_Requests_Processor.AutoIT_carStatusUpdate</members-->
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>AutoDesktopOAuth</members>
+		<name>ExternalCredential</name>
+	</types>
+	<!--types>
+		<members>Vehicle_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>SCR_Defleet_Send_Invoice_to_Buyer_LIGHTNING</members>
+		<members>SCR_Integration_Request_Run_The_Job</members>
+		<members>SCR_NAV_Utility_Flow</members>
+		<members>Update_Vehicle_fields_Automatically</members>
+		<members>VEHICLE_TRG_After_CalculateLeasingCost</members>
+		<members>VEHICLE_TRG_After_NavisionVehicle</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Xfleet_Admins</members>
+		<name>Group</name>
+	</types>
+	<types>
+		<members>Account-Leasing Company</members>
+		<members>Integration_Request__c-Integration Request Layout</members>
+		<members>Integration_Requests_Processor__mdt-Integration Requests Processor Layout</members>
+		<members>Vehicle__c-Vehicle Layout</members>
+		<name>Layout</name>
+	</types-->
+	<types>
+		<members>AutoDesktopPROD</members>
+		<members>AutoDesktopTEST</members>
+		<name>NamedCredential</name>
+	</types>
+	<types>
+		<members>AutoDesktop_Inbound_User</members>
+		<name>PermissionSet</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<members>Car Control</members>
+		<members>Car Sales</members>
+		<members>Minilease</members>
+		<members>Procurement</members>
+		<members>Station</members>
+		<members>SIXT Salesforce API Only System Integrations</members>
+		<name>Profile</name>
+	</types>
+	<version>57.0</version>
+</Package>
