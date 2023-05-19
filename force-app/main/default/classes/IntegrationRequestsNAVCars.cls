@@ -3,6 +3,7 @@ public with sharing class IntegrationRequestsNAVCars implements IntegrationReque
     public static final String METHOD_CREATE = 'NAV-createCar';
     public static final String METHOD_UPDATE = 'NAV-updateCar';
     public static final String METHOD_INVOICE = 'NAV-createInvoiceQuote';
+    public static final String METHOD_INVOICE_CARS_PRIVATE = 'NAV-createInvoicePrivate';
 
     
     public Integration_Request__c process(Integration_Request__c req, Vehicle__c veh) {
@@ -16,7 +17,11 @@ public with sharing class IntegrationRequestsNAVCars implements IntegrationReque
         } else if (req.API_Method__c.equals(METHOD_INVOICE)) {
             // UPDATE - Create Invoice or Quote
             navApi = new NAVCarsUpdate(veh.vinNumber__c);
+        } else if (req.API_Method__c.equals(METHOD_INVOICE_CARS_PRIVATE)) {
+            // UPDATE - Create Invoice or Quote
+            navApi = new NAVCarsUpdate(veh.vinNumber__c, NAVCars.CARS_PRIVATE_API);
         }
+
         // is method supported?
         if (navApi != null) {
             // prepare data and call API
@@ -44,6 +49,8 @@ public with sharing class IntegrationRequestsNAVCars implements IntegrationReque
             req.Status__c = IntegrationRequestsUtility.STATUS_FAILED;
             req.Message__c = IntegrationRequestsBatchable.ERROR_WRONG_METHOD;
         }
+        // set Integration Request processed timestamp
+        req.Last_Processing_Time__c = System.now();
         // return the updated req
         return req;
     }

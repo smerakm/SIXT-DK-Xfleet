@@ -165,4 +165,49 @@ public with sharing class NAVCars_Test {
         }
         // if any other exception is thrown then it is failed test
     }
+
+    @isTest
+    public static void navCarObjectTest() {
+        // basic vehicle update
+        NAVCarsObject obj1 = new NAVCarsObject('TESTVIN321khj41', 'DC12121', 'DK - L94', 'unit test', 333);
+        System.assertEquals('L94', obj1.vatType, 'wrong conversion of Xlfeet VAT type to NAV VAT Type!');
+        System.assertEquals('L94', obj1.convertToNAVVatType(), 'wrong conversion of Xlfeet VAT type to NAV VAT Type! (object method)');
+        // normal invoice
+        String testAddress = 'This is a very long address, that is over 50 characters, and was created in, Sweden, 112 88';
+        NAVCarsObject obj2 = new NAVCarsObject(12345.678, 'myTestDoc1', 'UT1234', null, 2, false, 'unit test desc', 333, testAddress);
+        System.assertEquals(50, obj2.createPickupAddr.length(), 'Address is not shortened to 50 chars!');
+        // AutoDesktop invoice
+        NAVCarsObject obj3 = new NAVCarsObject(
+            'myTestDoc1',
+            'unit test desc',
+            333,
+            1422312,
+            1232,
+            45453,
+            3433,
+            20000,
+            'roof window',
+            'EX12345',
+            98234,
+            'Marek',
+            testAddress,
+            'c/o Abc',
+            '112 88',
+            'STLM',
+            null,
+            null,
+            null,
+            null,
+            null
+        );
+        System.assertEquals(50, obj3.createOwnerAddress1.length(), 'Owner address line 1 is not shortened to 50 chars!');
+
+        // all vat type conversion
+        System.assertEquals('L94', obj1.convertToNAVVatType('DK - L94'), 'wrong VAT Type conversion, L94!');
+        System.assertEquals('VALUTA', obj1.convertToNAVVatType('Valuta'), 'wrong VAT Type conversion, VALUTA!');
+        System.assertEquals('FULD MOMS', obj1.convertToNAVVatType('DK - Full tax'), 'wrong VAT Type conversion, FULD MOMS!');
+        System.assertEquals(null, obj1.convertToNAVVatType('DK - Tax type not determined'), 'wrong VAT Type conversion, DK not determined!');
+        System.assertEquals('skip', obj1.convertToNAVVatType('skip'), 'wrong VAT Type conversion, skip conversion!');
+        System.assertEquals(null, obj1.convertToNAVVatType(null), 'wrong VAT Type conversion, null value!');
+    }
 }

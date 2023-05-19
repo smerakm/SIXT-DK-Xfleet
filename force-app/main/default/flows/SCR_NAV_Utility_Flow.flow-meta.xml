@@ -3,8 +3,8 @@
     <actionCalls>
         <name>call_NAV_API</name>
         <label>call NAV API</label>
-        <locationX>578</locationX>
-        <locationY>518</locationY>
+        <locationX>842</locationX>
+        <locationY>638</locationY>
         <actionName>NAVCarsInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -74,8 +74,8 @@
     <actionCalls>
         <name>Send_Invoice_Request</name>
         <label>Send Invoice Request</label>
-        <locationX>50</locationX>
-        <locationY>518</locationY>
+        <locationX>314</locationX>
+        <locationY>638</locationY>
         <actionName>NAVCarsInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -153,6 +153,11 @@
         </value>
     </choices>
     <choices>
+        <name>operationMarkForLicensePlateInvoice</name>
+        <choiceText>&quot;Mark for License Plate Invoice&quot;</choiceText>
+        <dataType>String</dataType>
+    </choices>
+    <choices>
         <name>operationUPDATE</name>
         <choiceText>UPDATE</choiceText>
         <dataType>String</dataType>
@@ -163,8 +168,8 @@
     <decisions>
         <name>Invoice_Request</name>
         <label>Invoice Request?</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>578</locationX>
+        <locationY>518</locationY>
         <defaultConnector>
             <targetReference>call_NAV_API</targetReference>
         </defaultConnector>
@@ -183,6 +188,31 @@
                 <targetReference>Send_Invoice_Request</targetReference>
             </connector>
             <label>yes, send invoice</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Operation_Split</name>
+        <label>Operation Split</label>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>Invoice_Request</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>API call</defaultConnectorLabel>
+        <rules>
+            <name>Mark_vehicle_for_License_Plate_Invoicing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Operation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>operationMarkForLicensePlateInvoice</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Vehicle_as_ready_for_License_Plate_Invoice</targetReference>
+            </connector>
+            <label>Mark vehicle for License Plate Invoicing</label>
         </rules>
     </decisions>
     <description>for testing / run manually NAV Cars API</description>
@@ -229,11 +259,38 @@
         <object>Vehicle__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Set_Vehicle_as_ready_for_License_Plate_Invoice</name>
+        <label>Set Vehicle as ready for License Plate Invoice</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>License_Plate_Invoice_Sent__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>License_Plate_Is_Not_Invoiced__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Vehicle__c</object>
+    </recordUpdates>
     <screens>
         <name>ERROR</name>
         <label>ERROR</label>
-        <locationX>314</locationX>
-        <locationY>638</locationY>
+        <locationX>578</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -248,8 +305,8 @@
     <screens>
         <name>Result_Invoice</name>
         <label>Result Invoice</label>
-        <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -264,8 +321,8 @@
     <screens>
         <name>Results</name>
         <label>Results</label>
-        <locationX>578</locationX>
-        <locationY>638</locationY>
+        <locationX>842</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -286,7 +343,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Invoice_Request</targetReference>
+            <targetReference>Operation_Split</targetReference>
         </connector>
         <fields>
             <fieldType>ObjectProvided</fieldType>
@@ -319,6 +376,7 @@
                     <choiceReferences>operationCREATE</choiceReferences>
                     <choiceReferences>operationUPDATE</choiceReferences>
                     <choiceReferences>operationGET</choiceReferences>
+                    <choiceReferences>operationMarkForLicensePlateInvoice</choiceReferences>
                     <dataType>String</dataType>
                     <fieldText>Operation</fieldText>
                     <fieldType>DropdownBox</fieldType>
@@ -471,7 +529,7 @@
             <targetReference>Get_Vehicle</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <description>vehicle id that the flow was run from</description>
         <name>recordId</name>
