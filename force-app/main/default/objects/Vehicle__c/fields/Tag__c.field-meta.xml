@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tag__c</fullName>
+    <externalId>false</externalId>
+    <label>Tag</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IKKE SOLGT - Sixt Bilsalg</fullName>
+                <default>false</default>
+                <label>IKKE SOLGT - Sixt Bilsalg</label>
+            </value>
+            <value>
+                <fullName>IKKE SOLGT - DAL Vamdrup</fullName>
+                <default>false</default>
+                <label>IKKE SOLGT - DAL Vamdrup</label>
+            </value>
+            <value>
+                <fullName>IKKE SOLGT - AUTOROLA</fullName>
+                <default>false</default>
+                <label>IKKE SOLGT - AUTOROLA</label>
+            </value>
+            <value>
+                <fullName>IKKE SOLGT - Defleet bil - Ringsted</fullName>
+                <default>false</default>
+                <label>IKKE SOLGT - Defleet bil - Ringsted</label>
+            </value>
+            <value>
+                <fullName>IKKE SOLGT - DAL Ringsted</fullName>
+                <default>false</default>
+                <label>IKKE SOLGT - DAL Ringsted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

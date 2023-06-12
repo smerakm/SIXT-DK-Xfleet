@@ -80,7 +80,7 @@ public with sharing class AutoITVehicleObject {
     public Decimal numberplateCostsDKK { get; set; }
     public Decimal priceWholesaleDKK { get; set; }
     public Decimal priceLowestAuctionDKK { get; set; }
-    public Boolean absoluteDivestitureAuction	 { get; set; }
+    public Boolean absoluteDivestitureAuction { get; set; }
     public String deeplink { get; set; }
     public Boolean showOnSalesList { get; set; }
     public Boolean showOnAftermarketList { get; set; }
@@ -92,27 +92,36 @@ public with sharing class AutoITVehicleObject {
     public Decimal priceRetailExRegistrationTax { get; set; }
     public Boolean priceRetailWithoutRegistrationTax { get; set; }
     public String comments { get; set; }
-    public Datetime inventoryDate { get; set; }
-    public Datetime lastVehicleInspection { get; set; }
+    public Date inventoryDate { get; set; }
+    public Date lastVehicleInspection { get; set; }
     public Integer vinYear { get; set; }
     public Decimal expectedRegistrationTax { get; set; }
     public String commissionNumber { get; set; }
     // public Boolean import { get; set; } // we cannot send "import" as it is reserved word in Apex
     public Decimal repurchasePrice { get; set; }
-    // TODO public CreateVehicleExtendedRequestType createVehicleExtendedRequest { get; set; }
-    // TODO define inner class
 
     // Convert Xfleet Vehicle__c to API Vehicle object
     public AutoITVehicleObject(Vehicle__c vehicle) {
         this.vin = vehicle.vinNumber__c;
         this.regNo = vehicle.License_Plate_System__c;
+        this.mileage = (Integer) vehicle.Current_KM__c;
         this.brandName = vehicle.Brand__c;
-        this.modelName = vehicle.Model__c;
-        this.mileage = (Integer)vehicle.Current_KM__c;
+        // model
+        if (String.isNotBlank(vehicle.Model_Name__c)) {
+            this.modelName = vehicle.Model_Name__c;
+        } else {
+            this.modelName = vehicle.Model__c;
+        }
         // registration date
-        this.firstRegistrationYear = vehicle.Registration_Date__c?.year();
-        this.firstRegistrationMonth = vehicle.Registration_Date__c?.month();
-        this.firstRegistrationDay = vehicle.Registration_Date__c?.day();
-        // TODO complete the mapping
+        this.firstRegistrationYear = vehicle.First_Registration_Date__c?.year();
+        this.firstRegistrationMonth = vehicle.First_Registration_Date__c?.month();
+        this.firstRegistrationDay = vehicle.First_Registration_Date__c?.day();
+        // complete the mapping
+        this.colorName = vehicle.color__c;
+        this.priceRetailDKK = (Integer) vehicle.Retail_Price__c;
+        this.fuelTypeId = vehicle.Fuel_type__c;
+        this.modelYear = (Integer) vehicle.Model_Year__c;
+        this.lastVehicleInspection = vehicle.Last_Vehicle_Inspection__c;
+        this.description = vehicle.Car_remark__c;
     }
 }

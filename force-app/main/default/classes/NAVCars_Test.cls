@@ -167,6 +167,87 @@ public with sharing class NAVCars_Test {
     }
 
     @isTest
+    public static void invocableMethods() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_SINGLE_CAR);
+        mock.setStatusCode(200);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        // test the call out
+        NAVCarsInvocable.NavisionCarsRequest navRequest = new NAVCarsInvocable.NavisionCarsRequest();
+        navRequest.callMethod = 'CREATE';
+        navRequest.vinNumber = 'UNITA423452';
+        navRequest.registrationNumber = 'LA12344';
+        navRequest.vatType = 'Valuta';
+        navRequest.vehicleDescription = 'unit test';
+        navRequest.currentKm = 100;
+
+        // CREATE
+        List<NAVCarsInvocable.NavisionCarsResult> results = NAVCarsInvocable.callNavisionCarsApi(new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest });
+        System.assertEquals(1, results.size());
+
+        // UPDATE
+        navRequest.callMethod = 'UPDATE';
+        results = NAVCarsInvocable.callNavisionCarsApi(new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest });
+        System.assertEquals(1, results.size());
+
+        // UPDATE - invoice
+        navRequest.callMethod = 'UPDATE';
+        navRequest.amount = 199;
+        navRequest.extDocNo = 'lsf';
+        navRequest.addToDoc = false;
+        navRequest.accNumberInvoice = 'DF234';
+        navRequest.pickupLocation = 'Korvvagen 123';
+        results = NAVCarsInvocable.callNavisionCarsApi(new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest });
+        System.assertEquals(1, results.size());
+
+        // GET
+        navRequest.callMethod = 'GET';
+        results = NAVCarsInvocable.callNavisionCarsApi(new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest });
+        System.assertEquals(1, results.size());
+
+        // GET - params
+        navRequest.callMethod = 'GET';
+        navRequest.filterValue = 'created eq TODAY';
+        results = NAVCarsInvocable.callNavisionCarsApi(new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest });
+        System.assertEquals(1, results.size());
+    }
+
+    @isTest
+    public static void invocableMethodsError() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_ERROR);
+        mock.setStatusCode(400);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        // test the call out
+        NAVCarsInvocable.NavisionCarsRequest navRequest = new NAVCarsInvocable.NavisionCarsRequest();
+        navRequest.callMethod = 'CREATE';
+        navRequest.vinNumber = 'UNITA423452';
+        navRequest.registrationNumber = 'LA12344';
+        navRequest.vatType = 'Valuta';
+        navRequest.vehicleDescription = 'unit test';
+        navRequest.currentKm = 100;
+
+        // CREATE
+        try {
+            List<NAVCarsInvocable.NavisionCarsResult> results = NAVCarsInvocable.callNavisionCarsApi(
+                new List<NAVCarsInvocable.NavisionCarsRequest>{ navRequest }
+            );
+        } catch (NAVCars.NavisionCarsException navException) {
+            System.assert(true);
+        }
+    }
+
+    @isTest
     public static void navCarObjectTest() {
         // basic vehicle update
         NAVCarsObject obj1 = new NAVCarsObject('TESTVIN321khj41', 'DC12121', 'DK - L94', 'unit test', 333);

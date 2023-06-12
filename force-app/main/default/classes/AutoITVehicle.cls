@@ -50,7 +50,7 @@ public abstract with sharing class AutoITVehicle {
         endpoint += '/' + CARS_API;
         // is it for specific vehicle?
         if (String.isNotBlank(this.externalId)) {
-            endpoint += '(\'' + this.externalId + '\')';
+            endpoint += '/' + this.externalId;
         }
 
         System.debug(LoggingLevel.DEBUG, 'AutoIT endpoint: ' + endpoint);
@@ -69,6 +69,9 @@ public abstract with sharing class AutoITVehicle {
             req.setEndpoint(this.getEndpoint());
         }
 
+        // authorization header
+        req = AutoITAuthentication.addAuthenticationHeader(req);
+
         req.setTimeout(120000);
 
         System.debug('req body: ' + req.getBody());
@@ -80,6 +83,10 @@ public abstract with sharing class AutoITVehicle {
         System.debug('resp body: ' + res.getBody());
 
         return res;
+    }
+
+    public virtual void processResponse(String responseBody, Id vehicleId) {
+
     }
 
     public class AutoITVehicleException extends Exception {}

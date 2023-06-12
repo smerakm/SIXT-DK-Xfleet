@@ -1,54 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
+		<members>AutoITAuthentication</members>
 		<members>AutoITVehicle</members>
 		<members>AutoITVehicleObject</members>
-		<members>AutoITVehicleUpsert</members>
+		<members>AutoITVehicleCreate</members>
+		<members>AutoITVehicleUpdate</members>
+		<members>AutoITVehicle_Test</members>
+		<members>CreateDefaultBatchSchedulable</members>
+		<members>CreateDefaultBatchSchedulable_Test</members>
 		<members>IntegrationRequestsAutoITVehicle</members>
+		<members>IntegrationRequestsAutoITVehicle_Test</members>
+		<members>REST_XfleetInvoiceRequest</members>
+		<members>REST_XfleetInvoiceRequest_Test</members>
+		<members>REST_XfleetVehicle</members>
+		<members>REST_XfleetVehicle_Test</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
-		<members>AutoIT_Inbound</members>
+		<members>AutoIT_Inbound_JWT</members>
 		<name>ConnectedApp</name>
 	</types>
 	<types>
 		<members>Integration_Request__c.API_Method__c</members>
 		<members>Integration_Requests_Processor__mdt.API_Method__c</members>
+		<members>FleetManagementConfig__c.ExchangeVehicleGroupId__c</members>
+		<members>FleetManagementConfig__c.DefaultBatchId__c</members>
+		<members>vehicleBatch__c.Type__c</members>
+		<members>Vehicle__c.First_Registration_Date__c</members>
+		<members>Vehicle__c.Model_Name__c</members>
+		<members>Vehicle__c.Model_Year__c</members>
+		<members>Vehicle__c.Last_Vehicle_Inspection__c</members>
+		<members>Vehicle__c.Battery_Capacity_kWh__c</members>
+		<members>Vehicle__c.Service_interval_Years_KM__c</members>
+		<members>Vehicle__c.Link_to_Retail_Website__c</members>
+		<members>Vehicle__c.AutoDesktop_Id__c</members>
+		<members>Client_Credentials_Auth__mdt.clientId__c</members>
+		<members>Client_Credentials_Auth__mdt.clientSecret__c</members>
+		<members>Client_Credentials_Auth__mdt.tokenEndpoint__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
-		<members>Integration_Requests_Processor.AutoIT_upsertCar</members>
-		<!--members>Integration_Requests_Processor.AutoIT_carStatusUpdate</members-->
+		<members>Xfleet_Label_Default_Batch_Description</members>
+		<members>Xfleet_Integration_Request_Vehicle_Fields</members>
+		<name>CustomLabel</name>
+	</types>
+	<types>
+		<members>Integration_Requests_Processor.AutoIT_createCar</members>
+		<members>Integration_Requests_Processor.AutoIT_updateCar</members>
+		<members>Client_Credentials_Auth.AutoDesktopCC</members>
 		<name>CustomMetadata</name>
 	</types>
 	<types>
-		<members>AutoDesktopOAuth</members>
+		<members>Client_Credentials_Auth__mdt</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>AutoDesktop_Integration_User</members>
+		<name>CustomPermission</name>
+	</types>
+	<types>
+		<members>AutoDesktopCustom</members>
 		<name>ExternalCredential</name>
 	</types>
 	<!--types>
 		<members>Vehicle_Record_Page</members>
 		<name>FlexiPage</name>
-	</types>
+	</types-->
 	<types>
-		<members>SCR_Defleet_Send_Invoice_to_Buyer_LIGHTNING</members>
-		<members>SCR_Integration_Request_Run_The_Job</members>
-		<members>SCR_NAV_Utility_Flow</members>
 		<members>Update_Vehicle_fields_Automatically</members>
-		<members>VEHICLE_TRG_After_CalculateLeasingCost</members>
-		<members>VEHICLE_TRG_After_NavisionVehicle</members>
+		<members>VEHICLE_TRG_After_AutoDesktop</members>
 		<name>Flow</name>
 	</types>
 	<types>
-		<members>Xfleet_Admins</members>
-		<name>Group</name>
-	</types>
-	<types>
-		<members>Account-Leasing Company</members>
-		<members>Integration_Request__c-Integration Request Layout</members>
-		<members>Integration_Requests_Processor__mdt-Integration Requests Processor Layout</members>
 		<members>Vehicle__c-Vehicle Layout</members>
+		<members>Client_Credentials_Auth__mdt-Client Credentials Auth Layout</members>
 		<name>Layout</name>
-	</types-->
+	</types>
 	<types>
 		<members>AutoDesktopPROD</members>
 		<members>AutoDesktopTEST</members>
@@ -59,6 +87,10 @@
 		<name>PermissionSet</name>
 	</types>
 	<types>
+		<members>Xfleet</members>
+		<name>PlatformCachePartition</name>
+	</types>
+	<types>
 		<members>Admin</members>
 		<members>Car Control</members>
 		<members>Car Sales</members>
@@ -67,6 +99,18 @@
 		<members>Station</members>
 		<members>SIXT Salesforce API Only System Integrations</members>
 		<name>Profile</name>
+	</types>
+	<types>
+		<members>AutoDesktopToken</members>
+		<name>RemoteSiteSetting</name>
+	</types>
+	<types>
+		<members>AutoITVehicles_BasicResponse</members>
+		<name>StaticResource</name>
+	</types>
+	<types>
+		<members>Vehicle__c.Status_cannot_be_moved_without_price</members>
+		<name>ValidationRule</name>
 	</types>
 	<version>57.0</version>
 </Package>

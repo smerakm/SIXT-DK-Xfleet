@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>marek.smerak@wipro.com</contactEmail>
+    <label>AutoIT Inbound JWT</label>
+    <oauthConfig>
+        <callbackUrl>https://test.com</callbackUrl>
+        <certificate>MIIDAjCCAeoCCQDkejUvhmA9AzANBgkqhkiG9w0BAQsFADBDMQswCQYDVQQGEwJTRTESMBAGA1UEBwwJU3RvY2tob2xtMRIwEAYDVQQKDAlTSVhUREtERVYxDDAKBgNVBAsMA0RFVjAeFw0yMzA0MjExNDE4MzZaFw0yNDA0MjAxNDE4MzZaMEMxCzAJBgNVBAYTAlNFMRIwEAYDVQQHDAlTdG9ja2hvbG0xEjAQBgNVBAoMCVNJWFRES0RFVjEMMAoGA1UECwwDREVWMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6WB8Eao6A17hfH1NiEHQ+Z809T6fx2IBrNcM9KA1RykGSnM/jCrXeWnn+bk+oZ2q/1J5wN7nG+/btXupaPOudl2j+/NLWOi/NJb8hOfT3GN/Nb+/rtH295tCl8nHeXF84s21UXnUWLyDJIYk0NJ6lBbcHXrURb4rm/gFOvDzNlp0VYu1g8XNvitfoweNRg0f7vN3CMzvT9myNF+GFxgxSZo8LEp2sT8Jxlmsdeob5jjsE/NndBy8XbmHfquN4ntYmtyN+TYQ+HNoj1crlSA9DXZJUmTNVoY65TPwIijOc7JrPoquB7/pGr1h5BxgqWVWE1+NghQ3yONPdvFvEhi6AwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQDJezVXL4dA1G1aXqGgvrgIBdeiKNzGRY2s2LZ3f7mQK72GchdNVLvsb4V00h+Tb2EHneroSfNrG7cVqJTSWf4DXzPSo3Y0HYTU9hI5N2I9YZ+nvTkjkUDPjiyC+t3mdDSOwe+lA96Hpg47ZPBGsij2Yt2rFvxzYQ+EpA30ropb9Cdt3KSoC8R68DUs9rVdywmKoF3W+RC8AgTFWuJ+24JjVhB2GK1YYFgJXEfAysV7YFZz42roJqsyj6bK2904GEi9ebmHtg3CO/VuBJzkRWDts6GKWnywAyMXmOh2MZMNPfou+gQjURU6mTKJETjkB/W1d61ezoWjByaugPfsYePx</certificate>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>SIXT Salesforce API Only System Integrations</profileName>
+    <profileName>System Administrator</profileName>
+</ConnectedApp>
