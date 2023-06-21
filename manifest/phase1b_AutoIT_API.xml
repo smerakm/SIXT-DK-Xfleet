@@ -38,6 +38,10 @@
 		<members>Client_Credentials_Auth__mdt.clientId__c</members>
 		<members>Client_Credentials_Auth__mdt.clientSecret__c</members>
 		<members>Client_Credentials_Auth__mdt.tokenEndpoint__c</members>
+		<members>Integration_Call_Default_Values__mdt.API_Method__c</members>
+		<members>Integration_Call_Default_Values__mdt.Property_Name__c</members>
+		<members>Integration_Call_Default_Values__mdt.Property_Type__c</members>
+		<members>Integration_Call_Default_Values__mdt.Value__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
@@ -49,10 +53,13 @@
 		<members>Integration_Requests_Processor.AutoIT_createCar</members>
 		<members>Integration_Requests_Processor.AutoIT_updateCar</members>
 		<members>Client_Credentials_Auth.AutoDesktopCC</members>
+		<members>Integration_Call_Default_Values.AutoIT_createCar_showOnSalesList</members>
+		<members>Integration_Call_Default_Values.AutoIT_createCar_newOrUsed</members>
 		<name>CustomMetadata</name>
 	</types>
 	<types>
 		<members>Client_Credentials_Auth__mdt</members>
+		<members>Integration_Call_Default_Values__mdt</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
@@ -70,6 +77,7 @@
 	<types>
 		<members>Update_Vehicle_fields_Automatically</members>
 		<members>VEHICLE_TRG_After_AutoDesktop</members>
+		<members>VEHICLE_TRG_Before_Delete_AutoDesktop</members>
 		<name>Flow</name>
 	</types>
 	<types>

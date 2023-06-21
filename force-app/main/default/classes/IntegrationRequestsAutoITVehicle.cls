@@ -2,7 +2,8 @@ public with sharing class IntegrationRequestsAutoITVehicle implements Integratio
     
     public static final String METHOD_INSERT = 'AutoIT-createCar';
     public static final String METHOD_UPDATE = 'AutoIT-updateCar';
-    public static final String METHOD_STATUS_UPDATE = 'AutoIT-carStatusUpdate';
+    public static final String METHOD_DELETE = 'AutoIT-delete';
+    public static final String METHOD_STATUS_UPDATE = 'AutoIT-markAsSold';
 
     public Integration_Request__c process(Integration_Request__c req, Vehicle__c veh) {
         AutoITVehicle autoItApi;
@@ -11,28 +12,37 @@ public with sharing class IntegrationRequestsAutoITVehicle implements Integratio
             autoItApi = new AutoITVehicleCreate();
         } else if (req.API_Method__c.equals(METHOD_UPDATE)) {
             autoItApi = new AutoITVehicleUpdate (veh.AutoDesktop_Id__c);
+        } else if (req.API_Method__c.equals(METHOD_DELETE)) {
+            autoItApi = new AutoITVehicleDelete (veh.AutoDesktop_Id__c);
         } else if (req.API_Method__c.equals(METHOD_STATUS_UPDATE)) {
-            // STATUS UPDATE
-            // TODO status update
+            autoItApi = new AutoITVehicleMarkAsSold(veh.AutoDesktop_Id__c);
         }
         // is method supported?
         if (autoItApi != null) {
             // prepare data and call API
-            AutoITVehicleObject theCar;
+            HttpRequest apiReq;
             // are data already prepared in the request record?
             if (String.isNotBlank(req.Data__c)) {
-                theCar = (AutoITVehicleObject) JSON.deserialize(req.Data__c, AutoITVehicleObject.class);
-            } else {
-                // clone the vehicle to skip "SObject row was retrieved via SOQL without querying the requested field" error
-                Vehicle__c tempVehicle = veh.clone();
-                theCar = new AutoITVehicleObject(tempVehicle);
+                apiReq = autoItApi.prepareRequest(req.Data__c);
+            } else if (req.API_Method__c.equals(METHOD_INSERT)) {
+                AutoITVehicleObject theCar;
+                theCar = AutoITVehicleObject.createWithDefaults(veh, req.API_Method__c);
                 req.Data__c = JSON.serialize(theCar, true);
+                apiReq = autoItApi.prepareRequest(theCar);
+            } else if (req.API_Method__c.equals(METHOD_UPDATE)) {
+                // TODO
+                apiReq = autoItApi.prepareRequest(null);
+            } else if (req.API_Method__c.equals(METHOD_STATUS_UPDATE)) {
+                apiReq = autoItApi.prepareRequest(veh);
+                req.Data__c = apiReq.getBody();
+            } else {
+                apiReq = autoItApi.prepareRequest(null);
             }
-            HttpRequest apiReq = autoItApi.prepareRequest(theCar);
+
             HttpResponse apiResp = autoItApi.call(apiReq);
             // is it success?
             Integer statusCode = apiResp.getStatusCode();
-            if ((statusCode == 200) || (statusCode == 201)) {
+            if ((statusCode >= 200) && (statusCode < 300)) {
                 // SUCCESS
                 req.Status__c = IntegrationRequestsUtility.STATUS_SUCCESS;
                 // process respone after create a vehicle, to store Autodesktop Id in Salesforce

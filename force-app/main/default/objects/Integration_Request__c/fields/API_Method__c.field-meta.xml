@@ -41,9 +41,14 @@
                 <label>AutoIT-updateCar</label>
             </value>
             <value>
-                <fullName>AutoIT-carStatusUpdate</fullName>
+                <fullName>AutoIT-markAsSold</fullName>
                 <default>false</default>
-                <label>AutoIT-carStatusUpdate</label>
+                <label>AutoIT-markAsSold</label>
+            </value>
+            <value>
+                <fullName>AutoIT-delete</fullName>
+                <default>false</default>
+                <label>AutoIT-delete</label>
             </value>
             <value>
                 <fullName>UnitTest</fullName>

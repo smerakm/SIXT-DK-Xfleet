@@ -44,7 +44,9 @@ Model_Name__c,
 Model_Year__c,
 Registration_Date__c,
 Retail_Price__c,
-vinNumber__c</value>
+vinNumber__c,
+Confirmed_Remarketing_Price_Converted__c
+</value>
     </labels>
     <labels>
         <fullName>Xfleet_Label_License_Plate_Invoice_Description</fullName>

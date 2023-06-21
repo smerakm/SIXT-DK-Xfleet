@@ -43,6 +43,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VehicleResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse400'
+        '422': 
+          description: DML exception
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /Vehicle/{vehicleId}:
     patch:
       tags:
@@ -84,6 +119,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VehicleResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse400'
+        '404': 
+          description: Vehicle not found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "List has no rows for assignment to SObject"
+        '422': 
+          description: DML exception
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "Update failed. First exception on row 0 with id a0A0Q000003FoGaUAK; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "Internal error"
     get:
       tags:
         - Vehicle
@@ -110,6 +195,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Vehicle'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse400'
+        '404': 
+          description: Vehicle not found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "List has no rows for assignment to SObject"
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /InvoiceRequest:
     post:
       tags:
@@ -138,6 +258,70 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InvoiceRequestResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message : "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
+                errorCode : "JSON_PARSER_ERROR"
+        '404': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "List has no rows for assignment to SObject"
+        '422': 
+          description: DML exception
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "Update failed. First exception on row 0 with id a0A0Q000003FoGaUAK; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
+        '424': 
+          description: Navision request failed
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errorMessage: "Resource not found in Navision!"
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 components:
   securitySchemes:
     bearerAuth:
@@ -442,5 +626,20 @@ components:
         id:
           type: string
           example: a0BAO000000IxAS1A0
+    ErrorResponse:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+          example: "value cannot be null"
+    ErrorResponse400:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
+        errorCode:
+          type: string
+          example: "JSON_PARSER_ERROR"
 security:
   - bearerAuth: []

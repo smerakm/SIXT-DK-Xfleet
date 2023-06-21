@@ -10,18 +10,21 @@ global with sharing class REST_XfleetVehicle {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
 
-        VehicleWrapper respBody;
+        VehicleWrapper respBody = new VehicleWrapper();
         try {
             // need vehicle Id from URI
             String vehicleId = req.requestURI.substring(req.requestURI.lastIndexOf('/') + 1);
             Vehicle__c xfleetVehicle = queryVehicle(vehicleId);
             respBody = vehicle2Wrapper(xfleetVehicle);
             res.statusCode = 200;
+        } catch (StringException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (QueryException ex) {
+            res.statusCode = 404;
+            respBody.errorMessage = ex.getMessage();
         } catch (Exception ex) {
-            System.debug(LoggingLevel.ERROR, 'error in vehicle create processing: ' + ex.getMessage());
-            System.debug(LoggingLevel.ERROR, 'cause: ' + ex.getCause());
             res.statusCode = 500;
-            respBody = new VehicleWrapper();
             respBody.errorMessage = ex.getMessage();
         }
         res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
@@ -32,10 +35,10 @@ global with sharing class REST_XfleetVehicle {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
 
+        System.debug('request body: ' + req.requestBody);
+
         VehicleResponseWrapper respBody = new VehicleResponseWrapper();
         try {
-            System.debug(vehicle.range);
-            System.debug(vehicle.firstRegistrationDate);
             Vehicle__c xfleetVehicle = wrapper2Vehicle(vehicle, null);
             // batch assignment;
             xfleetVehicle.Vehicle_Batch__c = getBatchId(vehicle.vehicleBatchName);
@@ -43,10 +46,21 @@ global with sharing class REST_XfleetVehicle {
             insert xfleetVehicle;
             respBody.id = xfleetVehicle.Id;
             res.statusCode = 201;
+        } catch (JSONException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.errorMessage = ex.getMessage();
+        } catch (TypeException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.errorMessage = ex.getMessage();
+        } catch (DmlException ex) {
+            res.statusCode = 422;
+            respBody = new VehicleResponseWrapper();
+            respBody.errorMessage = ex.getMessage();
         } catch (Exception ex) {
-            System.debug(LoggingLevel.ERROR, 'error in vehicle create processing: ' + ex.getMessage());
-            System.debug(LoggingLevel.ERROR, 'cause: ' + ex.getCause());
             res.statusCode = 500;
+            respBody = new VehicleResponseWrapper();
             respBody.errorMessage = ex.getMessage();
         }
         res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
@@ -61,14 +75,31 @@ global with sharing class REST_XfleetVehicle {
         try {
             // need vehicle Id from URI
             String vehicleId = req.requestURI.substring(req.requestURI.lastIndexOf('/') + 1);
-            Vehicle__c xfleetVehicle = wrapper2Vehicle(vehicle, Id.valueOf(vehicleId));
+            // check if vehicle exist
+            Vehicle__c xfleetVehicle = queryVehicle(Id.valueOf(vehicleId));
+            // if no exception is thrown convert request data to Xfleet vehicle
+            xfleetVehicle = wrapper2Vehicle(vehicle, Id.valueOf(vehicleId));
             System.debug(LoggingLevel.DEBUG, 'vehicle before update: ' + xfleetVehicle);
             update xfleetVehicle;
             respBody.id = xfleetVehicle.Id;
             res.statusCode = 200;
+        } catch (JSONException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (StringException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (TypeException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (QueryException ex) {
+            res.statusCode = 404;
+            respBody.errorMessage = ex.getMessage();
+        } catch (DmlException ex) {
+            res.statusCode = 422;
+            respBody.errorMessage = ex.getMessage();
         } catch (Exception ex) {
-            System.debug(LoggingLevel.ERROR, 'error in vehicle create processing: ' + ex.getMessage());
-            System.debug(LoggingLevel.ERROR, 'cause: ' + ex.getCause());
+            System.debug(LoggingLevel.ERROR, 'exception type: ' + ex.getTypeName());
             res.statusCode = 500;
             respBody.errorMessage = ex.getMessage();
         }

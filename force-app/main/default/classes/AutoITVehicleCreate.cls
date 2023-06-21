@@ -1,10 +1,16 @@
 public with sharing class AutoITVehicleCreate extends AutoITVehicle {
     public override HttpRequest prepareRequest(Object params) {
-        AutoITVehicleObject car = (AutoITVehicleObject) params;
+        String reqBody;
+        if (params instanceOf String) {
+            reqBody = JSON.serialize(JSON.deserializeUntyped( (String) params));
+        } else {
+            AutoITVehicleObject car = (AutoITVehicleObject) params;
+            reqBody = JSON.serialize(car, true);
+        }
         HttpRequest req = new HttpRequest();
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json');
-        req.setBody(JSON.serialize(car, true));
+        req.setBody(reqBody);
         return req;
     }
 

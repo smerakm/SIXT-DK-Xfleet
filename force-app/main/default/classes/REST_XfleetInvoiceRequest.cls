@@ -11,9 +11,28 @@ global with sharing class REST_XfleetInvoiceRequest {
         try {
             respBody.id = processInvoice(invoiceRequest);
             res.statusCode = 201;
+        } catch (InvoiceRequestValidationException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (StringException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (JSONException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (TypeException ex) {
+            res.statusCode = 400;
+            respBody.errorMessage = ex.getMessage();
+        } catch (QueryException ex) {
+            res.statusCode = 404;
+            respBody.errorMessage = ex.getMessage();
+        } catch (DmlException ex) {
+            res.statusCode = 422;
+            respBody.errorMessage = ex.getMessage();
+        } catch (NavisionInvoiceException ex) {
+            res.statusCode = 424;
+            respBody.errorMessage = ex.getMessage();
         } catch (Exception ex) {
-            System.debug(LoggingLevel.ERROR, 'error in invoice processing: ' + ex.getMessage());
-            System.debug(LoggingLevel.ERROR, 'cause: ' + ex.getCause());
             res.statusCode = 500;
             respBody.errorMessage = ex.getMessage();
         }

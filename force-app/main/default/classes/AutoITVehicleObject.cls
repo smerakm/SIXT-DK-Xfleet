@@ -101,7 +101,9 @@ public with sharing class AutoITVehicleObject {
     public Decimal repurchasePrice { get; set; }
 
     // Convert Xfleet Vehicle__c to API Vehicle object
-    public AutoITVehicleObject(Vehicle__c vehicle) {
+    // deprecated
+    public void updateFromXfleetVehicle(Vehicle__c vehicle) {
+        this.externalId = vehicle.Id;
         this.vin = vehicle.vinNumber__c;
         this.regNo = vehicle.License_Plate_System__c;
         this.mileage = (Integer) vehicle.Current_KM__c;
@@ -124,4 +126,44 @@ public with sharing class AutoITVehicleObject {
         this.lastVehicleInspection = vehicle.Last_Vehicle_Inspection__c;
         this.description = vehicle.Car_remark__c;
     }
+
+    public static AutoITVehicleObject createWithDefaults(Vehicle__c xfleetVehicle, String callMethod) {
+        AutoITVehicleObject autoItVehicleRecord;
+        Map<String, Object> defaultValues = getDefaultProperties(callMethod);
+        if (defaultValues.size() > 0) {
+            autoItVehicleRecord = (AutoITVehicleObject)JSON.deserialize(JSON.serialize(defaultValues), AutoITVehicleObject.class);
+        } else {
+            autoItVehicleRecord = new AutoITVehicleObject();
+        }
+        autoItVehicleRecord.updateFromXfleetVehicle(xfleetVehicle);
+        return autoItVehicleRecord;
+    }
+
+        // TODO: shall have it owns utility class
+        public static Map<String, Object> getDefaultProperties(String apiCallName) {
+            Map<String, Object> defaultProperties = new Map<String, Object>();
+            // get all default properties from custom metadata
+            List<Integration_Call_Default_Values__mdt> defaultValues = [SELECT Property_Name__c, Property_Type__c, Value__c FROM Integration_Call_Default_Values__mdt WHERE API_Method__c = :apiCallName];
+            for (Integration_Call_Default_Values__mdt singleValue : defaultValues) {
+                switch on singleValue.Property_Type__c {
+                    when 'Boolean' {
+                        Boolean v = Boolean.valueOf(singleValue.Value__c);
+                        defaultProperties.put(singleValue.Property_Name__c, v);
+                    }
+                    when 'Integer' {
+                        Integer v = Integer.valueOf(singleValue.Value__c);
+                        defaultProperties.put(singleValue.Property_Name__c, v);
+                    }
+                    when 'Decimal' {
+                        Decimal v = Decimal.valueOf(singleValue.Value__c);
+                        defaultProperties.put(singleValue.Property_Name__c, v);
+                    }
+                    when else {
+                        // String doesn't need casting
+                        defaultProperties.put(singleValue.Property_Name__c, singleValue.Value__c);
+                    }
+                }
+            }
+            return defaultProperties;
+        } 
 }
