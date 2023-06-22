@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIXT- 115 2%2E0</fullName>
+    <description>DAL SFTP Integration</description>
+    <types>
+        <members>TransportRequestUtility</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Transport_Request__c.Account_Number__c</members>
+        <members>Transport_Request__c.Arrived_at_DAL_on__c</members>
+        <members>Transport_Request__c.Booking_Received__c</members>
+        <members>Transport_Request__c.Brand__c</members>
+        <members>Transport_Request__c.DAL_Return_Car__c</members>
+        <members>Transport_Request__c.Day_to_Day__c</members>
+        <members>Transport_Request__c.Day_to_day_Account_Number__c</members>
+        <members>Transport_Request__c.Dealer__c</members>
+        <members>Transport_Request__c.Delivered_On__c</members>
+        <members>Transport_Request__c.Delivery_Location_Code__c</members>
+        <members>Transport_Request__c.Department__c</members>
+        <members>Transport_Request__c.From_Location_Address__c</members>
+        <members>Transport_Request__c.From_Location__c</members>
+        <members>Transport_Request__c.License_plate__c</members>
+        <members>Transport_Request__c.Model__c</members>
+        <members>Transport_Request__c.Pickup_Location_Code__c</members>
+        <members>Transport_Request__c.Planned_On__c</members>
+        <members>Transport_Request__c.Reference_Code__c</members>
+        <members>Transport_Request__c.Registration_Number_BMW__c</members>
+        <members>Transport_Request__c.Requested_Date__c</members>
+        <members>Transport_Request__c.SPIL_Comments__c</members>
+        <members>Transport_Request__c.Status__c</members>
+        <members>Transport_Request__c.To_Location_Address__c</members>
+        <members>Transport_Request__c.To_Location_Regular_Transport__c</members>
+        <members>Transport_Request__c.To_Location__c</members>
+        <members>Transport_Request__c.VIN_Number__c</members>
+        <members>Transport_Request__c.Vehicle__c</members>
+        <members>Vehicle__c.Dealer_Name__c</members>
+        <members>Vehicle__c.Defleet_Pickup_Location_Name__c</members>
+        <members>Vehicle__c.Infleet_Pickup_Location_Name__c</members>
+        <members>Vehicle__c.Station_Account_Number__c</members>
+        <members>Vehicle__c.Station_Name__c</members>
+        <members>Vehicle__c.department__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Transport_Request__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Transport_Request__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Create_Transportation_Request</members>
+        <members>Update_Transport_Request_Status</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Transport_Request__c-Transport Request Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Transport_Request__c.Not_Ready</members>
+        <members>Transport_Request__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Car Control</members>
+        <members>Car Sales</members>
+        <members>Minilease</members>
+        <members>Procurement</members>
+        <members>Station</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Vehicle__c.Transport_Request</members>
+        <name>WebLink</name>
+    </types>
+    <version>57.0</version>
+</Package>
