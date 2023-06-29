@@ -6,7 +6,7 @@ public class IntegrationRequestsAutoITVehicle_Test {
 
     private final static String MOCK_OK = 'AutoITVehicles_BasicResponse';
 
-    private final static String VEHICLE_QUERY = 'SELECT id, vinNumber__c, License_Plate_System__c, Current_KM__c, Brand__c, Model_Name__c, Model__c, First_Registration_Date__c, color__c, Retail_Price__c, Fuel_type__c, Model_Year__c, Last_Vehicle_Inspection__c, Car_remark__c, AutoDesktop_Id__c FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN';
+    private final static String VEHICLE_QUERY = 'SELECT ' + Label.Xfleet_Integration_Request_Vehicle_Fields + ' FROM Vehicle__c WHERE vinNumber__c = :TEST_VIN';
 
     @TestSetup
     static void makeData() {
@@ -52,6 +52,52 @@ public class IntegrationRequestsAutoITVehicle_Test {
         veh.AutoDesktop_Id__c = TEST_VEHICLE_AUTODESKTOP_ID;
         Integration_Request__c ir = new Integration_Request__c();
         ir.API_Method__c = IntegrationRequestsAutoITVehicle.METHOD_UPDATE;
+        ir.Vehicle__c = veh.Id;
+        IntegrationRequestsAutoITVehicle testProcessor = new IntegrationRequestsAutoITVehicle();
+        Test.startTest();
+        ir = testProcessor.process(ir, veh);
+        Test.stopTest();
+        System.assertEquals(IntegrationRequestsUtility.STATUS_SUCCESS, ir.Status__c, 'Wrong status set!');
+    }
+
+    @isTest
+    public static void markAsSoldTest() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_OK);
+        mock.setStatusCode(204);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
+        veh.AutoDesktop_Id__c = TEST_VEHICLE_AUTODESKTOP_ID;
+        Integration_Request__c ir = new Integration_Request__c();
+        ir.API_Method__c = IntegrationRequestsAutoITVehicle.METHOD_STATUS_UPDATE;
+        ir.Vehicle__c = veh.Id;
+        IntegrationRequestsAutoITVehicle testProcessor = new IntegrationRequestsAutoITVehicle();
+        Test.startTest();
+        ir = testProcessor.process(ir, veh);
+        Test.stopTest();
+        System.assertEquals(IntegrationRequestsUtility.STATUS_SUCCESS, ir.Status__c, 'Wrong status set!');
+    }
+
+    @isTest
+    public static void deleteTest() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_OK);
+        mock.setStatusCode(204);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        Vehicle__c veh = (Vehicle__c) Database.query(VEHICLE_QUERY);
+        veh.AutoDesktop_Id__c = TEST_VEHICLE_AUTODESKTOP_ID;
+        Integration_Request__c ir = new Integration_Request__c();
+        ir.API_Method__c = IntegrationRequestsAutoITVehicle.METHOD_DELETE;
         ir.Vehicle__c = veh.Id;
         IntegrationRequestsAutoITVehicle testProcessor = new IntegrationRequestsAutoITVehicle();
         Test.startTest();

@@ -55,7 +55,7 @@ public with sharing class IntegrationRequestsUtility {
         // get all integration request since last job run to get impacted vehicles
         Datetime lastRun = getLastJobRunTime();
         Set<Id> vehicles4UpdateIds = new Set<Id>();
-        for (Integration_Request__c req : [SELECT Vehicle__c FROM Integration_Request__c WHERE LastModifiedDate >= :lastRun]) {
+        for (Integration_Request__c req : [SELECT Vehicle__c FROM Integration_Request__c WHERE LastModifiedDate >= :lastRun AND Vehicle__c != null]) {
             vehicles4UpdateIds.add(req.Vehicle__c);
         }
         // any vehicles for update?

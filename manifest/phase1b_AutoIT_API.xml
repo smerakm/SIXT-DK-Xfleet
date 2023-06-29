@@ -15,6 +15,7 @@
 		<members>REST_XfleetInvoiceRequest_Test</members>
 		<members>REST_XfleetVehicle</members>
 		<members>REST_XfleetVehicle_Test</members>
+		<members>IntegrationRequestsUtility</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

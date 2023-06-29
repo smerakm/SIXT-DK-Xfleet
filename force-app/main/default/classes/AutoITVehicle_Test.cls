@@ -27,7 +27,7 @@ public with sharing class AutoITVehicle_Test {
 
         // test the call out
         AutoITVehicle autoITApi = new AutoITVehicleCreate();
-        AutoITVehicleObject reqParams = new AutoITVehicleObject(tstVehicle);
+        AutoITVehicleObject reqParams = AutoITVehicleObject.createWithDefaults(tstVehicle, IntegrationRequestsAutoITVehicle.METHOD_INSERT);
         HttpRequest autoITApiReq = autoITApi.prepareRequest(reqParams);
         HttpResponse autoITApiResp = autoITApi.call(autoITApiReq);
 
@@ -57,7 +57,7 @@ public with sharing class AutoITVehicle_Test {
 
         // test the call out
         AutoITVehicle autoITApi = new AutoITVehicleUpdate(TEST_AUTODESKTOP_VEHICLE_ID);
-        AutoITVehicleObject reqParams = new AutoITVehicleObject(tstVehicle);
+        AutoITVehicleObject reqParams = AutoITVehicleObject.createWithDefaults(tstVehicle, IntegrationRequestsAutoITVehicle.METHOD_UPDATE);
         HttpRequest autoITApiReq = autoITApi.prepareRequest(reqParams);
         HttpResponse autoITApiResp = autoITApi.call(autoITApiReq);
 
@@ -65,12 +65,86 @@ public with sharing class AutoITVehicle_Test {
     }
 
     @isTest
+    public static void updateCarPatchData() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_OK);
+        mock.setStatusCode(200);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        // test data
+        Vehicle__c tstVehicle = new Vehicle__c();
+        tstVehicle.vinNumber__c = TEST_VIN_NO;
+        tstVehicle.License_plate_system__c = TEST_REG_NO;
+        tstVehicle.First_Registration_Date__c = Date.today();
+        tstVehicle.Current_KM__c = 1983;
+
+        // construct patch data request
+        List<String> tstFields = new List<String>{'License_plate_system__c', 'First_Registration_Date__c', 'Current_KM__c'};
+        AutoITVehicleUpdate.VehiclePatchData tstPatchData = new AutoITVehicleUpdate.VehiclePatchData();
+        tstPatchData.veh = tstVehicle;
+        tstPatchData.updatedFields = tstFields;
+        List<AutoITVehicleUpdate.VehiclePatchData> tstPatchDataReq = new List<AutoITVehicleUpdate.VehiclePatchData>();
+        tstPatchDataReq.add(tstPatchData);
+
+        // invoke create body method
+        List<String> reqBodies = AutoITVehicleUpdate.createPatchBody(tstPatchDataReq);
+        String reqBody = reqBodies.get(0);
+
+        // test the call out
+        AutoITVehicle autoITApi = new AutoITVehicleUpdate(TEST_AUTODESKTOP_VEHICLE_ID);
+        HttpRequest autoITApiReq = autoITApi.prepareRequest(reqBody);
+        HttpResponse autoITApiResp = autoITApi.call(autoITApiReq);
+
+        System.assertEquals(200, autoITApiResp.getStatusCode(), 'Expected Updated/200 response code!');
+    }
+    
+
+    @isTest
+    public static void deleteCar() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_OK);
+        mock.setStatusCode(204);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        // test the call out
+        AutoITVehicle autoITApi = new AutoITVehicleDelete(TEST_AUTODESKTOP_VEHICLE_ID);
+        HttpRequest autoITApiReq = autoITApi.prepareRequest(null);
+        HttpResponse autoITApiResp = autoITApi.call(autoITApiReq);
+
+        System.assertEquals(204, autoITApiResp.getStatusCode(), 'Expected No content/204 response code!');
+    }
+
+    @isTest
+    public static void deleteCarInvocable() {
+        // Use StaticResourceCalloutMock built-in class to set mock response
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource(MOCK_OK);
+        mock.setStatusCode(204);
+        mock.setHeader('Content-Type', 'application/json');
+
+        // Set the mock callout mode
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        // test the future call
+        AutoITVehicleDelete.deleteVehicle(new List<String>{TEST_AUTODESKTOP_VEHICLE_ID});
+    }
+
+
+    @isTest
     public static void objectTest() {
         Vehicle__c tstVehicle = new Vehicle__c();
         tstVehicle.vinNumber__c = TEST_VIN_NO;
         tstVehicle.License_plate__c = TEST_REG_NO;
         tstVehicle.Model_Name__c = 'XC60';
-        AutoITVehicleObject tstObject = new AutoITVehicleObject(tstVehicle);
+        AutoITVehicleObject tstObject = AutoITVehicleObject.createWithDefaults(tstVehicle, null);
         tstObject.absoluteDivestitureAuction = false;
         tstObject.additionalVariantDesignation = 'unitTest';
         tstObject.bodyAdditionalDesignation = 'unitTest';

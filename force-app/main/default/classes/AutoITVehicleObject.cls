@@ -115,9 +115,15 @@ public with sharing class AutoITVehicleObject {
             this.modelName = vehicle.Model__c;
         }
         // registration date
-        this.firstRegistrationYear = vehicle.First_Registration_Date__c?.year();
-        this.firstRegistrationMonth = vehicle.First_Registration_Date__c?.month();
-        this.firstRegistrationDay = vehicle.First_Registration_Date__c?.day();
+        if (vehicle.First_Registration_Date__c == null && vehicle.Registration_Date__c != null) {
+            this.firstRegistrationYear = vehicle.Registration_Date__c?.year();
+            this.firstRegistrationMonth = vehicle.Registration_Date__c?.month();
+            this.firstRegistrationDay = vehicle.Registration_Date__c?.day();
+        } else {
+            this.firstRegistrationYear = vehicle.First_Registration_Date__c?.year();
+            this.firstRegistrationMonth = vehicle.First_Registration_Date__c?.month();
+            this.firstRegistrationDay = vehicle.First_Registration_Date__c?.day();
+        }
         // complete the mapping
         this.colorName = vehicle.color__c;
         this.priceRetailDKK = (Integer) vehicle.Retail_Price__c;

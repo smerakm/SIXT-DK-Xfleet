@@ -68,7 +68,11 @@ public with sharing class AutoITVehicleUpdate extends AutoITVehicle {
         PatchRequest singlePatchRequest = new PatchRequest();
         singlePatchRequest.op = OPERATION;
         singlePatchRequest.path = PATH_PREFIX + autoDesktopFieldName;
-        singlePatchRequest.value = value;
+        if (value instanceOf Decimal) {
+            singlePatchRequest.value = Integer.valueOf(value);    
+        } else {
+            singlePatchRequest.value = value;
+        }
         return singlePatchRequest;
     }
 
