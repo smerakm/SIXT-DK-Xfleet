@@ -34,6 +34,8 @@
         <members>Transport_Request__c.To_Location__c</members>
         <members>Transport_Request__c.VIN_Number__c</members>
         <members>Transport_Request__c.Vehicle__c</members>
+        <members>Transport_Request__c.Tracking_Number__c</members>
+		<members>Transport_Request__c.Tracking_Link__c</members>
         <members>Vehicle__c.Dealer_Name__c</members>
         <members>Vehicle__c.Defleet_Pickup_Location_Name__c</members>
         <members>Vehicle__c.Infleet_Pickup_Location_Name__c</members>
