@@ -4,6 +4,18 @@ global with sharing class REST_XfleetVehicle {
     global static final String ERROR_NO_BUYER = 'Buyer cannot be found in Xfleet!';
     global static final String ERROR_NO_BATCH = 'Vehicle Batch cannot be found in Xfleet!';
 
+    private static final Map<String, String> MAP_ERROR_CODES = new Map<String, String>{
+        'System.QueryException' => 'RESOURCE_NOT_FOUND',
+        'System.TypeException' => 'TYPE_ERROR',
+        'System.JSONException' => 'JSON_PARSER_ERROR',
+        'System.DmlException' => 'DML_ERROR',
+        'System.StringException' => 'INVALID_ID',
+        'REST_XfleetVehicle.XfleetVehicleInvalidBuyerException' => 'INVALID_BUYER',
+        'REST_XfleetVehicle.XfleetVehicleInvalidBatchException' => 'INVALID_BATCH',
+        'REST_XfleetVehicle.XfleetVehicleException' => 'XFLEET_ERROR',
+        'REST_XfleetVehicle.XfleetVehicleNavisionException' => 'NAVISION_ERROR',
+        'DUPLICATE_VALUE' => 'DUPLICATE_VALUE'
+    };
 
     @HttpGet
     global static void doGet() {
@@ -19,15 +31,25 @@ global with sharing class REST_XfleetVehicle {
             res.statusCode = 200;
         } catch (StringException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (QueryException ex) {
             res.statusCode = 404;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (Exception ex) {
             res.statusCode = 500;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         }
-        res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
+        // is it success or error?
+        if (respBody.errorCode != null) {
+            // error response:
+            res.responseBody = Blob.valueOf(JSON.serialize(new List<VehicleWrapper>{respBody}, true));
+        } else {
+            // success response
+            res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));  
+        }
     }
 
     @HttpPost
@@ -42,28 +64,70 @@ global with sharing class REST_XfleetVehicle {
             Vehicle__c xfleetVehicle = wrapper2Vehicle(vehicle, null);
             // batch assignment;
             xfleetVehicle.Vehicle_Batch__c = getBatchId(vehicle.vehicleBatchName);
+            // process Navision request
+            Integration_Request__c navIntegrationReq;
+            if (vehicle.createInNavision != null && vehicle.createInNavision) {
+                navIntegrationReq = createVehicleInNavision(vehicle);
+                xfleetVehicle.Created_in_Navision_at__c = System.now();
+            }
             // insert into Xfleet
             insert xfleetVehicle;
+            // save navigation request log
+            if (navIntegrationReq != null) {
+                navIntegrationReq.Vehicle__c = xfleetVehicle.Id;
+                insert navIntegrationReq;
+            } 
             respBody.id = xfleetVehicle.Id;
             res.statusCode = 201;
         } catch (JSONException ex) {
             res.statusCode = 400;
             respBody = new VehicleResponseWrapper();
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (TypeException ex) {
             res.statusCode = 400;
             respBody = new VehicleResponseWrapper();
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (DmlException ex) {
-            res.statusCode = 422;
+            res.statusCode = 400;
             respBody = new VehicleResponseWrapper();
-            respBody.errorMessage = ex.getMessage();
+            if (ex.getMessage().contains('DUPLICATE_VALUE')) {
+                respBody.message = ex.getMessage();
+                respBody.errorCode = MAP_ERROR_CODES.get('DUPLICATE_VALUE');
+            } else {
+                respBody.message = ex.getMessage();
+                respBody.errorCode = getErrorCode(ex); 
+            }
+        } catch (XfleetVehicleInvalidBuyerException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (XfleetVehicleInvalidBatchException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (XfleetVehicleException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (Exception ex) {
             res.statusCode = 500;
             respBody = new VehicleResponseWrapper();
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         }
-        res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
+        // is it success or error?
+        if (respBody.errorCode != null) {
+            // error response:
+            res.responseBody = Blob.valueOf(JSON.serialize(new List<VehicleResponseWrapper>{respBody}, true));
+        } else {
+            // success response
+            res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));  
+        }
     }
 
     @HttpPatch
@@ -85,25 +149,53 @@ global with sharing class REST_XfleetVehicle {
             res.statusCode = 200;
         } catch (JSONException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (StringException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (TypeException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (QueryException ex) {
             res.statusCode = 404;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (DmlException ex) {
-            res.statusCode = 422;
-            respBody.errorMessage = ex.getMessage();
+            res.statusCode = 400;
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (XfleetVehicleInvalidBuyerException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (XfleetVehicleInvalidBatchException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (XfleetVehicleException ex) {
+            res.statusCode = 400;
+            respBody = new VehicleResponseWrapper();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (Exception ex) {
             System.debug(LoggingLevel.ERROR, 'exception type: ' + ex.getTypeName());
             res.statusCode = 500;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         }
-        res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
+        // is it success or error?
+        if (respBody.errorCode != null) {
+            // error response:
+            res.responseBody = Blob.valueOf(JSON.serialize(new List<VehicleResponseWrapper>{respBody}, true));
+        } else {
+            // success response
+            res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));  
+        }
     }
 
     private static Vehicle__c queryVehicle(Id vehicleId) {
@@ -165,11 +257,44 @@ global with sharing class REST_XfleetVehicle {
         } else {
             List<vehicleBatch__c> batches = [SELECT Id FROM vehicleBatch__c WHERE Name = :batchName LIMIT 1];
             if (batches.isEmpty()) {
-                throw new XfleetVehicleException(ERROR_NO_BATCH);
+                throw new XfleetVehicleInvalidBatchException(ERROR_NO_BATCH);
             } 
             batchId = batches.get(0).Id;
         }
         return batchId;
+    }
+
+    private static Integration_Request__c createVehicleInNavision(VehicleWrapper reqVehicle) {
+        // create NAV request data
+        NAVCarsObject navReqData = new NAVCarsObject(
+            reqVehicle.vin,
+            reqVehicle.regNo,
+            null,
+            reqVehicle.brandName + ' ' + reqVehicle.modelName,
+            reqVehicle.mileage
+        );
+        // construct NAV request
+        Integration_Request__c navReq = new Integration_Request__c();
+        navReq.API_Method__c = IntegrationRequestsNAVCars.METHOD_CREATE;
+        navReq.Data__c = JSON.serialize(navReqData, true);
+        // call NAV
+        IntegrationRequestsNAVCars reqProcessor = new IntegrationRequestsNAVCars();
+        // skip in Test
+        if (Test.isRunningTest()) {
+            navReq.Status__c = IntegrationRequestsUtility.STATUS_SUCCESS;
+        } else {
+            navReq = reqProcessor.process(navReq, null);
+        }
+        if (navReq.Status__c != IntegrationRequestsUtility.STATUS_SUCCESS) {
+            // ignore "already exists" error, so this API call can be re-tried
+            if (String.isNotBlank(navReq.Message__c) && navReq.Message__c.contains('The Car already exists')) {
+                // skip
+                System.debug(LoggingLevel.WARN, 'Vehicle already exists in NAVISION: ' + navReq.Message__c);
+            } else {
+                throw new XfleetVehicleNavisionException(navReq.Message__c);
+            }
+        }
+        return navReq;
     }
 
     private static VehicleWrapper vehicle2Wrapper(Vehicle__c vehicle) {
@@ -269,7 +394,7 @@ global with sharing class REST_XfleetVehicle {
         if (String.isNotBlank(wrapper.buyerAccountName)) {
             List<Account> buyerAccounts = [SELECT Name FROM Account WHERE Name = :wrapper.buyerAccountName LIMIT 1];
             if (buyerAccounts.isEmpty()) {
-                throw new XfleetVehicleException(ERROR_NO_BUYER);
+                throw new XfleetVehicleInvalidBuyerException(ERROR_NO_BUYER);
             }
             vehicle.Buyer_Account__c = buyerAccounts.get(0).Id;
         }
@@ -330,13 +455,28 @@ global with sharing class REST_XfleetVehicle {
         public String vehicleBatchName;
         public String vin;
         // add error message
-        public String errorMessage;
+        public String message;
+        public String errorCode;
+        public Boolean createInNavision;
     }
 
     global class VehicleResponseWrapper {
         public String id;
-        public String errorMessage;
+        public String message;
+        public String errorCode;
+    }
+
+    private static String getErrorCode(Exception ex) {
+        String exceptionName = ex.getTypeName();
+        System.debug('error in Invoice request processing, exception type name: ' + exceptionName);
+        if (MAP_ERROR_CODES.containsKey(exceptionName)) {
+            return MAP_ERROR_CODES.get(exceptionName);
+        }
+        return 'UNEXCPECTED_ERROR';
     }
 
     global class XfleetVehicleException extends Exception {}
+    global class XfleetVehicleInvalidBuyerException extends Exception {}
+    global class XfleetVehicleInvalidBatchException extends Exception {}
+    global class XfleetVehicleNavisionException extends Exception {}
 }

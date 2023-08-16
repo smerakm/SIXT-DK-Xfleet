@@ -16,9 +16,8 @@
         <scopes>RefreshToken</scopes>
     </oauthConfig>
     <oauthPolicy>
-        <ipRelaxation>ENFORCE</ipRelaxation>
+        <ipRelaxation>BYPASS</ipRelaxation>
         <refreshTokenPolicy>zero</refreshTokenPolicy>
     </oauthPolicy>
-    <profileName>SIXT Salesforce API Only System Integrations</profileName>
-    <profileName>System Administrator</profileName>
+    <permissionSetName>AutoDesktop Inbound User</permissionSetName>
 </ConnectedApp>

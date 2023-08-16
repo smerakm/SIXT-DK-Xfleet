@@ -41,7 +41,7 @@ public inherited sharing class UtilityCommon {
 
             System.debug('fieldName: ' + fieldName);
 
-            String fieldValue = null;
+            String fieldValue = '';
             SObject o = obj;
 
             // check if the field is from related object
@@ -53,7 +53,9 @@ public inherited sharing class UtilityCommon {
                 o = o.getSobject(objectName);
             }
             // get the field value (as String)
-            fieldValue = (String) o.get(fieldName);
+            if (o != null && fieldName != null) {
+                fieldValue = (String) o.get(fieldName);
+            }
             // replace / merge it into the label
             theLabel = theLabel.replace(openBracket + fieldNameWhole + closeBracket, fieldValue);
 

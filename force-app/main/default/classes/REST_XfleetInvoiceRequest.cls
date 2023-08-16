@@ -2,6 +2,17 @@
 global with sharing class REST_XfleetInvoiceRequest {
     private static final String ANONYM_TEXT = 'anonymous-gdpr';
 
+    private static final Map<String, String> MAP_ERROR_CODES = new Map<String, String>{
+        'System.QueryException' => 'RESOURCE_NOT_FOUND',
+        'System.TypeException' => 'TYPE_ERROR',
+        'System.JSONException' => 'JSON_PARSER_ERROR',
+        'System.DmlException' => 'DML_ERROR',
+        'REST_XfleetInvoiceRequest.BuyerAccountIsMissingException' => 'BUYER_MISSING',
+        'REST_XfleetInvoiceRequest.InvoiceRequestValidationException' => 'VALIDATION_ERROR',
+        'REST_XfleetInvoiceRequest.NavisionInvoiceException' => 'NAVISION_ERROR',
+        'REST_XfleetInvoiceRequest.ExchangeVehicleNotExistException' => 'EXCHANGE_VEHICLE_NOT_FOUND'
+    };
+
     @HttpPost
     global static void doPost(InvoiceRequestWrapper invoiceRequest) {
         RestRequest req = RestContext.request;
@@ -13,30 +24,49 @@ global with sharing class REST_XfleetInvoiceRequest {
             res.statusCode = 201;
         } catch (InvoiceRequestValidationException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
-        } catch (StringException ex) {
-            res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (JSONException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (TypeException ex) {
             res.statusCode = 400;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (QueryException ex) {
             res.statusCode = 404;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (DmlException ex) {
-            res.statusCode = 422;
-            respBody.errorMessage = ex.getMessage();
+            res.statusCode = 400;
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (NavisionInvoiceException ex) {
-            res.statusCode = 424;
-            respBody.errorMessage = ex.getMessage();
+            res.statusCode = 400;
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (BuyerAccountIsMissingException ex) {
+            res.statusCode = 400;
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
+        } catch (ExchangeVehicleNotExistException ex) {
+            res.statusCode = 400;
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         } catch (Exception ex) {
             res.statusCode = 500;
-            respBody.errorMessage = ex.getMessage();
+            respBody.message = ex.getMessage();
+            respBody.errorCode = getErrorCode(ex);
         }
-        res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));
+        // is it success or error?
+        if (respBody.errorCode != null) {
+            // error response:
+            res.responseBody = Blob.valueOf(JSON.serialize(new List<InvoiceRequestResponseWrapper>{respBody}, true));
+        } else {
+            // success response
+            res.responseBody = Blob.valueOf(JSON.serialize(respBody, true));  
+        }
     }
 
     global class InvoiceRequestWrapper {
@@ -66,7 +96,8 @@ global with sharing class REST_XfleetInvoiceRequest {
     global class InvoiceRequestResponseWrapper {
         public String id;
         public String navisionId;
-        public String errorMessage;
+        public String message;
+        public String errorCode;
     }
 
     private static String processInvoice(InvoiceRequestWrapper invoiceReq) {
@@ -80,11 +111,19 @@ global with sharing class REST_XfleetInvoiceRequest {
         // get Exchange vehicle
         Vehicle__c exchangeVeh;
         if (invoiceReq.exchangeVehicleId != null) {
-            exchangeVeh = [
+            List<Vehicle__c> vehs = [
                 SELECT id, vinNumber__c, Sixt_steel_purchase_price__c, Car_description_2__c
                 FROM Vehicle__c
                 WHERE Id = :invoiceReq.exchangeVehicleId
             ];
+            if (vehs.isEmpty()) {
+                // exchange vehicle not found
+                throw new ExchangeVehicleNotExistException('Exchange Vehicle ' + invoiceReq.exchangeVehicleId + ' not found in Xfleet!');
+            } else {
+                // query by id, there is only one possible vehicle found
+                exchangeVeh = vehs.get(0);
+            }
+
         }
         // create NAV request data
         NAVCarsObject navReqData = new NAVCarsObject(
@@ -153,14 +192,29 @@ global with sharing class REST_XfleetInvoiceRequest {
     private static Boolean vehicleValidation(Vehicle__c veh) {
         // buyer must be populated 
         if (veh.Buyer_Account__c == null) {
-            throw new InvoiceRequestValidationException('Buyer Account missing in Xfleet!');
+            throw new BuyerAccountIsMissingException('Buyer Account missing in Xfleet!');
         }
         return true;
+    }
+
+    private static String getErrorCode(Exception ex) {
+        String exceptionName = ex.getTypeName();
+        System.debug('error in Invoice request processing, exception type name: ' + exceptionName);
+        if (MAP_ERROR_CODES.containsKey(exceptionName)) {
+            return MAP_ERROR_CODES.get(exceptionName);
+        }
+        return 'UNEXCPECTED_ERROR';
     }
 
     public class NavisionInvoiceException extends Exception {
     }
 
     public class InvoiceRequestValidationException extends Exception {
+    }
+
+    public class BuyerAccountIsMissingException extends Exception {
+    }
+
+    public class ExchangeVehicleNotExistException extends Exception {
     }
 }

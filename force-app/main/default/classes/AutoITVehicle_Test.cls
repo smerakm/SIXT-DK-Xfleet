@@ -176,7 +176,6 @@ public with sharing class AutoITVehicle_Test {
         tstObject.equipmentLevelDesignation = 'unitTest';
         tstObject.equipmentlist = 'unitTest';
         tstObject.expectedRegistrationTax = 1.2;
-        tstObject.externalId = 'unitTest';
         tstObject.exVat = true;
         tstObject.firstRegistrationDay = 1;
         tstObject.firstRegistrationMonth = 1;

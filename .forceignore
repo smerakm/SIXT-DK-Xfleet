@@ -4,6 +4,9 @@
 
 package.xml
 
+# These metadata files are ignored when pulling (retrieving)
+*.profile
+
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json

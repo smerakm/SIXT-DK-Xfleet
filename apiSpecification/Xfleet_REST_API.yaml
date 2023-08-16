@@ -53,20 +53,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse400'
-        '422': 
-          description: DML exception
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              example:
-                errorMessage: "Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
+                $ref: '#/components/schemas/ErrorResponseVehicle'
         '500': 
           description: Unexpected error
           headers:
@@ -77,7 +64,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
   /Vehicle/{vehicleId}:
     patch:
       tags:
@@ -129,7 +119,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse400'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
         '404': 
           description: Vehicle not found
           headers:
@@ -140,22 +130,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
               example:
-                errorMessage: "List has no rows for assignment to SObject"
-        '422': 
-          description: DML exception
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              example:
-                errorMessage: "Update failed. First exception on row 0 with id a0A0Q000003FoGaUAK; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
         '500': 
           description: Unexpected error
           headers:
@@ -166,9 +144,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
               example:
-                errorMessage: "Internal error"
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
     get:
       tags:
         - Vehicle
@@ -205,7 +184,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse400'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
         '404': 
           description: Vehicle not found
           headers:
@@ -216,9 +195,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
               example:
-                errorMessage: "List has no rows for assignment to SObject"
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
         '500': 
           description: Unexpected error
           headers:
@@ -229,7 +209,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
   /InvoiceRequest:
     post:
       tags:
@@ -268,12 +251,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseInvoice'
               example:
-                message : "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
-                errorCode : "JSON_PARSER_ERROR"
+                - message : "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
+                  errorCode : "JSON_PARSER_ERROR"
         '404': 
-          description: Bad request, parsing error
+          description: Resource not found
           headers:
             Content-Type:
               schema:
@@ -282,35 +265,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseInvoice'
               example:
-                errorMessage: "List has no rows for assignment to SObject"
-        '422': 
-          description: DML exception
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              example:
-                errorMessage: "Update failed. First exception on row 0 with id a0A0Q000003FoGaUAK; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, NCAP: bad value for restricted picklist field: _5: [NCAP__c]"
-        '424': 
-          description: Navision request failed
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              example:
-                errorMessage: "Resource not found in Navision!"
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
         '500': 
           description: Unexpected error
           headers:
@@ -321,7 +279,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/ErrorResponseInvoice'
+              example:
+                - message: "Internal Error"
+                  errorCode: UNEXCPECTED_ERROR
+                
 components:
   securitySchemes:
     bearerAuth:
@@ -402,6 +364,8 @@ components:
           type: number
           format: float
           example: 19.6
+        createInNavision:
+          type: boolean
         cruiseControl:
           type: boolean
         deeplink:
@@ -626,13 +590,11 @@ components:
         id:
           type: string
           example: a0BAO000000IxAS1A0
-    ErrorResponse:
-      type: object
-      properties:
-        errorMessage:
-          type: string
-          example: "value cannot be null"
-    ErrorResponse400:
+    ErrorResponseVehicle:
+      type: array
+      items:
+        $ref: '#/components/schemas/ErrorResponseVehicle1'
+    ErrorResponseVehicle1:
       type: object
       properties:
         message:
@@ -640,6 +602,43 @@ components:
           example: "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
         errorCode:
           type: string
+          enum:
+            - "INVALID_SESSION_ID"
+            - "JSON_PARSER_ERROR"
+            - "RESOURCE_NOT_FOUND"
+            - "TYPE_ERROR"
+            - "DML_ERROR"
+            - "INVALID_ID"
+            - "INVALID_BUYER"
+            - "INVALID_BATCH"
+            - "XFLEET_ERROR"
+            - "NAVISION_ERROR"
+            - "DUPLICATE_VALUE"
+            - "UNEXCPECTED_ERROR"
           example: "JSON_PARSER_ERROR"
+    ErrorResponseInvoice:
+      type: array
+      items:
+        $ref: '#/components/schemas/ErrorResponseInvoice1'
+    ErrorResponseInvoice1:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Buyer Account is missing in Xfleet!"
+        errorCode:
+          type: string
+          enum:
+            - "INVALID_SESSION_ID"
+            - "JSON_PARSER_ERROR"
+            - "RESOURCE_NOT_FOUND"
+            - "TYPE_ERROR"
+            - "DML_ERROR"
+            - "BUYER_MISSING"
+            - "VALIDATION_ERROR"
+            - "NAVISION_ERROR"
+            - "EXCHANGE_VEHICLE_NOT_FOUND"
+            - "UNEXCPECTED_ERROR"
+          example: "BUYER_MISSING"
 security:
   - bearerAuth: []

@@ -6,6 +6,8 @@
 		<members>AutoITVehicleObject</members>
 		<members>AutoITVehicleCreate</members>
 		<members>AutoITVehicleUpdate</members>
+		<members>AutoITVehicleDelete</members>
+		<members>AutoITVehicleMarkAsSold</members>
 		<members>AutoITVehicle_Test</members>
 		<members>CreateDefaultBatchSchedulable</members>
 		<members>CreateDefaultBatchSchedulable_Test</members>
@@ -15,6 +17,7 @@
 		<members>REST_XfleetInvoiceRequest_Test</members>
 		<members>REST_XfleetVehicle</members>
 		<members>REST_XfleetVehicle_Test</members>
+		<members>IntegrationRequestsBatchable</members>
 		<members>IntegrationRequestsUtility</members>
 		<name>ApexClass</name>
 	</types>
@@ -36,6 +39,8 @@
 		<members>Vehicle__c.Service_interval_Years_KM__c</members>
 		<members>Vehicle__c.Link_to_Retail_Website__c</members>
 		<members>Vehicle__c.AutoDesktop_Id__c</members>
+		<members>Vehicle__c.Car_description_2__c</members>
+		<members>Vehicle__c.Created_in_Navision_at__c</members>
 		<members>Client_Credentials_Auth__mdt.clientId__c</members>
 		<members>Client_Credentials_Auth__mdt.clientSecret__c</members>
 		<members>Client_Credentials_Auth__mdt.tokenEndpoint__c</members>
@@ -79,6 +84,8 @@
 		<members>Update_Vehicle_fields_Automatically</members>
 		<members>VEHICLE_TRG_After_AutoDesktop</members>
 		<members>VEHICLE_TRG_Before_Delete_AutoDesktop</members>
+		<members>VEHICLE_TRG_After_NavisionVehicle</members>
+		<members>VEHICLE_TRG_After_NavisionVehicle_Insert</members>
 		<name>Flow</name>
 	</types>
 	<types>

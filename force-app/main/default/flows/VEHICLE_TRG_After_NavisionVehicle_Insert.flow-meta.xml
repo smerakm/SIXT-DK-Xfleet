@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
-    <description>In case vehicle is inserted directly as in infleet it still need to be created.
-Fix to issue with vehicle created after the batch was already moved to Deal.</description>
+    <description>In case vehicle is inserted directly as in infleet it still need to be created. Or vehicle is coming from different source and so attached to &quot;Other&quot; batch type.
+Fix to issue with vehicle created after the batch was already moved to Deal.
+Skip if already created in Navision.</description>
     <environments>Default</environments>
     <interviewLabel>VEHICLE_TRG_After_Insert_NavisionVehicle {!$Flow.CurrentDateTime}</interviewLabel>
     <label>VEHICLE_TRG_After_NavisionVehicle_Insert</label>
@@ -51,17 +52,16 @@ Fix to issue with vehicle created after the batch was already moved to Deal.</de
         <connector>
             <targetReference>Insert_Integration_Request_Create</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Infleet</stringValue>
-            </value>
-        </filters>
+        <filterFormula>AND(
+ISNULL({!$Record.Created_in_Navision_at__c}),
+OR(
+ISPICKVAL({!$Record.Status__c}, &quot;Infleet&quot;), 
+ISPICKVAL({!$Record.Vehicle_Batch__r.Type__c}, &quot;Other&quot;)
+)
+)</filterFormula>
         <object>Vehicle__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

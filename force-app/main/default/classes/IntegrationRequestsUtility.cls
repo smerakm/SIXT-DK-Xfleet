@@ -100,6 +100,42 @@ public with sharing class IntegrationRequestsUtility {
         }
     }
 
+    // process any vehicle (or other object) updates that are needed as result of the calls
+    // implementation of the method is Xfleet specific and needs to be re-written if the framework is used outside of Xfleet
+    public static void postProcessActions() {
+        // API methods with post-process actions
+        Set<String> methodsWithAction = new Set<String>{ IntegrationRequestsNAVCars.METHOD_CREATE };
+        // get all integration request since last job run to get impacted vehicles
+        Datetime lastRun = getLastJobRunTime();
+        // vehicles for update
+        Map<Id, Vehicle__c> mVehicles = new Map<Id, Vehicle__c>();
+        for (Integration_Request__c req : [SELECT Vehicle__c, API_Method__c, Status__c, Last_Processing_Time__c FROM Integration_Request__c WHERE API_Method__c IN :methodsWithAction AND Status__c != null AND LastModifiedDate >= :lastRun AND Vehicle__c != null]) {
+            Vehicle__c veh;
+            Boolean updatedByAction = false;
+            if (mVehicles.containsKey(req.Vehicle__c)) {
+                veh = mVehicles.get(req.Vehicle__c);
+            } else {
+                veh = new Vehicle__c(id = req.Vehicle__c);
+            }
+            // NAV CREATE
+            if (req.API_Method__c.equals(IntegrationRequestsNAVCars.METHOD_CREATE)) {
+                if (req.Status__c.endsWithIgnoreCase('Success')) {
+                    veh.Created_in_Navision_at__c = req.Last_Processing_Time__c;
+                    updatedByAction = true;
+                }
+            }
+            // only put into the map if updated
+            if (updatedByAction) {
+                mVehicles.put(req.Vehicle__c, veh);
+            }
+        }
+        // any vehicles for update?
+        if (!mVehicles.isEmpty()) {
+            // update vehicles
+            update mVehicles.values();
+        }
+    }
+
     public static void notifyAdminsAboutFailedRequests(Integer failedReqCount) {
         // Get the Id for our custom notification type
         CustomNotificationType notificationType = [SELECT Id, DeveloperName FROM CustomNotificationType WHERE DeveloperName = 'Xfleet_Notification'];

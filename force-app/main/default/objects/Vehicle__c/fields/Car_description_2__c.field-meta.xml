@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Car_description_2__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(Brand__c) + &quot; &quot; +  Model__c + &quot; &quot; +  License_plate__c</formula>
+    <formula>TEXT(Brand__c) + &quot; &quot; + BLANKVALUE(Model__c, Model_Name__c) + &quot; &quot; +  License_plate__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Car description</label>
     <required>false</required>

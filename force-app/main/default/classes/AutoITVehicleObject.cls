@@ -18,7 +18,6 @@
  * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 public with sharing class AutoITVehicleObject {
-    public String externalId { get; set; } // Salesforce record Id
     public String vin { get; set; }
     public String regNo { get; set; }
     public String dmrVehicleIdentifier { get; set; }
@@ -27,7 +26,7 @@ public with sharing class AutoITVehicleObject {
     public Integer tecDocKTypeNumber { get; set; }
     public Integer dkTypeApprovalCertificateNumber { get; set; }
     public Integer dkTypeApprovalVariantNumber { get; set; }
-    public String dealerReferenceNumber { get; set; }
+    public String dealerReferenceNumber { get; set; } // Salesforce record Id
     public Integer firstRegistrationYear { get; set; }
     public Integer firstRegistrationMonth { get; set; }
     public Integer firstRegistrationDay { get; set; }
@@ -103,7 +102,7 @@ public with sharing class AutoITVehicleObject {
     // Convert Xfleet Vehicle__c to API Vehicle object
     // deprecated
     public void updateFromXfleetVehicle(Vehicle__c vehicle) {
-        this.externalId = vehicle.Id;
+        this.dealerReferenceNumber = vehicle.Id;
         this.vin = vehicle.vinNumber__c;
         this.regNo = vehicle.License_Plate_System__c;
         this.mileage = (Integer) vehicle.Current_KM__c;
@@ -135,7 +134,7 @@ public with sharing class AutoITVehicleObject {
 
     public static AutoITVehicleObject createWithDefaults(Vehicle__c xfleetVehicle, String callMethod) {
         AutoITVehicleObject autoItVehicleRecord;
-        Map<String, Object> defaultValues = getDefaultProperties(callMethod);
+        Map<String, Object> defaultValues = d(callMethod);
         if (defaultValues.size() > 0) {
             autoItVehicleRecord = (AutoITVehicleObject)JSON.deserialize(JSON.serialize(defaultValues), AutoITVehicleObject.class);
         } else {
@@ -146,7 +145,7 @@ public with sharing class AutoITVehicleObject {
     }
 
         // TODO: shall have it owns utility class
-        public static Map<String, Object> getDefaultProperties(String apiCallName) {
+        public static Map<String, Object> d(String apiCallName) {
             Map<String, Object> defaultProperties = new Map<String, Object>();
             // get all default properties from custom metadata
             List<Integration_Call_Default_Values__mdt> defaultValues = [SELECT Property_Name__c, Property_Type__c, Value__c FROM Integration_Call_Default_Values__mdt WHERE API_Method__c = :apiCallName];
