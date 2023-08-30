@@ -41,6 +41,7 @@ public with sharing class REST_XfleetInvoiceRequest_Test {
         req.vehicleId = v.Id;
         req.exchangeVehicleId = exchangeVeh.Id;
         req.customerPriceDKK = 1000;
+        req.additionalAccessoriesCostDKK = 24000;
         req.externalInvoiceNumber = 'abc unit';
         req.ownerAddressLine1 = 'Korvgatan 1';
         req.ownerAddressLine2 = 'c/o Lund';

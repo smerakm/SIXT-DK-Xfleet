@@ -103,7 +103,7 @@ global with sharing class REST_XfleetInvoiceRequest {
     private static String processInvoice(InvoiceRequestWrapper invoiceReq) {
         // get Vehicle
         Vehicle__c veh = [
-            SELECT id, vinNumber__c, licensePlateCost__c, Delivery_cost__c, Car_description_2__c, Current_KM__c, Buyer_Account__c
+            SELECT id, vinNumber__c, licensePlateCost__c, Delivery_cost_without_VAT__c, Car_description_2__c, Current_KM__c, Buyer_Account__c
             FROM Vehicle__c
             WHERE Id = :invoiceReq.vehicleId
         ];
@@ -125,6 +125,12 @@ global with sharing class REST_XfleetInvoiceRequest {
             }
 
         }
+        // convert additional accessory price to without VAT
+        FleetManagementConfig__c xfleetConfig = FleetManagementConfig__c.getInstance();
+        Integer additionAccessoriesWithoutVAT;
+        if (invoiceReq.additionalAccessoriesCostDKK != null) {
+            additionAccessoriesWithoutVAT = Math.round(invoiceReq.additionalAccessoriesCostDKK / (1 + xfleetConfig.VAT_Percentage__c / 100));
+        }
         // create NAV request data
         NAVCarsObject navReqData = new NAVCarsObject(
             invoiceReq.externalInvoiceNumber, //createInvoice,
@@ -132,9 +138,9 @@ global with sharing class REST_XfleetInvoiceRequest {
             (Integer) veh.Current_KM__c, // km,
             invoiceReq.customerPriceDKK, // salesPrice,
             invoiceReq.registrationFeeDKK, // registrationFee,
-            (Integer) veh.Delivery_cost__c, // deliveryCost,
+            (Integer) veh.Delivery_cost_without_VAT__c, // deliveryCost,
             (Integer) veh.licensePlateCost__c, // licensePlateCost,
-            invoiceReq.additionalAccessoriesCostDKK, // additionalAccessoriesCost,
+            additionAccessoriesWithoutVAT, // additionalAccessoriesCost, without VAT
             invoiceReq.accessoryDescription, // accessoryDescription,
             exchangeVeh?.vinNumber__c, // exchangeCarVin,
             (Integer) exchangeVeh?.Sixt_steel_purchase_price__c, // exchangeCarAmount,

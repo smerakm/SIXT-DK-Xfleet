@@ -19,6 +19,7 @@
 		<members>REST_XfleetVehicle_Test</members>
 		<members>IntegrationRequestsBatchable</members>
 		<members>IntegrationRequestsUtility</members>
+		<members>TestUtilitySIXT</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -48,6 +49,8 @@
 		<members>Integration_Call_Default_Values__mdt.Property_Name__c</members>
 		<members>Integration_Call_Default_Values__mdt.Property_Type__c</members>
 		<members>Integration_Call_Default_Values__mdt.Value__c</members>
+		<members>Vehicle__c.Delivery_cost_without_VAT__c</members>
+		<members>FleetManagementConfig__c.VAT_Percentage__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
