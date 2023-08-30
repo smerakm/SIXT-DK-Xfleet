@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recalculation_Vehicle_Flags</fullName>
+    <columns>NAME</columns>
+    <columns>vinNumber__c</columns>
+    <columns>Recalculation_Group__c</columns>
+    <columns>License_plate__c</columns>
+    <columns>Registration_Date__c</columns>
+    <columns>Batch_Distribution__c</columns>
+    <columns>leasing_Account__c</columns>
+    <columns>Tax_value_incl_VAT__c</columns>
+    <columns>Ready_for_Recalculation__c</columns>
+    <columns>Exclude_from_Recalculation__c</columns>
+    <columns>Legal_Recalculation_Requested__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Recalculation_Group__c</field>
+        <operation>contains</operation>
+        <value>C0278</value>
+    </filters>
+    <label>Recalculation - Vehicle Flags</label>
+    <sharedTo>
+        <group>Procurement</group>
+    </sharedTo>
+</ListView>

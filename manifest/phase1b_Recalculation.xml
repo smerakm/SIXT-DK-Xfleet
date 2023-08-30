@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIXT-Recalculation</fullName>
+    <description>Recalculation process</description>
+    <types>
+		<!--members>Recalculation_Group__c.Best_Value__c</members>
+		<members>Recalculation_Group__c.Last_Value__c</members-->
+		<members>Recalculation_Group__c.Sample_Vehicle_Current_Km__c</members>
+		<members>Recalculation_Group__c.Sample_Vehicle_Leasing_Period__c</members>
+		<members>Recalculation_Group__c.Sample_Vehicle_Licence_Plate__c</members>
+		<members>Recalculation_Group__c.Sample_Vehicle__c</members>
+		<members>Recalculation_Group__c.VIN__c</members>
+		<members>Recalculation_Group__c.Vehicle_Batch__c</members>
+        <members>Recalculation_Group__c.Sample_Vehicle_Ready_For_Recalculation__c</members>
+		<members>Recalculation_Result__c.Afgift__c</members>
+		<members>Recalculation_Result__c.Afgiftspligt_Vaerdi__c</members>
+		<members>Recalculation_Result__c.Dato_for_vurdering__c</members>
+		<members>Recalculation_Result__c.Genberegnings_regulering__c</members>
+		<members>Recalculation_Result__c.Handelspris__c</members>
+		<members>Recalculation_Result__c.Horse_power__c</members>
+		<members>Recalculation_Result__c.Nypris__c</members>
+        <members>Recalculation_Result__c.Comparison_Value__c</members>
+		<members>Recalculation_Result__c.Recalculation_Group__c</members>
+		<!--members>Recalculation_Result__c.VIN__c</members-->
+		<members>Vehicle__c.Exclude_from_Recalculation__c</members>
+        <members>Vehicle__c.Is_Valuta__c</members>
+        <members>Vehicle__c.Ready_for_Recalculation__c</members>
+		<!--members>Vehicle__c.Last_Legal_Recalculation_Result__c</members-->
+		<members>Vehicle__c.Leasing_Period_for_recalculation__c</members>
+        <members>Vehicle__c.Legal_Recalculation_Requested__c</members>
+		<members>Vehicle__c.Legal_Recalculation_Requested_Date__c</members>
+        <members>Vehicle__c.Last_Afgiftspligt_Vaerdi__c</members>
+        <members>Vehicle__c.Recalculation_Group__c</members>
+		<name>CustomField</name>
+	</types>
+    <types>
+        <members>Recalculation_Group__c</members>
+        <members>Recalculation_Result__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Recalculation_Group__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Recalculation_Group_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+    <types>
+        <members>Vehicle_Update_Sample_Vehicle_for_Recalculation_Group</members>
+        <members>Update_Vehicle_with_Recalculation_Result</members>
+        <members>Vehicle_Batch_Create_Recalculation_Group_Record</members>
+        <members>Vehicle_Update_Recalculation_Group</members>
+        <members>Update_Vehicle_fields_Automatically</members>
+        <members>Update_Recalculation_Group</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Recalculation_Group__c-Recalculation Group Layout</members>
+        <members>Recalculation_Result__c-Recalculation Result Layout</members>
+        <members>Vehicle__c-Vehicle Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Recalculation_Group__c.All</members>
+        <members>Vehicle__c.Recalculation_Vehicle_Flags</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Car Control</members>
+        <members>Car Sales</members>
+        <members>Minilease</members>
+        <members>Procurement</members>
+        <members>Station</members>
+        <name>Profile</name>
+    </types>
+    	<types>
+        <members>RecalculationReports</members>
+		<members>RecalculationReports/Recalculation_Groups_new_diE</members>
+		<members>RecalculationReports/Recalculation_Result_Report_a8R</members>
+		<members>RecalculationReports/Vehicles_for_Recalculation_fwl</members>
+		<name>Report</name>
+	</types>
+	<types>
+		<members>Recalculation_Groups_with_Recalculation_Results</members>
+		<members>Recalculation_group_with_Vehicle</members>
+		<name>ReportType</name>
+	</types>
+    <version>57.0</version>
+</Package>

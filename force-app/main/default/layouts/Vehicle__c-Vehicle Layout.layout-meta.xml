@@ -542,6 +542,10 @@
                 <behavior>Edit</behavior>
                 <field>Registration_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>First_Registration_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
