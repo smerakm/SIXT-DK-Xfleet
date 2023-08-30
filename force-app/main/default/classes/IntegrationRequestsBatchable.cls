@@ -63,6 +63,8 @@ public with sharing class IntegrationRequestsBatchable implements Database.Batch
     public void finish(Database.BatchableContext context) {
         // update count of integration request on a vehicle
         IntegrationRequestsUtility.updateIntegrationRequestsRollups();
+        // any post actions?
+        IntegrationRequestsUtility.postProcessActions();
         // set the timestamp when the job was finished
         IntegrationRequestsUtility.setLastJobRunTime(System.now());
         // any failed request?

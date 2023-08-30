@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>allow authentication for Navision Integration</description>
+    <classAccesses>
+        <apexClass>REST_XfleetInvoiceRequest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>REST_XfleetVehicle</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>AutoDesktop_Integration_User</name>
+    </customPermissions>
+    <description>permission for AutoDesktop user using Xfleet API</description>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Integration_Request__c.Data__c</field>
+        <field>Vehicle__c.Brand__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Integration_Request__c.Last_Processing_Time__c</field>
+        <field>Vehicle__c.License_Plate_System__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Integration_Request__c.Message__c</field>
+        <field>Vehicle__c.License_plate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Integration_Request__c.Status__c</field>
+        <field>Vehicle__c.color__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Integration_Request__c.Vehicle__c</field>
+        <field>Vehicle__c.vinNumber__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Navision Integration</label>
+    <label>AutoDesktop Inbound User</label>
+    <license>Salesforce Integration</license>
     <objectPermissions>
         <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Vehicle__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Integration_Request__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>UserExternalCredential</object>
+        <object>vehicleBatch__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
 </PermissionSet>

@@ -7,7 +7,7 @@ OR(
 AND(ISCHANGED( Status__c ),ISPICKVAL(Status__c , &apos;Sold&apos;)),
 AND(ISCHANGED( Re_marketing_Status__c),ISPICKVAL( Re_marketing_Status__c , &apos;Sold&apos;))
 ),
-OR(ISBLANK(Sales_Price_Formula__c),
+OR(ISBLANK(Confirmed_Remarketing_Price_Converted__c),
 ISBLANK( Buyer_Account__c )
 )
 )</errorConditionFormula>

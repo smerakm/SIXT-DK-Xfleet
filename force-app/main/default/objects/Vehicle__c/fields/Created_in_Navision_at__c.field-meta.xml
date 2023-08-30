@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_in_Navision_at__c</fullName>
+    <description>timestamp when the vehicle was created in Navision</description>
+    <externalId>false</externalId>
+    <inlineHelpText>timestamp when the vehicle was created in Navision</inlineHelpText>
+    <label>Created in Navision at</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_cost_without_VAT__c</fullName>
+    <description>calculated Delivery cost without VAT, to be able to send it without VAT to Navision</description>
+    <externalId>false</externalId>
+    <formula>/* remove 20% VAT from Delivery Cost */
+Delivery_cost__c / (1+ $Setup.FleetManagementConfig__c.VAT_Percentage__c)</formula>
+    <inlineHelpText>Delivery_cost__c / 1.2</inlineHelpText>
+    <label>Delivery cost without VAT</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

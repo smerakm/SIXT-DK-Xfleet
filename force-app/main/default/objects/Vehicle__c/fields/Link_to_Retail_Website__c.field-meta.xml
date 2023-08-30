@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_Retail_Website__c</fullName>
+    <description>ling to navigate to the vehicle on SIXT Retail Sales Website</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ling to navigate to the vehicle on SIXT Retail Sales Website</inlineHelpText>
+    <label>Link to Retail Website</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

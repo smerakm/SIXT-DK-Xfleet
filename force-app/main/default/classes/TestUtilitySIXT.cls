@@ -32,6 +32,8 @@ public with sharing class TestUtilitySIXT {
 
     public final static String ACCOUNT_DEFAULT_NAME = 'SIXT Unit TEST f23r';
 
+    public final static Integer VAT_VALUE = 20;
+
     // creates batch together with vehicle group and other required objects
     public static vehicleBatch__c createBatch() {
         // Service and Damage Group
@@ -171,7 +173,8 @@ public with sharing class TestUtilitySIXT {
                 SetupOwnerId = UserInfo.getOrganizationId(),
                 Opportunity_default_user__c = UserInfo.getUserId(),
                 DefaultOppAccountId__c = getDefaultAccount().Id,
-                Uncategorizied__c = getUncategorizedVehicleGroup().Id
+                Uncategorizied__c = getUncategorizedVehicleGroup().Id,
+                VAT_Percentage__c = VAT_VALUE
             );
             insert orgDefaultFleetConfig;
         }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comparison_Value__c</fullName>
+    <description>Afgiftspligt Vaerdi - Sample Vehicle Tax Value incl VAT</description>
+    <externalId>false</externalId>
+    <formula>Afgiftspligt_Vaerdi__c -  Recalculation_Group__r.Sample_Vehicle__r.Tax_value_incl_VAT__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Afgiftspligt Vaerdi - Sample Vehicle Tax Value incl VAT</inlineHelpText>
+    <label>Comparison Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

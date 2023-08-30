@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>bs@autoit.dk</contactEmail>
+    <label>AutoIT Inbound</label>
+    <oauthConfig>
+        <callbackUrl>https://local.com</callbackUrl>
+        <consumerKey>3MVG9ZPHiJTk7yFxaRTt81H9FfTFR04STdfbIrEWN9GZg4cxBGBgOZPvIcbNWS4qWRKtvq.9.HNMoN1Pn37HK</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>true</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <oauthClientCredentialUser>autoit@sixt.dk.dev</oauthClientCredentialUser>
+        <scopes>Api</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>AutoDesktop Inbound User</permissionSetName>
+</ConnectedApp>

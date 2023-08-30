@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAT_Percentage__c</fullName>
+    <defaultValue>20</defaultValue>
+    <description>what is current VAT on vehicles and accessories
+used to calculate values with/without VAT especially when sending to Navision</description>
+    <externalId>false</externalId>
+    <inlineHelpText>what is current VAT on vehicles and accessories</inlineHelpText>
+    <label>VAT Percentage</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

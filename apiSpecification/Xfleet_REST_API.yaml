@@ -4,7 +4,7 @@ info:
   description: REST API available to login users to Xfleet
   version: 1.0.0
 servers:
-  - url: https://{instance_url}/services/apexrest/Xfleet
+  - url: https://{instance_url}/services/apexrest/Xfleet/v1
     variables:
       instance_url:
         description: The base URL for the instance, obtained from the login response
@@ -25,7 +25,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/VehicleCreate'
+              type: object
+              properties:
+                vehicle:
+                  $ref: '#/components/schemas/VehicleCreate'
+              required:
+                - vehicle
       responses:
         '201':
           description: Created
@@ -38,6 +43,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VehicleResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
   /Vehicle/{vehicleId}:
     patch:
       tags:
@@ -48,13 +78,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Vehicle'
-            example: |-
-              {
-                "buyerAccountName": "BILSALG",
-                "confirmedRemarketingPriceDKK": 133999,
-                "remarketingStatus": "Sold"
-              }
+              type: object
+              properties:
+                vehicle:
+                  $ref: '#/components/schemas/Vehicle'
+              required:
+                - vehicle
+            example: 
+              vehicle:
+                brandName: "Volvo"
+                modelName: "XC60"
+                tankSize: 61
+                consumptionKmPerLiter: 5.1
       parameters:
         - name: vehicleId
           in: path
@@ -74,6 +109,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VehicleResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+        '404': 
+          description: Vehicle not found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
     get:
       tags:
         - Vehicle
@@ -100,7 +174,46 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Vehicle'
-  /services/apexrest/Xfleet/InvoiceRequest:
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+        '404': 
+          description: Vehicle not found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseVehicle'
+              example:
+                - message: "Internal error"
+                  errorCode: "UNEXCPECTED_ERROR"
+  /InvoiceRequest:
     post:
       tags:
         - InvoiceRequest
@@ -110,7 +223,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InvoiceRequest'
+              type: object
+              properties:
+                invoiceRequest:
+                  $ref: '#/components/schemas/InvoiceRequest'
+              required:
+                - invoiceRequest
       responses:
         '201':
           description: Created
@@ -123,6 +241,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InvoiceRequestResponse'
+        '400': 
+          description: Bad request, parsing error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseInvoice'
+              example:
+                - message : "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
+                  errorCode : "JSON_PARSER_ERROR"
+        '404': 
+          description: Resource not found
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseInvoice'
+              example:
+                - message: "List has no rows for assignment to SObject"
+                  errorCode: RESOURCE_NOT_FOUND
+        '500': 
+          description: Unexpected error
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseInvoice'
+              example:
+                - message: "Internal Error"
+                  errorCode: UNEXCPECTED_ERROR
+                
 components:
   securitySchemes:
     bearerAuth:
@@ -142,6 +303,9 @@ components:
           example: 6
         automaticGears:
           type: boolean
+        batteryCapacity:
+          type: integer
+          example: 1180  
         bluetooth:
           type: boolean
         brandName:
@@ -184,7 +348,11 @@ components:
         buyerAccountName:
           type: string
           example: IKKE SOLG - BILSALG
-        co2:
+        carRemarks:
+          type: string
+          maxLength: 1500
+          example: Denne har vinterdæk, skal have skiftet til sommerdæk. /OH
+        co2Emissions:
           type: integer
           maximum: 9999
           example: 95
@@ -192,13 +360,12 @@ components:
           type: string
           maxLength: 100
           example: red
-        confirmedRemarketingPriceDKK:
-          type: integer
-          example: 133999
         consumptionKmPerLiter:
           type: number
           format: float
           example: 19.6
+        createInNavision:
+          type: boolean
         cruiseControl:
           type: boolean
         deeplink:
@@ -219,7 +386,7 @@ components:
         firstRegistrationDate:
           type: string
           format: date
-          example: 2019-10-28T00:00:00.000Z
+          example: 2019-10-28
         fuelType:
           type: string
           enum:
@@ -229,6 +396,10 @@ components:
             - HBD
             - BE
             - HBB
+        lastVehicleInspection:
+          type: string
+          format: date
+          example: 2021-02-24
         licensePlateCostsDKK:
           type: integer
           example: 1180
@@ -239,6 +410,13 @@ components:
           type: string
           maxLength: 255
           example: 320d Touring M-Sport
+        modelXfleet:
+          type: string
+          maxLength: 255
+          example: 320d Touring M-Sport  350 HPa
+        modelYear:
+          type: integer
+          example: 2020
         navigation:
           type: boolean
         ncap:
@@ -258,15 +436,17 @@ components:
         regNo:
           type: string
           maxLength: 18
+          example: "DK12345"
+        registrationDate:
+          type: string
+          format: date
+          example: 2021-02-26  
         remarketingStatus:
           type: string
           enum:
             - Ready to sell
             - Sold
             - Not sold
-        repurchasePriceDKK:
-          type: integer
-          example: 115000
         retailPriceDKK:
           type: integer
           example: 135000
@@ -278,6 +458,7 @@ components:
         serviceInterval:
           type: string
           maxLength: 255
+          example: "3 år /30.000 km."
         status:
           type: string
           enum:
@@ -288,6 +469,9 @@ components:
             - Sold
             - Stock Car
           example: Stock Car
+        steelPriceDKK:
+          type: integer
+          example: 115000
         tankSize:
           type: integer
           example: 61
@@ -329,48 +513,132 @@ components:
       type: object
       required:
         - vehicleId
-        - vin
-        - customerName
-        - customerAddress
         - customerPriceDKK
-        - salesPersonName
+        - registrationFeeDKK
+        - externalInvoiceNumber
       properties:
         vehicleId:
           type: string
           minLength: 18
           maxLength: 18
           example: a0AAO000000a32j7B1
-        vin:
-          type: string
-          example: WF0YXXTTGGGG12345
-        customerName:
-          type: string
-          maxLength: 50
-          example: Jens Jensen
-        customerAddress:
-          type: string
-          maxLength: 50
-          example: Kongshøjvej 53, København, 1218
         customerPriceDKK:
           type: integer
           example: 222000
-        salesPersonName:
+        registrationFeeDKK:
+          type: integer
+          example: 15000
+        additionalAccessoriesCostDKK:
+          type: integer
+          example: 222000
+        accessoryDescription:
           type: string
           maxLength: 50
-          example: Nils Nilsen
+          example: sunroof, Heat-reflecting windscreen
+        ownerName:
+          type: string
+          maxLength: 50
+          example: Jens Jensen
+        ownerAddressLine1:
+          type: string
+          maxLength: 50
+          example: Kongshøjvej 53
+        ownerAddressLine2:
+          type: string
+          maxLength: 50
+          example: c/o Spenser
+        ownerPostCode:
+          type: string
+          maxLength: 50
+          example: 1218
+        ownerCity:
+          type: string
+          maxLength: 50
+          example: København
+        driverName:
+          type: string
+          maxLength: 50
+          example: Martin Jensen
+        driverAddressLine1:
+          type: string
+          maxLength: 50
+          example: Kongshøjvej 53
+        driverAddressLine2:
+          type: string
+          maxLength: 50
+          example: c/o Spenser
+        driverPostCode:
+          type: string
+          maxLength: 50
+          example: 1218
+        driverCity:
+          type: string
+          maxLength: 50
+          example: København
         exchangeVehicleId:
           type: string
           minLength: 18
           maxLength: 18
           example: a0AAO000000m11i2AA
+        externalInvoiceNumber:
+          type: string
+          maxLength: 50
+          example: D-EW84793243
     InvoiceRequestResponse:
       type: object
       properties:
         id:
           type: string
           example: a0BAO000000IxAS1A0
-        navisionId:
+    ErrorResponseVehicle:
+      type: array
+      items:
+        $ref: '#/components/schemas/ErrorResponseVehicle1'
+    ErrorResponseVehicle1:
+      type: object
+      properties:
+        message:
           type: string
-          example: kl35h29rhb342l
+          example: "Unknown field: REST_XfleetVehicle.VehicleWrapper.brandNsame at [line:3, column:20]"
+        errorCode:
+          type: string
+          enum:
+            - "INVALID_SESSION_ID"
+            - "JSON_PARSER_ERROR"
+            - "RESOURCE_NOT_FOUND"
+            - "TYPE_ERROR"
+            - "DML_ERROR"
+            - "INVALID_ID"
+            - "INVALID_BUYER"
+            - "INVALID_BATCH"
+            - "XFLEET_ERROR"
+            - "NAVISION_ERROR"
+            - "DUPLICATE_VALUE"
+            - "UNEXCPECTED_ERROR"
+          example: "JSON_PARSER_ERROR"
+    ErrorResponseInvoice:
+      type: array
+      items:
+        $ref: '#/components/schemas/ErrorResponseInvoice1'
+    ErrorResponseInvoice1:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Buyer Account is missing in Xfleet!"
+        errorCode:
+          type: string
+          enum:
+            - "INVALID_SESSION_ID"
+            - "JSON_PARSER_ERROR"
+            - "RESOURCE_NOT_FOUND"
+            - "TYPE_ERROR"
+            - "DML_ERROR"
+            - "BUYER_MISSING"
+            - "VALIDATION_ERROR"
+            - "NAVISION_ERROR"
+            - "EXCHANGE_VEHICLE_NOT_FOUND"
+            - "UNEXCPECTED_ERROR"
+          example: "BUYER_MISSING"
 security:
   - bearerAuth: []

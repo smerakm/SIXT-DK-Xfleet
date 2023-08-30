@@ -4,11 +4,9 @@ public abstract with sharing class NAVCars {
     private static final String NAMED_CREDENTIAL_TEST = 'NavisionTEST';
     private static final String NAMED_CREDENTIAL_PROD = 'NavisionPROD';
     // API suffix
-    private static final String CARS_API = 'Cars';
-
-    //private static final String NAMED_CREDENTIAL_TEST = 'https://178.209.171.36:7048/DynamicsNAV100/ODataV4';
-    //private static final String NAMED_CREDENTIAL_TEST = 'https://nav.sixt.dk:7048/DynamicsNAV100/ODataV4';
-    //private static final String NAMED_CREDENTIAL_PROD = 'http://178.209.171.36:7048/DynamicsNAV100/ODataV4';
+    private String apiSuffix;
+    public static final String CARS_API = 'Cars'; // default
+    public static final String CARS_PRIVATE_API = 'CarsPrivate';
 
     public String vinNo;
 
@@ -16,10 +14,20 @@ public abstract with sharing class NAVCars {
     public NAVCars() {
         // just set Vin number to null to avoid empty block
         this.vinNo = null;
+        // default suffix
+        this.apiSuffix = CARS_API;
     }
 
     public NAVCars(String vinNo) {
         this.vinNo = vinNo;
+        // default suffix
+        this.apiSuffix = CARS_API;
+    }
+
+    public NAVCars(String vinNo, String specificApiSuffix) {
+        this.vinNo = vinNo;
+        // specific suffix for this call
+        this.apiSuffix = specificApiSuffix;
     }
 
     public virtual String getEndpoint() {
@@ -32,7 +40,7 @@ public abstract with sharing class NAVCars {
             endpoint += NAMED_CREDENTIAL_PROD;
         }
         // API name / suffix:
-        endpoint += '/' + CARS_API;
+        endpoint += '/' + this.apiSuffix;
         // is it for specific vehicle?
         if (String.isNotBlank(this.vinNo)) {
             endpoint += '(\'' + this.vinNo + '\')';

@@ -25,6 +25,38 @@
                 <default>false</default>
                 <label>NAV-createInvoiceQuote</label>
             </value>
+            <value>
+                <fullName>AutoIT-markAsSold</fullName>
+                <default>false</default>
+                <label>AutoIT-markAsSold</label>
+            </value>
+            <value>
+                <fullName>AutoIT-updateCar</fullName>
+                <default>false</default>
+                <label>AutoIT-updateCar</label>
+            </value>
+            <value>
+                <fullName>AutoIT-createCar</fullName>
+                <default>false</default>
+                <label>AutoIT-createCar</label>
+            </value>
+            <value>
+                <fullName>AutoIT-delete</fullName>
+                <default>false</default>
+                <label>AutoIT-delete</label>
+            </value>
+            <value>
+                <fullName>AutoIT-carStatusUpdate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AutoIT-carStatusUpdate</label>
+            </value>
+            <value>
+                <fullName>AutoIT-upsertCar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AutoIT-upsertCar</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

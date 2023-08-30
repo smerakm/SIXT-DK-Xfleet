@@ -26,9 +26,40 @@
                 <label>NAV-createInvoiceQuote</label>
             </value>
             <value>
+                <fullName>NAV-createInvoicePrivate</fullName>
+                <default>false</default>
+                <label>NAV-createInvoicePrivate</label>
+            </value>
+            <value>
+                <fullName>AutoIT-createCar</fullName>
+                <default>false</default>
+                <label>AutoIT-createCar</label>
+            </value>
+            <value>
+                <fullName>AutoIT-updateCar</fullName>
+                <default>false</default>
+                <label>AutoIT-updateCar</label>
+            </value>
+            <value>
+                <fullName>AutoIT-markAsSold</fullName>
+                <default>false</default>
+                <label>AutoIT-markAsSold</label>
+            </value>
+            <value>
+                <fullName>AutoIT-delete</fullName>
+                <default>false</default>
+                <label>AutoIT-delete</label>
+            </value>
+            <value>
                 <fullName>UnitTest</fullName>
                 <default>false</default>
                 <label>UnitTest</label>
+            </value>
+            <value>
+                <fullName>AutoIT-carStatusUpdate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AutoIT-carStatusUpdate</label>
             </value>
         </valueSetDefinition>
     </valueSet>

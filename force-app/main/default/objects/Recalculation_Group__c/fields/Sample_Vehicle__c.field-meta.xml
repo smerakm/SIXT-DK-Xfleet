@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Vehicle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Sample Vehicle</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Vehicle__c.Recalculation_Group__c</field>
+            <operation>equals</operation>
+            <valueField>Vehicle__c.Recalculation_Group__r.Id</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Vehicle__c</referenceTo>
+    <relationshipLabel>Recalculation Groups (Sample Vehicle)</relationshipLabel>
+    <relationshipName>Recalculation_Groups1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Location_Address__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(To_Location_Regular_Transport__c),IF( To_Location__r.RecordType.Name = &quot;Buyer&quot;,  Vehicle__r.Buyer_delivery_address__c , To_Location__r.Billing_Address_Formula__c ),   To_Location_Regular_Transport__r.Mailing_Address_Formula__c  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>To Location Address</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

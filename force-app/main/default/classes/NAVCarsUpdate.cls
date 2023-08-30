@@ -7,6 +7,10 @@ public with sharing class NAVCarsUpdate extends NAVCars {
         super(vinNo);
     }
 
+    public NAVCarsUpdate(String vinNo, String specificApiSuffix) {
+        super(vinNo, specificApiSuffix);
+    }
+
     public override HttpRequest prepareRequest(Object params) {
         NAVCarsObject car = (NAVCarsObject) params;
         HttpRequest req = new HttpRequest();

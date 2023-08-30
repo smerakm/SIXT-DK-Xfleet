@@ -1,0 +1,15 @@
+{
+    "@odata.context": "https://nav.sixt.dk:7048/DynamicsNAV100/ODataV4/$metadata#Collection(NAV.Cars)",
+    "@odata.etag": "W/\"JzYwO1hzTUFBQUo3LzFZQVVnQXpBRVlBUWdCWkFFZ0FXZ0JVQUUwQVdRQTFBRElBT0FBMkFEVUFOZ0FBQUFBQTk7ODM1MjM1MzMxMDsn\"",
+    "Vin_No": "VR3FBYHZTMY528656",
+    "regNo": "DF75664",
+    "vatType": "VALUTA",
+    "createdAt": "2022-11-30T10:03:14.187Z",
+    "modifiedAt": "2022-12-06T15:38:57.2Z",
+    "isPaid": false,
+    "createAmount": 0,
+    "creatExtDocNo": "",
+    "createInvoice": "",
+    "createQuote": "",
+    "ETag": "60;XsMAAAJ7/1YAUgAzAEYAQgBZAEgAWgBUAE0AWQA1ADIAOAA2ADUANgAAAAAA9;8352353310;"
+}
