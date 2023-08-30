@@ -10,6 +10,9 @@
     <columns>Day_to_Day__c</columns>
     <columns>Planned_On__c</columns>
     <columns>Requested_Date__c</columns>
+    <columns>SPIL_Comments__c</columns>
+    <columns>Account_Number__c</columns>
+    <columns>Day_to_day_Account_Number__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

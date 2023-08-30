@@ -21,9 +21,9 @@
                 <label>New</label>
             </value>
             <value>
-                <fullName>Arrived at DAL</fullName>
+                <fullName>Requested</fullName>
                 <default>false</default>
-                <label>Arrived at DAL</label>
+                <label>Requested</label>
             </value>
             <value>
                 <fullName>Booked</fullName>
@@ -44,6 +44,11 @@
                 <fullName>Done</fullName>
                 <default>false</default>
                 <label>Done</label>
+            </value>
+            <value>
+                <fullName>Arrived at DAL</fullName>
+                <default>false</default>
+                <label>Arrived at DAL</label>
             </value>
         </valueSetDefinition>
     </valueSet>

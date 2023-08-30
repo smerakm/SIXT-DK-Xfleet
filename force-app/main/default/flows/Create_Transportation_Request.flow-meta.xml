@@ -48,7 +48,7 @@
         <name>Calculate_formulas_regular_Tranport</name>
         <label>Calculate formulas regular Tranport</label>
         <locationX>490</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <actionName>TransportRequestUtility</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -103,7 +103,7 @@
         <name>Add_Transport_Request_to_list_Regular_Transport</name>
         <label>Add Transport Request to list Regular Transport</label>
         <locationX>490</locationX>
-        <locationY>890</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>setTransportRequest</assignToReference>
             <operator>Add</operator>
@@ -119,7 +119,7 @@
         <name>Add_Transport_Request_to_New_Collection</name>
         <label>Add Transport Request to New Collection</label>
         <locationX>358</locationX>
-        <locationY>1598</locationY>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>setTransportRequestNotReady</assignToReference>
             <operator>Add</operator>
@@ -178,6 +178,13 @@
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTransportRequest.Day_to_day_Account_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Day_to_day_Account_Number</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Calculate_formulas_Defleet</targetReference>
         </connector>
@@ -219,7 +226,7 @@
             <assignToReference>SingleTransportRequest.Account_Number__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Formula_Account_Number_Infleet</elementReference>
+                <stringValue>AFSBET</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -227,6 +234,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTransportRequest.Day_to_day_Account_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Day_to_day_Account_Number</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -237,7 +251,7 @@
         <name>Assign_Field_values_to_Transport_record_Regular_Transport</name>
         <label>Assign Field values to Transport record Regular Transport</label>
         <locationX>490</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>SingleTransportRequest.Vehicle__c</assignToReference>
             <operator>Assign</operator>
@@ -280,6 +294,13 @@
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SingleTransportRequest.Day_to_day_Account_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Day_to_day_Account_Number</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Calculate_formulas_regular_Tranport</targetReference>
         </connector>
@@ -288,7 +309,7 @@
         <name>Assign_Status_Not_Ready</name>
         <label>Assign Status Not Ready</label>
         <locationX>358</locationX>
-        <locationY>1490</locationY>
+        <locationY>1706</locationY>
         <assignmentItems>
             <assignToReference>Loop_through_Not_Ready_Transport_Reqeust.Status__c</assignToReference>
             <operator>Assign</operator>
@@ -368,7 +389,7 @@
         <name>Needs_Manual_Changes</name>
         <label>Needs Manual Changes</label>
         <locationX>402</locationX>
-        <locationY>1274</locationY>
+        <locationY>1490</locationY>
         <defaultConnector>
             <targetReference>Transport_Request_Ready</targetReference>
         </defaultConnector>
@@ -431,7 +452,6 @@
     </decisions>
     <description>Transport Request 3.0
  Defleet, Infleet and Regular Transport</description>
-    <environments>Default</environments>
     <formulas>
         <name>Formula_Account_Number_Defleet</name>
         <dataType>String</dataType>
@@ -440,12 +460,19 @@
     <formulas>
         <name>Formula_Account_Number_Infleet</name>
         <dataType>String</dataType>
-        <expression>IF({!Day_to_day_checkbox} = TRUE, &quot;210700-&quot; + {!Loop_through_Vehicles_Infleet.Station__r.Station_Account_Num__c}, {!Loop_through_Vehicles_Infleet.Dealer__r.Station_Account_Num__c} )</expression>
+        <expression>IF({!Day_to_day_checkbox} = TRUE, &quot;210700-&quot; + {!Loop_through_Vehicles_Infleet.Station__r.Station_Account_Num__c}, &quot;210700-&quot; + {!Loop_through_Vehicles_Infleet.Dealer__r.Station_Account_Num__c} )</expression>
     </formulas>
     <formulas>
         <name>Formula_Account_Number_Regular</name>
         <dataType>String</dataType>
-        <expression>&quot;210700-&quot; + {!Loop_through_Vehicles_Regular_Tranport.Dealer__r.Station_Account_Num__c}</expression>
+        <expression>&quot;210700-&quot; + {!Get_delivery_location_record.Account.Station_Account_Num__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Day_to_day_Account_Number</name>
+        <dataType>String</dataType>
+        <expression>IF({!Day_to_day_checkbox} = TRUE &amp;&amp; {!Transportation_type} = {!Defleet_Transport}, &quot;210700-&quot; + {!Loop_through_Vehicles_Defleet.Pickup_Location__r.Account.Station_Account_Num__c},
+IF({!Day_to_day_checkbox} = TRUE &amp;&amp; {!Transportation_type} = {!Infleet_Transport}, &quot;210700-&quot;+{!Loop_through_Vehicles_Infleet.Station__r.Station_Account_Num__c}, 
+IF({!Day_to_day_checkbox} = TRUE &amp;&amp;{!Transportation_type}= {!Regular_Transport}, &quot;210700-&quot;+{!Get_delivery_location_record.Account.Station_Account_Num__c}, &quot;&quot;)))</expression>
     </formulas>
     <interviewLabel>Create Transportation Request {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Create Transportation Request</label>
@@ -453,7 +480,7 @@
         <name>Loop_through_Not_Ready_Transport_Reqeust</name>
         <label>Loop through Not Ready Transport Request</label>
         <locationX>270</locationX>
-        <locationY>1382</locationY>
+        <locationY>1598</locationY>
         <collectionReference>setTransportRequest</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -495,7 +522,7 @@
         <name>Loop_through_Vehicles_Regular_Tranport</name>
         <label>Loop through Vehicles Regular Tranport</label>
         <locationX>402</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <collectionReference>Get_Vehicles</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -528,7 +555,7 @@
         <name>Create_Transport_Request_Not_Ready</name>
         <label>Create Transport Request Not Ready</label>
         <locationX>270</locationX>
-        <locationY>1790</locationY>
+        <locationY>2006</locationY>
         <connector>
             <targetReference>Success_Message</targetReference>
         </connector>
@@ -538,12 +565,54 @@
         <name>Transport_Request_Ready</name>
         <label>Transport Request Ready</label>
         <locationX>534</locationX>
-        <locationY>1382</locationY>
+        <locationY>1598</locationY>
         <connector>
             <targetReference>Success_Message</targetReference>
         </connector>
         <inputReference>setTransportRequest</inputReference>
     </recordCreates>
+    <recordLookups>
+        <name>Get_delivery_location_record</name>
+        <label>Get delivery location record</label>
+        <locationX>402</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_pickup_location_record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Delivery_Location_Lookup.recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_pickup_location_record</name>
+        <label>Get pickup location record</label>
+        <locationX>402</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Vehicles_Regular_Tranport</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Pickup_Location_Lookup.recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Vehicles</name>
         <label>Get Vehicles</label>
@@ -574,7 +643,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Loop_through_Vehicles_Regular_Tranport</targetReference>
+            <targetReference>Get_delivery_location_record</targetReference>
         </connector>
         <fields>
             <name>Location_Help_text</name>
@@ -652,7 +721,7 @@
         <name>Confirm_TR_Before_Create</name>
         <label>Confirm TR Before Create</label>
         <locationX>402</locationX>
-        <locationY>1166</locationY>
+        <locationY>1382</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -694,7 +763,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;VIN_Number__c&quot;,&quot;guid&quot;:&quot;column-e6bb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Brand__c&quot;,&quot;guid&quot;:&quot;column-83f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Brand&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Model__c&quot;,&quot;guid&quot;:&quot;column-99fa&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Model&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Account_Number__c&quot;,&quot;guid&quot;:&quot;column-f336&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Pickup_Location_Code__c&quot;,&quot;guid&quot;:&quot;column-13be&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Pickup Location Code&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;From_Location_Address__c&quot;,&quot;guid&quot;:&quot;column-42ce&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Pickup Address&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;From Location Address&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Delivery_Location_Code__c&quot;,&quot;guid&quot;:&quot;column-7bf0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Delivery Location Code&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;To_Location_Address__c&quot;,&quot;guid&quot;:&quot;column-b685&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Delivery Address&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:7,&quot;label&quot;:&quot;To Location Address&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Requested_Date__c&quot;,&quot;guid&quot;:&quot;column-8f79&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:8,&quot;label&quot;:&quot;Requested Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;Day_to_Day__c&quot;,&quot;guid&quot;:&quot;column-e02a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:9,&quot;label&quot;:&quot;Day-to-Day&quot;,&quot;type&quot;:&quot;boolean&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;VIN_Number__c&quot;,&quot;guid&quot;:&quot;column-e6bb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;VIN Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Brand__c&quot;,&quot;guid&quot;:&quot;column-83f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Brand&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Model__c&quot;,&quot;guid&quot;:&quot;column-99fa&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Model&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Account_Number__c&quot;,&quot;guid&quot;:&quot;column-f336&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Account Number&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Pickup_Location_Code__c&quot;,&quot;guid&quot;:&quot;column-13be&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Pickup Location Code&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;From_Location_Address__c&quot;,&quot;guid&quot;:&quot;column-42ce&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Pickup Address&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;From Location Address&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Delivery_Location_Code__c&quot;,&quot;guid&quot;:&quot;column-7bf0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Delivery Location Code&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;To_Location_Address__c&quot;,&quot;guid&quot;:&quot;column-b685&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Delivery Address&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:7,&quot;label&quot;:&quot;To Location Address&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Requested_Date__c&quot;,&quot;guid&quot;:&quot;column-8f79&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:8,&quot;label&quot;:&quot;Requested Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;Day_to_Day__c&quot;,&quot;guid&quot;:&quot;column-e02a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:9,&quot;label&quot;:&quot;Day-to-Day&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;Day_to_day_Account_Number__c&quot;,&quot;guid&quot;:&quot;column-8ec1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:10,&quot;label&quot;:&quot;Day-to-day Account Number&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -905,7 +974,7 @@
         <name>Success_Message</name>
         <label>Success Message</label>
         <locationX>402</locationX>
-        <locationY>1982</locationY>
+        <locationY>2198</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
