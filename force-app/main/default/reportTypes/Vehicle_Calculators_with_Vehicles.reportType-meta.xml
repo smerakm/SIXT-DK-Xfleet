@@ -1233,6 +1233,11 @@
             <field>Minilease_Pickup_Date__c</field>
             <table>Vehicle_Calculator__c.Vehicles__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Best_Estimated_Infleet_Date__c</field>
+            <table>Vehicle_Calculator__c.Vehicles__r</table>
+        </columns>
         <masterLabel>Vehicles</masterLabel>
     </sections>
 </ReportType>

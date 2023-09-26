@@ -151,7 +151,7 @@ public with sharing class AutoITVehicle_Test {
         tstObject.bodyLengthTypeId = 'unitTest';
         tstObject.bodyTypeId = 1;
         tstObject.bodyTypeName = 'unitTest';
-        tstObject.brandId = 1;s
+        tstObject.brandId = 1;
         tstObject.brandName = 'unitTest';
         tstObject.colorId = 1;
         tstObject.colorName = 'unitTest';

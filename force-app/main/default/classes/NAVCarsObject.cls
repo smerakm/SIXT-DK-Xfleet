@@ -29,7 +29,7 @@ public with sharing class NAVCarsObject {
     public Integer createSalesPrice { get; set; }
     public Integer createDeliveryCost { get; set; }
     public Integer createLicensePlateCost { get; set; }
-    public Integer createRegistrationFee { get; set; }
+    //public Integer createRegistrationFee { get; set; } // removed as requested 2023-09-20
     public Integer createAdditionalAccessories { get; set; }
     public Integer createCarExchangeAmount { get; set; }
     public String createAccessoryDescription { get; set; }
@@ -115,7 +115,7 @@ public with sharing class NAVCarsObject {
         this.createSalesPrice = salesPrice;
         this.createDeliveryCost = deliveryCost;
         this.createLicensePlateCost = licensePlateCost;
-        this.createRegistrationFee = registrationFee;
+        //this.createRegistrationFee = registrationFee;
         this.createAdditionalAccessories = additionalAccessoriesCost;
         this.createAccessoryDescription = accessoryDescription?.left(50);
         this.createExchangeVinNo = exchangeCarVin;

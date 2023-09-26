@@ -3,16 +3,16 @@
     <baseObject>vehicleBatch__c</baseObject>
     <category>other</category>
     <deployed>true</deployed>
-    <description>Vehicle Batches with Vehicles with Market Values</description>
+    <description>Vehicle Batches with Vehicles w/wo Market Values</description>
     <join>
         <join>
-            <outerJoin>false</outerJoin>
+            <outerJoin>true</outerJoin>
             <relationship>Market_Values__r</relationship>
         </join>
         <outerJoin>false</outerJoin>
         <relationship>Vehicles__r</relationship>
     </join>
-    <label>Vehicle Batches with Vehicles with Market Values</label>
+    <label>Vehicle Batches with Vehicles w/wo Market Values</label>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -91,22 +91,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Number_Of_Not_Yet_Imported_Vehicles__c</field>
-            <table>vehicleBatch__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>vehicleImporter__c</field>
             <table>vehicleBatch__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Requested_Number_of_Vehicles__c</field>
-            <table>vehicleBatch__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Requested_DK_Mini_lease__c</field>
             <table>vehicleBatch__c</table>
         </columns>
         <columns>
@@ -127,16 +117,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>vehicleBrandAndModel__c</field>
-            <table>vehicleBatch__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Requested_Valuta_Vehicles__c</field>
-            <table>vehicleBatch__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Available_for_Detail_Forecast_Split__c</field>
             <table>vehicleBatch__c</table>
         </columns>
         <columns>
@@ -167,11 +147,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>System_Number_of_Selected_Calculations__c</field>
-            <table>vehicleBatch__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Requested_DK_Short_term__c</field>
             <table>vehicleBatch__c</table>
         </columns>
         <masterLabel>Vehicle Batches</masterLabel>
@@ -214,26 +189,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Tag__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Minilease_ready_for_sale_timestamp__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Integration_Requests_Number_Not_Run_Yet__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>First_Registration_Date__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Internal_number__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
@@ -249,37 +204,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Leasing_Cost_1st_Month__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>holdingCost__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Tax_Interest_Rate__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Proportional_Registration_Interest__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Defleet_Pickup_Location_Address__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>License_Plate_Invoice_Sent__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Vehicle_Batch__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
@@ -294,67 +219,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Integration_Requests_Number_Success__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Minilease_car_sold_timestamp__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Minilease_Carcontrol_Check__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>kmPrL__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>First_Registration_Date__c</field>
+            <table>vehicleBatch__c.Vehicles__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>For_sale_as_Minilease__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>License_Plate_Is_Not_Invoiced__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Current_Month_in_Leasing__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Integration_Requests_Number_Total__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>baseTax__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>License_Plate_System__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Best_Estimated_Infleet_Date__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Leasing_Type__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Proportional_Registration_Fee__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
@@ -379,21 +254,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Leasing_Cost_Per_Month__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Integration_Requests_Number_Failed__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Depreciation__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>handlingCost__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
@@ -409,47 +269,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Is_Car_Paid_by_Buyer__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Interest_Leasing__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Confirmed_Remarketing_Price_EUR__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Automatic_Gears_Formula__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Currency__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>COC_document__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Navision_Account_Number__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Invoice_Amount__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Interest_Rate_First_Leasing_Period__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
@@ -490,11 +315,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Key_received_at_station__c</field>
-            <table>vehicleBatch__c.Vehicles__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Buyer_Name__c</field>
             <table>vehicleBatch__c.Vehicles__r</table>
         </columns>
         <columns>
