@@ -7,7 +7,7 @@
  * Next, subtract the month of the earlier date from the month of the later date, and add that difference to the value of the first set of operations. 
 	* ((YEAR(date_1) - YEAR(date_2))*12) + (MONTH(date_1) - MONTH(date_2))
 	*/
-((YEAR(TODAY()) - YEAR(Registration_Date__c))*12) + (MONTH(TODAY()) - MONTH(Registration_Date__c))</formula>
+((YEAR(TODAY()) - YEAR(First_Registration_Date__c))*12) + (MONTH(TODAY()) - MONTH(First_Registration_Date__c))</formula>
     <inlineHelpText>based on registration date, shows in which month of leasing period the vehicle currently is</inlineHelpText>
     <label>Current Month in Leasing</label>
     <precision>18</precision>

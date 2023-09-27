@@ -10,6 +10,7 @@ public with sharing class CalculationsLeasingResidualValueBatchTes {
         params.put('Batch_Distribution__c', 'Valuta');
         params.put('Leasing_Cost_Per_Month__c', 3284.43);
         params.put('Registration_Date__c', Date.today().addMonths(-1));
+        params.put('First_Registration_Date__c', Date.today().addMonths(-1));
         params.put('Sixt_steel_purchase_price__c', 254330);
         Vehicle__c testVehicle = TestUtilitySIXT.createVehicle(testBatch.id, params);
         testVehicle.leasing_Account__c = testLeasingAccount.id;
